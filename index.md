@@ -9,5 +9,5 @@ Caso deseje utiliza-las entre em contato com a Equipe de PRODUTOS CIELO, e obten
 
 **CHECKOUT CIELO**
 
-> **Pré-Cadastro** - _Permite a criação de lojas Checkout Cielo. Disponivel apenas para Plataformas cadastradas junto a Produtos Cielo._ 
+> **Pré-Cadastro** - _Permite a criação de lojas Checkout Cielo. Disponivel apenas para **Plataformas** cadastradas junto a Produtos Cielo._ 
 
