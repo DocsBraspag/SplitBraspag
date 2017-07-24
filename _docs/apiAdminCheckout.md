@@ -143,6 +143,15 @@ Para realizar a criação de uma loja, basta realizar um `POST` ou um `PUT` para
    "isAdminOrigen":false
 }
 ```
+
+
+
+
+> **ATENÇÃO** -  Devido a limitações do sistem cielo, eles sempre enviarão 3 tipos de parcelamento para cartão de crédito. Serão considerados apenas parcelas acima de 0 e inferiores a 12. Caso existam 2 parcelas inferiores a 12, será considerada a maior parcela como limite maximo.
+
+
+
+
 **MerchantViewModel**:
 
 | Campo                      | Descrição                                                           | Tipo                                              | Tamanho | Obrigatório          | Equivalente ao Admin                  |
