@@ -41,7 +41,7 @@ Para realizar a criação de uma loja, basta realizar um `POST` ou um `PUT` para
 ```
 **MerchantViewModel**:
 
-| Campo                     | Descrição                                                           | Tipo                                              | Tamanho | Obrigatório          | Campos equivalente  no contrato Admin |
+| Campo                      | Descrição                                                           | Tipo                                              | Tamanho | Obrigatório          | Campos equivalente  no contrato Admin |
 |----------------------------|---------------------------------------------------------------------|---------------------------------------------------|---------|----------------------|---------------------------------------|
 | Id                         | MerchantID do Checkout                                              | Guid                                              | -       | Apenas para o update | N/A                                   |
 | Nickname                   | Nome uusado  no "Como gostaria de ser chamado"                      | string                                            | 64      | sim                  | N/A                                   |
