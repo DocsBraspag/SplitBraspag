@@ -64,3 +64,29 @@ Para realizar a criação de uma loja, basta realizar um `POST` ou um `PUT` para
 | ShipmentConfiguration      | Dados de contratos dos correios da loja                             | Ver Tabela 04 - Objeto-ShipmentConfiguration      | -       | não                  | N/A                                   |
 | CorreiosServices           | Tipo de contrato dos correios                                       | Ver tabela 05 - Lista-Objetos-CorreiosServices    | -       | não                  | N/A                                   |
 | PaymentMethods             | Meios de pagamento disponiveis no cadastro                          | Ver tabela 06 - Lista-Objetos-PaymentMethods      | -       | não                  | PAYMENTMETHOD                         |
+
+
+**Objeto-Adress**
+| Campo      | Descrição                   | Tipo       | Tamanho | Obrigatório | Campos equivalente no contrato Admin  |
+|------------|-----------------------------|------------|---------|-------------|---------------------------------------|
+| City       | Cidade da loja              | string     | 64      | sim         | CITY                                  |
+| Complement | Complemento                 | string     | 256     | não         | COMPLEMENT                            |
+| Street     | Nome da rua                 | string     | 256     | sim         | ADDRESS                               |
+| District   | Bairro                      | string     | 64      | não         | DISTRICT                              |
+| Number     | Numero da loja              | string     | 8       | sim         | NUMBER                                |
+| State      | Estado (UNIDADE FEDERATIVA) | Enum-State | -       | sim         | STATE                                 |
+| ZipCode    | CEP                         | string     | 9       | sim         | ZIPCODE                               |
+
+
+
+
+
+[GitHub](http://github.com)
+
+
+
+
+
+
+
+-
