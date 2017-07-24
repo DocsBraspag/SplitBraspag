@@ -261,7 +261,7 @@ Resposta:
 
 A API de pré-cadastro permite que determinados dados da loja sejam atualizados após a ATIVAÇÃO do cadastro. São disponibilizados para manipulação dois tipos de informação: **Plano Cielo** e **Contato técnicos**. 
 
-Plano Cielo
+## Plano Cielo
 
 > **Url de Homologação**: https://cieloecommercehomolog.braspag.com.br/api/public/v1/Plan/`MID DA LOJA`
 
@@ -274,14 +274,40 @@ Exemplo de PUT de atualização –  Plano Cielo
 header:
 Content-Type : application/json
 Authorization : OAuth+accesstoken
+```
 
------
-
+```
 {
     "Name" : "Avulso",
 }
+```
+
+
+## CONTATO TÉCNICO
+
+Para atualizar contatos técnicos, deve-se ser enviado um `PUT` para a URL:
+
+Exemplo de PUT de atualização – Contato Técnico
 
 ```
+header:
+Content-Type : application/json
+Authorization : OAuth+accesstoken
+```
+
+```
+ 
+ {
+    "ContactName" : "ContactName-Update",
+    "ContactPhone" : "11 22222-3333",
+    "ContactEmail" : “ContactEmail@update.com",
+    "CompanyDeveloper" : "CompanyDeveloper-Update"
+ }
+```
+
+
+> **ATENÇÃO:** Todos os campos de contato técnico devem ser atualizados em conjunto. Caso apenas um campo seja informado, apenas esse será atualizado e os outros terão seus valores apagados.
+
 
 
 
