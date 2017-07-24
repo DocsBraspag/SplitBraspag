@@ -16,6 +16,11 @@ A Cielo realiza a criação e edição de lojas via essa API quando uma Afialia�
 
 
 
+### Consultando Lojas
 
+Basta realizar um GET via a URL abaixo.
+
+
+> https://cieloecommerce.cielo.com.br/api/private/v1/Merchant/GetByAffiliationCode/`(Afiliação da loja)`
 
 
