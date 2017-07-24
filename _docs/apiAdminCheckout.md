@@ -161,9 +161,6 @@ Para realizar a criação de uma loja, basta realizar um `POST` ou um `PUT` para
 
 Enums
 
-
-**01**
-
 | Category     | Código |
 |--------------|--------|
 | Undefined    | 0      |
@@ -295,67 +292,3 @@ Enums
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[GitHub](http://github.com)
-
-
-
-
-
-
-
--
