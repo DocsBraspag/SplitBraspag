@@ -41,9 +41,9 @@ Para realizar a criação de uma loja, basta realizar um `POST` ou um `PUT` para
 ```
 **MerchantViewModel**:
 
-| Campo                      | Descrição                                                           | Tipo                                              | Tamanho | Obrigatório          | Campos equivalente  no contrato Admin |
-|----------------------------|---------------------------------------------------------------------|---------------------------------------------------|---------|----------------------|---------------------------------------|
-| Id                         | MerchantID do Checkout                                              | Guid                                              | -       | Apenas para o update | N/A                                   |
+| Campo                      | Descrição                                                           | Tipo                                              | Tamanho | Obrigatório          | Equivalente ao Admin                  |
+|----------------------------|---------------------------------------------------------------------|:-------------------------------------------------:|:-------:|----------------------|---------------------------------------|
+| Id                         | MerchantID do Checkout                                              | Guid                                              | -       | Para o update        | N/A                                   |
 | Nickname                   | Nome uusado  no "Como gostaria de ser chamado"                      | string                                            | 64      | sim                  | N/A                                   |
 | Email                      | E-mail principal - Usado como Login                                 | string                                            | 64      | sim                  | E-MAIL                                |
 | ContactName                | Nome de contato do lojista                                          | string                                            | 64      | sim                  | CONTACTNAME / FULLNAME                |
@@ -69,7 +69,7 @@ Para realizar a criação de uma loja, basta realizar um `POST` ou um `PUT` para
 
 **Objeto-Adress**
 
-| Campo      | Descrição                   | Tipo       | Tamanho | Obrigatório | Campos equivalente no contrato Admin  |
+| Campo      | Descrição                   | Tipo       | Tamanho | Obrigatório | Equivalente ao Admin                  |
 |------------|-----------------------------|------------|---------|-------------|---------------------------------------|
 | City       | Cidade da loja              | string     | 64      | sim         | CITY                                  |
 | Complement | Complemento                 | string     | 256     | não         | COMPLEMENT                            |
@@ -78,6 +78,74 @@ Para realizar a criação de uma loja, basta realizar um `POST` ou um `PUT` para
 | Number     | Numero da loja              | string     | 8       | sim         | NUMBER                                |
 | State      | Estado (UNIDADE FEDERATIVA) | Enum-State | -       | sim         | STATE                                 |
 | ZipCode    | CEP                         | string     | 9       | sim         | ZIPCODE                               |
+
+
+
+
+
+
+
+**TechnicalContact**
+
+| Campo   | Descrição                   | Tipo   | Tamanho | Obrigatório | Equivalente ao Admin                  |
+|---------|-----------------------------|--------|---------|-------------|---------------------------------------|
+| Name    | Nome do Responsavel tecnico | string | 64      | não         | N/A                                   |
+| Phone   | Telefone fixo ou Movel      | string | 16      | não         | PHONE                                 |
+| Email   | E-mail de contato           | string | 64      | não         | N/A                                   |
+| Website | URL do desenvolvedor        | string | 256     | não         | N/A                                   |
+| Company | Empresa de desenvolvimento  | string | 128     | não         | N/A                                   |
+
+
+
+
+
+
+| Campo   | Descrição                   | Tipo   | Tamanho | Obrigatório | Equivalente ao Admin                  |
+|---------|-----------------------------|--------|---------|-------------|---------------------------------------|
+| Profile | Perfil da loja dentro do código. | Enum-Profile | - | sim | INTEGRATIONTYPE |
+| Status | Status do lojista dentro do Chekcout | Enum-Status | - | sim | N/A |
+| IsAutomaticCaptureForLowRisk | Captura automatica para baixo risco no AF | bool | - | não | N/A |
+| IsAutomaticCancellationForHighRisk | Cancelamento automatico para Alto risco no AF | bool | - | sim | N/A |
+| TransactionalMerchantId | MerchantID do Pagador Associada ao Checkout Cielo | guid | - | sim | N/A |
+| ReturnUrl | URL de Retorno da Loja. Maiores informações no manual do desenvolvedor Checkout Cielo | string | 256 | não | N/A |
+| NotificationUrl | URL de Notificação da Loja. Maiores informações no manual do desenvolvedor Checkout Cielo | string | 256 | não | N/A |
+| StatusNotificationUrl | URL de Mudança de status da Loja. Maiores informações no manual do desenvolvedor Checkout Cielo | string | 256 | não | N/A |
+| TestModeEnabled | Modo de teste ativo no momento da criação ? Padrão: False | bool | - | não | N/A |
+| MinimumInstallmentAmount | Valor minimo para o parcelamento | int | - | não | N/A |
+| MinimumBoletoAmount | Valor minimo para  emissão de boleto | int | - | não | N/A |
+| BoletoDiscountPercentage | Porcentagem de desconto para pagamento com boletos | byte | - | não | N/A |
+| OnlineDebitDiscountPercentage | Porcentagem de desconto para pagamento com Débito online | byte | - | não | N/A |
+| AffiliationCode | Afiliação Cielo | string | 16 | não | EC |
+| AffiliationKey | Chave de produção Cielo | string | 64 | não | PRODUCTIONKEY |
+| AntifraudEnabled | Anti Fraude (AF) ativo no momento da criação ? Padrão: False | bool | - | não | N/A |
+| CartaoProtegidoEnabled | Defini se a loja poderá utilizar o cartão protegido, junto com suporte a clientes registrados. Padrão: False | bool | - | não | N/A |
+| CvvRequired | Obrigatoriedade de envio do CVV. Padrão: False | bool | - | sim | CVVREQUIRED |
+| Mcc | Identificados do segmento CIELO que defini a taxa a ser cobrada | string | 16 | não | Mcc |
+| ContractedSolution | Tipo de Loja com base no serviço prestado | Enum-ContractedSolution | - | sim | N/A |
+| CreditCardAuthenticationRequired | Autenticação do Cartão de crédito junto ao banco? Padrão: False | bool | - | não | N/A |
+| CaptchaIsRequired | Obrigatoriedade do Captcha no transacional. Padrão: False | bool | - | não | N/A |
+| CaptchaRequiredUpDate | Data em que o Captcha  deixará de ser exibido. | DateTime | - | não | N/A |
+| AntifraudMinimumAmount | Valor minimo para ocorrer a analise de risco | int | - | não | N/A |
+| IsAutomaticCaptureForAllTransactions | Captura automatica para todas as transações | bool | - | não | N/A |
+| TransactionalMerchantKey | MerchantKey do Pagador Associada ao Checkout Cielo | string | 40 | sim | N/A |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
