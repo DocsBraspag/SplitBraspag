@@ -5,7 +5,7 @@ order: 2
 ---
 
 
-### O QUE &Eacute; O PR&Eacute;-CADASTRO
+### O que é a API de pré-cadastro.
 
 A API de pr&eacute;-cadastro &eacute; projetada para simplificar o processo de cadastro de lojas originarias de plataformas ecommerce. Ela visa operacionalizar o processo de recebimento de informa&ccedil;&otilde;es e cria&ccedil;&atilde;o de novos cadastros no Checkout Cielo.
 
@@ -254,3 +254,55 @@ Resposta:
 | 634 | BancoTriangulo | BANCO TRI&Acirc;NGULO S.A. |
 | 655 | Votorantim | BANCO VOTORANTIM S.A. |
 | 41 | BancoDoEstadoDoRioGrandeDoSul | BANCO DO ESTADO DO RIO GRANDE DO SUL S.A. |
+
+
+
+### Atualização de cadastros.
+
+A API de pré-cadastro permite que determinados dados da loja sejam atualizados após a ATIVAÇÃO do cadastro. São disponibilizados para manipulação dois tipos de informação: **Plano Cielo** e **Contato técnicos**. 
+
+Plano Cielo
+
+> **Url de Homologação**: https://cieloecommercehomolog.braspag.com.br/api/public/v1/Plan/`MID DA LOJA`
+
+> **Url de Produção**: https://cieloecommerce.cielo.com.br/api/public/v1/Plan/`MID DA LOJA`
+
+
+Exemplo de PUT de atualização –  Plano Cielo
+
+```
+header:
+Content-Type : application/json
+Authorization : OAuth+accesstoken
+
+-----
+
+{
+    "Name" : "Avulso",
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
