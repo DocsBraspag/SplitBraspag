@@ -226,14 +226,71 @@ Enums
 | TO    |
 
 
+| Profile       | Código |
+|---------------|--------|
+| Undefined     | 0      |
+| Standard      | 1      |
+| Guaranteed    | 2      |
+| ClicaSorocaba | 3      |
+| BuyPage       | 4      |
+| CheckoutCielo | 5      |
+
+
+| Status   | Código |
+|----------|--------|
+| Inactive | 0      |
+| Active   | 1      |
+| Blocked  | 2      |
 
 
 
+| ContractedSolution | Código |
+|--------------------|--------|
+| Undefined          | 0      |
+| SolucaoIntegrada   | 1      |
+| LojaVirtual        | 2      |
+| WebService         | 3      |
 
 
+| ServiceCode                  | Código |
+|------------------------------|--------|
+| Undefined                    | 0      |
+| SEDEXSemContrato             | 40010  |
+| SEDEX10SemContrato           | 40215  |
+| SEDEXHojeSemContrato         | 40290  |
+| SEDEXComContrato1            | 40096  |
+| SEDEXComContrato2            | 40436  |
+| SEDEXComContrato3            | 40444  |
+| SEDEXComContrato4            | 40568  |
+| SEDEXComContrato5            | 40606  |
+| PACSemContrato               | 41106  |
+| PACComContrato1              | 41211  |
+| PACComContrato2              | 41068  |
+| eSEDEXComContrato            | 81019  |
+| eSEDEXPrioritárioComContrato | 81027  |
+| eSEDEXExpressComContrato     | 81035  |
+| Grupo1eSEDEXComContrato      | 81868  |
+| Grupo2eSEDEXComContrato      | 81833  |
+| Grupo3eSEDEXComContrato      | 81850  |
 
 
-
+| PaymentMethodName         | Código |
+|---------------------------|--------|
+| NotDefined                | 0      |
+| BoletoBradesco            | 1      |
+| BoletoBancoDoBrasil       | 2      |
+| OnlineDebitBancoDoBrasil  | 3      |
+| OnlineDebitBradesco       | 4      |
+| DebitCardVisa             | 5      |
+| DebitCardMaster           | 6      |
+| CreditCardVisa            | 7      |
+| CreditCardMaster          | 8      |
+| CreditCardJcb             | 9      |
+| CreditCardDiscover        | 10     |
+| CreditCardAmericanExpress | 11     |
+| CreditCardElo             | 12     |
+| CreditCardDiners          | 13     |
+| CreditCardAura            | 14     |
 
 
 
