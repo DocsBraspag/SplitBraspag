@@ -35,9 +35,113 @@ Para realizar a criação de uma loja, basta realizar um `POST` ou um `PUT` para
 
 
 ```
-
-
-
+{  
+   "id":"fb616582-abc1-4f87-8e1a-33c79f08704f",
+   "nickname":"CMV COSMETICOS M",
+   "email":"CONTATO@CASADAMICROPIGMENTADORA.COM.BR",
+   "contactName":"CESAR",
+   "contactPhone":"5197265192",
+   "identity":"24151971000109",
+   "doingBusinessAs":"CMV COSMETICOS M ",
+   "corporateName":"CMV COSMETICOS EIRELI ME",
+   "createdDate":"0001-01-01T00:00:00",
+   "category":1,
+   "personType":2,
+   "notAccredited":0,
+   "address":{  
+      "city":"PORTO ALEGRE",
+      "complement":"",
+      "street":"R. DEMETRIO RIBEIRO 646",
+      "district":"N/I",
+      "number":"S/N",
+      "state":"RS",
+      "zipCode":"N/I"
+   },
+   "transactionalConfiguration":{  
+      "profile":5,
+      "isAutomaticCaptureForLowRisk":false,
+      "isAutomaticCancellationForHighRisk":false,
+      "transactionalMerchantId":"dded5662-571e-e411-9405-000af7120b62",
+      "returnUrl":"",
+      "notificationUrl":"",
+      "statusNotificationUrl":"",
+      "testModeEnabled":false,
+      "status":2,
+      "minimumInstallmentAmount":500,
+      "minimumBoletoAmount":0,
+      "boletoDiscountPercentage":0,
+      "onlineDebitDiscountPercentage":0,
+      "affiliationCode":"1093380621",
+      "affiliationKey":"bc66536dfcd5f5783c55961d0949335b89307aca78a2bc71ddd9d66d412554dc",
+      "antifraudEnabled":false,
+      "cartaoProtegidoEnabled":false,
+      "cvvRequired":true,
+      "mcc":"5977",
+      "contractedSolution":1,
+      "creditCardAuthenticationRequired":false,
+      "captchaIsRequired":false,
+      "antifraudMinimumAmount":0,
+      "isAutomaticCaptureForAllTransactions":false
+   },
+   "paymentMethods":[  
+      {  
+         "type":7,
+         "enabled":true,
+         "maxNumberOfPayments":6
+      },
+      {  
+         "type":8,
+         "enabled":true,
+         "maxNumberOfPayments":6
+      },
+      {  
+         "type":13,
+         "enabled":true,
+         "maxNumberOfPayments":6
+      },
+      {  
+         "type":12,
+         "enabled":true,
+         "maxNumberOfPayments":6
+      },
+      {  
+         "type":12,
+         "enabled":true,
+         "maxNumberOfPayments":6
+      },
+      {  
+         "type":14,
+         "enabled":true,
+         "maxNumberOfPayments":6
+      },
+      {  
+         "type":14,
+         "enabled":true,
+         "maxNumberOfPayments":6
+      },
+      {  
+         "type":5,
+         "enabled":true,
+         "maxNumberOfPayments":1
+      },
+      {  
+         "type":5,
+         "enabled":true,
+         "maxNumberOfPayments":1
+      },
+      {  
+         "type":6,
+         "enabled":true,
+         "maxNumberOfPayments":1
+      },
+      {  
+         "type":6,
+         "enabled":true,
+         "maxNumberOfPayments":1
+      }
+   ],
+   "isAdminOrigen":false
+}
 ```
 **MerchantViewModel**:
 
@@ -59,12 +163,12 @@ Para realizar a criação de uma loja, basta realizar um `POST` ou um `PUT` para
 | Category                   | Perfil de Anti-fraude a ser utilizado na loja                       | Enum-Category                                     | -       | sim                  | N/A                                   |
 | PersonType                 | Tipo de registro (Pessoal fisica ou empresa)                        | Enum-PersonEnum                                   | -       | não                  | DOCUMENTTYPE                          |
 | NotAccredited              | Motivo do não credenciamento do lojista                             | Enum-NotAccredited                                | -       | sim                  | N/A                                   |
-| Address                    | Dados de endereço do lojista/loja                                   | Ver tabela 01 - Objeto-Adress                     | -       | não                  | N/A                                   |
-| TechnicalContact           | Dados de responsavel tecnico da loja                                | Ver tabela 02 - Objeto-TechnicalContact           | -       | sim                  | N/A                                   |
-| TransactionalConfiguration | Configurações transacionais.Ver tabela 03 para descrição dos campos | Ver tabela 03 - Objeto-TransactionalConfiguration | -       | não                  | N/A                                   |
-| ShipmentConfiguration      | Dados de contratos dos correios da loja                             | Ver Tabela 04 - Objeto-ShipmentConfiguration      | -       | não                  | N/A                                   |
-| CorreiosServices           | Tipo de contrato dos correios                                       | Ver tabela 05 - Lista-Objetos-CorreiosServices    | -       | não                  | N/A                                   |
-| PaymentMethods             | Meios de pagamento disponiveis no cadastro                          | Ver tabela 06 - Lista-Objetos-PaymentMethods      | -       | não                  | PAYMENTMETHOD                         |
+| Address                    | Dados de endereço do lojista/loja                                   | Ver tabela - Objeto-Adress                        | -       | não                  | N/A                                   |
+| TechnicalContact           | Dados de responsavel tecnico da loja                                | Ver tabela - Objeto-TechnicalContact              | -       | sim                  | N/A                                   |
+| TransactionalConfiguration | Configurações transacionais.Ver tabela 03 para descrição dos campos | Ver tabela - Objeto-TransactionalConfiguration    | -       | não                  | N/A                                   |
+| ShipmentConfiguration      | Dados de contratos dos correios da loja                             | Ver Tabela - Objeto-ShipmentConfiguration         | -       | não                  | N/A                                   |
+| CorreiosServices           | Tipo de contrato dos correios                                       | Ver tabela - Lista-Objetos-CorreiosServices       | -       | não                  | N/A                                   |
+| PaymentMethods             | Meios de pagamento disponiveis no cadastro                          | Ver tabela - Lista-Objetos-PaymentMethods         | -       | não                  | PAYMENTMETHOD                         |
 
 
 **Objeto-Adress**
@@ -159,7 +263,7 @@ Para realizar a criação de uma loja, basta realizar um `POST` ou um `PUT` para
 
 
 
-Enums
+**Enums**
 
 | Category     | Código |
 |--------------|--------|
@@ -274,12 +378,16 @@ Enums
 | PaymentMethodName         | Código |
 |---------------------------|--------|
 | NotDefined                | 0      |
+| ..............            | -      |
 | BoletoBradesco            | 1      |
 | BoletoBancoDoBrasil       | 2      |
+| ..............            | -      |
 | OnlineDebitBancoDoBrasil  | 3      |
 | OnlineDebitBradesco       | 4      |
+| ..............            | -      |
 | DebitCardVisa             | 5      |
 | DebitCardMaster           | 6      |
+| ..............            | -      |
 | CreditCardVisa            | 7      |
 | CreditCardMaster          | 8      |
 | CreditCardJcb             | 9      |
