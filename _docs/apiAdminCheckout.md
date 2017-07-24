@@ -99,6 +99,7 @@ Para realizar a criação de uma loja, basta realizar um `POST` ou um `PUT` para
 
 
 
+**TransactionalConfiguration**
 
 | Campo   | Descrição                   | Tipo   | Tamanho | Obrigatório | Equivalente ao Admin                  |
 |---------|-----------------------------|--------|---------|-------------|---------------------------------------|
@@ -128,6 +129,52 @@ Para realizar a criação de uma loja, basta realizar um `POST` ou um `PUT` para
 | AntifraudMinimumAmount | Valor minimo para ocorrer a analise de risco | int | - | não | N/A |
 | IsAutomaticCaptureForAllTransactions | Captura automatica para todas as transações | bool | - | não | N/A |
 | TransactionalMerchantKey | MerchantKey do Pagador Associada ao Checkout Cielo | string | 40 | sim | N/A |
+
+
+**ShipmentConfiguration**
+
+| Campo    | Descrição                   | Tipo   | Tamanho | Obrigatório | Equivalente ao Admin                  |
+|----------|-----------------------------|--------|---------|-------------|---------------------------------------|
+| Login    | Login do lojista no Correio             | string | 32      | sim         | N/A                       |
+| Password | Senha do contrato do lojista no Correio | string | 32      | sim         | N/A                       |
+
+
+
+**CorreiosServiceConfiguration**
+
+| Campo       | Descrição                           | Tipo             | Tamanho | Obrigatório | Equivalente ao Admin |
+|-------------|-------------------------------------|------------------|---------|-------------|----------------------|
+| ServiceCode | Tipo de contrato de frete utilizado | Enum-ServiceCode | -       | sim         | N/A                  |
+
+
+**PaymentMethod**
+
+| Campo               | Descrição                                                             | Tipo                   | Tamanho | Obrigatório | Campos equivalente  no contrato Admin |
+|---------------------|-----------------------------------------------------------------------|------------------------|---------|-------------|---------------------------------------|
+| Type                | Meio de pagamento Disponibilizado ao lojista                          | Enum-PaymentMethodName | -       | sim         | NAME                                  |
+| Enabled             | Liberar meio de pagamento no Backoffice? Padrão: True                 | bool                   | -       | sim         | N/A                                   |
+| MaxNumberOfPayments | Numero de parcelas liberado no meio de pagamento. Padrão: 1 (A vista) | byte                   | -       | sim         | MAXINSTALLMENTS                       |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
