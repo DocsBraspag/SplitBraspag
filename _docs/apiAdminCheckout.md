@@ -159,6 +159,101 @@ Para realizar a criação de uma loja, basta realizar um `POST` ou um `PUT` para
 
 
 
+Enums
+
+
+**01**
+
+| Category     | Código |
+|--------------|--------|
+| Undefined    | 0      |
+| Retail       | 1      |
+| Cosmeticos   | 2      |
+| DigitalGoods | 3      |
+| Servicos     | 4      |
+| Turismo      | 5      |
+| Joalheria    | 6      |
+
+
+
+| Person   | Código |
+|----------|--------|
+| Personal | 1      |
+| Company  | 2      |
+
+
+
+| NotAccredited            | Código |
+|--------------------------|--------|
+| Undefined                | 0      |
+| InvalidDataBank          | 1      |
+| CpfWithError             | 2      |
+| CnpjWithError            | 3      |
+| InconsistentBirthDate    | 4      |
+| RegisterWithRestrictions | 5      |
+| Other                    | 6      |
+
+
+| State |
+|-------|
+| ND    |
+| AC    |
+| AL    |
+| AP    |
+| AM    |
+| BA    |
+| CE    |
+| DF    |
+| ES    |
+| GO    |
+| MA    |
+| MT    |
+| MS    |
+| MG    |
+| PA    |
+| PB    |
+| PR    |
+| PE    |
+| PI    |
+| RJ    |
+| RN    |
+| RS    |
+| RO    |
+| RR    |
+| SC    |
+| SP    |
+| SE    |
+| TO    |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
