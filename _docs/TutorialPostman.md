@@ -146,12 +146,12 @@ Com a sua Collection e Environmet configurados, realizar uma transação junto a
 
 ![](/images/TutorialPostman/pr.PNG)
 
-	1. Seleciona qual requisição você deseja usar.
-	2. Verifique que o Environment correto está selecionado
-	3. Clique em SEND.
-	4. Na parte inferior você verá 2 informações:
-		a. O Body do Response - Aqui é onde ficam listadas os dados retornados de suas transações
-		b. O HTTP Status - Aqui você verifica se a sua requisição funcionou. 
+1. Seleciona qual requisição você deseja usar.
+2. Verifique que o Environment correto está selecionado
+3. Clique em SEND.
+4. Na parte inferior você verá 2 informações:
+	a. O Body do Response - Aqui é onde ficam listadas os dados retornados de suas transações
+	b. O HTTP Status - Aqui você verifica se a sua requisição funcionou. 
 
 **OBS**:Se você não receber um response verifique o status HTTP.
 
