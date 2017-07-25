@@ -15,19 +15,19 @@ Além da praticidade de ter todos os exemplos e códigos de integração prontos
 
 **Outras vantagens do POSTMAN**:
 
-	• Ferramenta gratuita
-	• Não é necessário instalar EXE - é uma extensão do Google Chrome
-	• Funciona em qualquer plataforma: Windows, MacOS e Linux
-	• Converte JSON em várias linguagens (EX: Python, PHP, RUBY)
-	• Sincronização entre diversos aplicativos
-	• Sincroniza código entre equipes (Versão paga)
+* Ferramenta gratuita
+* Não é necessário instalar EXE - é uma extensão do Google Chrome
+* Funciona em qualquer plataforma: Windows, MacOS e Linux
+* Converte JSON em várias linguagens (EX: Python, PHP, RUBY)
+* Sincronização entre diversos aplicativos
+* Sincroniza código entre equipes (Versão paga)
 	
-Download e cadastro.
+#### Download e cadastro
 
 Para utilizar o Postman, basta instalar o APP em seu computador. Isso pode ser realizado de duas maneiras:
 
-	• Instalando a versão desktop: Basta acessar https://www.getpostman.com/ , baixar a versão para sua plataforma e instalar o executável
-	• Instalando a extensão do Chrome: Basta acessar a Chrome Store e instalar a extensão do Postman
+* **Instalando a versão desktop**: Basta acessar https://www.getpostman.com/ , baixar a versão para sua plataforma e instalar o executável
+* **Instalando a extensão do Chrome**: Basta acessar a Chrome Store e instalar a extensão do Postman
 
 Instalando a extensão do Chrome
 
