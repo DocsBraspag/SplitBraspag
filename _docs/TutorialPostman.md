@@ -161,6 +161,33 @@ Com a sua Collection e Environmet configurados, realizar uma transação junto a
 
 
 
+
+## Gerando exemplos em outras linguagens.
+
+O POSTMAN permite criar exemplos de outras linguagens baseadas nas requisições JSON dos produtos Cielo.
+
+Abaixo demonstramos como gerar um exemplo em Python
+
+1 - Acesse a requisição que você deseja converter e clique em `CODE` no canto direito da tela. 
+
+*OBS*:Caso esse link não exista em sua tela, clique em `Params`
+
+![](/images/TutorialPostman/p5.PNG)
+
+2 - Selecione a Linguagem que deseje converter, neste caso, Python. 
+
+![](/images/TutorialPostman/pcode.PNG)
+
+
+3 - Pronto. O exemplo Json está convertido para Python
+
+
+![](/images/TutorialPostman/pcode2.PNG)
+
+
+
+
+
 ## Collections e Environments  Cielo
 
 Abaixo, listamos as collections e os Environments Cielo. Use-as em seu Postman para realizar testes e integrações.
