@@ -160,3 +160,40 @@ Com a sua Collection e Environmet configurados, realizar uma transação junto a
 ## Collections e Environments  Cielo
 
 Abaixo, listamos as collections e os Environments Cielo. Use-as em seu Postman para realizar testes e integrações.
+
+
+
+|Produto|Coleção e Ambientes|
+|-------|-------------------|
+|Api Cielo E-commerce|Coleção:<https://www.getpostman.com/collections/139520c8fe2210654d7c>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
