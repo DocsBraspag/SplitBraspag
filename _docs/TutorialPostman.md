@@ -71,8 +71,7 @@ Para utilizar o Postman, basta instalar o APP em seu computador. Isso pode ser r
 Nesta área vamos explicar os diferentes componentes do Postman e suas funções. Depois dessa introdução, as próximas partes deste tutorial vão focar na configurações e usos para teste das APIs
 
 
-
-> Imagem com os nomes das áreas
+![](/images/TutorialPostman/pc.PNG)
 
 
 *A* - *Environment (Ambiente)*:
@@ -90,11 +89,11 @@ Desta maneira se torna muito mais simples realizar testes com o mesmo contrato p
 
 
 *B* - *Header*
-Aqui existem o MerchantId/MerchantKey, que por padrão usam os mesmos dados registrados em Environment.
+Aqui existem o MerchantId/MerchantKey, que por padrão usam os mesmos dados registrados em `Environment`.
 
 
 *C* - *Body*:
-É o conteúdo das Requisições. Aqui é onde você pode alterar ou criar exemplos para a API e validar o conteúdo do seu 
+É o conteúdo das Requisições. Aqui é onde você pode alterar ou criar exemplos para a API e validar o conteúdo do seu `POST`/`GET`/`PUT`
 
 *D* - *Collection (Coleções)*:
 Local que contém todas os exemplos e códigos que podem ser utilizados na API. Aqui existem as criações de transações, consultas e outras funcionalidades que existem nas APIs Cielo.
