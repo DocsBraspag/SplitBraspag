@@ -106,12 +106,15 @@ O primeiro passo na utilização do postman é a criação do ambiente (environm
 
 Realizando a criação do ambiente:
 
-	1. No canto superior direito, clique na engrenagem e selecione "Manage environment".
+1. No canto superior direito, clique na engrenagem e selecione "Manage environment".
 		P7
-		
-	2. Na tela de gerenciamento, basta preencher as configurações de acordo com a tela abaixo:
-		P9
-	3. Pronto,  agora os endereços e credenciais para teste já estão cadastrada. Sugerimos que você crie um ambiente para Produção e um para Sandbox assim,
+![](/images/TutorialPostman/p7.PNG)
+
+2. Na tela de gerenciamento, basta preencher as configurações de acordo com a tela abaixo:
+
+![](/images/TutorialPostman/p9.PNG)
+
+3. Pronto,  agora os endereços e credenciais para teste já estão cadastrada. Sugerimos que você crie um ambiente para Produção e um para Sandbox assim,
 	
 
 
