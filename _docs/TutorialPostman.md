@@ -32,7 +32,8 @@ Para utilizar o Postman, basta instalar o APP em seu computador. Isso pode ser r
 ### Instalando a extensão do Chrome
 
 1.Acesse a Chrome Store, pesquise por POSTMAN  em APPs
-![](/uploads/versions/p1.png)
+
+![](/images/TutorialPostman/p1.png)
 		
 2.Na aba de Apps no seu Google Chrome acesse o ícone do Postman
 		P2
