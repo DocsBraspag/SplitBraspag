@@ -115,7 +115,11 @@ Realizando a criação do ambiente:
 ![](/images/TutorialPostman/p8.PNG)
 
 
-**OBS**: As credenciais, `MerchantID` e `MerchantKey`, devem coincindir com o ambiente das URLs, ou seja, Credenciais de sandbox funcionam apenas com URLs de Sandbox
+> Na **API Cielo Ecommerce** as credenciais, `MerchantID` e `MerchantKey`, devem coincindir com o ambiente das URLs, ou seja, Credenciais de sandbox funcionam apenas com URLs de Sandbox
+
+> No **Checkout Cielo** não há `MerchantKey` nem diferença entre Sandbox e produção. Para realizar testes, deve ser ativado o **"Modo de Teste"**. Para mais informações sobre o Modo de teste, acesso o [Tutorial do backoffice](https://developercielo.github.io/Checkout-Backoffice/)
+
+
 
 3. Pronto,  agora os endereços e credenciais para teste já estão cadastrada. Sugerimos que você crie um ambiente para Produção e um para Sandbox assim,
 	
@@ -182,7 +186,7 @@ Abaixo, listamos as collections e os Environments Cielo. Use-as em seu Postman p
 
 |Ambiente|URLs|
 |--------|----|
-|Produção|**Envio de transação**: https://api.cieloecommerce.cielo.com.br/ <br> **Consulta transação**: https://apiquery.cieloecommerce.cielo.com.br/|
+|Produção|**Envio de transação**: https://cieloecommerce.cielo.com.br/api|
 
 
 
