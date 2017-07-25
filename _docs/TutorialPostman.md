@@ -172,9 +172,9 @@ Abaixo, listamos as collections e os Environments Cielo. Use-as em seu Postman p
 **Ambientes**:
 
 |Ambiente|URLs|
-
-|Sandbox|**Requisição de transação**:  https://apisandbox.cieloecommerce.cielo.com.br <br> **Consulta transação**: https://apiquerysandbox.cieloecommerce.cielo.com.br/|
-|Produção|**Requisição de transação**: https://api.cieloecommerce.cielo.com.br/ <br> **Consulta transação**: https://apiquery.cieloecommerce.cielo.com.br/|
+|--------|----|
+|Sandbox|**Envio de transação**:  https://apisandbox.cieloecommerce.cielo.com.br <br> **Consulta transação**: https://apiquerysandbox.cieloecommerce.cielo.com.br/|
+|Produção|**Envio de transação**: https://api.cieloecommerce.cielo.com.br/ <br> **Consulta transação**: https://apiquery.cieloecommerce.cielo.com.br/|
 
 
 **Checkout Cielo**     
