@@ -164,8 +164,8 @@ Abaixo, listamos as collections e os Environments Cielo. Use-as em seu Postman p
 
 
 Produto
-* **Api Cielo E-commerce** -  <https://www.getpostman.com/collections/139520c8fe2210654d7c> |
-* **Checkout Cielo**       -  <https://www.getpostman.com/collections/97969ec643738aac42f4> |
+* **Api Cielo E-commerce** -  <https://www.getpostman.com/collections/139520c8fe2210654d7c> 
+* **Checkout Cielo**       -  <https://www.getpostman.com/collections/97969ec643738aac42f4> 
 
 
 
