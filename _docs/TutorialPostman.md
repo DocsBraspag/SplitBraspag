@@ -1,19 +1,19 @@
 ---
 title: POSTMAN
-category: Tutoriais
+category: TUTORIAIS
 order: 1
 ---
 
-O que é o POSTMAN?
+### O que é o POSTMAN?
 
 O Postman é um API Client que facilita aos desenvolvedores criar, compartilhar, testar e documentar APIs. Isso é feito, permitindo aos usuários criar e salvar solicitações HTTP / s simples e complexas, bem como ler suas respostas.
 
 
-Por que utilizar o POSTMAN?
+#### Por que utilizar o POSTMAN?
 
 Além da praticidade de ter todos os exemplos e códigos de integração prontos, o POSTMAN é a ferramenta oficial de teste pelas equipes de desenvolvimento e suporte Cielo. Dessa maneira ao realizar integrações, caso você possua duvidas, será mais rápido e simples de confirmar o que pode estar ocorrendo com o seu código.
 
-	Ø Outras vantagens do POSTMAN:
+**Outras vantagens do POSTMAN**:
 
 	• Ferramenta gratuita
 	• Não é necessário instalar EXE - é uma extensão do Google Chrome
