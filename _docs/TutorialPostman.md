@@ -114,6 +114,9 @@ Realizando a criação do ambiente:
 
 ![](/images/TutorialPostman/p8.PNG)
 
+
+*OBS*: As credenciais, `MerchantID` e `MerchantKey`, devem coincindir com o ambiente das URLs, ou seja, Credenciais de sandbox funcionam apenas com URLs de Sandbox
+
 3. Pronto,  agora os endereços e credenciais para teste já estão cadastrada. Sugerimos que você crie um ambiente para Produção e um para Sandbox assim,
 	
 
