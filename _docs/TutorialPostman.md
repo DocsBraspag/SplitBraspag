@@ -9,6 +9,11 @@ order: 1
 O Postman é um API Client que facilita aos desenvolvedores criar, compartilhar, testar e documentar APIs. Isso é feito, permitindo aos usuários criar e salvar solicitações HTTP / s simples e complexas, bem como ler suas respostas.
 
 
+
+
+
+
+
 ## Por que utilizar o POSTMAN?
 
 Além da praticidade de ter todos os exemplos e códigos de integração prontos, o POSTMAN é a ferramenta oficial de teste pelas equipes de desenvolvimento e suporte Cielo. Dessa maneira ao realizar integrações, caso você possua duvidas, será mais rápido e simples de confirmar o que pode estar ocorrendo com o seu código.
@@ -22,6 +27,14 @@ Além da praticidade de ter todos os exemplos e códigos de integração prontos
 * Sincronização entre diversos aplicativos
 * Sincroniza código entre equipes (Versão paga)
 	
+
+
+
+
+
+
+
+
 ## Download e cadastro
 
 Para utilizar o Postman, basta instalar o APP em seu computador. Isso pode ser realizado de duas maneiras:
@@ -36,13 +49,22 @@ Para utilizar o Postman, basta instalar o APP em seu computador. Isso pode ser r
 ![](/images/TutorialPostman/p1.PNG)
 		
 2.Na aba de Apps no seu Google Chrome acesse o ícone do Postman
-		P2
+
+![](/images/TutorialPostman/p2.PNG)
 	
 3.Ao acessar o Postman pela primeira vez, o App ira requisitar um login. Essa etapa é opcional, mas sugerismos que uma conta seja criada, pois isso sincroniza suas configurações com a sua conta POSTMAN, ou seja, se for necessario realiza um login em outro computador, suas configurações já estarão prontas para serem usadas
-		P3
+
+![](/images/TutorialPostman/p3.PNG)
 		
 4.Pronto, basta configurar suas Coleções  e ambientes para iniciar os testes
-		P4
+
+![](/images/TutorialPostman/p4.PNG)
+
+
+
+
+
+
 
 ## Explicando Componentes do POSTMAN
 
@@ -54,13 +76,14 @@ Nesta área vamos explicar os diferentes componentes do Postman e suas funções
 
 
 *A* - *Environment (Ambiente)*:
-Ambiente para onde serão direcionadas as requisições.
-Aqui existem dados de:
+Ambiente para onde serão direcionadas as requisições. Nesta área que serão definidos dados de:
 
-	• MerchantId - Identificador de sua loja nas APIs Cielo
-	• MerchantKey - Chave de segurança da sua loja nas APIs Cielo
-	• URL do POST/PUT - Endpoint Para criar ou editar transações
-	• URL do GET - Endpoint para consulta de transações
+|Dados          |Descrição|
+|---------------|---------|
+|**MerchantId**| Identificador de sua loja nas APIs Cielo|
+|**MerchantKey**| Chave de segurança da sua loja nas APIs Cielo|
+|**URL do POST/PUT**| Endpoint Para criar ou editar transações|
+|**URL do GET**| Endpoint para consulta de transações|
 
 Sugerimos que sejam criados dois ambientes, um com dados de produção e outro para Sandbox, cada um com suas respectivas credenciais e URLs.
 Desta maneira se torna muito mais simples realizar testes com o mesmo contrato para ambos os ambientes.
