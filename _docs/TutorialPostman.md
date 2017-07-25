@@ -163,26 +163,24 @@ Abaixo, listamos as collections e os Environments Cielo. Use-as em seu Postman p
 
 
 
-Produto
-* **Api Cielo E-commerce** -  <https://www.getpostman.com/collections/139520c8fe2210654d7c> 
-* **Checkout Cielo**       -  <https://www.getpostman.com/collections/97969ec643738aac42f4> 
+### Produto
 
+**Api Cielo Ecommerce**
 
+* **Collection** -  <https://www.getpostman.com/collections/139520c8fe2210654d7c> 
 
-Ambientes:
-**Api Cielo E-commerce*
+**Ambientes**:
 
-Produção:
-* Requisição de transação: https://api.cieloecommerce.cielo.com.br/
-* Consulta transação: https://apiquery.cieloecommerce.cielo.com.br/
+|Ambiente|URLs|
 
-Ambiente Sandbox
-* Requisição de transação: https://apisandbox.cieloecommerce.cielo.com.br
-* Consulta transação: https://apiquerysandbox.cieloecommerce.cielo.com.br
+|Sandbox|**Requisição de transação**:  https://apisandbox.cieloecommerce.cielo.com.br <br> **Consulta transação**: https://apiquerysandbox.cieloecommerce.cielo.com.br/|
+|Produção|**Requisição de transação**: https://api.cieloecommerce.cielo.com.br/ <br> **Consulta transação**: https://apiquery.cieloecommerce.cielo.com.br/|
+
 
 **Checkout Cielo**     
 
 
+* **Collection**   -  <https://www.getpostman.com/collections/97969ec643738aac42f4> 
 
 
 
