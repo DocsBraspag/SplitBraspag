@@ -169,8 +169,6 @@ Abaixo, listamos as collections e os Environments Cielo. Use-as em seu Postman p
 
 * **Collection** -  <https://www.getpostman.com/collections/139520c8fe2210654d7c> 
 
-**Ambientes**:
-
 |Ambiente|URLs|
 |--------|----|
 |Sandbox|**Envio de transação**:  https://apisandbox.cieloecommerce.cielo.com.br <br> **Consulta transação**: https://apiquerysandbox.cieloecommerce.cielo.com.br/|
@@ -182,7 +180,9 @@ Abaixo, listamos as collections e os Environments Cielo. Use-as em seu Postman p
 
 * **Collection**   -  <https://www.getpostman.com/collections/97969ec643738aac42f4> 
 
-
+|Ambiente|URLs|
+|--------|----|
+|Produção|**Envio de transação**: https://api.cieloecommerce.cielo.com.br/ <br> **Consulta transação**: https://apiquery.cieloecommerce.cielo.com.br/|
 
 
 
