@@ -26,7 +26,7 @@ Além da praticidade de ter todos os exemplos e códigos de integração prontos
 
 Para utilizar o Postman, basta instalar o APP em seu computador. Isso pode ser realizado de duas maneiras:
 
-* **Instalando a versão desktop**: Basta acessar https://www.getpostman.com/ , baixar a versão para sua plataforma e instalar o executável
+* **Instalando a versão desktop**: Basta acessar <https://www.getpostman.com/> , baixar a versão para sua plataforma e instalar o executável
 * **Instalando a extensão do Chrome**: Basta acessar a Chrome Store e instalar a extensão do Postman
 
 ### Instalando a extensão do Chrome
