@@ -1,411 +1,130 @@
 ---
-title: API Cielo X Admin
-category: CHECKOUT CIELO
+title: POSTMAN
+category: Tutoriais
 order: 1
 ---
 
+O que é o POSTMAN?
 
-### O que é a API Cielo X Admin
-
-Está API é utilizada para criar e editar lojas Checkout. Hoje ela é utilizada pelo Admin Braspag e a Cielo (Via Admin Braspag),
-
-
-### Utilização pela Cielo.
-
-A Cielo realiza a criação e edição de lojas via essa API quando uma Afialiação é criada no SEC. é uma chamada automatica, que visa manter uma coesão e sincronia de dados cadastrais. 
-
-
-
-### Consultando Lojas
-
-Basta realizar um GET via a URL abaixo.
-
-
-> https://cieloecommerce.cielo.com.br/api/private/v1/Merchant/GetByAffiliationCode/`(Afiliação da loja)`
-
-
-### Criação e atualização das Lojas
-
-Para realizar a criação de uma loja, basta realizar um `POST` ou um `PUT` para a URL abaixo. 
-
-> *Criação* (`POST`) e *Atualização* (`PUT`): https://cieloecommerce.cielo.com.br/api/private/v1/Merchant
-
-
- O Contrato de criação/Atualização está exemplificado abaixo:
-
-
-```
-{  
-   "id":"fb616582-abc1-4f87-8e1a-33c79f08704f",
-   "nickname":"CMV COSMETICOS M",
-   "email":"CONTATO@CASADAMICROPIGMENTADORA.COM.BR",
-   "contactName":"CESAR",
-   "contactPhone":"5197265192",
-   "identity":"24151971000109",
-   "doingBusinessAs":"CMV COSMETICOS M ",
-   "corporateName":"CMV COSMETICOS EIRELI ME",
-   "createdDate":"0001-01-01T00:00:00",
-   "category":1,
-   "personType":2,
-   "notAccredited":0,
-   "address":{  
-      "city":"PORTO ALEGRE",
-      "complement":"",
-      "street":"R. DEMETRIO RIBEIRO 646",
-      "district":"N/I",
-      "number":"S/N",
-      "state":"RS",
-      "zipCode":"N/I"
-   },
-   "transactionalConfiguration":{  
-      "profile":5,
-      "isAutomaticCaptureForLowRisk":false,
-      "isAutomaticCancellationForHighRisk":false,
-      "transactionalMerchantId":"dded5662-571e-e411-9405-000af7120b62",
-      "returnUrl":"",
-      "notificationUrl":"",
-      "statusNotificationUrl":"",
-      "testModeEnabled":false,
-      "status":2,
-      "minimumInstallmentAmount":500,
-      "minimumBoletoAmount":0,
-      "boletoDiscountPercentage":0,
-      "onlineDebitDiscountPercentage":0,
-      "affiliationCode":"1093380621",
-      "affiliationKey":"bc66536dfcd5f5783c55961d0949335b89307aca78a2bc71ddd9d66d412554dc",
-      "antifraudEnabled":false,
-      "cartaoProtegidoEnabled":false,
-      "cvvRequired":true,
-      "mcc":"5977",
-      "contractedSolution":1,
-      "creditCardAuthenticationRequired":false,
-      "captchaIsRequired":false,
-      "antifraudMinimumAmount":0,
-      "isAutomaticCaptureForAllTransactions":false
-   },
-   "paymentMethods":[  
-      {  
-         "type":7,
-         "enabled":true,
-         "maxNumberOfPayments":6
-      },
-      {  
-         "type":8,
-         "enabled":true,
-         "maxNumberOfPayments":6
-      },
-      {  
-         "type":13,
-         "enabled":true,
-         "maxNumberOfPayments":6
-      },
-      {  
-         "type":12,
-         "enabled":true,
-         "maxNumberOfPayments":6
-      },
-      {  
-         "type":12,
-         "enabled":true,
-         "maxNumberOfPayments":6
-      },
-      {  
-         "type":14,
-         "enabled":true,
-         "maxNumberOfPayments":6
-      },
-      {  
-         "type":14,
-         "enabled":true,
-         "maxNumberOfPayments":6
-      },
-      {  
-         "type":5,
-         "enabled":true,
-         "maxNumberOfPayments":1
-      },
-      {  
-         "type":5,
-         "enabled":true,
-         "maxNumberOfPayments":1
-      },
-      {  
-         "type":6,
-         "enabled":true,
-         "maxNumberOfPayments":1
-      },
-      {  
-         "type":6,
-         "enabled":true,
-         "maxNumberOfPayments":1
-      }
-   ],
-   "isAdminOrigen":false
-}
-```
-
-
-
-
-> **ATENÇÃO** -  Devido a limitações do sistem cielo, eles sempre enviarão 3 tipos de parcelamento para cartão de crédito. Serão considerados apenas parcelas acima de 0 e inferiores a 12. Caso existam 2 parcelas inferiores a 12, será considerada a maior parcela como limite maximo.
-
-
-
-
-**MerchantViewModel**:
-
-| Campo                      | Descrição                                                           | Tipo                                              | Tamanho | Obrigatório          | Equivalente ao Admin                  |
-|----------------------------|---------------------------------------------------------------------|:-------------------------------------------------:|:-------:|----------------------|---------------------------------------|
-| Id                         | MerchantID do Checkout                                              | Guid                                              | -       | Para o update        | N/A                                   |
-| Nickname                   | Nome uusado  no "Como gostaria de ser chamado"                      | string                                            | 64      | sim                  | N/A                                   |
-| Email                      | E-mail principal - Usado como Login                                 | string                                            | 64      | sim                  | E-MAIL                                |
-| ContactName                | Nome de contato do lojista                                          | string                                            | 64      | sim                  | CONTACTNAME / FULLNAME                |
-| ContactPhone               | Telefone de contato do lojista                                      | string                                            | 16      | sim                  | N/A                                   |
-| Identity                   | CPF ou CNPJ - Deve ser enviado sem formatação                       | string                                            | 32      | sim                  | CNPJ / CPF                            |
-| DoingBusinessAs            | Nome fantasia da loja                                               | string                                            | 128     | sim                  | FANCYNAME                             |
-| CorporateName              | Razão social                                                        | string                                            | 128     | sim                  | CORPORATENAME                         |
-| Website                    | Url do lojista                                                      | string                                            | 256     | não                  | N/A                                   |
-| Origin                     | Origem do cadastro da loja                                          | string                                            | 100     | não                  | N/A                                   |
-| Gateway                    | Gateway utilizado pelo lojista                                      | string                                            | 128     | não                  | N/A                                   |
-| Comments                   | Comentários a respeito do cadastro                                  | string                                            | 4000    | não                  | N/A                                   |
-| SecondEmail                | E-mail secundario opcional                                          | string                                            | 64      | sim                  | N/A                                   |
-| Category                   | Perfil de Anti-fraude a ser utilizado na loja                       | Enum-Category                                     | -       | sim                  | N/A                                   |
-| PersonType                 | Tipo de registro (Pessoal fisica ou empresa)                        | Enum-PersonEnum                                   | -       | não                  | DOCUMENTTYPE                          |
-| NotAccredited              | Motivo do não credenciamento do lojista                             | Enum-NotAccredited                                | -       | sim                  | N/A                                   |
-| Address                    | Dados de endereço do lojista/loja                                   | Ver tabela - Objeto-Adress                        | -       | não                  | N/A                                   |
-| TechnicalContact           | Dados de responsavel tecnico da loja                                | Ver tabela - Objeto-TechnicalContact              | -       | sim                  | N/A                                   |
-| TransactionalConfiguration | Configurações transacionais.Ver tabela 03 para descrição dos campos | Ver tabela - Objeto-TransactionalConfiguration    | -       | não                  | N/A                                   |
-| ShipmentConfiguration      | Dados de contratos dos correios da loja                             | Ver Tabela - Objeto-ShipmentConfiguration         | -       | não                  | N/A                                   |
-| CorreiosServices           | Tipo de contrato dos correios                                       | Ver tabela - Lista-Objetos-CorreiosServices       | -       | não                  | N/A                                   |
-| PaymentMethods             | Meios de pagamento disponiveis no cadastro                          | Ver tabela - Lista-Objetos-PaymentMethods         | -       | não                  | PAYMENTMETHOD                         |
-
-
-**Objeto-Adress**
-
-| Campo      | Descrição                   | Tipo       | Tamanho | Obrigatório | Equivalente ao Admin                  |
-|------------|-----------------------------|------------|---------|-------------|---------------------------------------|
-| City       | Cidade da loja              | string     | 64      | sim         | CITY                                  |
-| Complement | Complemento                 | string     | 256     | não         | COMPLEMENT                            |
-| Street     | Nome da rua                 | string     | 256     | sim         | ADDRESS                               |
-| District   | Bairro                      | string     | 64      | não         | DISTRICT                              |
-| Number     | Numero da loja              | string     | 8       | sim         | NUMBER                                |
-| State      | Estado (UNIDADE FEDERATIVA) | Enum-State | -       | sim         | STATE                                 |
-| ZipCode    | CEP                         | string     | 9       | sim         | ZIPCODE                               |
-
+O Postman é um API Client que facilita aos desenvolvedores criar, compartilhar, testar e documentar APIs. Isso é feito, permitindo aos usuários criar e salvar solicitações HTTP / s simples e complexas, bem como ler suas respostas.
 
 
+Por que utilizar o POSTMAN?
 
+Além da praticidade de ter todos os exemplos e códigos de integração prontos, o POSTMAN é a ferramenta oficial de teste pelas equipes de desenvolvimento e suporte Cielo. Dessa maneira ao realizar integrações, caso você possua duvidas, será mais rápido e simples de confirmar o que pode estar ocorrendo com o seu código.
 
+	Ø Outras vantagens do POSTMAN:
 
-
-**TechnicalContact**
-
-| Campo   | Descrição                   | Tipo   | Tamanho | Obrigatório | Equivalente ao Admin                  |
-|---------|-----------------------------|--------|---------|-------------|---------------------------------------|
-| Name    | Nome do Responsavel tecnico | string | 64      | não         | N/A                                   |
-| Phone   | Telefone fixo ou Movel      | string | 16      | não         | PHONE                                 |
-| Email   | E-mail de contato           | string | 64      | não         | N/A                                   |
-| Website | URL do desenvolvedor        | string | 256     | não         | N/A                                   |
-| Company | Empresa de desenvolvimento  | string | 128     | não         | N/A                                   |
-
-
-
-
-
-**TransactionalConfiguration**
-
-| Campo   | Descrição                   | Tipo   | Tamanho | Obrigatório | Equivalente ao Admin                  |
-|---------|-----------------------------|--------|---------|-------------|---------------------------------------|
-| Profile | Perfil da loja dentro do código. | Enum-Profile | - | sim | INTEGRATIONTYPE |
-| Status | Status do lojista dentro do Chekcout | Enum-Status | - | sim | N/A |
-| IsAutomaticCaptureForLowRisk | Captura automatica para baixo risco no AF | bool | - | não | N/A |
-| IsAutomaticCancellationForHighRisk | Cancelamento automatico para Alto risco no AF | bool | - | sim | N/A |
-| TransactionalMerchantId | MerchantID do Pagador Associada ao Checkout Cielo | guid | - | sim | N/A |
-| ReturnUrl | URL de Retorno da Loja. Maiores informações no manual do desenvolvedor Checkout Cielo | string | 256 | não | N/A |
-| NotificationUrl | URL de Notificação da Loja. Maiores informações no manual do desenvolvedor Checkout Cielo | string | 256 | não | N/A |
-| StatusNotificationUrl | URL de Mudança de status da Loja. Maiores informações no manual do desenvolvedor Checkout Cielo | string | 256 | não | N/A |
-| TestModeEnabled | Modo de teste ativo no momento da criação ? Padrão: False | bool | - | não | N/A |
-| MinimumInstallmentAmount | Valor minimo para o parcelamento | int | - | não | N/A |
-| MinimumBoletoAmount | Valor minimo para  emissão de boleto | int | - | não | N/A |
-| BoletoDiscountPercentage | Porcentagem de desconto para pagamento com boletos | byte | - | não | N/A |
-| OnlineDebitDiscountPercentage | Porcentagem de desconto para pagamento com Débito online | byte | - | não | N/A |
-| AffiliationCode | Afiliação Cielo | string | 16 | não | EC |
-| AffiliationKey | Chave de produção Cielo | string | 64 | não | PRODUCTIONKEY |
-| AntifraudEnabled | Anti Fraude (AF) ativo no momento da criação ? Padrão: False | bool | - | não | N/A |
-| CartaoProtegidoEnabled | Defini se a loja poderá utilizar o cartão protegido, junto com suporte a clientes registrados. Padrão: False | bool | - | não | N/A |
-| CvvRequired | Obrigatoriedade de envio do CVV. Padrão: False | bool | - | sim | CVVREQUIRED |
-| Mcc | Identificados do segmento CIELO que defini a taxa a ser cobrada | string | 16 | não | Mcc |
-| ContractedSolution | Tipo de Loja com base no serviço prestado | Enum-ContractedSolution | - | sim | N/A |
-| CreditCardAuthenticationRequired | Autenticação do Cartão de crédito junto ao banco? Padrão: False | bool | - | não | N/A |
-| CaptchaIsRequired | Obrigatoriedade do Captcha no transacional. Padrão: False | bool | - | não | N/A |
-| CaptchaRequiredUpDate | Data em que o Captcha  deixará de ser exibido. | DateTime | - | não | N/A |
-| AntifraudMinimumAmount | Valor minimo para ocorrer a analise de risco | int | - | não | N/A |
-| IsAutomaticCaptureForAllTransactions | Captura automatica para todas as transações | bool | - | não | N/A |
-| TransactionalMerchantKey | MerchantKey do Pagador Associada ao Checkout Cielo | string | 40 | sim | N/A |
-
-
-**ShipmentConfiguration**
-
-| Campo    | Descrição                   | Tipo   | Tamanho | Obrigatório | Equivalente ao Admin                  |
-|----------|-----------------------------|--------|---------|-------------|---------------------------------------|
-| Login    | Login do lojista no Correio             | string | 32      | sim         | N/A                       |
-| Password | Senha do contrato do lojista no Correio | string | 32      | sim         | N/A                       |
-
-
-
-**CorreiosServiceConfiguration**
-
-| Campo       | Descrição                           | Tipo             | Tamanho | Obrigatório | Equivalente ao Admin |
-|-------------|-------------------------------------|------------------|---------|-------------|----------------------|
-| ServiceCode | Tipo de contrato de frete utilizado | Enum-ServiceCode | -       | sim         | N/A                  |
-
-
-**PaymentMethod**
-
-| Campo               | Descrição                                                             | Tipo                   | Tamanho | Obrigatório | Campos equivalente  no contrato Admin |
-|---------------------|-----------------------------------------------------------------------|------------------------|---------|-------------|---------------------------------------|
-| Type                | Meio de pagamento Disponibilizado ao lojista                          | Enum-PaymentMethodName | -       | sim         | NAME                                  |
-| Enabled             | Liberar meio de pagamento no Backoffice? Padrão: True                 | bool                   | -       | sim         | N/A                                   |
-| MaxNumberOfPayments | Numero de parcelas liberado no meio de pagamento. Padrão: 1 (A vista) | byte                   | -       | sim         | MAXINSTALLMENTS                       |
-
-
-
-
-
-**Enums**
-
-| Category     | Código |
-|--------------|--------|
-| Undefined    | 0      |
-| Retail       | 1      |
-| Cosmeticos   | 2      |
-| DigitalGoods | 3      |
-| Servicos     | 4      |
-| Turismo      | 5      |
-| Joalheria    | 6      |
-
-
-
-| Person   | Código |
-|----------|--------|
-| Personal | 1      |
-| Company  | 2      |
-
-
-
-| NotAccredited            | Código |
-|--------------------------|--------|
-| Undefined                | 0      |
-| InvalidDataBank          | 1      |
-| CpfWithError             | 2      |
-| CnpjWithError            | 3      |
-| InconsistentBirthDate    | 4      |
-| RegisterWithRestrictions | 5      |
-| Other                    | 6      |
-
-
-| State |
-|-------|
-| ND    |
-| AC    |
-| AL    |
-| AP    |
-| AM    |
-| BA    |
-| CE    |
-| DF    |
-| ES    |
-| GO    |
-| MA    |
-| MT    |
-| MS    |
-| MG    |
-| PA    |
-| PB    |
-| PR    |
-| PE    |
-| PI    |
-| RJ    |
-| RN    |
-| RS    |
-| RO    |
-| RR    |
-| SC    |
-| SP    |
-| SE    |
-| TO    |
-
-
-| Profile       | Código |
-|---------------|--------|
-| Undefined     | 0      |
-| Standard      | 1      |
-| Guaranteed    | 2      |
-| ClicaSorocaba | 3      |
-| BuyPage       | 4      |
-| CheckoutCielo | 5      |
-
-
-| Status   | Código |
-|----------|--------|
-| Inactive | 0      |
-| Active   | 1      |
-| Blocked  | 2      |
-
-
-
-| ContractedSolution | Código |
-|--------------------|--------|
-| Undefined          | 0      |
-| SolucaoIntegrada   | 1      |
-| LojaVirtual        | 2      |
-| WebService         | 3      |
-
-
-| ServiceCode                  | Código |
-|------------------------------|--------|
-| Undefined                    | 0      |
-| SEDEXSemContrato             | 40010  |
-| SEDEX10SemContrato           | 40215  |
-| SEDEXHojeSemContrato         | 40290  |
-| SEDEXComContrato1            | 40096  |
-| SEDEXComContrato2            | 40436  |
-| SEDEXComContrato3            | 40444  |
-| SEDEXComContrato4            | 40568  |
-| SEDEXComContrato5            | 40606  |
-| PACSemContrato               | 41106  |
-| PACComContrato1              | 41211  |
-| PACComContrato2              | 41068  |
-| eSEDEXComContrato            | 81019  |
-| eSEDEXPrioritárioComContrato | 81027  |
-| eSEDEXExpressComContrato     | 81035  |
-| Grupo1eSEDEXComContrato      | 81868  |
-| Grupo2eSEDEXComContrato      | 81833  |
-| Grupo3eSEDEXComContrato      | 81850  |
-
-
-| PaymentMethodName         | Código |
-|---------------------------|--------|
-| NotDefined                | 0      |
-| ..............            | -      |
-| BoletoBradesco            | 1      |
-| BoletoBancoDoBrasil       | 2      |
-| ..............            | -      |
-| OnlineDebitBancoDoBrasil  | 3      |
-| OnlineDebitBradesco       | 4      |
-| ..............            | -      |
-| DebitCardVisa             | 5      |
-| DebitCardMaster           | 6      |
-| ..............            | -      |
-| CreditCardVisa            | 7      |
-| CreditCardMaster          | 8      |
-| CreditCardJcb             | 9      |
-| CreditCardDiscover        | 10     |
-| CreditCardAmericanExpress | 11     |
-| CreditCardElo             | 12     |
-| CreditCardDiners          | 13     |
-| CreditCardAura            | 14     |
+	• Ferramenta gratuita
+	• Não é necessário instalar EXE - é uma extensão do Google Chrome
+	• Funciona em qualquer plataforma: Windows, MacOS e Linux
+	• Converte JSON em várias linguagens (EX: Python, PHP, RUBY)
+	• Sincronização entre diversos aplicativos
+	• Sincroniza código entre equipes (Versão paga)
+	
+Download e cadastro.
 
+Para utilizar o Postman, basta instalar o APP em seu computador. Isso pode ser realizado de duas maneiras:
 
+	• Instalando a versão desktop: Basta acessar https://www.getpostman.com/ , baixar a versão para sua plataforma e instalar o executável
+	• Instalando a extensão do Chrome: Basta acessar a Chrome Store e instalar a extensão do Postman
 
+Instalando a extensão do Chrome
 
+	1. Acesse a Chrome Store, pesquise por POSTMAN  em APPs
+		P1
+		
+	2. Na aba de Apps no seu Google Chrome acesse o ícone do Postman
+		P2
+	
+	3. Ao acessar o Postman pela primeira vez, o App ira requisitar um login. Essa etapa é opcional, mas sugerismos que uma conta seja criada, pois isso sincroniza suas configurações com a sua conta POSTMAN, ou seja, se for necessario realiza um login em outro computador, suas configurações já estarão prontas para serem usadas
+		P3
+		
+	4. Pronto, basta configurar suas Coleções  e ambientes para iniciar os testes
+		P4
+
+Explicando Componentes do POSTMAN
+
+Nesta área vamos explicar os diferentes componentes do Postman e suas funções. Depois dessa introdução, as próximas partes deste tutorial vão focar na configurações e usos para teste das APIs
+
+
+
+Imagem com os nomes das áreas
+
+
+
+A - Environment (Ambiente):
+Ambiente para onde serão direcionadas as requisições.
+Aqui existem dados de:
+
+	• MerchantId - Identificador de sua loja nas APIs Cielo
+	• MerchantKey - Chave de segurança da sua loja nas APIs Cielo
+	• URL do POST/PUT - Endpoint Para criar ou editar transações
+	• URL do GET - Endpoint para consulta de transações
+
+Sugerimos que sejam criados dois ambientes, um com dados de produção e outro para Sandbox, cada um com suas respectivas credenciais e URLs.
+Desta maneira se torna muito mais simples realizar testes com o mesmo contrato para ambos os ambientes.
+
+
+B - Header
+Aqui existem o MerchantId/MerchantKey, que por padrão usam os mesmos dados registrados em Environment.
+
+
+C - Body:
+É o conteúdo das Requisições. Aqui é onde você pode alterar ou criar exemplos para a API e validar o conteúdo do seu 
+
+D - Collection (Coleções):
+Local que contém todas os exemplos e códigos que podem ser utilizados na API. Aqui existem as criações de transações, consultas e outras funcionalidades que existem nas APIs Cielo.
+O número de coleções é ilimitado, ou seja, você pode criar várias coleções para se adequar ao seu estilo de uso do Postman.
+
+
+Criando Environment Cielo (ProdutoX)
+
+O primeiro passo na utilização do postman é a criação do ambiente (environment) da API. Essa configuração vai definir quais credenciais e endpoints serão utilizados como padrão, assim evitando a necessidade de realizar configurações a cada teste.
+
+Realizando a criação do ambiente:
+
+	1. No canto superior direito, clique na engrenagem e selecione "Manage environment".
+		P7
+		
+	2. Na tela de gerenciamento, basta preencher as configurações de acordo com a tela abaixo:
+		P9
+	3. Pronto,  agora os endereços e credenciais para teste já estão cadastrada. Sugerimos que você crie um ambiente para Produção e um para Sandbox assim,
+	
+
+
+Importando uma Collection
+
+A Cielo dispõe de coleções padrões para suas APIs. Você pode importa-las diretamente para o seu POSTMAN e ter todos os exemplos prontos para utilização instantaneamente, sem a necessidade de copia-los diretamente do manual.
+
+Para realizar a importação basta:
+
+	1. Acessar a área do manual onde o link da Coleção está disponível e copia-lo
+		a. IMPORTANTE: para que a sua coleção sempre esteja atualizada, sugerimos que sempre busque a ultima versão da coleção no manual. O link NÃO ATUALIZA A COLEÇÃO IMPORTADA AUTOMATICAMENTE
+	
+	2. Com o Postman aberto, use o botão IMPORT, e selecione a opção "IMPORT FROM LINK".
+		P5
+		
+	3. Pronto, sua coleção Cielo já está disponível. Basta selecionar Environment e a requisição. Ao clicar em SEND, o Postman vai executar a comunicação com a Cielo.
+		a. P6
+	
+
+
+Realizando uma requisição
+
+Com a sua Collection e Environmet configurados, realizar uma transação junto a Cielo é extremamente facil:
+
+P10
+
+	1. Seleciona qual requisição você deseja usar.
+	2. Verifique que o Environment correto está selecionado
+	3. Clique em SEND.
+	4. Na parte inferior você verá 2 informações:
+		a. O Body do Response - Aqui é onde ficam listadas os dados retornados de suas transações
+		b. O HTTP Status - Aqui você verifica se a sua requisição funcionou. Se você não receber um response verifique o status HTTP.
+
+
+
+Collections e Environments  Cielo
+
+Abaixo, listamos as collections e os Environments Cielo. Use-as em seu Postman para realizar testes e integrações.
