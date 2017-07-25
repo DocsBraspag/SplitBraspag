@@ -4,12 +4,12 @@ category: TUTORIAIS
 order: 1
 ---
 
-### O que é o POSTMAN?
+# O que é o POSTMAN?
 
 O Postman é um API Client que facilita aos desenvolvedores criar, compartilhar, testar e documentar APIs. Isso é feito, permitindo aos usuários criar e salvar solicitações HTTP / s simples e complexas, bem como ler suas respostas.
 
 
-#### Por que utilizar o POSTMAN?
+## Por que utilizar o POSTMAN?
 
 Além da praticidade de ter todos os exemplos e códigos de integração prontos, o POSTMAN é a ferramenta oficial de teste pelas equipes de desenvolvimento e suporte Cielo. Dessa maneira ao realizar integrações, caso você possua duvidas, será mais rápido e simples de confirmar o que pode estar ocorrendo com o seu código.
 
@@ -22,34 +22,34 @@ Além da praticidade de ter todos os exemplos e códigos de integração prontos
 * Sincronização entre diversos aplicativos
 * Sincroniza código entre equipes (Versão paga)
 	
-#### Download e cadastro
+## Download e cadastro
 
 Para utilizar o Postman, basta instalar o APP em seu computador. Isso pode ser realizado de duas maneiras:
 
 * **Instalando a versão desktop**: Basta acessar https://www.getpostman.com/ , baixar a versão para sua plataforma e instalar o executável
 * **Instalando a extensão do Chrome**: Basta acessar a Chrome Store e instalar a extensão do Postman
 
-Instalando a extensão do Chrome
+### Instalando a extensão do Chrome
 
-	1. Acesse a Chrome Store, pesquise por POSTMAN  em APPs
+1.Acesse a Chrome Store, pesquise por POSTMAN  em APPs
 		P1
 		
-	2. Na aba de Apps no seu Google Chrome acesse o ícone do Postman
+2.Na aba de Apps no seu Google Chrome acesse o ícone do Postman
 		P2
 	
-	3. Ao acessar o Postman pela primeira vez, o App ira requisitar um login. Essa etapa é opcional, mas sugerismos que uma conta seja criada, pois isso sincroniza suas configurações com a sua conta POSTMAN, ou seja, se for necessario realiza um login em outro computador, suas configurações já estarão prontas para serem usadas
+3.Ao acessar o Postman pela primeira vez, o App ira requisitar um login. Essa etapa é opcional, mas sugerismos que uma conta seja criada, pois isso sincroniza suas configurações com a sua conta POSTMAN, ou seja, se for necessario realiza um login em outro computador, suas configurações já estarão prontas para serem usadas
 		P3
 		
-	4. Pronto, basta configurar suas Coleções  e ambientes para iniciar os testes
+4.Pronto, basta configurar suas Coleções  e ambientes para iniciar os testes
 		P4
 
-Explicando Componentes do POSTMAN
+# Explicando Componentes do POSTMAN
 
 Nesta área vamos explicar os diferentes componentes do Postman e suas funções. Depois dessa introdução, as próximas partes deste tutorial vão focar na configurações e usos para teste das APIs
 
 
 
-Imagem com os nomes das áreas
+> Imagem com os nomes das áreas
 
 
 
