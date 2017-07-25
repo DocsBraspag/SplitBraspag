@@ -172,7 +172,7 @@ Abaixo demonstramos como gerar um exemplo em Python
 
 *OBS*:Caso esse link não exista em sua tela, clique em `Params`
 
-![](/images/TutorialPostman/p5.PNG)
+![](/images/TutorialPostman/p10.PNG)
 
 2 - Selecione a Linguagem que deseje converter, neste caso, Python. 
 
