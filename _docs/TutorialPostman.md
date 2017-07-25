@@ -112,7 +112,7 @@ Realizando a criação do ambiente:
 
 2. Na tela de gerenciamento, basta preencher as configurações de acordo com a tela abaixo:
 
-![](/images/TutorialPostman/p9.PNG)
+![](/images/TutorialPostman/p8.PNG)
 
 3. Pronto,  agora os endereços e credenciais para teste já estão cadastrada. Sugerimos que você crie um ambiente para Produção e um para Sandbox assim,
 	
