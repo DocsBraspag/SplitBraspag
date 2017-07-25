@@ -74,7 +74,7 @@ Nesta área vamos explicar os diferentes componentes do Postman e suas funções
 ![](/images/TutorialPostman/pc.PNG)
 
 
-**A** - *Environment (Ambiente)*:
+**A** - **Environment (Ambiente)**:
 Ambiente para onde serão direcionadas as requisições. Nesta área que serão definidos dados de:
 
 |Dados          |Descrição|
@@ -114,15 +114,15 @@ Realizando a criação do ambiente:
 
 ![](/images/TutorialPostman/p8.PNG)
 
+3. Pronto,  agora os endereços e credenciais para teste já estão cadastrada. Sugerimos que você crie um ambiente para Produção e um para Sandbox assim,
+	
+
 
 > Na **API Cielo Ecommerce** as credenciais, `MerchantID` e `MerchantKey`, devem coincindir com o ambiente das URLs, ou seja, Credenciais de sandbox funcionam apenas com URLs de Sandbox
 
 > No **Checkout Cielo** não há `MerchantKey` nem diferença entre Sandbox e produção. Para realizar testes, deve ser ativado o **"Modo de Teste"**. Para mais informações sobre o Modo de teste, acesso o [Tutorial do backoffice](https://developercielo.github.io/Checkout-Backoffice/)
 
 
-
-3. Pronto,  agora os endereços e credenciais para teste já estão cadastrada. Sugerimos que você crie um ambiente para Produção e um para Sandbox assim,
-	
 
 
 ## Importando uma Collection
