@@ -151,7 +151,9 @@ Com a sua Collection e Environmet configurados, realizar uma transação junto a
 	3. Clique em SEND.
 	4. Na parte inferior você verá 2 informações:
 		a. O Body do Response - Aqui é onde ficam listadas os dados retornados de suas transações
-		b. O HTTP Status - Aqui você verifica se a sua requisição funcionou. Se você não receber um response verifique o status HTTP.
+		b. O HTTP Status - Aqui você verifica se a sua requisição funcionou. 
+
+**OBS**:Se você não receber um response verifique o status HTTP.
 
 
 
