@@ -104,7 +104,7 @@ O número de coleções é ilimitado, ou seja, você pode criar várias coleçõ
 
 O primeiro passo na utilização do postman é a criação do ambiente (environment) da API. Essa configuração vai definir quais credenciais e endpoints serão utilizados como padrão, assim evitando a necessidade de realizar configurações a cada teste.
 
-Realizando a criação do ambiente:
+**Realizando a criação do ambiente**:
 
 1. No canto superior direito, clique na engrenagem e selecione "Manage environment".
 	
