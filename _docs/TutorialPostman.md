@@ -74,7 +74,7 @@ Nesta área vamos explicar os diferentes componentes do Postman e suas funções
 ![](/images/TutorialPostman/pc.PNG)
 
 
-*A* - *Environment (Ambiente)*:
+**A** - *Environment (Ambiente)*:
 Ambiente para onde serão direcionadas as requisições. Nesta área que serão definidos dados de:
 
 |Dados          |Descrição|
@@ -88,14 +88,14 @@ Sugerimos que sejam criados dois ambientes, um com dados de produção e outro p
 Desta maneira se torna muito mais simples realizar testes com o mesmo contrato para ambos os ambientes.
 
 
-*B* - *Header*
+**B** - **Header**
 Aqui existem o MerchantId/MerchantKey, que por padrão usam os mesmos dados registrados em `Environment`.
 
 
-*C* - *Body*:
+**C** - **Body**:
 É o conteúdo das Requisições. Aqui é onde você pode alterar ou criar exemplos para a API e validar o conteúdo do seu `POST`/`GET`/`PUT`
 
-*D* - *Collection (Coleções)*:
+**D** - **Collection (Coleções*)*:
 Local que contém todas os exemplos e códigos que podem ser utilizados na API. Aqui existem as criações de transações, consultas e outras funcionalidades que existem nas APIs Cielo.
 O número de coleções é ilimitado, ou seja, você pode criar várias coleções para se adequar ao seu estilo de uso do Postman.
 
@@ -107,7 +107,7 @@ O primeiro passo na utilização do postman é a criação do ambiente (environm
 Realizando a criação do ambiente:
 
 1. No canto superior direito, clique na engrenagem e selecione "Manage environment".
-		P7
+	
 ![](/images/TutorialPostman/p7.PNG)
 
 2. Na tela de gerenciamento, basta preencher as configurações de acordo com a tela abaixo:
@@ -115,7 +115,7 @@ Realizando a criação do ambiente:
 ![](/images/TutorialPostman/p8.PNG)
 
 
-*OBS*: As credenciais, `MerchantID` e `MerchantKey`, devem coincindir com o ambiente das URLs, ou seja, Credenciais de sandbox funcionam apenas com URLs de Sandbox
+**OBS**: As credenciais, `MerchantID` e `MerchantKey`, devem coincindir com o ambiente das URLs, ou seja, Credenciais de sandbox funcionam apenas com URLs de Sandbox
 
 3. Pronto,  agora os endereços e credenciais para teste já estão cadastrada. Sugerimos que você crie um ambiente para Produção e um para Sandbox assim,
 	
@@ -127,14 +127,16 @@ A Cielo dispõe de coleções padrões para suas APIs. Você pode importa-las di
 
 Para realizar a importação basta:
 
-	1. Acessar a área do manual onde o link da Coleção está disponível e copia-lo
+1. Acessar a área do manual onde o link da Coleção está disponível e copia-lo
 		a. IMPORTANTE: para que a sua coleção sempre esteja atualizada, sugerimos que sempre busque a ultima versão da coleção no manual. O link NÃO ATUALIZA A COLEÇÃO IMPORTADA AUTOMATICAMENTE
 	
-	2. Com o Postman aberto, use o botão IMPORT, e selecione a opção "IMPORT FROM LINK".
-		P5
+2. Com o Postman aberto, use o botão IMPORT, e selecione a opção "IMPORT FROM LINK".
+
+![](/images/TutorialPostman/p5.PNG)
 		
-	3. Pronto, sua coleção Cielo já está disponível. Basta selecionar Environment e a requisição. Ao clicar em SEND, o Postman vai executar a comunicação com a Cielo.
-		a. P6
+3. Pronto, sua coleção Cielo já está disponível. Basta selecionar Environment e a requisição. Ao clicar em SEND, o Postman vai executar a comunicação com a Cielo.
+	
+![](/images/TutorialPostman/p6.PNG)
 	
 
 
@@ -142,7 +144,7 @@ Para realizar a importação basta:
 
 Com a sua Collection e Environmet configurados, realizar uma transação junto a Cielo é extremamente facil:
 
-P10
+![](/images/TutorialPostman/pr.PNG)
 
 	1. Seleciona qual requisição você deseja usar.
 	2. Verifique que o Environment correto está selecionado
