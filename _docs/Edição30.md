@@ -345,6 +345,18 @@ Para que você possa disfrutar de todos os recursos disponíveis em nossa API, �
 * **Recorrente**: A Recorrência Inteligente é um recurso indispensável para estabelicimentos que precisam cobrar regularmente por seus produtos/serviços.
 É muito utilizado para assinaturas de revistas, mensalidades, licenças de software, entre outros. Os lojistas contarão com recursos diferenciados para modelar sua cobrança de acordo com o seu negócio, pois toda parametrização é configurável, tais como: periodicidade, data de início e fim, quantidade de tentativas, intervalo entre elas, entre outros.
 
+
+
+
+
+
+
+
+
+
+
+
+
 ## Criando uma transação simples
 
 Para criar uma transação que utilizará cartão de crédito, é necessário enviar uma requisição utilizando o método `POST` para o recurso Payment, conforme o exemplo. Esse exemplo contempla o mínimo de campos necessários a serem enviados para a autorização.
@@ -534,17 +546,24 @@ curl
 }
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Formato|
-|-----------|---------|----|-------|-------|
-|`ProofOfSale`|Número da autorização, identico ao NSU.|Texto|20|Texto alfanumérico|
-|`Tid`|Id da transação na adquirente.|Texto|40|Texto alfanumérico|
-|`AuthorizationCode`|Código de autorização.|Texto|300|Texto alfanumérico|
-|`SoftDescriptor`|Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - nao permite caracteres especiais|Texto|13|Texto alfanumérico|
-|`PaymentId`|Campo Identificador do Pedido.|Guid|36|xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx|
-|`ECI`|Eletronic Commerce Indicator. Representa o quão segura é uma transação.|Texto|2|Exemplos: 7|
-|`Status`|Status da Transação.|Byte|---|2|
-|`ReturnCode`|Código de retorno da Adquirência.|Texto|32|Texto alfanumérico|
-|`ReturnMessage`|Mensagem de retorno da Adquirência.|Texto|512|Texto alfanumérico|
+| Propriedade         | Descrição                                                                                                                      | Tipo  | Tamanho | Formato                              |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------|-------|---------|--------------------------------------|
+| `ProofOfSale`       | Número da autorização, identico ao NSU.                                                                                        | Texto | 20      | Texto alfanumérico                   |
+| `Tid`               | Id da transação na adquirente.                                                                                                 | Texto | 40      | Texto alfanumérico                   |
+| `AuthorizationCode` | Código de autorização.                                                                                                         | Texto | 300     | Texto alfanumérico                   |
+| `SoftDescriptor`    | Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - nao permite caracteres especiais | Texto | 13      | Texto alfanumérico                   |
+| `PaymentId`         | Campo Identificador do Pedido.                                                                                                 | Guid  | 36      | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |
+| `ECI`               | Eletronic Commerce Indicator. Representa o quão segura é uma transação.                                                        | Texto | 2       | Exemplos: 7                          |
+| `Status`            | Status da Transação.                                                                                                           | Byte  | ---     | 2                                    |
+| `ReturnCode`        | Código de retorno da Adquirência.                                                                                              | Texto | 32      | Texto alfanumérico                   |
+| `ReturnMessage`     | Mensagem de retorno da Adquirência.                                                                                            | Texto | 512     | Texto alfanumérico                   |
+
+
+
+
+
+
+
 
 ## Criando uma transação completa
 
@@ -5548,7 +5567,7 @@ curl
 {  
    "MerchantOrderId":"2014111703",
    "Customer":{  
-      "Name":"Comprador Teste"
+      "Name":"Comprador Visa Checkout"
    },
    "Payment":{  
       "Type":"CreditCard",
@@ -5579,7 +5598,7 @@ curl
 {  
    "MerchantOrderId":"2014111703",
    "Customer":{  
-      "Name":"Comprador Teste"
+      "Name":"Comprador Visa Checkout"
    },
    "Payment":{  
       "Type":"CreditCard",
@@ -5624,20 +5643,110 @@ curl
 ### Resposta
 
 ```json
-
-
-
+{
+    "MerchantOrderId": "2014111706",
+    "Customer": {
+        "Name": "Comprador Visa Checkout"
+    },
+    "Payment": {
+        "ServiceTaxAmount": 0,
+        "Installments": 1,
+        "Interest": "ByMerchant",
+        "Capture": false,
+        "Authenticate": false,
+        "CreditCard": {
+            "CardNumber": "455187******0183",
+            "Holder": "Teste Holder",
+            "ExpirationDate": "12/2030",
+            "SaveCard": false,
+            "Brand": "Visa"
+        },
+        "ProofOfSale": "674532",
+        "Tid": "0305023644309",
+        "AuthorizationCode": "123456",
+        "PaymentId": "24bc8366-fc31-4d6c-8555-17049a836a07",
+        "Type": "CreditCard",
+        "Amount": 15700,
+        "Currency": "BRL",
+        "Country": "BRA",
+        "ExtraDataCollection": [],
+        "Status": 1,
+        "ReturnCode": "4",
+        "ReturnMessage": "Operation Successful",
+        "Links": [
+            {
+                "Method": "GET",
+                "Rel": "self",
+                "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
+            },
+            {
+                "Method": "PUT",
+                "Rel": "capture",
+                "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/capture"
+            },
+            {
+                "Method": "PUT",
+                "Rel": "void",
+                "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/void"
+            }
+        ]
+    }
+}
 ```
 
 ```shell
 --header "Content-Type: application/json"
 --header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 --data-binary
-
-
-
-
-
+{
+    "MerchantOrderId": "2014111706",
+    "Customer": {
+        "Name": "Comprador Visa Checkout"
+    },
+    "Payment": {
+        "ServiceTaxAmount": 0,
+        "Installments": 1,
+        "Interest": "ByMerchant",
+        "Capture": false,
+        "Authenticate": false,
+        "CreditCard": {
+            "CardNumber": "455187******0183",
+            "Holder": "Teste Holder",
+            "ExpirationDate": "12/2030",
+            "SaveCard": false,
+            "Brand": "Visa"
+        },
+        "ProofOfSale": "674532",
+        "Tid": "0305023644309",
+        "AuthorizationCode": "123456",
+        "PaymentId": "24bc8366-fc31-4d6c-8555-17049a836a07",
+        "Type": "CreditCard",
+        "Amount": 15700,
+        "Currency": "BRL",
+        "Country": "BRA",
+        "ExtraDataCollection": [],
+        "Status": 1,
+        "ReturnCode": "4",
+        "ReturnMessage": "Operation Successful",
+        "Links": [
+            {
+                "Method": "GET",
+                "Rel": "self",
+                "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
+            },
+            {
+                "Method": "PUT",
+                "Rel": "capture",
+                "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/capture"
+            },
+            {
+                "Method": "PUT",
+                "Rel": "void",
+                "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/void"
+            }
+        ]
+    }
+}
 ```
 
 | Propriedade         | Descrição                                                                                                                      | Tipo  | Tamanho | Formato                              |
@@ -5652,7 +5761,28 @@ curl
 | `ReturnCode`        | Código de retorno da Adquirência.                                                                                              | Texto | 32      | Texto alfanumérico                   |
 | `ReturnMessage`     | Mensagem de retorno da Adquirência.                                                                                            | Texto | 512     | Texto alfanumérico                   |
 | `Type`              | indica qual o tipo de carteira: "VisaCheckout" ou "Masterpass"                                                                 | Texto | 255     | Sim                                  |
-| `Walletkey`         | Chave criptografica enviada pelo VisaCheckout                                                                                  | Texto | 255     | ---                                  |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
