@@ -272,8 +272,7 @@ O **Postman** é um API Client que facilita aos desenvolvedores criar, compartil
 
 A Cielo oferece coleções completas de suas integrações via Postamn, o que facilita o processo de integração com a API Cielo.
 
-Sugerimos que desenvolvedores acessem nosso tutorial sobre a ferramenta para compreender melhor todas as vantagens que ela oferece.
-Tutorial: https://developercielo.github.io/Tutorial-Postman
+Sugerimos que desenvolvedores acessem nosso [**Tutorial**](https://developercielo.github.io/Tutorial//Postman) sobre a ferramenta para compreender melhor todas as vantagens que ela oferece.
 
 
 ## Cartão de crédito - Sandbox
@@ -1909,11 +1908,14 @@ Para captura uma venda que utiliza cartão de crédito, é necessário fazer um 
 <aside class="request"><span class="method put">PUT</span> <span class="endpoint">/1/sales/{PaymentId}/capture</span></aside>
 
 ```json
+
+PUT "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/capture
+
 ```
 
 ```shell
 curl
---request PUT "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/capture?amount=xxx&serviceTaxAmount=xxx"
+--request PUT "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/capture"
 --header "Content-Type: application/json"
 --header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 --header "MerchantKey: 0123456789012345678901234567890123456789"
@@ -1921,14 +1923,14 @@ curl
 --verbose
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
-|-----------|---------|----|-------|-----------|
-|`MerchantId`|Identificador da loja na API Cielo eCommerce. | Guid | 36 | Sim|
-|`MerchantKey`|Chave Publica para Autenticação Dupla na API Cielo eCommerce. | Texto | 40 | Sim|
-|`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
-|`PaymentId`|Campo Identificador do Pedido. | Guid | 36 | Sim|
-|`Amount`|Valor do Pedido (ser enviado em centavos).| Número | 15 | Não|
-|`ServiceTaxAmount`|Exclusivo para companhias aéreas - Montante do valor da autorização que deve ser destinado à taxa de serviço. Obs.: Esse valor não é adicionado ao valor da autorização.| Número | 15 | Não|
+| Propriedade        | Descrição                                                                                                                                                                | Tipo   | Tamanho | Obrigatório |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|---------|-------------|
+| `MerchantId`       | Identificador da loja na API Cielo eCommerce.                                                                                                                            | Guid   | 36      | Sim         |
+| `MerchantKey`      | Chave Publica para Autenticação Dupla na API Cielo eCommerce.                                                                                                            | Texto  | 40      | Sim         |
+| `RequestId`        | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT                                                                    | Guid   | 36      | Não         |
+| `PaymentId`        | Campo Identificador do Pedido.                                                                                                                                           | Guid   | 36      | Sim         |
+| `Amount`           | Valor do Pedido (ser enviado em centavos).                                                                                                                               | Número | 15      | Não         |
+| `ServiceTaxAmount` | Exclusivo para companhias aéreas - Montante do valor da autorização que deve ser destinado à taxa de serviço. Obs.: Esse valor não é adicionado ao valor da autorização. | Número | 15      | Não         |
 
 ### Resposta
 
@@ -1975,11 +1977,15 @@ curl
 }
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Formato|
-|-----------|---------|----|-------|-------|
-|`Status`|Status da Transação. | Byte | --- | 2|
-|`ReturnCode`|Código de retorno da adquirente. | Texto | 32 | Texto alfanumérico |
-|`ReturnMessage`|Mensagem de retorno da adquirente. | Texto | 512 | Texto alfanumérico |
+| Propriedade     | Descrição                          | Tipo  | Tamanho | Formato            |
+|-----------------|------------------------------------|-------|---------|--------------------|
+| `Status`        | Status da Transação.               | Byte  | ---     | 2                  |
+| `ReturnCode`    | Código de retorno da adquirente.   | Texto | 32      | Texto alfanumérico |
+| `ReturnMessage` | Mensagem de retorno da adquirente. | Texto | 512     | Texto alfanumérico |
+
+
+
+
 
 
 ### Captura parcial
@@ -1991,9 +1997,140 @@ A **captura parcial** é o ato de capturar um valor menor que o valor autorizado
 Métodos de captura parcial:
 
 1. **Via API** - Basta realizar um `POST` enviando o valor a ser capturado.
-2. **Via Backoffice** - Acesse nosso [**Tutorial**](https://developercielo.github.io/Tutorial-Backoffice-3.0/)  para maiores informações
+2. **Via Backoffice** - Acesse nosso [**Tutorial**](https://developercielo.github.io/Tutorial//Backoffice-3.0)  para maiores informações
 
 <aside class="notice"><strong>Atenção:</strong> Captura parcial disponível apenas para transações de crédito</aside>
+
+
+
+
+### Requisição - Captura Parcial
+
+<aside class="request"><span class="method put">PUT</span> <span class="endpoint">/1/sales/{paymentId}/capture?amount={Valor}</span></aside>
+
+```json
+
+PUT "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{paymentId}/capture?amount={Valor}
+
+```
+
+```shell
+curl
+--request PUT "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{paymentId}/capture?amount={Valor}"
+--header "Content-Type: application/json"
+--header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+--header "MerchantKey: 0123456789012345678901234567890123456789"
+--header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+--verbose
+```
+
+| Propriedade        | Descrição                                                                                                                                                                | Tipo   | Tamanho | Obrigatório |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|---------|-------------|
+| `MerchantId`       | Identificador da loja na API Cielo eCommerce.                                                                                                                            | Guid   | 36      | Sim         |
+| `MerchantKey`      | Chave Publica para Autenticação Dupla na API Cielo eCommerce.                                                                                                            | Texto  | 40      | Sim         |
+| `RequestId`        | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT                                                                    | Guid   | 36      | Não         |
+| `PaymentId`        | Campo Identificador do Pedido.                                                                                                                                           | Guid   | 36      | Sim         |
+| `Amount`           | Valor do Pedido (ser enviado em centavos).                                                                                                                               | Número | 15      | Não         |
+| `ServiceTaxAmount` | Exclusivo para companhias aéreas - Montante do valor da autorização que deve ser destinado à taxa de serviço. Obs.: Esse valor não é adicionado ao valor da autorização. | Número | 15      | Não         |
+
+### Resposta
+
+```json
+{
+    "Status": 2,
+    "ReasonCode": 0,
+    "ReasonMessage": "Successful",
+    "ProviderReturnCode": "6",
+    "ProviderReturnMessage": "Operation Successful",
+    "ReturnCode": "6",
+    "ReturnMessage": "Operation Successful",
+    "Links": [
+        {
+            "Method": "GET",
+            "Rel": "self",
+            "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/8b1d43ee-a918-40d2-ba62-e5665e7ccbd3"
+        },
+        {
+            "Method": "PUT",
+            "Rel": "void",
+            "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/8b1d43ee-a918-40d2-ba62-e5665e7ccbd3/void"
+        }
+    ]
+}
+```
+
+```shell
+--header "Content-Type: application/json"
+--header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+--data-binary
+{
+    "Status": 2,
+    "ReasonCode": 0,
+    "ReasonMessage": "Successful",
+    "ProviderReturnCode": "6",
+    "ProviderReturnMessage": "Operation Successful",
+    "ReturnCode": "6",
+    "ReturnMessage": "Operation Successful",
+    "Links": [
+        {
+            "Method": "GET",
+            "Rel": "self",
+            "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/8b1d43ee-a918-40d2-ba62-e5665e7ccbd3"
+        },
+        {
+            "Method": "PUT",
+            "Rel": "void",
+            "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/8b1d43ee-a918-40d2-ba62-e5665e7ccbd3/void"
+        }
+    ]
+}
+```
+
+| Propriedade             | Descrição                          | Tipo  | Tamanho | Formato            |
+|-------------------------|------------------------------------|-------|---------|--------------------|
+| `Status`                | Status da Transação.               | Byte  | ---     | 2                  |
+| `ReturnCode`            | Código de retorno da adquirente.   | Texto | 32      | Texto alfanumérico |
+| `ReturnMessage`         | Mensagem de retorno da adquirente. | Texto | 512     | Texto alfanumérico |
+| `ProviderReturnCode`    | Código de retorno do Provider.     | Texto | 32      | Texto alfanumérico |
+| `ProviderReturnMessage` | Mensagem de retorno do Provider.   | Texto | 512     | Texto alfanumérico |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Cancelando uma venda
 
@@ -2078,7 +2215,7 @@ O **cancelamento  parcial** é o ato de cancelar um valor menor que o valor tota
 Métodos de cancelamento parcial:
 
 1. **Via API** - Basta realizar um `POST` enviando o valor a ser capturado.
-2. **Via Backoffice** - Acesse nosso [**Tutorial**](https://developercielo.github.io/Tutorial-Backoffice-3.0/)  para maiores informações
+2. **Via Backoffice** - Acesse nosso [**Tutorial**](https://developercielo.github.io/Tutorial//Backoffice-3.0)  para maiores informações
 
 <aside class="notice"><strong>Atenção:</strong> Cancelamento parcial disponível apenas para transações de crédito</aside>
 
@@ -5761,105 +5898,6 @@ curl
 | `ReturnCode`        | Código de retorno da Adquirência.                                                                                              | Texto | 32      | Texto alfanumérico                   |
 | `ReturnMessage`     | Mensagem de retorno da Adquirência.                                                                                            | Texto | 512     | Texto alfanumérico                   |
 | `Type`              | indica qual o tipo de carteira: "VisaCheckout" ou "Masterpass"                                                                 | Texto | 255     | Sim                                  |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
