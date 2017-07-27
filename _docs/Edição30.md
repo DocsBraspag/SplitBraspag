@@ -407,23 +407,23 @@ curl
 --verbose
 ```
 
-|Propriedade|Tipo|Tamanho|Obrigatório|Descrição|
-|-----------|----|-------|-----------|---------|
-|`MerchantId`|Guid|36|Sim|Identificador da loja na Cielo.|
-|`MerchantKey`|Texto|40|Sim|Chave Publica para Autenticação Dupla na Cielo.|
-|`RequestId`|Guid|36|Não|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT.|
-|`MerchantOrderId`|Texto|50|Sim|Numero de identificação do Pedido.|
-|`Customer.Name`|Texto|255|Não|Nome do Comprador.|
-|`Customer.Status`|Texto|255|Não|Status de cadastro do comprador na loja (NEW / EXISTING)|
-|`Payment.Type`|Texto|100|Sim|Tipo do Meio de Pagamento.|
-|`Payment.Amount`|Número|15|Sim|Valor do Pedido (ser enviado em centavos).|
-|`Payment.Provider`|Texto|15|---|Define comportamento do meio de pagamento (ver Anexo)/NÃO OBRIGATÓRIO PARA CRÉDITO.|
-|`Payment.Installments`|Número|2|Sim|Número de Parcelas.|
-|`CreditCard.CardNumber`|Texto|19|Sim|Número do Cartão do Comprador.|
-|`CreditCard.Holder`|Texto|25|Não|Nome do Comprador impresso no cartão.|
-|`CreditCard.ExpirationDate`|Texto|7|Sim|Data de validade impresso no cartão.|
-|`CreditCard.SecurityCode`|Texto|4|Não|Código de segurança impresso no verso do cartão - Ver Anexo.|
-|`CreditCard.Brand`|Texto|10|Sim |Bandeira do cartão (Visa / Master / Amex / Elo / Aura / JCB / Diners / Discover).|
+| Propriedade                 | Tipo   | Tamanho | Obrigatório | Descrição                                                                                              |
+|-----------------------------|--------|---------|-------------|--------------------------------------------------------------------------------------------------------|
+| `MerchantId`                | Guid   | 36      | Sim         | Identificador da loja na Cielo.                                                                        |
+| `MerchantKey`               | Texto  | 40      | Sim         | Chave Publica para Autenticação Dupla na Cielo.                                                        |
+| `RequestId`                 | Guid   | 36      | Não         | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT. |
+| `MerchantOrderId`           | Texto  | 50      | Sim         | Numero de identificação do Pedido.                                                                     |
+| `Customer.Name`             | Texto  | 255     | Não         | Nome do Comprador.                                                                                     |
+| `Customer.Status`           | Texto  | 255     | Não         | Status de cadastro do comprador na loja (NEW / EXISTING)                                               |
+| `Payment.Type`              | Texto  | 100     | Sim         | Tipo do Meio de Pagamento.                                                                             |
+| `Payment.Amount`            | Número | 15      | Sim         | Valor do Pedido (ser enviado em centavos).                                                             |
+| `Payment.Provider`          | Texto  | 15      | ---         | Define comportamento do meio de pagamento (ver Anexo)/NÃO OBRIGATÓRIO PARA CRÉDITO.                    |
+| `Payment.Installments`      | Número | 2       | Sim         | Número de Parcelas.                                                                                    |
+| `CreditCard.CardNumber`     | Texto  | 19      | Sim         | Número do Cartão do Comprador.                                                                         |
+| `CreditCard.Holder`         | Texto  | 25      | Não         | Nome do Comprador impresso no cartão.                                                                  |
+| `CreditCard.ExpirationDate` | Texto  | 7       | Sim         | Data de validade impresso no cartão.                                                                   |
+| `CreditCard.SecurityCode`   | Texto  | 4       | Não         | Código de segurança impresso no verso do cartão - Ver Anexo.                                           |
+| `CreditCard.Brand`          | Texto  | 10      | Sim         | Bandeira do cartão (Visa / Master / Amex / Elo / Aura / JCB / Diners / Discover).                      |
 
 ### Resposta
 
@@ -5345,7 +5345,14 @@ A API Cielo eCommerce suporta duas carteiras de pagamento: VisaCheckout e Master
 
 ## Como realizar transação com VisaCheckout
 
-### Requisição
+É possivel realizar uma transação com VisaCheckout de duas maneiras:
+
+1. Sem enviar dados do cartão
+2. Enviando dados do cartão
+
+
+
+### Requisição - Sem dados do Cartão
 
 <aside class="request"><span class="method post">POST</span> <span class="endpoint">/1/sales/</span></aside>
 
@@ -5527,6 +5534,206 @@ curl
 | `ReturnMessage`     | Mensagem de retorno da Adquirência.                                                                                            | Texto | 512     | Texto alfanumérico                   |
 | `Type`              | indica qual o tipo de carteira: "VisaCheckout" ou "Masterpass"                                                                 | Texto | 255     | Sim                                  |
 | `Walletkey`         | Chave criptografica enviada pelo VisaCheckout                                                                                  | Texto | 255     | ---                                  |
+
+
+
+
+
+### Requisição - Com dados do Cartão
+
+<aside class="request"><span class="method post">POST</span> <span class="endpoint">/1/sales/</span></aside>
+
+```json
+
+{  
+   "MerchantOrderId":"2014111703",
+   "Customer":{  
+      "Name":"Comprador Teste"
+   },
+   "Payment":{  
+      "Type":"CreditCard",
+      "Amount":15700,
+      "Installments":1,
+      "SoftDescriptor":"123456789ABCD",
+      "CreditCard":{  
+         "CardNumber":"1234123412341231",
+         "Holder":"Teste Holder",
+         "ExpirationDate":"12/2030",
+         "Brand":"Visa"
+      }
+   },
+   "Wallet":{  
+      "Type":"VisaCheckout"
+   }
+}
+```
+
+```shell
+curl
+--request POST "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/"
+--header "Content-Type: application/json"
+--header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+--header "MerchantKey: 0123456789012345678901234567890123456789"
+--header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+--data-binary
+{  
+   "MerchantOrderId":"2014111703",
+   "Customer":{  
+      "Name":"Comprador Teste"
+   },
+   "Payment":{  
+      "Type":"CreditCard",
+      "Amount":15700,
+      "Installments":1,
+      "SoftDescriptor":"123456789ABCD",
+      "CreditCard":{  
+         "CardNumber":"1234123412341231",
+         "Holder":"Teste Holder",
+         "ExpirationDate":"12/2030",
+         "Brand":"Visa"
+      }
+   },
+   "Wallet":{  
+      "Type":"VisaCheckout"
+   }
+}
+--verbose
+```
+
+| Propriedade                | Tipo   | Tamanho | Obrigatório | Descrição                                                                                              |
+|----------------------------|--------|---------|-------------|--------------------------------------------------------------------------------------------------------|
+| `MerchantId`               | Guid   | 36      | Sim         | Identificador da loja na Cielo.                                                                        |
+| `MerchantKey`              | Texto  | 40      | Sim         | Chave Publica para Autenticação Dupla na Cielo.                                                        |
+| `RequestId`                | Guid   | 36      | Não         | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT. |
+| `MerchantOrderId`          | Texto  | 50      | Sim         | Numero de identificação do Pedido.                                                                     |
+| `Customer.Name`            | Texto  | 255     | Não         | Nome do Comprador.                                                                                     |
+| `Customer.Status`          | Texto  | 255     | Não         | Status de cadastro do comprador na loja (NEW / EXISTING)                                               |
+| `Payment.Type`             | Texto  | 100     | Sim         | Tipo do Meio de Pagamento.                                                                             |
+| `Payment.Amount`           | Número | 15      | Sim         | Valor do Pedido (ser enviado em centavos).                                                             |
+| `Payment.Installments`     | Número | 2       | Sim         | Número de Parcelas.                                                                                    |
+| `Payment.ReturnUrl`        | Texto  | 1024    | ---         | Obrigatório para cartão de débito                                                                      |
+| `CreditCard.CardNumber`    | Texto  | 19      | Sim         | Número do Cartão do Comprador.                                                                         |
+| `CreditCard.Holder`        | Texto  | 25      | Não         | Nome do Comprador impresso no cartão.                                                                  |
+| `CreditCard.ExpirationDate`| Texto  | 7       | Sim         | Data de validade impresso no cartão.                                                                   |
+| `CreditCard.SecurityCode`  | Texto  | 4       | Não         | Código de segurança impresso no verso do cartão - Ver Anexo.                                           |
+| `CreditCard.Brand`         | Texto  | 10      | Sim         | Bandeira do cartão (Visa / Master / Amex / Elo / Aura / JCB / Diners / Discover).                      |
+| `CreditCard.SecurityCode`  | Texto  | 4       | Não         | Código de segurança impresso no verso do cartão - Ver Anexo.                                           |
+| `Wallet.Type`              | Texto  | 255     | Sim         | indica qual o tipo de carteira: "VisaCheckout" ou "Masterpass"                                         |
+
+
+### Resposta
+
+```json
+
+
+
+```
+
+```shell
+--header "Content-Type: application/json"
+--header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+--data-binary
+
+
+
+
+
+```
+
+| Propriedade         | Descrição                                                                                                                      | Tipo  | Tamanho | Formato                              |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------|-------|---------|--------------------------------------|
+| `ProofOfSale`       | Número da autorização, identico ao NSU.                                                                                        | Texto | 20      | Texto alfanumérico                   |
+| `Tid`               | Id da transação na adquirente.                                                                                                 | Texto | 40      | Texto alfanumérico                   |
+| `AuthorizationCode` | Código de autorização.                                                                                                         | Texto | 300     | Texto alfanumérico                   |
+| `SoftDescriptor`    | Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - nao permite caracteres especiais | Texto | 13      | Texto alfanumérico                   |
+| `PaymentId`         | Campo Identificador do Pedido.                                                                                                 | Guid  | 36      | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |
+| `ECI`               | Eletronic Commerce Indicator. Representa o quão segura é uma transação.                                                        | Texto | 2       | Exemplos: 7                          |
+| `Status`            | Status da Transação.                                                                                                           | Byte  | ---     | 2                                    |
+| `ReturnCode`        | Código de retorno da Adquirência.                                                                                              | Texto | 32      | Texto alfanumérico                   |
+| `ReturnMessage`     | Mensagem de retorno da Adquirência.                                                                                            | Texto | 512     | Texto alfanumérico                   |
+| `Type`              | indica qual o tipo de carteira: "VisaCheckout" ou "Masterpass"                                                                 | Texto | 255     | Sim                                  |
+| `Walletkey`         | Chave criptografica enviada pelo VisaCheckout                                                                                  | Texto | 255     | ---                                  |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Como realizar transação com MasterPass
