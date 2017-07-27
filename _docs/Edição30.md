@@ -39,7 +39,10 @@ Para executar uma operação, combine a URL base do ambiente com a URL da opera�
 
 A solução API Cielo eCommerce da plataforma Cielo eCommerce foi desenvolvida com a tecnologia REST, que é padrão de mercado e independe da tecnologia utilizada por nossos clientes. Dessa forma, é possível integrar-se utilizando as mais variadas linguagens de programação, tais como: ASP, ASP. Net, Java, PHP, Ruby, Python, etc.
 
+Para Obter exemplos dessas linguagens, veja nosso tutorial de conversao via nosso [**Tutorial Postman**](https://developercielo.github.io/Tutorial//Postman)
+
 Entre outras características, os atributos que mais se destacam na plataforma Cielo eCommerce:
+
 
 * **Ausência de aplicativos proprietários**: não é necessário instalar aplicativos no ambiente da loja virtual em nenhuma hipótese.
 * **Simplicidade**: o protocolo utilizado é puramente o HTTPS.
@@ -52,29 +55,45 @@ Entre outras características, os atributos que mais se destacam na plataforma C
 
 A integração é realizada através de serviços disponibilizados como Web Services. O modelo empregado é bastante simples: Existem duas URLs (endpoint), uma específica operações que causam efeitos colaterais - como autorização, captura e cancelamento de transações, e uma URL específica para operações que não causam efeitos colaterais, como pesquisa de transações. Essas duas URLs receberão as mensagens HTTP através dos métodos POST, GET ou PUT. Cada tipo de mensagem deve ser enviada para um recurso identificado através do path.
 
-* **POST** - O método HTTP POST é utilizado na criação dos recursos ou no envio de informações que serão processadas. Por exemplo, criação de uma transação.
-* **PUT** - O método HTTP PUT é utilizado para atualização de um recurso já existente. Por exemplo, captura ou cancelamento de uma transação previamente autorizada.
-* **GET** - O método HTTP GET é utilizado para consultas de recursos já existentes. Por exemplo, consulta de transações.
+
+| Método   | Descrição                                                                                                                                                  |
+|:--------:|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **POST** | O método HTTP `POST` é utilizado na criação dos recursos ou no envio de informações que serão processadas. Por exemplo, criação de uma transação.          |
+| **PUT**  | O método HTTP `PUT` é utilizado para atualização de um recurso já existente. Por exemplo, captura ou cancelamento de uma transação previamente autorizada. |
+| **GET**  | O método HTTP `GET` é utilizado para consultas de recursos já existentes. Por exemplo, consulta de transações.                                             |
+
+
 
 ## Glossário
 
 Para facilitar o entendimento, listamos abaixo um pequeno glossário com os principais termos relacionados ao eCommerce, ao mercado de cartões e adquirencia:
 
-* **Autenticação**: processo para assegurar que o comprador é realmente aquele quem diz ser (portador legítimo), geralmente ocorre no banco emissor com uso de um token digital ou cartão com chaves de segurança.
-* **Autorização**: processo para verificar se uma compra pode ou não ser realizada com um cartão. Nesse momento, são feitas diversas verificações com o cartão e com o portador (ex.: adimplência, bloqueios, etc.) É também neste momento que o limite do cartão é sensibilizado com o valor da transação.
-* **Cancelamento**: processo para cancelar uma compra realizada com cartão.
-* **Captura**: processo que confirma uma autorização que foi realizada previamente. Somente após a captura, é que o portador do cartão poderá visualizá-la em seu extrato ou fatura.
-* **Chave de acesso**: é um código de segurança específico de cada loja, gerado pela Cielo, usada para realizar a autenticação e comunicação em todas as mensagens trocadas com a Cielo. Também conhecido como chave de produção e key data.
-* **Comprador**: é o aquele que efetua compra na loja virtual.
-* **Emissor (ou banco emissor)**: É a instituição financeira que emite o cartão de crédito, débito ou voucher.
-* **Estabelecimento comercial ou EC**: Entidade que responde pela loja virtual.
-* **Gateway de pagamentos**: Empresa responsável pelo integração técnica e processamento das transações.
-* **Número de credenciamento**: é um número identificador que o lojista recebe após seu credenciamento junto à Cielo.
-* **Portador**: é a pessoa que tem o porte do cartão no momento da venda.
-* **SecureCode**: programa internacional da Mastercard para possibilitar a autenticação do comprador no momento de uma compra em ambiente eCommerce.
-* **TID (Transaction Identifier)**: código composto por 20 caracteres que identificada unicamente uma transação Cielo eCommerce.
-* **Transação**: é o pedido de compra do portador do cartão na Cielo.
-* **VBV (Verified by Visa)**: Programa internacional da Visa que possibilita a autenticação do comprador no momento de uma compra em ambiente eCommerce.
+
+
+| Termo          | Descrição                                                                                                                                                  |
+|:--------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|**Autenticação**| processo para assegurar que o comprador é realmente aquele quem diz ser (portador legítimo), geralmente ocorre no banco emissor com uso de um token digital ou cartão com chaves de segurança.|
+| **Autorização**| processo para verificar se uma compra pode ou não ser realizada com um cartão. Nesse momento, são feitas diversas verificações com o cartão e com o portador (ex.: adimplência, bloqueios, etc.) É também neste momento que o limite do cartão é sensibilizado com o valor da transação.|
+| **Cancelamento**| processo para cancelar uma compra realizada com cartão.|
+| **Captura**| processo que confirma uma autorização que foi realizada previamente. Somente após a captura, é que o portador do cartão poderá visualizá-la em seu extrato ou fatura.|
+| **Chave de acesso**| é um código de segurança específico de cada loja, gerado pela Cielo, usada para realizar a autenticação e comunicação em todas as mensagens trocadas com a Cielo. Também conhecido como chave de produção e key data.|
+| **Comprador**| é o aquele que efetua compra na loja virtual.|
+| **Emissor (ou banco emissor)**| É a instituição financeira que emite o cartão de crédito, débito ou voucher.|
+| **Estabelecimento comercial ou EC**| Entidade que responde pela loja virtual.|
+| **Gateway de pagamentos**| Empresa responsável pelo integração técnica e processamento das transações.|
+| **Número de credenciamento**| é um número identificador que o lojista recebe após seu credenciamento junto à Cielo.|
+| **Portador**| é a pessoa que tem o porte do cartão no momento da venda.|
+| **SecureCode**| programa internacional da Mastercard para possibilitar a autenticação do comprador no momento de uma compra em ambiente eCommerce.|
+| **TID (Transaction Identifier)**| código composto por 20 caracteres que identificada unicamente uma transação Cielo eCommerce.|
+| **Transação**| é o pedido de compra do portador do cartão na Cielo.|
+| **VBV (Verified by Visa)**| Programa internacional da Visa que possibilita a autenticação do comprador no momento de uma compra em ambiente eCommerce.|
+
+
+
+
+
+
+
 
 
 ## Produtos e Bandeiras suportadas
@@ -90,6 +109,23 @@ A versão atual do Webservice Cielo possui suporte às seguintes bandeiras e pro
 | Discover         | Sim             | *Não*                  | *Não*  | *Não*   |
 | JCB              | Sim             | Sim                    | *Não*  | *Não*   |
 | Aura             | Sim             | Sim                    | *Não*  | *Não*   |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Certificado Extended Validation
@@ -290,16 +326,16 @@ Para melhor utilização do Meio de Pagamento Simulado, estamos disponibilizando
 
 **Os `status` das transações são definidos pelos FINAIS de cada cartão, assim como o `ReturnCode` .**
 
-|Status da Transação|Final do Cartão|Código de Retorno|Mensagem de Retorno|
-|-------------------|---------------|:---------------:|-------------------|
-|Autorizado|0000.0000.0000.0001<br>0000.0000.0000.0004|4|Operação realizada com sucesso|
-|Não Autorizado|0000.0000.0000.0002|2|Não Autorizada|
-|Autorização Aleatória|0000.0000.0000.0009|4 / 99|Operation Successful / Time Out|
-|Não Autorizado|0000.0000.0000.0007|77|Cartão Cancelado|
-|Não Autorizado|0000.0000.0000.0008|70|Problemas com o Cartão de Crédito|
-|Não Autorizado|0000.0000.0000.0005|78|Cartão Bloqueado|
-|Não Autorizado|0000.0000.0000.0003|57|Cartão Expirado|
-|Não Autorizado|0000.0000.0000.0006|99|Time Out|
+| Status da Transação   | Final do Cartão                            | Código de Retorno | Mensagem de Retorno               |
+|-----------------------|--------------------------------------------|:-----------------:|-----------------------------------|
+| Autorizado            | 0000.0000.0000.0001<br>0000.0000.0000.0004 |         4         | Operação realizada com sucesso    |
+| Não Autorizado        | 0000.0000.0000.0002                        |         2         | Não Autorizada                    |
+| Autorização Aleatória | 0000.0000.0000.0009                        |       4 / 99      | Operation Successful / Time Out   |
+| Não Autorizado        | 0000.0000.0000.0007                        |         77        | Cartão Cancelado                  |
+| Não Autorizado        | 0000.0000.0000.0008                        |         70        | Problemas com o Cartão de Crédito |
+| Não Autorizado        | 0000.0000.0000.0005                        |         78        | Cartão Bloqueado                  |
+| Não Autorizado        | 0000.0000.0000.0003                        |         57        | Cartão Expirado                   |
+| Não Autorizado        | 0000.0000.0000.0006                        |         99        | Time Out                          |
 
 Exemplo de um Cartão de teste - 4024.0071.5376.3191
 
@@ -315,16 +351,11 @@ As informações de **Cód.Segurança (CVV)** e validade podem ser aleatórias, 
 Outros meios de pagamento não possuem cartões ou dados específicos simulados, como no caso do cartão de crédito.
 Abaixo especificamos qualquer diferença existente:
 
-|Meio de pagamento|Diferenças|
-|-----------------|----------|
-|Boleto|Não há diferenças de integração. |
-|Cartão de débito|O `provider` utilizado deve ser **SIMULADO** <br><br> A URL de redirecionamento para o ambiente do banco será na verdade uma tela para escolher o estado da autenticação|
-|Transferência online|O `provider` utilizado deve ser **SIMULADO** <br><br> A URL de redirecionamento para o ambiente do banco será na verdade uma tela para escolher o estado da autenticação|
-
-
-
-
-
+| Meio de pagamento    | Diferenças                                                                                                                                                               |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Boleto               | Não há diferenças de integração.                                                                                                                                         |
+| Cartão de débito     | O `provider` utilizado deve ser **SIMULADO** <br><br> A URL de redirecionamento para o ambiente do banco será na verdade uma tela para escolher o estado da autenticação |
+| Transferência online | O `provider` utilizado deve ser **SIMULADO** <br><br> A URL de redirecionamento para o ambiente do banco será na verdade uma tela para escolher o estado da autenticação |
 
 
 
@@ -866,17 +897,17 @@ curl
 }
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Formato|
-|-----------|---------|----|-------|-------|
-|`ProofOfSale`|Número da autorização, identico ao NSU.|Texto|20|Texto alfanumérico|
-|`Tid`|Id da transação na adquirente.|Texto|40|Texto alfanumérico|
-|`AuthorizationCode`|Código de autorização.|Texto|300|Texto alfanumérico|
-|`SoftDescriptor`|Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - nao permite caracteres especiais|Texto|13|Texto alfanumérico|
-|`PaymentId`|Campo Identificador do Pedido.|Guid|36|xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx|
-|`ECI`|Eletronic Commerce Indicator. Representa o quão segura é uma transação.|Texto|2|Exemplos: 7|
-|`Status`|Status da Transação.|Byte|---|2|
-|`ReturnCode`|Código de retorno da Adquirência.|Texto|32|Texto alfanumérico|
-|`ReturnMessage`|Mensagem de retorno da Adquirência.|Texto|512|Texto alfanumérico|
+| Propriedade         | Descrição                                                                                                                      | Tipo  | Tamanho | Formato                              |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------|-------|---------|--------------------------------------|
+| `ProofOfSale`       | Número da autorização, identico ao NSU.                                                                                        | Texto | 20      | Texto alfanumérico                   |
+| `Tid`               | Id da transação na adquirente.                                                                                                 | Texto | 40      | Texto alfanumérico                   |
+| `AuthorizationCode` | Código de autorização.                                                                                                         | Texto | 300     | Texto alfanumérico                   |
+| `SoftDescriptor`    | Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - nao permite caracteres especiais | Texto | 13      | Texto alfanumérico                   |
+| `PaymentId`         | Campo Identificador do Pedido.                                                                                                 | Guid  | 36      | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |
+| `ECI`               | Eletronic Commerce Indicator. Representa o quão segura é uma transação.                                                        | Texto | 2       | Exemplos: 7                          |
+| `Status`            | Status da Transação.                                                                                                           | Byte  | ---     | 2                                    |
+| `ReturnCode`        | Código de retorno da Adquirência.                                                                                              | Texto | 32      | Texto alfanumérico                   |
+| `ReturnMessage`     | Mensagem de retorno da Adquirência.                                                                                            | Texto | 512     | Texto alfanumérico                   |
 
 ## Criando uma venda com Autenticação
 
@@ -947,24 +978,24 @@ curl
 --verbose
 ```
 
-|Propriedade|Tipo|Tamanho|Obrigatório|Descrição|
-|-----------|----|-------|-----------|---------|
-|`MerchantId`|Guid|36|Sim|Identificador da loja na Cielo.|
-|`MerchantKey`|Texto|40|Sim|Chave Publica para Autenticação Dupla na Cielo.|
-|`RequestId`|Guid|36|Não|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT.|
-|`MerchantOrderId`|Texto|50|Sim|Numero de identificação do Pedido.|
-|`Customer.Name`|Texto|255|Não|Nome do Comprador.|
-|`Customer.Status`|Texto|255|Não|Status de cadastro do comprador na loja (NEW / EXISTING)|
-|`Payment.Type`|Texto|100|Sim|Tipo do Meio de Pagamento.|
-|`Payment.Amount`|Número|15|Sim|Valor do Pedido (ser enviado em centavos).|
-|`Payment.Provider`|Texto|15|---|Define comportamento do meio de pagamento (ver Anexo)/NÃO OBRIGATÓRIO PARA CRÉDITO.|
-|`Payment.Installments`|Número|2|Sim|Número de Parcelas.|
-|`Payment.Authenticate`|Booleano|---|Não (Default false)|Define se o comprador será direcionado ao Banco emissor para autenticação do cartão|
-|`CreditCard.CardNumber.`|Texto|19|Sim|Número do Cartão do Comprador|
-|`CreditCard.Holder`|Texto|25|Não|Nome do Comprador impresso no cartão.|
-|`CreditCard.ExpirationDate`|Texto|7|Sim|Data de validade impresso no cartão.|
-|`CreditCard.SecurityCode`|Texto|4|Não|Código de segurança impresso no verso do cartão - Ver Anexo.|
-|`CreditCard.Brand`|Texto|10|Sim |Bandeira do cartão (Visa / Master / Amex / Elo / Aura / JCB / Diners / Discover).|
+| Propriedade                 | Tipo     | Tamanho | Obrigatório         | Descrição                                                                                              |
+|-----------------------------|----------|---------|---------------------|--------------------------------------------------------------------------------------------------------|
+| `MerchantId`                | Guid     | 36      | Sim                 | Identificador da loja na Cielo.                                                                        |
+| `MerchantKey`               | Texto    | 40      | Sim                 | Chave Publica para Autenticação Dupla na Cielo.                                                        |
+| `RequestId`                 | Guid     | 36      | Não                 | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT. |
+| `MerchantOrderId`           | Texto    | 50      | Sim                 | Numero de identificação do Pedido.                                                                     |
+| `Customer.Name`             | Texto    | 255     | Não                 | Nome do Comprador.                                                                                     |
+| `Customer.Status`           | Texto    | 255     | Não                 | Status de cadastro do comprador na loja (NEW / EXISTING)                                               |
+| `Payment.Type`              | Texto    | 100     | Sim                 | Tipo do Meio de Pagamento.                                                                             |
+| `Payment.Amount`            | Número   | 15      | Sim                 | Valor do Pedido (ser enviado em centavos).                                                             |
+| `Payment.Provider`          | Texto    | 15      | ---                 | Define comportamento do meio de pagamento (ver Anexo)/NÃO OBRIGATÓRIO PARA CRÉDITO.                    |
+| `Payment.Installments`      | Número   | 2       | Sim                 | Número de Parcelas.                                                                                    |
+| `Payment.Authenticate`      | Booleano | ---     | Não (Default false) | Define se o comprador será direcionado ao Banco emissor para autenticação do cartão                    |
+| `CreditCard.CardNumber.`    | Texto    | 19      | Sim                 | Número do Cartão do Comprador                                                                          |
+| `CreditCard.Holder`         | Texto    | 25      | Não                 | Nome do Comprador impresso no cartão.                                                                  |
+| `CreditCard.ExpirationDate` | Texto    | 7       | Sim                 | Data de validade impresso no cartão.                                                                   |
+| `CreditCard.SecurityCode`   | Texto    | 4       | Não                 | Código de segurança impresso no verso do cartão - Ver Anexo.                                           |
+| `CreditCard.Brand`          | Texto    | 10      | Sim                 | Bandeira do cartão (Visa / Master / Amex / Elo / Aura / JCB / Diners / Discover).                      |
 
 ### Resposta
 
@@ -1061,17 +1092,17 @@ curl
 }
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Formato|
-|-----------|---------|----|-------|-------|
-|`ProofOfSale`|Número da autorização, identico ao NSU.|Texto|20|Texto alfanumérico|
-|`Tid`|Id da transação na adquirente.|Texto|40|Texto alfanumérico|
-|`AuthorizationCode`|Código de autorização.|Texto|300|Texto alfanumérico|
-|`SoftDescriptor`|Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - nao permite caracteres especiais|Texto|13|Texto alfanumérico|
-|`PaymentId`|Campo Identificador do Pedido.|Guid|36|xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx|
-|`ECI`|Eletronic Commerce Indicator. Representa o quão segura é uma transação.|Texto|2|Exemplos: 7|
-|`Status`|Status da Transação.|Byte|---|2|
-|`ReturnCode`|Código de retorno da Adquirência.|Texto|32|Texto alfanumérico|
-|`ReturnMessage`|Mensagem de retorno da Adquirência.|Texto|512|Texto alfanumérico|
+| Propriedade         | Descrição                                                                                                                      | Tipo  | Tamanho | Formato                              |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------|-------|---------|--------------------------------------|
+| `ProofOfSale`       | Número da autorização, identico ao NSU.                                                                                        | Texto | 20      | Texto alfanumérico                   |
+| `Tid`               | Id da transação na adquirente.                                                                                                 | Texto | 40      | Texto alfanumérico                   |
+| `AuthorizationCode` | Código de autorização.                                                                                                         | Texto | 300     | Texto alfanumérico                   |
+| `SoftDescriptor`    | Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - nao permite caracteres especiais | Texto | 13      | Texto alfanumérico                   |
+| `PaymentId`         | Campo Identificador do Pedido.                                                                                                 | Guid  | 36      | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |
+| `ECI`               | Eletronic Commerce Indicator. Representa o quão segura é uma transação.                                                        | Texto | 2       | Exemplos: 7                          |
+| `Status`            | Status da Transação.                                                                                                           | Byte  | ---     | 2                                    |
+| `ReturnCode`        | Código de retorno da Adquirência.                                                                                              | Texto | 32      | Texto alfanumérico                   |
+| `ReturnMessage`     | Mensagem de retorno da Adquirência.                                                                                            | Texto | 512     | Texto alfanumérico                   |
 
 ## Criando uma venda com Analise de Fraude
 
@@ -1766,22 +1797,22 @@ curl
 --verbose
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
-|-----------|---------|----|-------|-----------|
-|`MerchantId`|Identificador da loja na API Cielo eCommerce. |Guid |36 |Sim|
-|`MerchantKey`|Chave Publica para Autenticação Dupla na API Cielo eCommerce. |Texto | 40 | Sim|
-|`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
-|`MerchantOrderId`|Numero de identificação do Pedido. | Texto | 50 |Sim|
-|`Customer.Name`|Nome do Comprador. |Texto |255|Não|
-|`Customer.Status`|Status de cadastro do comprador na loja (NEW / EXISTING) - Utilizado pela análise de fraude|Texto |255|Não|
-|`Payment.Type`|Tipo do Meio de Pagamento. | Texto | 100 |Sim|
-|`Payment.Amount`|Valor do Pedido (ser enviado em centavos).| Número | 15 |Sim|
-|`Payment.Installments`|Número de Parcelas.| Número | 2 |Sim|
-|`Payment.SoftDescriptor`|Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - não permite caracteres especiais|Texto|13|Não|
-|`Payment.ReturnUrl`|URI para onde o usuário será redirecionado após o fim do pagamento|Texto |1024 |Sim quando Authenticate = true|
-|`CreditCard.CardToken`|Token de identificação do Cartão. |Guid |36 |Sim|
-|`CreditCard.SecurityCode`|Código de segurança impresso no verso do cartão.|Texto |4 |Não|
-|`CreditCard.Brand`|Bandeira do cartão.|Texto |10 |Sim|
+| Propriedade               | Descrição                                                                                                                      | Tipo   | Tamanho | Obrigatório                    |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------|--------|---------|--------------------------------|
+| `MerchantId`              | Identificador da loja na API Cielo eCommerce.                                                                                  | Guid   | 36      | Sim                            |
+| `MerchantKey`             | Chave Publica para Autenticação Dupla na API Cielo eCommerce.                                                                  | Texto  | 40      | Sim                            |
+| `RequestId`               | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT                          | Guid   | 36      | Não                            |
+| `MerchantOrderId`         | Numero de identificação do Pedido.                                                                                             | Texto  | 50      | Sim                            |
+| `Customer.Name`           | Nome do Comprador.                                                                                                             | Texto  | 255     | Não                            |
+| `Customer.Status`         | Status de cadastro do comprador na loja (NEW / EXISTING) - Utilizado pela análise de fraude                                    | Texto  | 255     | Não                            |
+| `Payment.Type`            | Tipo do Meio de Pagamento.                                                                                                     | Texto  | 100     | Sim                            |
+| `Payment.Amount`          | Valor do Pedido (ser enviado em centavos).                                                                                     | Número | 15      | Sim                            |
+| `Payment.Installments`    | Número de Parcelas.                                                                                                            | Número | 2       | Sim                            |
+| `Payment.SoftDescriptor`  | Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - não permite caracteres especiais | Texto  | 13      | Não                            |
+| `Payment.ReturnUrl`       | URI para onde o usuário será redirecionado após o fim do pagamento                                                             | Texto  | 1024    | Sim quando Authenticate = true |
+| `CreditCard.CardToken`    | Token de identificação do Cartão.                                                                                              | Guid   | 36      | Sim                            |
+| `CreditCard.SecurityCode` | Código de segurança impresso no verso do cartão.                                                                               | Texto  | 4       | Não                            |
+| `CreditCard.Brand`        | Bandeira do cartão.                                                                                                            | Texto  | 10      | Sim                            |
 
 ### Resposta
 
@@ -1886,17 +1917,17 @@ curl
 }
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Formato|
-|-----------|---------|----|-------|-------|
-|`ProofOfSale`|Número da autorização, identico ao NSU.|Texto|20|Texto alfanumérico|
-|`Tid`|Id da transação na adquirente.|Texto|40|Texto alfanumérico|
-|`AuthorizationCode`|Código de autorização.|Texto|300|Texto alfanumérico|
-`SoftDescriptor`|Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - nao permite caracteres especiais|Texto|13|Texto alfanumérico|
-|`PaymentId`|Campo Identificador do Pedido.|Guid|36|xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx|
-|`ECI`|Eletronic Commerce Indicator. Representa o quão segura é uma transação.|Texto|2|Exemplos: 7|
-|`Status`|Status da Transação.|Byte|---|2|
-|`ReturnCode`|Código de retorno da Adquirência.|Texto|32|Texto alfanumérico|
-|`ReturnMessage`|Mensagem de retorno da Adquirência.|Texto|512|Texto alfanumérico|
+| Propriedade         | Descrição                                                                                                                      | Tipo  | Tamanho | Formato                              |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------|-------|---------|--------------------------------------|
+| `ProofOfSale`       | Número da autorização, identico ao NSU.                                                                                        | Texto | 20      | Texto alfanumérico                   |
+| `Tid`               | Id da transação na adquirente.                                                                                                 | Texto | 40      | Texto alfanumérico                   |
+| `AuthorizationCode` | Código de autorização.                                                                                                         | Texto | 300     | Texto alfanumérico                   |
+| `SoftDescriptor`    | Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - nao permite caracteres especiais | Texto | 13      | Texto alfanumérico                   |
+| `PaymentId`         | Campo Identificador do Pedido.                                                                                                 | Guid  | 36      | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |
+| `ECI`               | Eletronic Commerce Indicator. Representa o quão segura é uma transação.                                                        | Texto | 2       | Exemplos: 7                          |
+| `Status`            | Status da Transação.                                                                                                           | Byte  | ---     | 2                                    |
+| `ReturnCode`        | Código de retorno da Adquirência.                                                                                              | Texto | 32      | Texto alfanumérico                   |
+| `ReturnMessage`     | Mensagem de retorno da Adquirência.                                                                                            | Texto | 512     | Texto alfanumérico                   |
 
 ## Capturando uma venda
 
@@ -2322,26 +2353,6 @@ curl
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Pagamentos com Cartão de Débito
 
 ## Criando uma venda simplificada
@@ -2402,24 +2413,23 @@ curl
 --verbose
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
-|-----------|---------|----|-------|-----------|
-|`MerchantId`|Identificador da loja na API Cielo eCommerce. |Guid |36 |Sim|
-|`MerchantKey`|Chave Publica para Autenticação Dupla na API Cielo eCommerce. |Texto |40 |Sim|
-|`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
-|`MerchantOrderId`|Numero de identificação do Pedido. |Texto |50 |Sim|
-|`Customer.Name`|Nome do Comprador. |Texto |255|Não|
-|`Customer.Status`|Status de cadastro do comprador na loja (NEW / EXISTING) - Utilizado pela análise de fraude|Texto |255|Não|
-|`Payment.Type`|Tipo do Meio de Pagamento.|Texto |100 |Sim|
-|`Payment.Amount`|Valor do Pedido (ser enviado em centavos).|Número |15 |Sim|
-|`Payment.ReturnUrl`|Url de retorno do lojista.|Texto |1024 |Sim|
-|`Payment.ReturnUrl`|URI para onde o usuário será redirecionado após o fim do pagamento|Texto |1024 |Sim|
-|`DebitCard.CardNumber`|Número do Cartão do Comprador.|Texto |19 |Sim|
-|`DebitCard.Holder`|Nome do Comprador impresso no cartão.|Texto |25 |Não|
-|`DebitCard.ExpirationDate`|Data de validade impresso no cartão.|Texto |7 |Sim|
-|`DebitCard.SecurityCode`|Código de segurança impresso no verso do cartão.|Texto |4 |Não|
-|`DebitCard.Brand`|Bandeira do cartão. |Texto |10 |Sim|
-
+| Propriedade                | Descrição                                                                                             | Tipo   | Tamanho | Obrigatório |
+|----------------------------|-------------------------------------------------------------------------------------------------------|--------|---------|-------------|
+| `MerchantId`               | Identificador da loja na API Cielo eCommerce.                                                         | Guid   | 36      | Sim         |
+| `MerchantKey`              | Chave Publica para Autenticação Dupla na API Cielo eCommerce.                                         | Texto  | 40      | Sim         |
+| `RequestId`                | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid   | 36      | Não         |
+| `MerchantOrderId`          | Numero de identificação do Pedido.                                                                    | Texto  | 50      | Sim         |
+| `Customer.Name`            | Nome do Comprador.                                                                                    | Texto  | 255     | Não         |
+| `Customer.Status`          | Status de cadastro do comprador na loja (NEW / EXISTING) - Utilizado pela análise de fraude           | Texto  | 255     | Não         |
+| `Payment.Type`             | Tipo do Meio de Pagamento.                                                                            | Texto  | 100     | Sim         |
+| `Payment.Amount`           | Valor do Pedido (ser enviado em centavos).                                                            | Número | 15      | Sim         |
+| `Payment.ReturnUrl`        | Url de retorno do lojista.                                                                            | Texto  | 1024    | Sim         |
+| `Payment.ReturnUrl`        | URI para onde o usuário será redirecionado após o fim do pagamento                                    | Texto  | 1024    | Sim         |
+| `DebitCard.CardNumber`     | Número do Cartão do Comprador.                                                                        | Texto  | 19      | Sim         |
+| `DebitCard.Holder`         | Nome do Comprador impresso no cartão.                                                                 | Texto  | 25      | Não         |
+| `DebitCard.ExpirationDate` | Data de validade impresso no cartão.                                                                  | Texto  | 7       | Sim         |
+| `DebitCard.SecurityCode`   | Código de segurança impresso no verso do cartão.                                                      | Texto  | 4       | Não         |
+| `DebitCard.Brand`          | Bandeira do cartão.                                                                                   | Texto  | 10      | Sim         |
 ### Resposta
 
 ```json
@@ -2627,11 +2637,11 @@ curl
 }
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Formato|
-|-----------|---------|----|-------|-------|
-|`PaymentId`|Campo Identificador do Pedido. |Guid |36 |xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |
-|`Url`|URL para qual o Lojista deve redirecionar o Cliente para o fluxo de Transferência Eletronica. |Texto |256 |Url de Autenticação |
-|`Status`|Status da Transação. |Byte |--- |0|
+| Propriedade | Descrição                                                                                     | Tipo  | Tamanho | Formato                              |
+|-------------|-----------------------------------------------------------------------------------------------|-------|---------|--------------------------------------|
+| `PaymentId` | Campo Identificador do Pedido.                                                                | Guid  | 36      | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |
+| `Url`       | URL para qual o Lojista deve redirecionar o Cliente para o fluxo de Transferência Eletronica. | Texto | 256     | Url de Autenticação                  |
+| `Status`    | Status da Transação.                                                                          | Byte  | ---     | 0                                    |
 
 # Pagamentos com Boleto
 
@@ -2724,31 +2734,31 @@ curl
 --verbose
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
-|-----------|---------|----|-------|-----------|
-|`MerchantId`|Identificador da loja na API Cielo eCommerce. |Guid |36 |Sim|
-|`MerchantKey`|Chave Publica para Autenticação Dupla na API Cielo eCommerce. |Texto |40 |Sim|
-|`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
-|`MerchantOrderId`|Numero de identificação do Pedido. |Texto |50 |Sim|
-|`Customer.Name`|Nome do Comprador. |Texto |255|Não|
-|`Customer.Status`|Status de cadastro do comprador na loja(NEW / EXISTING) - Utilizado pela análise de fraude|Texto |255|Não|
-|`Customer.Address.ZipCode`|CEP do endereço do Comprador. |Texto |9 |Sim|
-|`Customer.Address.Country`|Pais do endereço do Comprador. |Texto |35 |Sim|
-|`Customer.Address.State`|Estado do endereço do Comprador. |Texto |2 |Sim|
-|`Customer.Address.City`|Cidade do endereço do Comprador. |Texto |50 |Sim|
-|`Customer.Address.District`|Bairro do Comprador. |Texto |50 |Sim|
-|`Customer.Address.Street`|Endereço do Comprador. |Texto |255 |Sim|
-|`Customer.Address.Number`|Número do endereço do Comprador. |Texto |15|Sim|
-|`Payment.Type`|Tipo do Meio de Pagamento. |Texto |100|Sim|
-|`Payment.Amount`|Valor do Pedido (ser enviado em centavos).|Número |15 |Sim|
-|`Payment.Provider`|Define comportamento do meio de pagamento (ver Anexo)/NÃO OBRIGATÓRIO PARA CRÉDITO.|Texto |15 |Sim|
-|`Payment.Adress`|Endereço do Cedente.|Texto |255|Não|
-|`Payment.BoletoNumber`|Número do Boleto enviado pelo lojista. Usado para contar boletos emitidos ("NossoNumero").|Texto |50 |Não|
-|`Payment.Assignor`|Nome do Cedente.|Texto |200|Não|
-|`Payment.Demonstrative`|Texto de Demonstrativo.|Texto |450|Não|
-|`Payment.ExpirationDate`|Data de expiração do Boleto.|Date |10 |Não|
-|`Payment.Identification`|Documento de identificação do Cedente.|Texto |14 |Não|
-|`Payment.Instructions`|Instruções do Boleto.|Texto |450|Não|
+| Propriedade                 | Descrição                                                                                             | Tipo   | Tamanho | Obrigatório |
+|-----------------------------|-------------------------------------------------------------------------------------------------------|--------|---------|-------------|
+| `MerchantId`                | Identificador da loja na API Cielo eCommerce.                                                         | Guid   | 36      | Sim         |
+| `MerchantKey`               | Chave Publica para Autenticação Dupla na API Cielo eCommerce.                                         | Texto  | 40      | Sim         |
+| `RequestId`                 | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid   | 36      | Não         |
+| `MerchantOrderId`           | Numero de identificação do Pedido.                                                                    | Texto  | 50      | Sim         |
+| `Customer.Name`             | Nome do Comprador.                                                                                    | Texto  | 255     | Não         |
+| `Customer.Status`           | Status de cadastro do comprador na loja(NEW / EXISTING) - Utilizado pela análise de fraude            | Texto  | 255     | Não         |
+| `Customer.Address.ZipCode`  | CEP do endereço do Comprador.                                                                         | Texto  | 9       | Sim         |
+| `Customer.Address.Country`  | Pais do endereço do Comprador.                                                                        | Texto  | 35      | Sim         |
+| `Customer.Address.State`    | Estado do endereço do Comprador.                                                                      | Texto  | 2       | Sim         |
+| `Customer.Address.City`     | Cidade do endereço do Comprador.                                                                      | Texto  | 50      | Sim         |
+| `Customer.Address.District` | Bairro do Comprador.                                                                                  | Texto  | 50      | Sim         |
+| `Customer.Address.Street`   | Endereço do Comprador.                                                                                | Texto  | 255     | Sim         |
+| `Customer.Address.Number`   | Número do endereço do Comprador.                                                                      | Texto  | 15      | Sim         |
+| `Payment.Type`              | Tipo do Meio de Pagamento.                                                                            | Texto  | 100     | Sim         |
+| `Payment.Amount`            | Valor do Pedido (ser enviado em centavos).                                                            | Número | 15      | Sim         |
+| `Payment.Provider`          | Define comportamento do meio de pagamento (ver Anexo)/NÃO OBRIGATÓRIO PARA CRÉDITO.                   | Texto  | 15      | Sim         |
+| `Payment.Adress`            | Endereço do Cedente.                                                                                  | Texto  | 255     | Não         |
+| `Payment.BoletoNumber`      | Número do Boleto enviado pelo lojista. Usado para contar boletos emitidos ("NossoNumero").            | Texto  | 50      | Não         |
+| `Payment.Assignor`          | Nome do Cedente.                                                                                      | Texto  | 200     | Não         |
+| `Payment.Demonstrative`     | Texto de Demonstrativo.                                                                               | Texto  | 450     | Não         |
+| `Payment.ExpirationDate`    | Data de expiração do Boleto.                                                                          | Date   | 10      | Não         |
+| `Payment.Identification`    | Documento de identificação do Cedente.                                                                | Texto  | 14      | Não         |
+| `Payment.Instructions`      | Instruções do Boleto.                                                                                 | Texto  | 450     | Não         |
 
 
 ### Resposta
@@ -2841,19 +2851,19 @@ curl
 }
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Formato|
-|-----------|---------|----|-------|-------|
-|`PaymentId`|Campo Identificador do Pedido. |Guid |36 |xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |
-|`Instructions`|Instruções do Boleto. |Texto |450 |Ex: Aceitar somente até a data de vencimento, após essa data juros de 1% dia. |
-|`ExpirationDate`|Data de expiração. |Texto |10 |2014-12-25 |
-|`Url`|Url do Boleto gerado. |string |256 |Ex:https://.../pagador/reenvia.asp/8464a692-b4bd-41e7-8003-1611a2b8ef2d |
-|`Number`|"NossoNumero" gerado. |Texto|50 |Ex: 1000000012-8 |
-|`BarCodeNumber`|Representação numérica do código de barras. |Texto |44 |Ex: 00091628800000157000494250100000001200656560 |
-|`DigitableLine`|Linha digitável. |Texto |256 |Ex: 00090.49420 50100.000004 12006.565605 1 62880000015700 |
-|`Assignor`|Nome do Cedente. |Texto |256 |Ex: Loja Teste |
-|`Address`|Endereço do Cedente. |Texto |256 |Ex: Av. Teste, 160 |
-|`Identification`|Documento de identificação do Cedente. |Texto |14 |CPF ou CNPJ do Cedente sem os caracteres especiais (., /, -) |
-|`Status`|Status da Transação. |Byte |--- |1|
+| Propriedade      | Descrição                                   | Tipo   | Tamanho | Formato                                                                       |
+|------------------|---------------------------------------------|--------|---------|-------------------------------------------------------------------------------|
+| `PaymentId`      | Campo Identificador do Pedido.              | Guid   | 36      | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx                                          |
+| `Instructions`   | Instruções do Boleto.                       | Texto  | 450     | Ex: Aceitar somente até a data de vencimento, após essa data juros de 1% dia. |
+| `ExpirationDate` | Data de expiração.                          | Texto  | 10      | 2014-12-25                                                                    |
+| `Url`            | Url do Boleto gerado.                       | string | 256     | Ex:https://.../pagador/reenvia.asp/8464a692-b4bd-41e7-8003-1611a2b8ef2d       |
+| `Number`         | "NossoNumero" gerado.                       | Texto  | 50      | Ex: 1000000012-8                                                              |
+| `BarCodeNumber`  | Representação numérica do código de barras. | Texto  | 44      | Ex: 00091628800000157000494250100000001200656560                              |
+| `DigitableLine`  | Linha digitável.                            | Texto  | 256     | Ex: 00090.49420 50100.000004 12006.565605 1 62880000015700                    |
+| `Assignor`       | Nome do Cedente.                            | Texto  | 256     | Ex: Loja Teste                                                                |
+| `Address`        | Endereço do Cedente.                        | Texto  | 256     | Ex: Av. Teste, 160                                                            |
+| `Identification` | Documento de identificação do Cedente.      | Texto  | 14      | CPF ou CNPJ do Cedente sem os caracteres especiais (., /, -)                  |
+| `Status`         | Status da Transação.                        | Byte   | ---     | 1                                                                             |
 
 
 # Pagamentos Recorrentes
@@ -2932,25 +2942,25 @@ curl
 --verbose
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
-|-----------|---------|----|-------|-----------|
-|`MerchantId`|Identificador da loja na API Cielo eCommerce. |Guid |6 |Sim|
-|`MerchantKey`|Chave Publica para Autenticação Dupla na API Cielo eCommerce.|Texto |40 |Sim|
-|`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
-|`MerchantOrderId`|Numero de identificação do Pedido. |Texto |50 |Sim|
-|`Customer.Name`|Nome do Comprador. |Texto |255|Não|
-|`Payment.Type`|Tipo do Meio de Pagamento. |Texto |100 |Sim|
-|`Payment.Amount`|Valor do Pedido (ser enviado em centavos).|Número |15 |Sim|
-|`Payment.Installments`|Número de Parcelas.|Número |2 |Sim|
-|`Payment.SoftDescriptor`|Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - não permite caracteres especiais|Texto|13|Não|
-|`Payment.RecurrentPayment.EndDate`|Data para termino da recorrência.|Texto |10 |Não|
-|`Payment.RecurrentPayment.Interval`|Intervalo da recorrência.<br /><ul><li>Monthly (Default) </li><li>Bimonthly </li><li>Quarterly </li><li>SemiAnnual </li><li>Annual</li></ul> |Texto |10 |Não|
-|`Payment.RecurrentPayment.AuthorizeNow`|Booleano para saber se a primeira recorrência já vai ser Autorizada ou não.|Booleano |--- |Sim|
-|`CreditCard.CardNumber`|Número do Cartão do Comprador.|Texto |19 |Sim|
-|`CreditCard.Holder`|Nome do Comprador impresso no cartão.|Texto |25 |Não|
-|`CreditCard.ExpirationDate`|Data de validade impresso no cartão.|Texto |7 |Sim|
-|`CreditCard.SecurityCode`|Código de segurança impresso no verso do cartão.|Texto |4 |Não|
-|`CreditCard.Brand`|Bandeira do cartão.|Texto |10 |Sim|
+| Propriedade                             | Descrição                                                                                                                                    | Tipo     | Tamanho | Obrigatório |
+|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|----------|---------|-------------|
+| `MerchantId`                            | Identificador da loja na API Cielo eCommerce.                                                                                                | Guid     | 6       | Sim         |
+| `MerchantKey`                           | Chave Publica para Autenticação Dupla na API Cielo eCommerce.                                                                                | Texto    | 40      | Sim         |
+| `RequestId`                             | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT                                        | Guid     | 36      | Não         |
+| `MerchantOrderId`                       | Numero de identificação do Pedido.                                                                                                           | Texto    | 50      | Sim         |
+| `Customer.Name`                         | Nome do Comprador.                                                                                                                           | Texto    | 255     | Não         |
+| `Payment.Type`                          | Tipo do Meio de Pagamento.                                                                                                                   | Texto    | 100     | Sim         |
+| `Payment.Amount`                        | Valor do Pedido (ser enviado em centavos).                                                                                                   | Número   | 15      | Sim         |
+| `Payment.Installments`                  | Número de Parcelas.                                                                                                                          | Número   | 2       | Sim         |
+| `Payment.SoftDescriptor`                | Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - não permite caracteres especiais               | Texto    | 13      | Não         |
+| `Payment.RecurrentPayment.EndDate`      | Data para termino da recorrência.                                                                                                            | Texto    | 10      | Não         |
+| `Payment.RecurrentPayment.Interval`     | Intervalo da recorrência.<br /><ul><li>Monthly (Default) </li><li>Bimonthly </li><li>Quarterly </li><li>SemiAnnual </li><li>Annual</li></ul> | Texto    | 10      | Não         |
+| `Payment.RecurrentPayment.AuthorizeNow` | Booleano para saber se a primeira recorrência já vai ser Autorizada ou não.                                                                  | Booleano | ---     | Sim         |
+| `CreditCard.CardNumber`                 | Número do Cartão do Comprador.                                                                                                               | Texto    | 19      | Sim         |
+| `CreditCard.Holder`                     | Nome do Comprador impresso no cartão.                                                                                                        | Texto    | 25      | Não         |
+| `CreditCard.ExpirationDate`             | Data de validade impresso no cartão.                                                                                                         | Texto    | 7       | Sim         |
+| `CreditCard.SecurityCode`               | Código de segurança impresso no verso do cartão.                                                                                             | Texto    | 4       | Não         |
+| `CreditCard.Brand`                      | Bandeira do cartão.                                                                                                                          | Texto    | 10      | Sim         |
 
 ### Resposta
 
@@ -3090,13 +3100,13 @@ curl
 }
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Formato|
-|-----------|---------|----|-------|-------|
-|`RecurrentPaymentId`|Campo Identificador da próxima recorrência. |Guid |36 |xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |
-|`NextRecurrency`|Data da próxima recorrência. |Texto |7 |12/2030 (MM/YYYY) |
-|`EndDate`|Data do fim da recorrência. |Texto |7 |12/2030 (MM/YYYY) |
-|`Interval`|Intervalo entre as recorrência. |Texto |10 |<ul><li>Monthly</li><li>Bimonthly </li><li>Quarterly </li><li>SemiAnnual </li><li>Annual</li></ul> |
-|`AuthorizeNow`|Booleano para saber se a primeira recorrencia já vai ser Autorizada ou não. |Booleano |--- |true ou false |
+| Propriedade          | Descrição                                                                   | Tipo     | Tamanho | Formato                                                                                            |
+|----------------------|-----------------------------------------------------------------------------|----------|---------|----------------------------------------------------------------------------------------------------|
+| `RecurrentPaymentId` | Campo Identificador da próxima recorrência.                                 | Guid     | 36      | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx                                                               |
+| `NextRecurrency`     | Data da próxima recorrência.                                                | Texto    | 7       | 12/2030 (MM/YYYY)                                                                                  |
+| `EndDate`            | Data do fim da recorrência.                                                 | Texto    | 7       | 12/2030 (MM/YYYY)                                                                                  |
+| `Interval`           | Intervalo entre as recorrência.                                             | Texto    | 10      | <ul><li>Monthly</li><li>Bimonthly </li><li>Quarterly </li><li>SemiAnnual </li><li>Annual</li></ul> |
+| `AuthorizeNow`       | Booleano para saber se a primeira recorrencia já vai ser Autorizada ou não. | Booleano | ---     | true ou false                                                                                      |
 
 ## Agendamento de uma recorrência programada de crédito
 
@@ -3172,34 +3182,33 @@ curl
 --verbose
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
-|-----------|---------|----|-------|-----------|
-|`MerchantId`|Identificador da loja na API Cielo eCommerce |Guid |36|Sim|
-|`MerchantKey`|Chave Publica para Autenticação Dupla na API Cielo eCommerce |Texto |40|Sim|
-|`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
-|`RecurrentPaymentId`|Numero de identificação da Recorrência. |Texto |50|Sim|
-|`Customer.Name`|Nome do Comprador. |Texto |255|Não|
-|`Customer.Status`|Status de cadastro do comprador na loja (NEW / EXISTING) - Utilizado pela análise de fraude|Texto |255|Não|
-|`Customer.Email`|Email do Comprador. |Texto |255 |Não|
-|`Customer.Birthdate`|Data de nascimento do Comprador. |Date |10 |Não|
-|`Customer.Identity`|Número do RG, CPF ou CNPJ do Cliente. |Texto |14 |Não|
-|`Customer.Address.Street`|Endereço do Comprador. |Texto |255|Não|
-|`Customer.Address.Number`|Número do endereço do Comprador. |Texto |15 |Não|
-|`Customer.Address.Complement`|Complemento do endereço do Comprador.|Texto |50 |Não|
-|`Customer.Address.ZipCode`|CEP do endereço do Comprador. |Texto |9 |Não|
-|`Customer.Address.City`|Cidade do endereço do Comprador. |Texto |50|Não|
-|`Customer.Address.State`|Estado do endereço do Comprador. |Texto |2 |Não|
-|`Customer.Address.Country`|Pais do endereço do Comprador. |Texto |35|Não|
-|`Customer.Address.District`|Bairro do Comprador. |Texto |50|Não|
-|`Customer.DeliveryAddress.Street`|Endereço do Comprador. |Texto |255 |Não|
-|`Customer.DeliveryAddress.Number`|Número do endereço do Comprador. |Texto |15 |Não|
-|`Customer.DeliveryAddress.Complement`|Complemento do endereço do Comprador. |Texto |50 |Não|
-|`Customer.DeliveryAddress.ZipCode`|CEP do endereço do Comprador. |Texto |9 |Não|
-|`Customer.DeliveryAddress.City`|Cidade do endereço do Comprador. |Texto |50|Não|
-|`Customer.DeliveryAddress.State`|Estado do endereço do Comprador. |Texto |2 |Não|
-|`Customer.DeliveryAddress.Country`|Pais do endereço do Comprador. |Texto |35|Não|
-|`Customer.DeliveryAddress.District`|Bairro do Comprador. |Texto |50|Não|
-
+| Propriedade                           | Descrição                                                                                             | Tipo  | Tamanho | Obrigatório |
+|---------------------------------------|-------------------------------------------------------------------------------------------------------|-------|---------|-------------|
+| `MerchantId`                          | Identificador da loja na API Cielo eCommerce                                                          | Guid  | 36      | Sim         |
+| `MerchantKey`                         | Chave Publica para Autenticação Dupla na API Cielo eCommerce                                          | Texto | 40      | Sim         |
+| `RequestId`                           | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid  | 36      | Não         |
+| `RecurrentPaymentId`                  | Numero de identificação da Recorrência.                                                               | Texto | 50      | Sim         |
+| `Customer.Name`                       | Nome do Comprador.                                                                                    | Texto | 255     | Não         |
+| `Customer.Status`                     | Status de cadastro do comprador na loja (NEW / EXISTING) - Utilizado pela análise de fraude           | Texto | 255     | Não         |
+| `Customer.Email`                      | Email do Comprador.                                                                                   | Texto | 255     | Não         |
+| `Customer.Birthdate`                  | Data de nascimento do Comprador.                                                                      | Date  | 10      | Não         |
+| `Customer.Identity`                   | Número do RG, CPF ou CNPJ do Cliente.                                                                 | Texto | 14      | Não         |
+| `Customer.Address.Street`             | Endereço do Comprador.                                                                                | Texto | 255     | Não         |
+| `Customer.Address.Number`             | Número do endereço do Comprador.                                                                      | Texto | 15      | Não         |
+| `Customer.Address.Complement`         | Complemento do endereço do Comprador.                                                                 | Texto | 50      | Não         |
+| `Customer.Address.ZipCode`            | CEP do endereço do Comprador.                                                                         | Texto | 9       | Não         |
+| `Customer.Address.City`               | Cidade do endereço do Comprador.                                                                      | Texto | 50      | Não         |
+| `Customer.Address.State`              | Estado do endereço do Comprador.                                                                      | Texto | 2       | Não         |
+| `Customer.Address.Country`            | Pais do endereço do Comprador.                                                                        | Texto | 35      | Não         |
+| `Customer.Address.District`           | Bairro do Comprador.                                                                                  | Texto | 50      | Não         |
+| `Customer.DeliveryAddress.Street`     | Endereço do Comprador.                                                                                | Texto | 255     | Não         |
+| `Customer.DeliveryAddress.Number`     | Número do endereço do Comprador.                                                                      | Texto | 15      | Não         |
+| `Customer.DeliveryAddress.Complement` | Complemento do endereço do Comprador.                                                                 | Texto | 50      | Não         |
+| `Customer.DeliveryAddress.ZipCode`    | CEP do endereço do Comprador.                                                                         | Texto | 9       | Não         |
+| `Customer.DeliveryAddress.City`       | Cidade do endereço do Comprador.                                                                      | Texto | 50      | Não         |
+| `Customer.DeliveryAddress.State`      | Estado do endereço do Comprador.                                                                      | Texto | 2       | Não         |
+| `Customer.DeliveryAddress.Country`    | Pais do endereço do Comprador.                                                                        | Texto | 35      | Não         |
+| `Customer.DeliveryAddress.District`   | Bairro do Comprador.                                                                                  | Texto | 50      | Não         |
 ### Resposta
 
 ```json
@@ -3294,14 +3303,14 @@ curl
 }
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Formato|
-|-----------|---------|----|-------|-------|
-|`RecurrentPaymentId`|Campo Identificador da próxima recorrência. |Guid |36 |xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |
-|`NextRecurrency`|Data da próxima recorrência. |Texto |7 |12/2030 (MM/YYYY) |
-|`StartDate`|Data do inicio da recorrência. |Texto |7 |12/2030 (MM/YYYY) |
-|`EndDate`|Data do fim da recorrência. |Texto |7 |12/2030 (MM/YYYY) |
-|`Interval`|Intervalo entre as recorrência. |Texto |10 |<ul><li>Monthly</li><li>Bimonthly </li><li>Quarterly </li><li>SemiAnnual </li><li>Annual</li></ul> |
-|`AuthorizeNow`|Booleano para saber se a primeira recorrencia já vai ser Autorizada ou não. |Booleano |--- |true ou false |
+| Propriedade          | Descrição                                                                   | Tipo     | Tamanho | Formato                                                                                            |
+|----------------------|-----------------------------------------------------------------------------|----------|---------|----------------------------------------------------------------------------------------------------|
+| `RecurrentPaymentId` | Campo Identificador da próxima recorrência.                                 | Guid     | 36      | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx                                                               |
+| `NextRecurrency`     | Data da próxima recorrência.                                                | Texto    | 7       | 12/2030 (MM/YYYY)                                                                                  |
+| `StartDate`          | Data do inicio da recorrência.                                              | Texto    | 7       | 12/2030 (MM/YYYY)                                                                                  |
+| `EndDate`            | Data do fim da recorrência.                                                 | Texto    | 7       | 12/2030 (MM/YYYY)                                                                                  |
+| `Interval`           | Intervalo entre as recorrência.                                             | Texto    | 10      | <ul><li>Monthly</li><li>Bimonthly </li><li>Quarterly </li><li>SemiAnnual </li><li>Annual</li></ul> |
+| `AuthorizeNow`       | Booleano para saber se a primeira recorrencia já vai ser Autorizada ou não. | Booleano | ---     | true ou false                                                                                      |
 
 
 ## Autorizando uma recorrência própria / não programada
@@ -3371,23 +3380,23 @@ curl
 --verbose
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
-|-----------|---------|----|-------|-----------|
-|`MerchantId`|Identificador da loja na API Cielo eCommerce. |Guid |6 |Sim|
-|`MerchantKey`|Chave Publica para Autenticação Dupla na API Cielo eCommerce.|Texto |40 |Sim|
-|`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
-|`MerchantOrderId`|Numero de identificação do Pedido. |Texto |50 |Sim|
-|`Customer.Name`|Nome do Comprador. |Texto |255|Não|
-|`Payment.Type`|Tipo do Meio de Pagamento. |Texto |100 |Sim|
-|`Payment.Amount`|Valor do Pedido (ser enviado em centavos).|Número |15 |Sim|
-|`Payment.Installments`|Número de Parcelas.|Número |2 |Sim|
-|`Payment.SoftDescriptor`|Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - não permite caracteres especiais|Texto|13|Não|
-|`Payment.Recurrent`|marcação de uma transação de recorrencia não programada|boolean |5 |Não|
-|`CreditCard.CardNumber`|Número do Cartão do Comprador.|Texto |19 |Sim|
-|`CreditCard.Holder`|Nome do Comprador impresso no cartão.|Texto |25 |Não|
-|`CreditCard.ExpirationDate`|Data de validade impresso no cartão.|Texto |7 |Sim|
-|`CreditCard.SecurityCode`|Código de segurança impresso no verso do cartão.|Texto |4 |Não|
-|`CreditCard.Brand`|Bandeira do cartão.|Texto |10 |Sim|
+| Propriedade                 | Descrição                                                                                                                      | Tipo    | Tamanho | Obrigatório |
+|-----------------------------|--------------------------------------------------------------------------------------------------------------------------------|---------|---------|-------------|
+| `MerchantId`                | Identificador da loja na API Cielo eCommerce.                                                                                  | Guid    | 6       | Sim         |
+| `MerchantKey`               | Chave Publica para Autenticação Dupla na API Cielo eCommerce.                                                                  | Texto   | 40      | Sim         |
+| `RequestId`                 | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT                          | Guid    | 36      | Não         |
+| `MerchantOrderId`           | Numero de identificação do Pedido.                                                                                             | Texto   | 50      | Sim         |
+| `Customer.Name`             | Nome do Comprador.                                                                                                             | Texto   | 255     | Não         |
+| `Payment.Type`              | Tipo do Meio de Pagamento.                                                                                                     | Texto   | 100     | Sim         |
+| `Payment.Amount`            | Valor do Pedido (ser enviado em centavos).                                                                                     | Número  | 15      | Sim         |
+| `Payment.Installments`      | Número de Parcelas.                                                                                                            | Número  | 2       | Sim         |
+| `Payment.SoftDescriptor`    | Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - não permite caracteres especiais | Texto   | 13      | Não         |
+| `Payment.Recurrent`         | marcação de uma transação de recorrencia não programada                                                                        | boolean | 5       | Não         |
+| `CreditCard.CardNumber`     | Número do Cartão do Comprador.                                                                                                 | Texto   | 19      | Sim         |
+| `CreditCard.Holder`         | Nome do Comprador impresso no cartão.                                                                                          | Texto   | 25      | Não         |
+| `CreditCard.ExpirationDate` | Data de validade impresso no cartão.                                                                                           | Texto   | 7       | Sim         |
+| `CreditCard.SecurityCode`   | Código de segurança impresso no verso do cartão.                                                                               | Texto   | 4       | Não         |
+| `CreditCard.Brand`          | Bandeira do cartão.                                                                                                            | Texto   | 10      | Sim         |
 
 ### Resposta
 
@@ -3517,23 +3526,23 @@ curl
 }
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
-|-----------|---------|----|-------|-----------|
-|`MerchantId`|Identificador da loja na API Cielo eCommerce. |Guid |6 |Sim|
-|`MerchantKey`|Chave Publica para Autenticação Dupla na API Cielo eCommerce.|Texto |40 |Sim|
-|`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
-|`MerchantOrderId`|Numero de identificação do Pedido. |Texto |50 |Sim|
-|`Customer.Name`|Nome do Comprador. |Texto |255|Não|
-|`Payment.Type`|Tipo do Meio de Pagamento. |Texto |100 |Sim|
-|`Payment.Amount`|Valor do Pedido (ser enviado em centavos).|Número |15 |Sim|
-|`Payment.Installments`|Número de Parcelas.|Número |2 |Sim|
-|`Payment.SoftDescriptor`|Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - não permite caracteres especiais|Texto|13|Não|
-|`Payment.Recurrent`|marcação de uma transação de recorrencia não programada|boolean |5 |Não|
-|`CreditCard.CardNumber`|Número do Cartão do Comprador.|Texto |19 |Sim|
-|`CreditCard.Holder`|Nome do Comprador impresso no cartão.|Texto |25 |Não|
-|`CreditCard.ExpirationDate`|Data de validade impresso no cartão.|Texto |7 |Sim|
-|`CreditCard.SecurityCode`|Código de segurança impresso no verso do cartão.|Texto |4 |Não|
-|`CreditCard.Brand`|Bandeira do cartão.|Texto |10 |Sim|
+| Propriedade                 | Descrição                                                                                                                      | Tipo    | Tamanho | Obrigatório |
+|-----------------------------|--------------------------------------------------------------------------------------------------------------------------------|---------|---------|-------------|
+| `MerchantId`                | Identificador da loja na API Cielo eCommerce.                                                                                  | Guid    | 6       | Sim         |
+| `MerchantKey`               | Chave Publica para Autenticação Dupla na API Cielo eCommerce.                                                                  | Texto   | 40      | Sim         |
+| `RequestId`                 | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT                          | Guid    | 36      | Não         |
+| `MerchantOrderId`           | Numero de identificação do Pedido.                                                                                             | Texto   | 50      | Sim         |
+| `Customer.Name`             | Nome do Comprador.                                                                                                             | Texto   | 255     | Não         |
+| `Payment.Type`              | Tipo do Meio de Pagamento.                                                                                                     | Texto   | 100     | Sim         |
+| `Payment.Amount`            | Valor do Pedido (ser enviado em centavos).                                                                                     | Número  | 15      | Sim         |
+| `Payment.Installments`      | Número de Parcelas.                                                                                                            | Número  | 2       | Sim         |
+| `Payment.SoftDescriptor`    | Texto que será impresso na fatura bancaria do portador - Disponivel apenas para VISA/MASTER - não permite caracteres especiais | Texto   | 13      | Não         |
+| `Payment.Recurrent`         | marcação de uma transação de recorrencia não programada                                                                        | boolean | 5       | Não         |
+| `CreditCard.CardNumber`     | Número do Cartão do Comprador.                                                                                                 | Texto   | 19      | Sim         |
+| `CreditCard.Holder`         | Nome do Comprador impresso no cartão.                                                                                          | Texto   | 25      | Não         |
+| `CreditCard.ExpirationDate` | Data de validade impresso no cartão.                                                                                           | Texto   | 7       | Sim         |
+| `CreditCard.SecurityCode`   | Código de segurança impresso no verso do cartão.                                                                               | Texto   | 4       | Não         |
+| `CreditCard.Brand`          | Bandeira do cartão.                                                                                                            | Texto   | 10      | Sim         |
 
 
 
@@ -3611,34 +3620,34 @@ curl
 --verbose
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
-|-----------|---------|----|-------|-----------|
-|`MerchantId`|Identificador da loja na API Cielo eCommerce |Guid |36 |Sim|
-|`MerchantKey`|Chave Publica para Autenticação Dupla na API Cielo eCommerce|Texto |40 |Sim|
-|`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
-|`RecurrentPaymentId`|Numero de identificação da Recorrência. |Texto |50 |Sim|
-|`Customer.Name`|Nome do Comprador. |Texto |255|Não|
-|`Customer.Status`|Status de cadastro do comprador na loja (NEW / EXISTING) - Utilizado pela análise de fraude|Texto |255|Não|
-|`Customer.Email`|Email do Comprador. |Texto |255|Não|
-|`Customer.Birthdate`|Data de nascimento do Comprador. |Date |10 |Não|
-|`Customer.Identity`|Número do RG, CPF ou CNPJ do Cliente. |Texto |14 |Não|
-|`Customer.IdentityType`|Texto|255|Não|Tipo de documento de identificação do comprador (CFP/CNPJ).|
-|`Customer.Address.Street`|Endereço do Comprador. |Texto |255 |Não|
-|`Customer.Address.Number`|Número do endereço do Comprador. |Texto |15 |Não|
-|`Customer.Address.Complement`|Complemento do endereço do Comprador.|Texto |50 |Não|
-|`Customer.Address.ZipCode`|CEP do endereço do Comprador. |Texto |9 |Não|
-|`Customer.Address.City`|Cidade do endereço do Comprador. |Texto |50 |Não|
-|`Customer.Address.State`|Estado do endereço do Comprador. |Texto |2 |Não|
-|`Customer.Address.Country`|Pais do endereço do Comprador. |Texto |35 |Não|
-|`Customer.Address.District`|Bairro do Comprador. |Texto |50 |Não|
-|`Customer.DeliveryAddress.Street`|Endereço do Comprador. |Texto |255 |Não|
-|`Customer.DeliveryAddress.Number`|Número do endereço do Comprador. |Texto |15 |Não|
-|`Customer.DeliveryAddress.Complement`|Complemento do endereço do Comprador. |Texto |50 |Não|
-|`Customer.DeliveryAddress.ZipCode`|CEP do endereço do Comprador. |Texto |9 |Não|
-|`Customer.DeliveryAddress.City`|Cidade do endereço do Comprador. |Texto |50 |Não|
-|`Customer.DeliveryAddress.State`|Estado do endereço do Comprador. |Texto |2 |Não|
-|`Customer.DeliveryAddress.Country`|Pais do endereço do Comprador. |Texto |35 |Não|
-|`Customer.DeliveryAddress.District`|Bairro do Comprador. |Texto |50 |Não|
+| Propriedade                           | Descrição                                                                                             | Tipo  | Tamanho | Obrigatório                                                 |
+|---------------------------------------|-------------------------------------------------------------------------------------------------------|-------|---------|-------------------------------------------------------------|
+| `MerchantId`                          | Identificador da loja na API Cielo eCommerce                                                          | Guid  | 36      | Sim                                                         |
+| `MerchantKey`                         | Chave Publica para Autenticação Dupla na API Cielo eCommerce                                          | Texto | 40      | Sim                                                         |
+| `RequestId`                           | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid  | 36      | Não                                                         |
+| `RecurrentPaymentId`                  | Numero de identificação da Recorrência.                                                               | Texto | 50      | Sim                                                         |
+| `Customer.Name`                       | Nome do Comprador.                                                                                    | Texto | 255     | Não                                                         |
+| `Customer.Status`                     | Status de cadastro do comprador na loja (NEW / EXISTING) - Utilizado pela análise de fraude           | Texto | 255     | Não                                                         |
+| `Customer.Email`                      | Email do Comprador.                                                                                   | Texto | 255     | Não                                                         |
+| `Customer.Birthdate`                  | Data de nascimento do Comprador.                                                                      | Date  | 10      | Não                                                         |
+| `Customer.Identity`                   | Número do RG, CPF ou CNPJ do Cliente.                                                                 | Texto | 14      | Não                                                         |
+| `Customer.IdentityType`               | Texto                                                                                                 | 255   | Não     | Tipo de documento de identificação do comprador (CFP/CNPJ). |
+| `Customer.Address.Street`             | Endereço do Comprador.                                                                                | Texto | 255     | Não                                                         |
+| `Customer.Address.Number`             | Número do endereço do Comprador.                                                                      | Texto | 15      | Não                                                         |
+| `Customer.Address.Complement`         | Complemento do endereço do Comprador.                                                                 | Texto | 50      | Não                                                         |
+| `Customer.Address.ZipCode`            | CEP do endereço do Comprador.                                                                         | Texto | 9       | Não                                                         |
+| `Customer.Address.City`               | Cidade do endereço do Comprador.                                                                      | Texto | 50      | Não                                                         |
+| `Customer.Address.State`              | Estado do endereço do Comprador.                                                                      | Texto | 2       | Não                                                         |
+| `Customer.Address.Country`            | Pais do endereço do Comprador.                                                                        | Texto | 35      | Não                                                         |
+| `Customer.Address.District`           | Bairro do Comprador.                                                                                  | Texto | 50      | Não                                                         |
+| `Customer.DeliveryAddress.Street`     | Endereço do Comprador.                                                                                | Texto | 255     | Não                                                         |
+| `Customer.DeliveryAddress.Number`     | Número do endereço do Comprador.                                                                      | Texto | 15      | Não                                                         |
+| `Customer.DeliveryAddress.Complement` | Complemento do endereço do Comprador.                                                                 | Texto | 50      | Não                                                         |
+| `Customer.DeliveryAddress.ZipCode`    | CEP do endereço do Comprador.                                                                         | Texto | 9       | Não                                                         |
+| `Customer.DeliveryAddress.City`       | Cidade do endereço do Comprador.                                                                      | Texto | 50      | Não                                                         |
+| `Customer.DeliveryAddress.State`      | Estado do endereço do Comprador.                                                                      | Texto | 2       | Não                                                         |
+| `Customer.DeliveryAddress.Country`    | Pais do endereço do Comprador.                                                                        | Texto | 35      | Não                                                         |
+| `Customer.DeliveryAddress.District`   | Bairro do Comprador.                                                                                  | Texto | 50      | Não                                                         |
 
 ### Resposta
 
