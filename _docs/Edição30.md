@@ -3535,90 +3535,6 @@ curl
 |`CreditCard.SecurityCode`|Código de segurança impresso no verso do cartão.|Texto |4 |Não|
 |`CreditCard.Brand`|Bandeira do cartão.|Texto |10 |Sim|
 
-## Consultando uma venda Recorrente
-
-Para consultar uma Recorrência de cartão de crédito, é necessário fazer um GET conforme o exemplo.
-
-### Requisição
-
-<aside class="request"><span class="method get">GET</span> <span class="endpoint">/1/RecurrentPayment/{RecurrentPaymentId}</span></aside>
-
-```shell
-curl
---request GET "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/RecurrentPayment/{RecurrentPaymentId}"
---header "Content-Type: application/json"
---header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---header "MerchantKey: 0123456789012345678901234567890123456789"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
---verbose
-```
-
-|Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
-|-----------|---------|----|-------|-----------|
-|`MerchantId`|Identificador da loja na API Cielo eCommerce. |Guid |36 |Sim|
-|`MerchantKey`|Chave Publica para Autenticação Dupla na API Cielo eCommerce. |Texto |40 |Sim|
-|`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
-|`RecurrentPaymentId`|Campo Identificador da Recorrência. |Texto |36 |Sim|
-
-### Resposta
-
-```json
-{
-    "Customer":
-    {
-        "Name": "Comprador accept"
-    },
-    "RecurrentPayment": {
-        "RecurrentPaymentId": "6716406f-1cba-4c7a-8054-7e8988032b17",
-        "NextRecurrency": "2015-11-05",
-        "StartDate": "2015-05-05",
-        "EndDate": "2019-12-01",
-        "Interval": "SemiAnnual",
-        "Links": [
-            {
-                "Method": "GET",
-                "Rel": "self",
-                "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/RecurrentPayment/{RecurrentPaymentId}"
-            }
-        ]
-    }
-}
-```
-
-```shell
---header "Content-Type: application/json"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
-{
-    "Customer":
-    {
-        "Name": "Comprador accept"
-    },
-    "RecurrentPayment": {
-        "RecurrentPaymentId": "6716406f-1cba-4c7a-8054-7e8988032b17",
-        "NextRecurrency": "2015-11-05",
-        "StartDate": "2015-05-05",
-        "EndDate": "2019-12-01",
-        "Interval": "SemiAnnual",
-        "Links": [
-            {
-                "Method": "GET",
-                "Rel": "self",
-                "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/RecurrentPayment/{RecurrentPaymentId}"
-            }
-        ]
-    }
-}
-```
-
-|Propriedade|Descrição|Tipo|Tamanho|Formato|
-|-----------|---------|----|-------|-------|
-|`RecurrentPaymentId`|Campo Identificador da próxima recorrência. |Guid |36 |xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |
-|`NextRecurrency`|Data da próxima recorrência. |Texto |7 |12/2030 (MM/YYYY) |
-|`StartDate`|Data do inicio da recorrência. |Texto |7 |12/2030 (MM/YYYY) |
-|`EndDate`|Data do fim da recorrência. |Texto |7 |12/2030 (MM/YYYY) |
-|`Interval`|Intervalo entre as recorrência. |Texto |10 |<ul><li>Monthly</li><li>Bimonthly </li><li>Quarterly </li><li>SemiAnnual </li><li>Annual</li></ul> |
 
 
 ## Modificando dados do comprador
@@ -4541,9 +4457,9 @@ curls
 }
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Formato|
-|-----------|---------|----|-------|-------|
-|`PaymentId`|Campo Identificador do Pedido.|Guid|36|xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx|
+|Propriedade| Descrição                    | Tipo |Tamanho|Formato                             |
+|-----------|------------------------------|------|:-----:|------------------------------------|
+|`PaymentId`|Campo Identificador do Pedido.|Guid  |36     |xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx|
 
 ## Consultando uma venda com Analise de Fraude
 
@@ -4564,12 +4480,12 @@ curl
 --verbose
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
-|-----------|---------|----|-------|-----------|
-|`MerchantId`|Identificador da loja na API Cielo eCommerce. |Guid |36 |Sim|
-|`MerchantKey`|Chave Publica para Autenticação Dupla na API Cielo eCommerce. |Texto |40 |Sim|
-|`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
-|`PaymentId`|Numero de identificação do Pagamento. |Texto |36 |Sim|
+| Propriedade   | Descrição                                                                                             | Tipo  | Tamanho | Obrigatório |
+|---------------|-------------------------------------------------------------------------------------------------------|-------|---------|-------------|
+| `MerchantId`  | Identificador da loja na API Cielo eCommerce.                                                         | Guid  | 36      | Sim         |
+| `MerchantKey` | Chave Publica para Autenticação Dupla na API Cielo eCommerce.                                         | Texto | 40      | Sim         |
+| `RequestId`   | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid  | 36      | Não         |
+| `PaymentId`   | Numero de identificação do Pagamento.                                                                 | Texto | 36      | Sim         |
 
 ### Resposta
 
@@ -4733,9 +4649,13 @@ curl
 |`ReturnCode`|Código de retorno da Adquirência.|Texto|32|Texto alfanumérico|
 |`ReturnMessage`|Mensagem de retorno da Adquirência.|Texto|512|Texto alfanumérico|
 
-## Consultando uma venda Recorrente
+## Consultando uma Recorrencia
 
-Para consultar uma Recorrência de cartão de crédito, é necessário fazer um GET conforme o exemplo.
+Para consultar uma Recorrência de cartão de crédito, é necessário fazer um `GET`  conforme o exemplo.
+
+
+**A Consulta da Recorrência tras dados sobre o agendamento e sobre o processo de transações que se repetem. Elas não trazem dados sobre as transações em si. Para isso, deve ser realizado um `GET` na transação (Diponivel em "Consultanto vendas" 
+
 
 ### Requisição
 
@@ -4752,12 +4672,12 @@ curl
 --verbose
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
-|-----------|---------|----|-------|-----------|
-|`MerchantId`|Identificador da loja na API Cielo eCommerce. |Guid |36 |Sim|
-|`MerchantKey`|Chave Publica para Autenticação Dupla na API Cielo eCommerce. |Texto |40 |Sim|
-|`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
-|`RecurrentPaymentId`|Campo Identificador da Recorrência. |Texto |36 |Sim|
+| Propriedade          | Descrição                                                                                             | Tipo  | Tamanho | Obrigatório |
+|----------------------|-------------------------------------------------------------------------------------------------------|-------|---------|-------------|
+| `MerchantId`         | Identificador da loja na API Cielo eCommerce.                                                         | Guid  | 36      | Sim         |
+| `MerchantKey`        | Chave Publica para Autenticação Dupla na API Cielo eCommerce.                                         | Texto | 40      | Sim         |
+| `RequestId`          | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid  | 36      | Não         |
+| `RecurrentPaymentId` | Campo Identificador da Recorrência.                                                                   | Texto | 36      | Sim         |
 
 ### Resposta
 
@@ -4810,13 +4730,13 @@ curl
 }
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Formato|
-|-----------|---------|----|-------|-------|
-|`RecurrentPaymentId`|Campo Identificador da próxima recorrência. |Guid |36 |xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |
-|`NextRecurrency`|Data da próxima recorrência. |Texto |7 |12/2030 (MM/YYYY) |
-|`StartDate`|Data do inicio da recorrência. |Texto |7 |12/2030 (MM/YYYY) |
-|`EndDate`|Data do fim da recorrência. |Texto |7 |12/2030 (MM/YYYY) |
-|`Interval`|Intervalo entre as recorrência. |Texto |10 |<ul><li>Monthly</li><li>Bimonthly </li><li>Quarterly </li><li>SemiAnnual </li><li>Annual</li></ul> |
+| Propriedade          | Descrição                                   | Tipo  | Tamanho | Formato                                                                                            |
+|----------------------|---------------------------------------------|-------|---------|----------------------------------------------------------------------------------------------------|
+| `RecurrentPaymentId` | Campo Identificador da próxima recorrência. | Guid  | 36      | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx                                                               |
+| `NextRecurrency`     | Data da próxima recorrência.                | Texto | 7       | 12/2030 (MM/YYYY)                                                                                  |
+| `StartDate`          | Data do inicio da recorrência.              | Texto | 7       | 12/2030 (MM/YYYY)                                                                                  |
+| `EndDate`            | Data do fim da recorrência.                 | Texto | 7       | 12/2030 (MM/YYYY)                                                                                  |
+| `Interval`           | Intervalo entre as recorrência.             | Texto | 10      | <ul><li>Monthly</li><li>Bimonthly </li><li>Quarterly </li><li>SemiAnnual </li><li>Annual</li></ul> |
 
 
 # Tokenização de cartões
