@@ -2326,6 +2326,7 @@ curl
     ]
 }
 ```
+
 | Propriedade             | Descrição                          | Tipo  | Tamanho | Formato            |
 |-------------------------|------------------------------------|-------|---------|--------------------|
 | `Status`                | Status da Transação.               | Byte  | ---     | 2                  |
