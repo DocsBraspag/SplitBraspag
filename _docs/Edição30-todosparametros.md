@@ -724,37 +724,7 @@ INAIS de cada cartão, assim como o `ReturnCode` .**
 |`RecurrentPaymentId`|Numero de identificação da Recorrência. |Texto |50 |Sim|
 |`EndDate`|Data para termino da recorrência.|Texto |10 |Sim|
 
-### Resposta
 
-```shell
-HTTP Status 200
-```
-
-Veja o Anexo [HTTP Status Code](#http-status-code) para a lista com todos os códigos de status HTTP possivelmente retornados pela API.
-
-## Modificando intevalo da Recorrência
-
-Para alterar o Intervalo da Recorrência, basta fazer um Put conforme o exemplo.
-
-### Requisição
-
-<aside class="request"><span class="method put">PUT</span> <span class="endpoint">/1/RecurrentPayment/{RecurrentPaymentId}/Interval</span></aside>
-
-```json
-6
-```
-
-```shell
-curl
---request PUT "https://apisandbox.cieloecommerce.cielo.com.br/1/RecurrentPayment/{RecurrentPaymentId}/Interval"
---header "Content-Type: application/json"
---header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---header "MerchantKey: 0123456789012345678901234567890123456789"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
-6
---verbose
-```
 
 |Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
 |-----------|---------|----|-------|-----------|
@@ -764,39 +734,7 @@ curl
 |`RecurrentPaymentId`|Numero de identificação da Recorrência. |Texto |50 |Sim|
 |`Interval`|Intervalo da recorrência. <ul><li>Monthly</li><li>Bimonthly </li><li>Quarterly </li><li>SemiAnnual </li><li>Annual</li></ul>|Número |2 |Sim|
 
-### Resposta
 
-```shell
-HTTP Status 200
-```
-
-Veja o Anexo [HTTP Status Code](#http-status-code) para a lista com todos os códigos de status HTTP possivelmente retornados pela API.
-
-## Modificar dia da Recorrência
-
-Para modificar o dia da recorrência, basta fazer um Put conforme o exemplo.
-
-<aside class="notice"><strong>Regra:</strong> Se o novo dia informado for depois do dia atual, iremos atualizar o dia da recorrência com efeito na próxima recorrência Ex.: Hoje é dia 5, e a próxima recorrência é dia 25/05. Quando eu atualizar para o dia 10, a data da próxima recorrência será dia10/05. Se o novo dia informado for antes do dia atual, iremos atualizar o dia da recorrência, porém este só terá efeito depois que a próxima recorrência for executada com sucesso. Ex.: Hoje é dia 5, e a próxima recorrência é dia 25/05. Quando eu atualizar para o dia 3, a data da próxima recorrência permanecerá dia 25/05, e após ela ser executada, a próxima será agendada para o dia 03/06. Se o novo dia informado for antes do dia atual, mas a próxima recorrência for em outro mês, iremos atualizar o dia da recorrência com efeito na próxima recorrência. Ex.: Hoje é dia 5, e a próxima recorrência é dia 25/09. Quando eu atualizar para o dia 3, a data da próxima recorrência será 03/09</aside>
-
-### Requisição
-
-<aside class="request"><span class="method put">PUT</span> <span class="endpoint">/1/RecurrentPayment/{RecurrentPaymentId}/RecurrencyDay</span></aside>
-
-```json
-16
-```
-
-```shell
-curl
---request PUT "https://apisandbox.cieloecommerce.cielo.com.br/1/RecurrentPayment/{RecurrentPaymentId}/RecurrencyDay"
---header "Content-Type: application/json"
---header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---header "MerchantKey: 0123456789012345678901234567890123456789"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
-16
---verbose
-```
 
 |Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
 |-----------|---------|----|-------|-----------|
@@ -806,37 +744,6 @@ curl
 |`RecurrentPaymentId`|Numero de identificação da Recorrência. |Texto |50 |Sim|
 |`RecurrencyDay`|Dia da Recorrência.|Número |2 |Sim|
 
-### Resposta
-
-```shell
-HTTP Status 200
-```
-
-Veja o Anexo [HTTP Status Code](#http-status-code) para a lista com todos os códigos de status HTTP possivelmente retornados pela API.
-
-## Modificando o valor da Recorrência
-
-Para modificar o valor da recorrência, basta fazer um Put conforme o exemplo.
-
-### Requsição
-
-<aside class="request"><span class="method put">PUT</span> <span class="endpoint">/1/RecurrentPayment/{RecurrentPaymentId}/Amount</span></aside>
-
-```json
-156
-```
-
-```shell
-curl
---request POST "https://apisandbox.braspag.com.br/1/RecurrentPayment/{RecurrentPaymentId}/Amount"
---header "Content-Type: application/json"
---header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---header "MerchantKey: 0123456789012345678901234567890123456789"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
-156
---verbose
-```
 
 |Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
 |-----------|---------|----|-------|-----------|
@@ -846,39 +753,6 @@ curl
 |`RecurrentPaymentId`|Numero de identificação da Recorrência.|Texto|50|Sim|
 |`Payment.Amount`|Valor do Pedido em centavos: 156 equivale a R$ 1,56|Número|15|Sim|
 
-<aside class="warning">Essa alteração só afeta a data de pagamento da próxima recorrência.</aside>
-
-### Resposta
-
-```shell
-HTTP Status 200
-```
-
-Veja o Anexo [HTTP Status Code](#http-status-code) para a lista com todos os códigos de status HTTP possivelmente retornados pela API.
-
-## Modificando data do próximo Pagamento
-
-Para alterar a data do próximo Pagamento, basta fazer um Put conforme o exemplo.
-
-### Requisição
-
-<aside class="request"><span class="method put">PUT</span> <span class="endpoint">/1/RecurrentPayment/{RecurrentPaymentId}/NextPaymentDate</span></aside>
-
-```json
-"2016-06-15"
-```
-
-```shell
-curl
---request PUT "https://apisandbox.cieloecommerce.cielo.com.br/1/RecurrentPayment/{RecurrentPaymentId}/NextPaymentDate"
---header "Content-Type: application/json"
---header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---header "MerchantKey: 0123456789012345678901234567890123456789"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
-"2016-06-15"
---verbose
-```
 
 |Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
 |-----------|---------|----|-------|-----------|
@@ -888,65 +762,6 @@ curl
 |`RecurrentPaymentId`|Numero de identificação da Recorrência. |Texto |50 |Sim|
 |`NextPaymentDate`|Data de pagamento da próxima recorrência.|Texto |10 |Sim|
 
-### Resposta
-
-```shell
-HTTP Status 200
-```
-
-Veja o Anexo [HTTP Status Code](#http-status-code) para a lista com todos os códigos de status HTTP possivelmente retornados pela API.
-
-## Modificando dados do Pagamento da Recorrência
-
-Para alterar os dados de pagamento da Recorrência, basta fazer um Put conforme o exemplo.
-
-<aside class="notice"><strong>Atenção:</strong> Essa alteração afeta a todos os dados do nó Payment. Então para manter os dados anteriores você deve informar os campos que não vão sofre alterações com os mesmos valores que já estavam salvos.</aside>
-
-### Requisição
-
-<aside class="request"><span class="method put">PUT</span> <span class="endpoint">/1/RecurrentPayment/{RecurrentPaymentId}/Payment</span></aside>
-
-```json
-{  
-   "Type":"CreditCard",
-   "Amount":"123",
-   "Installments":3,
-   "Country":"USA",
-   "Currency":"BRL",
-   "SoftDescriptor":"123456789ABCD",
-   "CreditCard":{  
-      "Brand":"Master",
-      "Holder":"Teset card",
-      "CardNumber":"1234123412341232",
-      "ExpirationDate":"12/2030"
-   }
-}
-```
-
-```shell
-curl
---request PUT "https://apisandbox.cieloecommerce.cielo.com.br/1/RecurrentPayment/{RecurrentPaymentId}/Payment"
---header "Content-Type: application/json"
---header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---header "MerchantKey: 0123456789012345678901234567890123456789"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
-{  
-   "Type":"CreditCard",
-   "Amount":"123",
-   "Installments":3,
-   "Country":"USA",
-   "Currency":"BRL",
-   "SoftDescriptor":"123456789ABCD",
-   "CreditCard":{  
-      "Brand":"Master",
-      "Holder":"Teset card",
-      "CardNumber":"1234123412341232",
-      "ExpirationDate":"12/2030"
-   }
-}
---verbose
-```
 
 |Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
 |-----------|---------|----|-------|-----------|
@@ -964,32 +779,6 @@ curl
 |`CreditCard.SecurityCode`|Código de segurança impresso no verso do cartão.|Texto |4 |Não|
 |`CreditCard.Brand`|Bandeira do cartão.|Texto |10|Sim|
 
-### Resposta
-
-```shell
-HTTP Status 200
-```
-
-Veja o Anexo [HTTP Status Code](#http-status-code) para a lista com todos os códigos de status HTTP possivelmente retornados pela API.
-
-## Desabilitando um Pedido Recorrente
-
-Para desabilitar um pedido recorrente, basta fazer um Put conforme o exemplo.
-
-### Requisição
-
-<aside class="request"><span class="method put">PUT</span> <span class="endpoint">/1/RecurrentPayment/{RecurrentPaymentId}/Deactivate</span></aside>
-
-```shell
-curl
---request PUT "https://apisandbox.cieloecommerce.cielo.com.br/1/RecurrentPayment/{RecurrentPaymentId}/Deactivate"
---header "Content-Type: application/json"
---header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---header "MerchantKey: 0123456789012345678901234567890123456789"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
---verbose
-```
 
 |Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
 |-----------|---------|----|-------|-----------|
@@ -998,32 +787,6 @@ curl
 |`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
 |`RecurrentPaymentId`|Numero de identificação da Recorrência. |Texto |50 |Sim|
 
-### Resposta
-
-```shell
-HTTP Status 200
-```
-
-Veja o Anexo [HTTP Status Code](#http-status-code) para a lista com todos os códigos de status HTTP possivelmente retornados pela API.
-
-## Reabilitando um Pedido Recorrente
-
-Para Reabilitar um pedido recorrente, basta fazer um Put conforme o exemplo.
-
-### Requisição
-
-<aside class="request"><span class="method put">PUT</span> <span class="endpoint">/1/RecurrentPayment/{RecurrentPaymentId}/Reactivate</span></aside>
-
-```shell
-curl
---request PUT "https://apisandbox.cieloecommerce.cielo.com.br/1/RecurrentPayment/{RecurrentPaymentId}/Reactivate"
---header "Content-Type: application/json"
---header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---header "MerchantKey: 0123456789012345678901234567890123456789"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
---verbose
-```
 
 |Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
 |-----------|---------|----|-------|-----------|
@@ -1032,89 +795,6 @@ curl
 |`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
 |`RecurrentPaymentId`|Numero de identificação da Recorrência. |Texto |50 |Sim|
 
-### Resposta
-
-```shell
-HTTP Status 200
-```
-
-Veja o Anexo [HTTP Status Code](#http-status-code) para a lista com todos os códigos de status HTTP possivelmente retornados pela API.
-
-
-## Renova Facil
-
-O uso desta funcionalidade permite a substituição automática de um cartão vencido .
-Dessa forma, quando uma transação com marcação de recorrente for submetida para a API e a Cielo identificar que o cartão utilizado foi substituído, sua autorização será negada e serão retornados os dados do novo cartão conforme exemplo.
-
-<aside class="notice"><strong>Atenção:</strong> Necessário solicitar a habilitação desta funcionalidade no cadastro  </aside>
-
-### Requisição
-
-<aside class="request"><span class="method post">POST</span> <span class="endpoint">/1/sales/</span></aside>
-
-```json
-{  
-   "MerchantOrderId":"2014113245231706",
-   "Customer":{  
-      "Name":"Comprador Renova facil"
-   },
-   "Payment":{  
-     "Type":"CreditCard",
-     "Amount":1500,
-     "Installments":1,
-     "SoftDescriptor":"123456789ABCD",
-     "RecurrentPayment":{
-       "AuthorizeNow":"true",
-       "EndDate":"2019-12-01",
-       "Interval":"SemiAnnual"
-     },
-     "CreditCard":{  
-         "CardNumber":"1234123412341231",
-         "Holder":"Teste Holder",
-         "ExpirationDate":"12/2030",
-         "SecurityCode":"262",
-         "SaveCard":"false",
-         "Brand":"Visa"
-     }
-   }
-}
-```
-
-```shell
-curl
---request POST "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/"
---header "Content-Type: application/json"
---header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---header "MerchantKey: 0123456789012345678901234567890123456789"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
-    {
-   "MerchantOrderId":"2014113245231706",
-   "Customer":{  
-      "Name":"Comprador Renova facil"
-   },
-   "Payment":{  
-     "Type":"CreditCard",
-     "Amount":1500,
-     "Installments":1,
-     "SoftDescriptor":"123456789ABCD",
-     "RecurrentPayment":{
-       "AuthorizeNow":"true",
-       "EndDate":"2019-12-01",
-       "Interval":"SemiAnnual"
-     },
-     "CreditCard":{  
-         "CardNumber":"1234123412341231",
-         "Holder":"Teste Holder",
-         "ExpirationDate":"12/2030",
-         "SecurityCode":"262",
-         "SaveCard":"false",
-         "Brand":"Visa"
-     }
-   }
-}
---verbose
-```
 
 |Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
 |-----------|---------|----|-------|-----------|
@@ -1137,136 +817,6 @@ curl
 |`CreditCard.SecurityCode`|Código de segurança impresso no verso do cartão.|Texto |4 |Não|
 |`CreditCard.Brand`|Bandeira do cartão.|Texto |10 |Sim|
 
-### Resposta
-
-```json
-{
-  "MerchantOrderId": "2014113245231706",
-  "Customer": {
-    "Name": "Comprador  Renova facil"
-  },
-  "Payment": {
-    "ServiceTaxAmount": 0,
-    "Installments": 1,
-    "Interest": 0,
-    "Capture": false,
-    "Authenticate": false,
-    "Recurrent": false,
-    "CreditCard": {
-      "CardNumber": "123412******1231",
-      "Holder": "Teste Holder",
-      "ExpirationDate": "12/2030",
-      "SaveCard": false,
-      "Brand": "Visa"
-    },
-    "Tid": "10447480685P4611AQ9B",
-    "ProofOfSale": "087001",
-    "SoftDescriptor": "123456789ABCD",
-    "Provider": "Cielo",
-    "Eci": "0",
-	"NewCard": {
-       "CardNumber": "40000000000000000",
-       "ExpirationDate": "10/2020",
-       "SaveCard": false,
-        "Brand": "Visa"
-    },
-    "VelocityAnalysis": {
-      "Id": "94f06657-c715-45d2-a563-63f7dbb19e08",
-      "ResultMessage": "Accept",
-      "Score": 0
-    },
-    "PaymentId": "94f06657-c715-45d2-a563-63f7dbb19e08",
-    "Type": "CreditCard",
-    "Amount": 1500,
-    "ReceivedDate": "2016-12-26 14:14:21",
-    "Currency": "BRL",
-    "Country": "BRA",
-    "ReturnCode": "KA",
-    "ReturnMessage": "Autorizacao negada",
-    "Status": 3,
-    "RecurrentPayment": {
-      "ReasonCode": 7,
-      "ReasonMessage": "Denied",
-      "EndDate": "2019-12-01",
-      "Interval": 6,
-      "AuthorizeNow": true
-    },
-    "Links": [
-      {
-        "Method": "GET",
-        "Rel": "self",
-        "Href": "https://apiquery.cieloecommerce.cielo.com.br/1/sales/94f06657-c715-45d2-a563-63f7dbb19e08"
-      }
-    ]
-  }
-}
-```
-
-```shell
---header "Content-Type: application/json"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
-{
-  "MerchantOrderId": "2014113245231706",
-  "Customer": {
-    "Name": "Comprador  Renova facil"
-  },
-  "Payment": {
-    "ServiceTaxAmount": 0,
-    "Installments": 1,
-    "Interest": 0,
-    "Capture": false,
-    "Authenticate": false,
-    "Recurrent": false,
-    "CreditCard": {
-      "CardNumber": "123412******1231",
-      "Holder": "Teste Holder",
-      "ExpirationDate": "12/2030",
-      "SaveCard": false,
-      "Brand": "Visa"
-    },
-    "Tid": "10447480685P4611AQ9B",
-    "ProofOfSale": "087001",
-    "SoftDescriptor": "123456789ABCD",
-    "Provider": "Cielo",
-    "Eci": "0",
-	"NewCard": {
-       "CardNumber": "40000000000000000",
-       "ExpirationDate": "10/2020",
-       "SaveCard": false,
-        "Brand": "Visa"
-    },
-    "VelocityAnalysis": {
-      "Id": "94f06657-c715-45d2-a563-63f7dbb19e08",
-      "ResultMessage": "Accept",
-      "Score": 0
-    },
-    "PaymentId": "94f06657-c715-45d2-a563-63f7dbb19e08",
-    "Type": "CreditCard",
-    "Amount": 1500,
-    "ReceivedDate": "2016-12-26 14:14:21",
-    "Currency": "BRL",
-    "Country": "BRA",
-    "ReturnCode": "KA",
-    "ReturnMessage": "Autorizacao negada",
-    "Status": 3,
-    "RecurrentPayment": {
-      "ReasonCode": 7,
-      "ReasonMessage": "Denied",
-      "EndDate": "2019-12-01",
-      "Interval": 6,
-      "AuthorizeNow": true
-    },
-    "Links": [
-      {
-        "Method": "GET",
-        "Rel": "self",
-        "Href": "https://apiquery.cieloecommerce.cielo.com.br/1/sales/94f06657-c715-45d2-a563-63f7dbb19e08"
-      }
-    ]
-  }
-}
-```
 
 |Propriedade|Descrição|Tipo|Tamanho|Formato|
 |-----------|---------|----|-------|-------|
@@ -1287,26 +837,7 @@ curl
 |`NewCard.Brand`|Bandeira do cartão.|Texto |10 |Sim|
 |`NewCard.SaveCard`|Identifica se o cartão gerou Cardtoken durante a transação|Booleano |--- |Sim|
 
-# Consultando Vendas
 
-## Consultando uma venda
-
-Para consultar uma venda de cartão de crédito, é necessário fazer um GET para o recurso Payment conforme o exemplo.
-
-### Requisição
-
-<aside class="request"><span class="method get">GET</span> <span class="endpoint">/1/sales/{PaymentId}</span></aside>
-
-```shell
-curl
---request GET "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
---header "Content-Type: application/json"
---header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---header "MerchantKey: 0123456789012345678901234567890123456789"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
---verbose
-```
 
 |Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
 |-----------|---------|----|-------|-----------|
@@ -1315,110 +846,7 @@ curl
 |`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
 |`PaymentId`|Numero de identificação do Pagamento. |Texto |36 |Sim|
 
-### Resposta
 
-```json
-{
-    "MerchantOrderId": "2014111706",
-    "Customer": {
-        "Name": "Comprador Teste",
-        "Address": {}
-    },
-    "Payment": {
-        "ServiceTaxAmount": 0,
-        "Installments": 1,
-        "Interest": "ByMerchant",
-        "Capture": false,
-        "Authenticate": false,
-        "CreditCard": {
-            "CardNumber": "455187******0183",
-            "Holder": "Teste Holder",
-            "ExpirationDate": "12/2030",
-            "SaveCard": false,
-            "Brand": "Visa"
-        },
-        "ProofOfSale": "674532",
-        "AuthorizationCode": "123456",
-        "PaymentId": "24bc8366-fc31-4d6c-8555-17049a836a07",
-        "Type": "CreditCard",
-        "Amount": 15700,
-        "Currency": "BRL",
-        "Country": "BRA",
-        "ExtraDataCollection": [],
-        "Status": 1,
-        "Links": [
-            {
-                "Method": "GET",
-                "Rel": "self",
-                "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
-            },
-            {
-                "Method": "PUT",
-                "Rel": "capture",
-                "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/capture"
-            },
-            {
-                "Method": "PUT",
-                "Rel": "void",
-                "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/void"
-            }
-        ]
-    }
-}
-```
-
-```shell
---header "Content-Type: application/json"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
-{
-    "MerchantOrderId": "2014111706",
-    "Customer": {
-        "Name": "Comprador Teste",
-        "Address": {}
-    },
-    "Payment": {
-        "ServiceTaxAmount": 0,
-        "Installments": 1,
-        "Interest": "ByMerchant",
-        "Capture": false,
-        "Authenticate": false,
-        "CreditCard": {
-            "CardNumber": "455187******0183",
-            "Holder": "Teste Holder",
-            "ExpirationDate": "12/2030",
-            "SaveCard": false,
-            "Brand": "Visa"
-        },
-        "ProofOfSale": "674532",
-        "AuthorizationCode": "123456",
-        "PaymentId": "24bc8366-fc31-4d6c-8555-17049a836a07",
-        "Type": "CreditCard",
-        "Amount": 15700,
-        "Currency": "BRL",
-        "Country": "BRA",
-        "ExtraDataCollection": [],
-        "Status": 1,
-        "Links": [
-            {
-                "Method": "GET",
-                "Rel": "self",
-                "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
-            },
-            {
-                "Method": "PUT",
-                "Rel": "capture",
-                "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/capture"
-            },
-            {
-                "Method": "PUT",
-                "Rel": "void",
-                "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/void"
-            }
-        ]
-    }
-}
-```
 
 |Propriedade|Descrição|Tipo|Tamanho|Formato|
 |-----------|---------|----|-------|-------|
@@ -1438,26 +866,7 @@ curl
 |`CreditCard.SecurityCode`|Texto|4|Não|Código de segurança impresso no verso do cartão - Ver Anexo.|
 |`CreditCard.Brand`|Texto|10|Sim|Bandeira do cartão (Visa / Master / Amex / Elo / Aura / JCB / Diners / Discover).|
 
-## Consultando uma venda pelo identificador da loja
 
-Não é possível consultar diretamente uma pagamento pelo identificador enviado pela loja (MerchantOrderId), mas é possível obter todos os PaymentIds associados ao identificador.
-
-Para consultar uma venda pelo identificador da loja, é necessário fazer um GET para o recuso sales conforme o exemplo.
-
-### Requisição
-
-<aside class="request"><span class="method get">GET</span> <span class="endpoint">/1/sales?merchantOrderId={merchantOrderId}</span></aside>
-
-```shell
-curls
---request GET " https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales?merchantOrderId={merchantOrderId}"
---header "Content-Type: application/json"
---header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---header "MerchantKey: 0123456789012345678901234567890123456789"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
---verbose
-```
 
 |Propriedade|Descrição|Tipo|Tamanho|Obrigatório|
 |-----------|---------|----|-------|-----------|
@@ -1466,40 +875,7 @@ curls
 |`RequestId`|Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid | 36 |Não|
 |`MerchantOrderId`|Campo Identificador do Pedido na Loja. |Texto |36 |Sim|
 
-### Resposta
 
-```json
-{
-    "Payment": [
-        {
-            "PaymentId": "5fb4d606-bb63-4423-a683-c966e15399e8",
-            "ReceveidDate": "2015-04-06T10:13:39.42"
-        },
-        {
-            "PaymentId": "6c1d45c3-a95f-49c1-a626-1e9373feecc2",
-            "ReceveidDate": "2014-12-19T20:23:28.847"
-        }
-    ]
-}
-```
-
-```shell
---header "Content-Type: application/json"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
-{
-    "Payment": [
-        {
-            "PaymentId": "5fb4d606-bb63-4423-a683-c966e15399e8",
-            "ReceveidDate": "2015-04-06T10:13:39.42"
-        },
-        {
-            "PaymentId": "6c1d45c3-a95f-49c1-a626-1e9373feecc2",
-            "ReceveidDate": "2014-12-19T20:23:28.847"
-        }
-    ]
-}
-```
 
 |Propriedade| Descrição                    | Tipo |Tamanho|Formato                             |
 |-----------|------------------------------|------|:-----:|------------------------------------|
