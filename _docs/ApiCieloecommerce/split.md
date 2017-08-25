@@ -11,6 +11,9 @@ O Split de pagamentos &eacute; uma funcionalidade Braspag que permite a divis&at
 
 O Split &eacute; uma estrutura transacional muito utilizada em MarketPlaces onde o carrinho &eacute; formado por produtos de diferentes fornecedores que receberar&atilde;o partes do pagamento em contas separadas.
 
+
+
+
 ### Como funciona o Split de Pagamentos.
 
 O Split funciona como parte da integra&ccedil;&atilde;o transacional da Braspag.
@@ -61,5 +64,43 @@ O valor da tarifa fixa Braspag é retirada do montante destinado ao marketplace.
 O Custo total operacional para o Seller é baseado na Taxa Braspag a ser retirada da participação do marketplace. Ela é gerada com base no valor da transação e a margem do MKP
 
 > **Custo Seller:**   Taxa MKP = Margem MKP + (TAXA BRASPAG + R$0,30)
+
+
+
+
+### transacional (Contrato)
+
+### Quais features não podem ser usadas (Tokens / Recorrencia)
+
+### Definições de regras de Split (Durante transacional/pós Transacional)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
