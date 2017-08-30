@@ -34,7 +34,7 @@ Nesse modelo de integra&ccedil;&atilde;o existem 3 entidades:
 
 O Fluxo transacional de autoriza&ccedil;&atilde;o e retirada de ocorre como na imagem abaixo:
 
-![](/uploads/versions/Split---x----1398-720x---.png)
+![](/uploads/versions/Split---x----1398-720x---.PNG)
 
 
 Descrevendo os Passos: 
