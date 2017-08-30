@@ -65,22 +65,25 @@ O Custo total operacional para o Seller &eacute; baseado na Taxa Braspag a ser r
 
 ### transacional (Contrato)
 
-<div class="highlighter-rouge"><pre class="highlight"><code> "SplitPayments":[{
+```
+"SplitPayments":[{
         "SellerMerchantId" :"E41356F9-461C-43F3-BEE6-409A4A49DD29",
         "Amount":1000,
         "Fares":{
             "Mdr":3,
             "Fee":0
         }
-</code></pre></div>
+```
 
-| Propriedade | Tipo | Tamanho | Obrigat&oacute;rio | Descri&ccedil;&atilde;o |
+| Propriedade | Tipo | Tamanho | Obrigatório | Descrição |
 | --- | --- | --- | --- | --- |
-| `SplitPayments.SellerMerchantId`{: .highlighter-rouge} | Tipo | Tamanho | Obrigat&oacute;rio | Descri&ccedil;&atilde;o |
-| `SplitPayments.Amount`{: .highlighter-rouge} | Tipo | Tamanho | Obrigat&oacute;rio | Descri&ccedil;&atilde;o |
-| `SplitPayments.Fares`{: .highlighter-rouge} | Tipo | Tamanho | Obrigat&oacute;rio | Descri&ccedil;&atilde;o |
-| `SplitPayments.Fares.Mdr`{: .highlighter-rouge} | Tipo | Tamanho | Obrigat&oacute;rio | Descri&ccedil;&atilde;o |
-| `SplitPayments.Fares.Fee`{: .highlighter-rouge} | Tipo | Tamanho | Obrigat&oacute;rio | Descri&ccedil;&atilde;o |
+| `SplitPayments.SellerMerchantId`| Tipo | Tamanho | Obrigatório | Descrição |
+| `SplitPayments.Amount` | Tipo | Tamanho | Obrigatório | Descrição |
+| `SplitPayments.Fares`| Tipo | Tamanho | Obrigatório | Descrição |
+| `SplitPayments.Fares.Mdr` | Tipo | Tamanho | Obrigatório | Descrição |
+| `SplitPayments.Fares.Fee` | Tipo | Tamanho | Tipo | Tamanho | Obrigatório | Descrição |
+
+
 
 REQUEST
 
