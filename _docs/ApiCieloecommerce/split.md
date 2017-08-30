@@ -70,6 +70,175 @@ O Custo total operacional para o Seller é baseado na Taxa Braspag a ser retirad
 
 ### transacional (Contrato)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+ "SplitPayments":[{
+        "SellerMerchantId" :"E41356F9-461C-43F3-BEE6-409A4A49DD29",
+        "Amount":1000,
+        "Fares":{
+            "Mdr":3,
+            "Fee":0
+        }
+```
+
+
+
+| Propriedade                    | Tipo   | Tamanho | Obrigatório | Descrição |                  
+|--------------------------------|--------|---------|-------------|-----------|
+|`SplitPayments.SellerMerchantId`| Tipo   | Tamanho | Obrigatório | Descrição |
+|`SplitPayments.Amount`          | Tipo   | Tamanho | Obrigatório | Descrição |
+|`SplitPayments.Fares`           | Tipo   | Tamanho | Obrigatório | Descrição |
+|`SplitPayments.Fares.Mdr`       | Tipo   | Tamanho | Obrigatório | Descrição |
+|`SplitPayments.Fares.Fee`       | Tipo   | Tamanho | Obrigatório | Descrição |
+
+
+
+
+REQUEST
+
+```
+
+--request POST "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/"
+--header "Content-Type: application/json"
+--header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+--header "MerchantKey: 0123456789012345678901234567890123456789"
+--header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+--data-binary
+
+
+{
+   "MerchantOrderId":"2014111701",
+   "Payment":{
+     "Type":"SplittedCreditCard",
+     "Amount":1000,
+     "Installments":1,
+     "SoftDescriptor":"Split*LosCone",
+     "Capture":false,
+     "CreditCard":{
+         "CardNumber":"4551870000000181",
+         "Holder":"Teste Holder",
+         "ExpirationDate":"12/2021",
+         "SecurityCode":"123",
+         "Brand":"Visa"
+     },
+     "SplitPayments":[{
+        "SellerMerchantId" :"E41356F9-461C-43F3-BEE6-409A4A49DD29",
+        "Amount":1000,
+        "Fares":{
+            "Mdr":3,
+            "Fee":0
+        }
+     }]
+   }
+}
+```
+
+
+
+
+
+RESPONSE
+```
+{
+    "MerchantOrderId": "2014111701",
+    "Customer": {
+        "Name": "[Guest]"
+    },
+    "Payment": {
+    "SplitPayments": [
+            {
+                "sellerMerchantId": "e41356f9-461c-43f3-bee6-409a4a49dd29",
+                "amount": 10000,
+                "fares": {
+                    "mdr": 4,
+                    "fee": 0
+                },
+                "splits": [                
+                    {
+                        "sellerMerchantId": "94d0ba02-9c0e-4eac-be4e-3a9cc24574c1",
+                        "amount": 100,
+                        "mdr": 1,
+                        "fee": 0
+                    },
+                    {
+                        "sellerMerchantId": "e41356f9-461c-43f3-bee6-409a4a49dd30",
+                        "amount": 9900,
+                        "mdr": 99,
+                        "fee": 0
+                    }
+                ]
+            }
+        ],
+        "ServiceTaxAmount": 0,
+        "Installments": 1,
+        "Interest": 0,
+        "Capture": false,
+        "Authenticate": false,
+        "Recurrent": false,
+        "CreditCard": {
+            "CardNumber": "455187******0181",
+            "Holder": "Teste Holder",
+            "ExpirationDate": "12/2021",
+            "SaveCard": false,
+            "Brand": "Visa"
+        },
+        "Tid": "1006993069000AF39CAA",
+        "ProofOfSale": "483594",
+        "AuthorizationCode": "123456",
+        "SoftDescriptor": "Split*LosCone",
+        "Provider": "Cielo",
+        "Eci": "7",
+        "PaymentId": "c5b7ea6e-e604-463a-a1b1-123c3c598e05",
+        "Amount": 1000,
+        "ReceivedDate": "2017-08-30 14:37:14",
+        "Status": 1,
+        "ReturnMessage": "Transação autorizada",
+        "ReturnCode": "00",
+        "Type": "SplittedCreditCard",
+        "Currency": "BRL",
+        "Country": "BRA",
+        "Links": [
+            {
+                "Method": "GET",
+                "Rel": "self",
+                "Href": "http://splitsandbox.braspag.com.br/schedules/c5b7ea6e-e604-463a-a1b1-123c3c598e05"
+            },
+            {
+                "Method": "GET",
+                "Rel": "self",
+                "Href": "https://apiquerydev.cieloecommerce.cielo.com.br/1/sales/c5b7ea6e-e604-463a-a1b1-123c3c598e05"
+            },
+            {
+                "Method": "PUT",
+                "Rel": "capture",
+                "Href": "https://apidev.cieloecommerce.cielo.com.br/1/sales/c5b7ea6e-e604-463a-a1b1-123c3c598e05/capture"
+            },
+            {
+                "Method": "PUT",
+                "Rel": "void",
+                "Href": "https://apidev.cieloecommerce.cielo.com.br/1/sales/c5b7ea6e-e604-463a-a1b1-123c3c598e05/void"
+            }
+        ]
+    }
+}
+
+```
+
+
+
 ### Quais features não podem ser usadas (Tokens / Recorrencia)
 
 ### Definições de regras de Split (Durante transacional/pós Transacional)
