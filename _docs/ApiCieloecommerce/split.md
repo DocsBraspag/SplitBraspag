@@ -209,6 +209,6 @@ RESPONSE
 ```
 
 
-### Quais features n&atilde;o podem ser usadas (Tokens / Recorrencia)
+### Quais features não podem ser usadas (Tokens / Recorrencia)
 
-### Defini&ccedil;&otilde;es de regras de Split (Durante transacional/p&oacute;s Transacional)
+### Definição de regras de Split (Durante transacional/pós-Transacional)
