@@ -160,10 +160,10 @@ RESPONSE
     "Payment": {
     "SplitPayments": [
             {
-                "sellerMerchantId": "e41356f9-461c-43f3-bee6-409a4a49dd29",
+                "sellerMerchantId": "E41356F9-461C-43F3-BEE6-409A4A49DD29",
                 "amount": 10000,
                 "fares": {
-                    "mdr": 4,
+                    "mdr": 3,
                     "fee": 0
                 },
                 "splits": [                
@@ -174,7 +174,7 @@ RESPONSE
                         "fee": 0
                     },
                     {
-                        "sellerMerchantId": "e41356f9-461c-43f3-bee6-409a4a49dd30",
+                        "sellerMerchantId": "e41356f9-461c-43f3-bee6-409a4a49dd29",
                         "amount": 9900,
                         "mdr": 99,
                         "fee": 0
