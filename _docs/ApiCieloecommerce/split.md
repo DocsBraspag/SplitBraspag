@@ -21,9 +21,9 @@ O Split funciona como parte da integração transacional da Braspag.
 Nesse modelo de integração existem 3 entidades:
 
 | Entidades | Descrição | 
-| — | — |
-| Marketplace | Dono do carrinho e da Transação. Possui Sellers que fornecem o contudo do Carrinho. Realiza a cobrança de uma Taxa sobre a venda do Seller | 
-| Seller | Lojas do Marketplace que fornecem os produtos que formam o carrinho. Um Marketplace possui inumeros Seller. Recebem parte da venda, descontado o valor da taxa do MarketPlace |
+|-----------|---------- |
+| Marketplace | Dono do carrinho e da Transação. <BR> Possui Sellers que fornecem o contudo do Carrinho.<BR> Realiza a cobrança de uma Taxa sobre a venda do Seller | 
+| Seller | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<BR> Um Marketplace possui inumeros Seller. <BR>Recebem parte da venda, descontado o valor da taxa do MarketPlace |
 | Braspag | Responsavel pela autorização da transação Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação Deposita o valor da Transação na conta do Seller Deposita o valor da taxa cobrada pelo
 Marketplace so Seller |
 
