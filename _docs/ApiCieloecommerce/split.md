@@ -46,24 +46,17 @@ A **Braspag** receberá a transação, separando a transação entre valores a s
 
 
 
-
 Abaixo um exemplo do Fluxo transacional de autorização e divisão de valores no Split de pagamentos:
 
 
 EX: Uma venda de R$100, feita pelo **Seller** no Marketplace **MKP**
 
-* O **MKP** tem Taxa de **5%** Sobre a venda O **Seller**
-* A
+0. O **MKP** tem Taxa de **5%** Sobre a venda do **Seller**
+0. Essa Taxa é formada por uma margem de `3 Pontos Percentuais` sobre o total da transação + o custo braspag (`2 pontos percentuais + 0,30 centavos`) sobre o total ta transação
+0. A Transação é processada. O **Seller** recebe 
 
 
-Descrevendo os Passos:
 
-1. O Marketplace cria o carrinho contendo dados sobre Sellers e a Taxa que deseja Cobrar
-2. A Taxa do Marketplace &eacute; na verdade constituidade do Custo da opera&ccedil;&atilde;o e a margem que o Marketplace deseja obter.
-3. A Braspag identifica e realiza a partilha dos valores.
-4. O Seller recebe o valor da transa&ccedil;&atilde;o, menos o valor da Taxa de MKP.
-5. A Braspag retira sua taxa de opera&ccedil;&atilde;o do Valor contindo no MKP. Esse valor &eacute; calculado sobre o valor total da transa&ccedil;&atilde;o e n&atilde;o sobre a participa&ccedil;&atilde;o do MKP na venda
-6. O Marketplace recebe o valor restante da participa&ccedil;&atilde;o gerada com a taxa de Marketplace
 
 
 
