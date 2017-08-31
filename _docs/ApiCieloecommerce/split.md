@@ -51,20 +51,14 @@ Abaixo um exemplo do Fluxo transacional de autorização e divisão de valores n
 
 ![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/Split0.jpg)
 
-
-
-EX: Uma venda de R$100, feita pelo **Seller** no Marketplace **MKP**
+**EX:** Uma venda de R$100, feita pelo **Seller** no Marketplace **MKP**
 
 0. O **MKP** tem Taxa de **5%** Sobre a venda do **Seller**
 0. Essa Taxa é formada por uma margem de `3 Pontos Percentuais` sobre o total da transação + o custo braspag (`2 pontos percentuais + 0,30 centavos`) sobre o total da transação
 0. A Transação é processada. O **Seller** recebe o montante da venda - a `Taxa MKP`
 1. O MKP Recebe a parte da transação menos o custo da taxa Braspag.
 
-
-
-
-
-
+> ** *Importante* **: As porcentagens exibidas no exemplo não são aplicadas uma sobre as outras, mas sim como pontos percentuais que somados formam uma taxa unica sobre o Seller. Isso ocorre pois o valor das taxas sempre é cobrado sobre o total da transação do Seller.
 
 
 
@@ -77,7 +71,8 @@ Nesta área do manual vamos detalhar como o processo de cobrança e custos afeta
 
 #### Custo Marketplace
 
-O Split de pagamentos Braspag funciona com base em uma taxa basica tabelada contratada pelo Marketplace e uma tarifa fixa sobre a transação executada. A Taxa braspag é cobrada sobre o valor da transação
+O Split de pagamentos Braspag funciona com base em uma **taxa basica percentual tabelada** e uma **Tarifa fixa por transação** contratada pelo Marketplace. 
+A Taxa braspag é cobrada sobre o valor da transação do Seller Como um todo, mas é retirada da parte destinada ao Marketplace
 
 
 > **Custo MKP:** TAXA BRASPAG (%) + TARIFA FIXA (R$)
@@ -91,7 +86,10 @@ O Split de pagamentos Braspag funciona com base em uma taxa basica tabelada cont
 
 #### Custo Seller
 
-O Custo total operacional para o Seller é baseado na Taxa Braspag a ser retirada da participação do marketplace. Ela é gerada com base no valor da transação e a margem do MKP
+O Unico custo para o Seller no Split de pagamento Braspag é a Taxa que o Marketplace cobra sobre transações geradas.
+Essa taxa normalmente é formada por uma **Margem de lucro Percentual** aplicada sobre o **custo transacional**.
+
+Abaixo demonstramos como essa Taxa é formada pelo MKP com base no custo Braspag.
 
 > **Custo Seller:** Taxa MKP = {Margem MKP + (TAXA BRASPAG (%) + TARIFA FIXA (R$))}
 
