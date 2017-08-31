@@ -142,6 +142,10 @@ Body
 
 RESPONSE
 
+
+
+
+
 ```
 {
     "MerchantOrderId": "2014111701",
@@ -161,14 +165,10 @@ RESPONSE
                     {
                         "sellerMerchantId": "MID DO MKP",
                         "amount": 500,
-                        "mdr": 5,
-                        "fee": 0
                     },
                     {
                         "sellerMerchantId": "MID SELLER 01",
                         "amount": 9500,
-                        "mdr": 95
-                        "fee": 0
                     }
                 ]
             }
@@ -284,6 +284,10 @@ Body
 
 RESPONSE
 
+
+| `SplitPayments.SellerMerchantId`| Tipo | Tamanho | Obrigatório | Descrição |
+
+
 ```
 {
     "MerchantOrderId": "2014111701",
@@ -303,15 +307,11 @@ RESPONSE
                     {
                         "sellerMerchantId": "MID DO MKP",
                         "amount": 250,
-                        "mdr": 5,
-                        "fee": 0
                     },
                     {
                         "sellerMerchantId": "MID SELLER 01",
                         "amount": 4750,
-                        "mdr": 95,
-                        "fee": 0
-                    }
+                   }
                 ]
             },
         	{
@@ -325,14 +325,10 @@ RESPONSE
                     {
                         "sellerMerchantId": "MID DO MKP",
                         "amount": 500,
-                        "mdr": 10,
-                        "fee": 0
                     },
                     {
                         "sellerMerchantId": "MID SELLER 02",
                         "amount": 4500,
-                        "mdr": 90,
-                        "fee": 0
                     }
                 ]
             }
@@ -457,21 +453,19 @@ RESPONSE
                 "sellerMerchantId": "MID SELLER 01",
                 "amount": 5000,
                 "fares": {
-                    "mdr": 5,
+                    ""mdr: 5,
                     "fee": 0
                 },
                 "splits": [                
                     {
                         "sellerMerchantId": "MID DO MKP",
                         "amount": 250,
-                        "mdr": 5,
-                        "fee": 0
+                        
                     },
                     {
                         "sellerMerchantId": "MID SELLER 01",
                         "amount": 4750,
-                        "mdr": 95,
-                        "fee": 0
+                        
                     }
                 ]
             },
