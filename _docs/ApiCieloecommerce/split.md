@@ -5,19 +5,28 @@ order: 1
 ---
 
 
-### O que &eacute; o Split de pagamentos ?
+### O que é o Split de pagamentos ?
 
 O Split de pagamentos é uma funcionalidade Braspag que permite a divisão de uma transações em diferentes lojas de maneira organizadada e hierarquizada.
 
-O Split é uma estrutura transacional muito utilizada em MarketPlaces onde o carrinho é formado por produtos de diferentes fornecedores que receberarão partes do pagamento em contas separadas.
+Ele funcionando recebendo uma transação que pode ser subdividida para diferentes atores. Os valores dessa transação é dividido e pago em contas bancarias separadas. 
 
+
+Essa é uma  estrutura transacional muito utilizada em MarketPlaces (MKP), onde **o carrinho é formado por produtos de diferentes fornecedores** que receberarão partes do pagamento total da transação.
+O Split é uma funcionalidade que possui as seguintes vantagens:
+
+* Evita que comprador realize várias transações, elevando a chance de conversão
+* Permite que um Marketplace possa cobrar uma taxa sobre o valor transacional utilizando apenas uma integração técnica
+* Permite que o Marketplace possa montar um carrinho com produtos de diferentes fornecedores de maneira total transparente para o comprador.
 
 
 
 ### Como funciona o Split de Pagamentos.
 
 
-O Split funciona como parte da integração transacional da Braspag.
+O Split funciona como parte da API transacional da Braspag via API Cielo Ecommerce.   
+
+
 Nesse modelo de integração existem 3 entidades:
 
 | Entidades | Descrição | 
@@ -76,16 +85,16 @@ O Custo total operacional para o Seller é baseado na Taxa Braspag a ser retirad
 ```
 "SplitPayments":[{
         "SellerMerchantId" :"MID SELLER 01",
-        "Amount":100,
+        "Amount":10000,
         "Fares":{
-            "Mdr":3,
+            "Mdr":5,
             "Fee":0
         }
 ```
 
 | Propriedade | Tipo | Tamanho | Obrigatório | Descrição |
 | --- | --- | --- | --- | --- |
-| `SplitPayments.SellerMerchantId`| Tipo | Tamanho | Obrigatório | Descrição |
+| `SplitPayments.SellerMerchantId`| Identificador do Seller | Tamanho | Obrigatório | Descrição |
 | `SplitPayments.Amount` | Tipo | Tamanho | Obrigatório | Descrição |
 | `SplitPayments.Fares`| Tipo | Tamanho | Obrigatório | Descrição |
 | `SplitPayments.Fares.Mdr` | Tipo | Tamanho | Obrigatório | Descrição |
