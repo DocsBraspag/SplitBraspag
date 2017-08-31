@@ -48,7 +48,7 @@ A **Braspag** receberá a transação, separando a transação entre valores a s
 
 Abaixo um exemplo do Fluxo transacional de autorização e divisão de valores no Split de pagamentos:
 
-![](/uploads/versions/Split1---x----1398-720x---.jpg)
+![Salve a imagem para uma maior resolução](/uploads/versions/Split0.jpg)
 
 EX: Uma venda de R$100, feita pelo **Seller** no Marketplace **MKP**
 
@@ -62,7 +62,6 @@ EX: Uma venda de R$100, feita pelo **Seller** no Marketplace **MKP**
 
 
 
-![](/uploads/versions/Split2---x----1459-1033x---.jpg)
 
 
 
