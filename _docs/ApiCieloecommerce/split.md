@@ -122,10 +122,9 @@ Cada modelo possui um contrato adicional de integração a API Cielo Ecommerce e
 
 #### Split Transacional
 
-Esse modelo exige que o lojista envie um né adicional na integração da API CIelo 
+Esse modelo exige que o lojista envie um  adicional na integração da API Cielo Ecommerce onde serão inclusos os dados do pagamento, Sellers e Taxas a serem cobradas.
 
-
-
+Exemplo do Nó de SPLIT no `POST`:
 ```
 "SplitPayments":[{
         "SellerMerchantId" :"MID SELLER 01",
@@ -136,13 +135,56 @@ Esse modelo exige que o lojista envie um né adicional na integração da API CI
         }
 ```
 
-| Propriedade | Tipo | Tamanho | Obrigatório | Descrição |
-| --- | --- | --- | --- | --- |
-| `SplitPayments.SellerMerchantId`| Identificador do Seller | Tamanho | Obrigatório | Descrição |
-| `SplitPayments.Amount` | Tipo | Tamanho | Obrigatório | Descrição |
-| `SplitPayments.Fares`| Tipo | Tamanho | Obrigatório | Descrição |
-| `SplitPayments.Fares.Mdr` | Tipo | Tamanho | Obrigatório | Descrição |
-| `SplitPayments.Fares.Fee` | Tipo | Tamanho | Tipo | Tamanho | Obrigatório | Descrição |
+| Propriedade                      | Tipo   | Tamanho | Obrigatório | Descrição                                         |
+|----------------------------------|--------|---------|-------------|---------------------------------------------------|
+| `SplitPayments.SellerMerchantId` | GUID   | 36      | Sim         | Identificador do Seller                           |
+| `SplitPayments.Amount`           | Número | 15      | Sim         | Valor da transação pertencente ao Seller          |
+| `SplitPayments.Fares.Mdr`        | Número | 2       | Sim         | Taxa do MKP (%) a ser retirada do Seller          |
+| `SplitPayments.Fares.Fee`        | Número | 15      | Sim         | Tarifa (R$) a ser cobrada do Seller - em Centavos |
+
+
+Com resposta, A API retornará um nó com as seguintes caracteristicas:
+
+Parte do `RESPONSE`:
+```
+"SplitPayments": [
+            {
+                "sellerMerchantId": "MID SELLER 01",
+                "amount": 10000,
+                "fares": {
+                    "mdr": 5,
+                    "fee": 0
+                },
+                "splits": [                
+                    {
+                        "sellerMerchantId": "MID DO MKP",
+                        "amount": 500,
+                    },
+                    {
+                        "sellerMerchantId": "MID SELLER 01",
+                        "amount": 9500,
+                    }
+                ]
+            }
+        ],
+```
+
+
+| Propriedade                             | Tipo   | Tamanho | Obrigatório | Descrição                                                                                   |
+|-----------------------------------------|--------|---------|-------------|---------------------------------------------------------------------------------------------|
+| `SplitPayments.SellerMerchantId`        | GUID   | 36      | Sim         | Identificador do Seller                                                                     |
+| `SplitPayments.Amount`                  | Número | 15      | Sim         | Valor da transação pertencente ao Seller                                                    |
+| `SplitPayments.Fares.Mdr`               | Número | 2       | Sim         | Taxa do MKP (%) a ser retirada do Seller                                                    |
+| `SplitPayments.Fares.Fee`               | Número | 15      | Sim         | Tarifa (R$) a ser cobrada do Seller - em Centavos                                           |
+| `SplitPayments.split.SellerMerchantId.` | GUID   | 36      | Sim         | Identificador do Seller ou MKP incluso no Split                                             |
+| `SplitPayments.split.Amount`            | Número | 15      | Sim         | Valor da transação a ser depositado no Seller ou MKP, descontado a Taxa MKP e/ou Taxa Cielo |
+
+
+O nó `SPLIT` contido na resposta da transação informações:
+
+
+
+
 
 
 
