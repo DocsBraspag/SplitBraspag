@@ -93,25 +93,27 @@ O Custo total operacional para o Seller é baseado na Taxa Braspag a ser retirad
 
 
 
-REQUEST
+REQUEST 
+Modelo: 
+* MKP Recebe apenas Taxa
+* 2 Sellers dividindo a mesma transação
 
 Header
 ```
 --request POST "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/"
 --header "Content-Type: application/json"
---header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+--header "MerchantId: MID DO MKP"
 --header "MerchantKey: 0123456789012345678901234567890123456789"
 --header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 --data-binary
 ```
-
 Body
 ```
 {
    "MerchantOrderId":"2014111701",
    "Payment":{
      "Type":"SplittedCreditCard",
-     "Amount":1000,
+     "Amount":100,
      "Installments":1,
      "SoftDescriptor":"Split*LosCone",
      "Capture":false,
@@ -123,8 +125,8 @@ Body
          "Brand":"Visa"
      },
      "SplitPayments":[{
-        "SellerMerchantId" :"E41356F9-461C-43F3-BEE6-409A4A49DD29",
-        "Amount":1000,
+        "SellerMerchantId" :"MID SELLER 01",
+        "Amount":50,
         "Fares":{
             "Mdr":3,
             "Fee":0
@@ -146,23 +148,23 @@ RESPONSE
     "Payment": {
     "SplitPayments": [
             {
-                "sellerMerchantId": "e41356f9-461c-43f3-bee6-409a4a49dd29",
-                "amount": 10000,
+                "sellerMerchantId": "MID SELLER 01",
+                "amount": 50,
                 "fares": {
-                    "mdr": 4,
+                    "mdr": 3,
                     "fee": 0
                 },
                 "splits": [                
                     {
-                        "sellerMerchantId": "94d0ba02-9c0e-4eac-be4e-3a9cc24574c1",
-                        "amount": 100,
+                        "sellerMerchantId": "MID DO MKP",
+                        "amount": 50,
                         "mdr": 1,
                         "fee": 0
                     },
                     {
-                        "sellerMerchantId": "e41356f9-461c-43f3-bee6-409a4a49dd30",
-                        "amount": 9900,
-                        "mdr": 99,
+                        "sellerMerchantId": "MID SELLER 01",
+                        "amount": 50,
+                        "mdr": 3,
                         "fee": 0
                     }
                 ]
