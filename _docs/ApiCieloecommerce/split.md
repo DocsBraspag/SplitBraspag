@@ -135,12 +135,12 @@ Exemplo do Nó de SPLIT no `POST`:
         }
 ```
 
-| Propriedade                      | Tipo   | Tamanho | Obrigatório | Descrição                                         |
-|----------------------------------|--------|---------|-------------|---------------------------------------------------|
-| `SplitPayments.SellerMerchantId` | GUID   | 36      | Sim         | Identificador do Seller                           |
-| `SplitPayments.Amount`           | Número | 15      | Sim         | Valor da transação pertencente ao Seller          |
-| `SplitPayments.Fares.Mdr`        | Número | 2       | Sim         | Taxa do MKP (%) a ser retirada do Seller          |
-| `SplitPayments.Fares.Fee`        | Número | 15      | Sim         | Tarifa (R$) a ser cobrada do Seller - em Centavos |
+| Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
+|-----------------------------------------|---------------------------------------------------------------------------------------------|--------|---------|-------------|
+| `SplitPayments.SellerMerchantId`        | Identificador do Seller                                                                     | GUID   | 36      | Sim         |
+| `SplitPayments.Amount`                  | Valor da transação pertencente ao Seller                                                    | Número | 15      | Sim         |
+| `SplitPayments.Fares.Mdr`               | Taxa do MKP (%) a ser retirada do Seller                                                    | Número | 2       | Sim         |
+| `SplitPayments.Fares.Fee`               | Tarifa (R$) a ser cobrada do Seller - em Centavos                                           | Número | 15      | Sim         |
 
 
 Com resposta, A API retornará um nó com as seguintes caracteristicas:
@@ -169,15 +169,14 @@ Parte do `RESPONSE`:
         ],
 ```
 
-
-| Propriedade                             | Tipo   | Tamanho | Obrigatório | Descrição                                                                                   |
-|-----------------------------------------|--------|---------|-------------|---------------------------------------------------------------------------------------------|
-| `SplitPayments.SellerMerchantId`        | GUID   | 36      | Sim         | Identificador do Seller                                                                     |
-| `SplitPayments.Amount`                  | Número | 15      | Sim         | Valor da transação pertencente ao Seller                                                    |
-| `SplitPayments.Fares.Mdr`               | Número | 2       | Sim         | Taxa do MKP (%) a ser retirada do Seller                                                    |
-| `SplitPayments.Fares.Fee`               | Número | 15      | Sim         | Tarifa (R$) a ser cobrada do Seller - em Centavos                                           |
-| `SplitPayments.split.SellerMerchantId.` | GUID   | 36      | Sim         | Identificador do Seller ou MKP incluso no Split                                             |
-| `SplitPayments.split.Amount`            | Número | 15      | Sim         | Valor da transação a ser depositado no Seller ou MKP, descontado a Taxa MKP e/ou Taxa Cielo |
+| Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
+|-----------------------------------------|---------------------------------------------------------------------------------------------|--------|---------|-------------|
+| `SplitPayments.SellerMerchantId`        | Identificador do Seller                                                                     | GUID   | 36      | Sim         |
+| `SplitPayments.Amount`                  | Valor da transação pertencente ao Seller                                                    | Número | 15      | Sim         |
+| `SplitPayments.Fares.Mdr`               | Taxa do MKP (%) a ser retirada do Seller                                                    | Número | 2       | Sim         |
+| `SplitPayments.Fares.Fee`               | Tarifa (R$) a ser cobrada do Seller - em Centavos                                           | Número | 15      | Sim         |
+| `SplitPayments.split.SellerMerchantId.` | Identificador do Seller ou MKP incluso no Split                                             | GUID   | 36      | Sim         |
+| `SplitPayments.split.Amount`            | Valor da transação a ser depositado no Seller ou MKP, descontado a Taxa MKP e/ou Taxa Cielo | Número | 15      | Sim         |
 
 
 
