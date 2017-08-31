@@ -62,7 +62,7 @@ EX: Uma venda de R$100, feita pelo **Seller** no Marketplace **MKP**
 
 
 
-
+![](/uploads/versions/Split2---x----1459-1033x---.jpg)
 
 
 
