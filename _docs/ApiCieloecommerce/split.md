@@ -49,21 +49,24 @@ A **Braspag** receberá a transação, separando a transação entre valores a s
 Abaixo um exemplo do Fluxo transacional de autorização e divisão de valores no Split de pagamentos:
 
 
+> Teste
+
+>> Teste02
+
+> > > teste 03
+
+
 EX: Uma venda de R$100, feita pelo **Seller** no Marketplace **MKP**
 
 0. O **MKP** tem Taxa de **5%** Sobre a venda do **Seller**
-0. Essa Taxa é formada por uma margem de `3 Pontos Percentuais` sobre o total da transação + o custo braspag (`2 pontos percentuais + 0,30 centavos`) sobre o total ta transação
-0. A Transação é processada. O **Seller** recebe 
+0. Essa Taxa é formada por uma margem de `3 Pontos Percentuais` sobre o total da transação + o custo braspag (`2 pontos percentuais + 0,30 centavos`) sobre o total da transação
+0. A Transação é processada. O **Seller** recebe o montante da venda - a `Taxa MKP`
+1. O MKP Recebe a parte da transação menos o custo da taxa Braspag.
 
 
 
 
 
-
-
-
-
-> Na integração braspag, é possivel que dentro de um carrinho, o MarketPlace possa cobrar taxas diferentes dependendo o Seller.
 
 
 
