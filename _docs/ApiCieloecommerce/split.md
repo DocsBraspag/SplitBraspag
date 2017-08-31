@@ -27,7 +27,8 @@ Nesse modelo de integração existem 3 entidades:
 | Braspag | Responsavel pela autorização da transação Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação Deposita o valor da Transação na conta do Seller Deposita o valor da taxa cobrada pelo
 Marketplace so Seller |
 
-O Fluxo transacional de autoriza&ccedil;&atilde;o e retirada de ocorre como na imagem abaixo:
+
+O Fluxo transacional de autorização e retirada de ocorre como na imagem abaixo:
 
 
 
@@ -40,23 +41,33 @@ Descrevendo os Passos:
 5. A Braspag retira sua taxa de opera&ccedil;&atilde;o do Valor contindo no MKP. Esse valor &eacute; calculado sobre o valor total da transa&ccedil;&atilde;o e n&atilde;o sobre a participa&ccedil;&atilde;o do MKP na venda
 6. O Marketplace recebe o valor restante da participa&ccedil;&atilde;o gerada com a taxa de Marketplace
 
-> Na integra&ccedil;&atilde;o braspag, &eacute; possivel que dentro de um carrinho, o MarketPlace possa cobrar taxas diferentes dependendo o Seller.
+> Na integração braspag, é possivel que dentro de um carrinho, o MarketPlace possa cobrar taxas diferentes dependendo o Seller.
+
+
+
+
+
+
 
 ### Tarifas e Custos
 
-Nesta &aacute;rea do manual vamos detalhar como o processo de cobran&ccedil;a e custos afeta cada uma das entidades envolvidas no Split
+Nesta área do manual vamos detalhar como o processo de cobrança e custos afeta cada uma das entidades envolvidas no Split
+
+
+
 
 #### Custo Marketplace
 
-O Split de pagamentos Braspag funciona com base em uma taxa basica tabelada contratada pelo Marketplace e uma tarifa fixa sobre a transa&ccedil;&atilde;o executada. A Taxa braspag &eacute; cobrada sobre o valor da transa&ccedil;&atilde;o
+O Split de pagamentos Braspag funciona com base em uma taxa basica tabelada contratada pelo Marketplace e uma tarifa fixa sobre a transação executada. A Taxa braspag é cobrada sobre o valor da transação
+
 
 > **Custo MKP:** TAXA BRASPAG + R$0,30
 
-O valor da tarifa fixa Braspag &eacute; retirada do montante destinado ao marketplace.
+O valor da tarifa fixa Braspag é retirada do montante destinado ao marketplace.
 
 #### Custo Seller
 
-O Custo total operacional para o Seller &eacute; baseado na Taxa Braspag a ser retirada da participa&ccedil;&atilde;o do marketplace. Ela &eacute; gerada com base no valor da transa&ccedil;&atilde;o e a margem do MKP
+O Custo total operacional para o Seller é baseado na Taxa Braspag a ser retirada da participação do marketplace. Ela é gerada com base no valor da transação e a margem do MKP
 
 > **Custo Seller:** Taxa MKP = Margem MKP + (TAXA BRASPAG + R$0,30)
 
@@ -209,6 +220,3 @@ RESPONSE
 ```
 
 
-### Quais features não podem ser usadas (Tokens / Recorrencia)
-
-### Definição de regras de Split (Durante transacional/pós-Transacional)
