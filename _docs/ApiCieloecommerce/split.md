@@ -23,21 +23,24 @@ O Split é uma funcionalidade que possui as seguintes vantagens:
 
 ### Como funciona o Split de Pagamentos.
 
+O Split de pagamento funciona quando um Marketplace realiza uma transação e-commerce enviado a Braspag sobre como esse pagamento será dividido e quais participantes serão cobrados ou receberá o valor vendido.
 
-O Split funciona como parte da API transacional da Braspag via API Cielo Ecommerce.   
+Nesse modelo de split de pagamentos existem 3 entidades básicas:
 
-
-Nesse modelo de integração existem 3 entidades:
-
-| Entidades | Descrição | 
+| **Entidades** | **Descrição** | 
 |-----------|---------- |
-| Marketplace | Dono do carrinho e da Transação. <BR> Possui Sellers que fornecem o contudo do Carrinho.<BR> Realiza a cobrança de uma Taxa sobre a venda do Seller | 
-| Seller | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<BR> Um Marketplace possui inumeros Seller. <BR>Recebem parte da venda, descontado o valor da taxa do MarketPlace |
-| Braspag | Responsavel pela autorização da transação.<BR>Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação.<BR> Deposita o valor da Transação na conta do Seller.<BR> Deposita o valor da taxa cobrada pelo Marketplace so Seller |
-
-
+| **Marketplace** | Dono do carrinho e da Transação. <BR> Possui Sellers que fornecem o contudo do Carrinho.<BR> Realiza a cobrança de uma Taxa sobre a venda do Seller | 
+| **Seller** | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<BR> Um Marketplace possui inumeros Seller. <BR>Recebem parte da venda, descontado o valor da taxa do MarketPlace |
+| **Braspag** | Responsavel pela autorização da transação.<BR>Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação.<BR> Deposita o valor da Transação na conta do Seller.<BR> Deposita o valor da taxa cobrada pelo Marketplace so Seller |
 
 O Fluxo transacional de autorização e retirada de ocorre como na imagem abaixo:
+
+
+
+
+
+
+
 
 
 
@@ -50,6 +53,13 @@ Descrevendo os Passos:
 5. A Braspag retira sua taxa de opera&ccedil;&atilde;o do Valor contindo no MKP. Esse valor &eacute; calculado sobre o valor total da transa&ccedil;&atilde;o e n&atilde;o sobre a participa&ccedil;&atilde;o do MKP na venda
 6. O Marketplace recebe o valor restante da participa&ccedil;&atilde;o gerada com a taxa de Marketplace
 
+
+
+
+
+
+
+
 > Na integração braspag, é possivel que dentro de um carrinho, o MarketPlace possa cobrar taxas diferentes dependendo o Seller.
 
 
@@ -61,8 +71,6 @@ Descrevendo os Passos:
 ### Tarifas e Custos
 
 Nesta área do manual vamos detalhar como o processo de cobrança e custos afeta cada uma das entidades envolvidas no Split
-
-
 
 
 #### Custo Marketplace
@@ -80,7 +88,15 @@ O Custo total operacional para o Seller é baseado na Taxa Braspag a ser retirad
 
 > **Custo Seller:** Taxa MKP = Margem MKP + (TAXA BRASPAG + R$0,30)
 
-### transacional (Contrato)
+
+
+
+
+
+### Integrando o Split
+
+O Split funciona como parte da API transacional da Braspag via API Cielo Ecommerce.   
+
 
 ```
 "SplitPayments":[{
