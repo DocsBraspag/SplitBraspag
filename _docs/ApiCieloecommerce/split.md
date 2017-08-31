@@ -95,6 +95,7 @@ O Custo total operacional para o Seller é baseado na Taxa Braspag a ser retirad
 
 REQUEST
 
+Header
 ```
 --request POST "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/"
 --header "Content-Type: application/json"
@@ -102,7 +103,10 @@ REQUEST
 --header "MerchantKey: 0123456789012345678901234567890123456789"
 --header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 --data-binary
+```
 
+Body
+```
 {
    "MerchantOrderId":"2014111701",
    "Payment":{
