@@ -161,13 +161,13 @@ RESPONSE
                     {
                         "sellerMerchantId": "MID DO MKP",
                         "amount": 500,
-                        "mdr": 0,
+                        "mdr": 5,
                         "fee": 0
                     },
                     {
                         "sellerMerchantId": "MID SELLER 01",
                         "amount": 9500,
-                        "mdr": 5,
+                        "mdr": 95
                         "fee": 0
                     }
                 ]
@@ -303,13 +303,13 @@ RESPONSE
                     {
                         "sellerMerchantId": "MID DO MKP",
                         "amount": 250,
-                        "mdr": 0,
+                        "mdr": 5,
                         "fee": 0
                     },
                     {
                         "sellerMerchantId": "MID SELLER 01",
                         "amount": 4750,
-                        "mdr": 5,
+                        "mdr": 95,
                         "fee": 0
                     }
                 ]
@@ -325,13 +325,13 @@ RESPONSE
                     {
                         "sellerMerchantId": "MID DO MKP",
                         "amount": 500,
-                        "mdr": 0,
+                        "mdr": 10,
                         "fee": 0
                     },
                     {
                         "sellerMerchantId": "MID SELLER 02",
                         "amount": 4500,
-                        "mdr": 10,
+                        "mdr": 90,
                         "fee": 0
                     }
                 ]
@@ -464,13 +464,13 @@ RESPONSE
                     {
                         "sellerMerchantId": "MID DO MKP",
                         "amount": 250,
-                        "mdr": 0,
+                        "mdr": 5,
                         "fee": 0
                     },
                     {
                         "sellerMerchantId": "MID SELLER 01",
                         "amount": 4750,
-                        "mdr": 5,
+                        "mdr": 95,
                         "fee": 0
                     }
                 ]
@@ -492,7 +492,7 @@ RESPONSE
                     {
                         "sellerMerchantId": "MID DO MKP",
                         "amount": 5000
-                        "mdr": 0,
+                        "mdr": 100,
                         "fee": 0
                     }
                 ]
