@@ -94,13 +94,27 @@ Abaixo demonstramos como essa Taxa é formada pelo MKP com base no custo Braspag
 > **Custo Seller:** Taxa MKP = {Margem MKP + (TAXA BRASPAG (%) + TARIFA FIXA (R$))}
 
 
-
-
-
-
 ### Integrando o Split
 
-O Split funciona como parte da API transacional da Braspag via API Cielo Ecommerce.   
+O Split funciona como parte da API transacional da Braspag via API Cielo Ecommerce. 
+
+
+#### Tipos de Split
+
+O Split de pagamentos possui dois tipos basicos de integração:
+
+|Tipo|Descrição |
+|----|----------|
+|**Transacional**|O marketplace envia na transação quais os Sellers, os valores e Taxas a sofrerem SPLIT|
+|**Pós-Transacional**|O marketplace define quais os Sellers, valores e Taxas a sofrerem SPLIT depois autorização realizando uma atualização da transação|
+
+Cada modelo possui um contrato adicional de integração a API Cielo Ecommerce e Braspag
+
+
+
+
+
+  
 
 
 ```
