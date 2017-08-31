@@ -188,9 +188,14 @@ O nó `SPLIT` contido na resposta da transação retorna informações especific
 ![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/Split03.jpg)
 
 
+O Split aceita varias combinações para transações entre diferentes atores:
+
+* Apenas 1 Seller
+* 2 Sellers dividindo a mesma transação
+* 2 Sellers, sendo um deles o próprio MKP
 
 
-EXEMPLO 01 -  Apenas 1 Seller
+**EXEMPLO 01 -  Apenas 1 Seller**
 
 
 REQUEST 
@@ -235,10 +240,6 @@ Body
 ```
 
 RESPONSE
-
-
-
-
 
 ```
 {
@@ -323,9 +324,7 @@ RESPONSE
 ```
 
 
-EXEMPLO 02 - 2 Sellers dividindo a mesma transação
-
-
+**EXEMPLO 02 - 2 Sellers dividindo a mesma transação**
 
 REQUEST 
 
@@ -377,11 +376,6 @@ Body
 ```
 
 RESPONSE
-
-
-| `SplitPayments.SellerMerchantId`| Tipo | Tamanho | Obrigatório | Descrição |
-
-
 ```
 {
     "MerchantOrderId": "2014111701",
@@ -481,7 +475,7 @@ RESPONSE
 }
 ```
 
-EXEMPLO 03 - 2 Sellers, sendo um deles o MKP
+**EXEMPLO 03 - 2 Sellers, sendo um deles o próprio MKP**
 
 
 REQUEST 
