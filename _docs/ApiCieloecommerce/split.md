@@ -99,7 +99,6 @@ O Custo total operacional para o Seller é baseado na Taxa Braspag a ser retirad
 EXEMPLO 01 -  Apenas 1 Seller
 
 
-
 REQUEST 
 
 Header
@@ -393,8 +392,6 @@ RESPONSE
 ```
 
 EXEMPLO 03 - 2 Sellers, sendo um deles o MKP
-
-
 
 
 REQUEST 
