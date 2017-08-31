@@ -130,7 +130,7 @@ Body
      },
      "SplitPayments":[{
         "SellerMerchantId" :"MID SELLER 01",
-        "Amount":5000,
+        "Amount":10000,
         "Fares":{
             "Mdr":5,
             "Fee":0
@@ -153,7 +153,7 @@ RESPONSE
     "SplitPayments": [
             {
                 "sellerMerchantId": "MID SELLER 01",
-                "amount": 5000,
+                "amount": 10000,
                 "fares": {
                     "mdr": 5,
                     "fee": 0
@@ -161,13 +161,13 @@ RESPONSE
                 "splits": [                
                     {
                         "sellerMerchantId": "MID DO MKP",
-                        "amount": 250,
+                        "amount": 500,
                         "mdr": 0,
                         "fee": 0
                     },
                     {
                         "sellerMerchantId": "MID SELLER 01",
-                        "amount": 4750,
+                        "amount": 9500,
                         "mdr": 5,
                         "fee": 0
                     }
@@ -251,7 +251,7 @@ Body
    "MerchantOrderId":"2014111701",
    "Payment":{
      "Type":"SplittedCreditCard",
-     "Amount":100,
+     "Amount":10000,
      "Installments":1,
      "SoftDescriptor":"Split*LosCone",
      "Capture":false,
@@ -262,14 +262,22 @@ Body
          "SecurityCode":"123",
          "Brand":"Visa"
      },
-     "SplitPayments":[{
+     "SplitPayments":[
+        {
         "SellerMerchantId" :"MID SELLER 01",
-        "Amount":50,
+        "Amount":5000,
         "Fares":{
-            "Mdr":3,
+            "Mdr":5,
+            "Fee":0
+        },
+        {
+        "SellerMerchantId" :"MID SELLER 02",
+        "Amount":5000,
+        "Fares":{
+            "Mdr":10,
             "Fee":0
         }
-     }]
+      }]
    }
 }
 
@@ -287,22 +295,44 @@ RESPONSE
     "SplitPayments": [
             {
                 "sellerMerchantId": "MID SELLER 01",
-                "amount": 50,
+                "amount": 5000,
                 "fares": {
-                    "mdr": 3,
+                    "mdr": 5,
                     "fee": 0
                 },
                 "splits": [                
                     {
                         "sellerMerchantId": "MID DO MKP",
-                        "amount": 50,
-                        "mdr": 1,
+                        "amount": 250,
+                        "mdr": 0,
                         "fee": 0
                     },
                     {
                         "sellerMerchantId": "MID SELLER 01",
-                        "amount": 50,
-                        "mdr": 3,
+                        "amount": 4750,
+                        "mdr": 5,
+                        "fee": 0
+                    }
+                ]
+            },
+        	{
+                "sellerMerchantId": "MID SELLER 02",
+                "amount": 5000,
+                "fares": {
+                    "mdr": 10,
+                    "fee": 0
+                },
+                "splits": [                
+                    {
+                        "sellerMerchantId": "MID DO MKP",
+                        "amount": 500,
+                        "mdr": 0,
+                        "fee": 0
+                    },
+                    {
+                        "sellerMerchantId": "MID SELLER 02",
+                        "amount": 4500,
+                        "mdr": 10,
                         "fee": 0
                     }
                 ]
@@ -360,8 +390,170 @@ RESPONSE
         ]
     }
 }
-
 ```
 
 EXEMPLO 03 - 2 Sellers, sendo um deles o MKP
+
+
+
+
+REQUEST 
+
+Header
+```
+--request POST "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/"
+--header "Content-Type: application/json"
+--header "MerchantId: MID DO MKP"
+--header "MerchantKey: 0123456789012345678901234567890123456789"
+--header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+--data-binary
+```
+Body
+```
+{
+   "MerchantOrderId":"2014111701",
+   "Payment":{
+     "Type":"SplittedCreditCard",
+     "Amount":10000,
+     "Installments":1,
+     "SoftDescriptor":"Split*LosCone",
+     "Capture":false,
+     "CreditCard":{
+         "CardNumber":"4551870000000181",
+         "Holder":"Teste Holder",
+         "ExpirationDate":"12/2021",
+         "SecurityCode":"123",
+         "Brand":"Visa"
+     },
+     "SplitPayments":[
+        {
+        "SellerMerchantId" :"MID SELLER 01",
+        "Amount":5000,
+        "Fares":{
+            "Mdr":5,
+            "Fee":0
+        },
+        {
+        "SellerMerchantId" :"MID DO MKP",
+        "Amount":5000,
+        "Fares":{
+            "Mdr":0,
+            "Fee":0
+        }
+      }]
+   }
+}
+
+```
+
+RESPONSE
+
+```
+{
+    "MerchantOrderId": "2014111701",
+    "Customer": {
+        "Name": "[Guest]"
+    },
+    "Payment": {
+    "SplitPayments": [
+            {
+                "sellerMerchantId": "MID SELLER 01",
+                "amount": 5000,
+                "fares": {
+                    "mdr": 5,
+                    "fee": 0
+                },
+                "splits": [                
+                    {
+                        "sellerMerchantId": "MID DO MKP",
+                        "amount": 250,
+                        "mdr": 0,
+                        "fee": 0
+                    },
+                    {
+                        "sellerMerchantId": "MID SELLER 01",
+                        "amount": 4750,
+                        "mdr": 5,
+                        "fee": 0
+                    }
+                ]
+            },
+        	{
+                "sellerMerchantId": "MID DO MKP",
+                "amount": 5000,
+                "fares": {
+                    "mdr": 0,
+                    "fee": 0
+                },
+                "splits": [                
+                    {
+                        "sellerMerchantId": "MID DO MKP",
+                        "amount": 0,
+                        "mdr": 0,
+                        "fee": 0
+                    },
+                    {
+                        "sellerMerchantId": "MID DO MKP",
+                        "amount": 5000
+                        "mdr": 0,
+                        "fee": 0
+                    }
+                ]
+            }
+        ],
+        "ServiceTaxAmount": 0,
+        "Installments": 1,
+        "Interest": 0,
+        "Capture": false,
+        "Authenticate": false,
+        "Recurrent": false,
+        "CreditCard": {
+            "CardNumber": "455187******0181",
+            "Holder": "Teste Holder",
+            "ExpirationDate": "12/2021",
+            "SaveCard": false,
+            "Brand": "Visa"
+        },
+        "Tid": "1006993069000AF39CAA",
+        "ProofOfSale": "483594",
+        "AuthorizationCode": "123456",
+        "SoftDescriptor": "Split*LosCone",
+        "Provider": "Cielo",
+        "Eci": "7",
+        "PaymentId": "c5b7ea6e-e604-463a-a1b1-123c3c598e05",
+        "Amount": 1000,
+        "ReceivedDate": "2017-08-30 14:37:14",
+        "Status": 1,
+        "ReturnMessage": "Transação autorizada",
+        "ReturnCode": "00",
+        "Type": "SplittedCreditCard",
+        "Currency": "BRL",
+        "Country": "BRA",
+        "Links": [
+            {
+                "Method": "GET",
+                "Rel": "self",
+                "Href": "http://splitsandbox.braspag.com.br/schedules/c5b7ea6e-e604-463a-a1b1-123c3c598e05"
+            },
+            {
+                "Method": "GET",
+                "Rel": "self",
+                "Href": "https://apiquerydev.cieloecommerce.cielo.com.br/1/sales/c5b7ea6e-e604-463a-a1b1-123c3c598e05"
+            },
+            {
+                "Method": "PUT",
+                "Rel": "capture",
+                "Href": "https://apidev.cieloecommerce.cielo.com.br/1/sales/c5b7ea6e-e604-463a-a1b1-123c3c598e05/capture"
+            },
+            {
+                "Method": "PUT",
+                "Rel": "void",
+                "Href": "https://apidev.cieloecommerce.cielo.com.br/1/sales/c5b7ea6e-e604-463a-a1b1-123c3c598e05/void"
+            }
+        ]
+    }
+}
+```
+
+
 
