@@ -180,6 +180,13 @@ Parte do `RESPONSE`:
 | `SplitPayments.split.Amount`            | Número | 15      | Sim         | Valor da transação a ser depositado no Seller ou MKP, descontado a Taxa MKP e/ou Taxa Cielo |
 
 
+
+
+
+
+
+
+
 O nó `SPLIT` contido na resposta da transação informações:
 
 
