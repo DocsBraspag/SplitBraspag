@@ -183,10 +183,7 @@ Parte do `RESPONSE`:
 O nó `SPLIT` contido na resposta da transação informações:
 
 
-
-
-
-
+![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/Split03.jpg)
 
 
 
