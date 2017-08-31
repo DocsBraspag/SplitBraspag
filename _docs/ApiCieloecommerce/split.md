@@ -90,9 +90,9 @@ O Split de pagamentos Braspag funciona com base em uma taxa basica tabelada cont
 
 > **Custo MKP:** TAXA BRASPAG + R$0,30
 
-* A taxa Braspaga é vinculada ao valor total da transação do Seller e não sobre o valor que MKP irá receber.
-* +EX: 2% sobre a Venda de R$100,00 do SELLER)
-* O valor da tarifa fixa Braspag é debitada do montante destinado ao MKP. 
+1. A taxa Braspaga é vinculada ao valor total da transação do Seller e não sobre o valor que MKP irá receber.
+..*EX: 2% sobre a Venda de R$100,00 do SELLER)
+2. O valor da tarifa fixa Braspag é debitada do montante destinado ao MKP. 
 
 #### Custo Seller
 
