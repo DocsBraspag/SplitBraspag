@@ -27,6 +27,7 @@ Nesse modelo de integração existem 3 entidades:
 | Braspag | Responsavel pela autorização da transação.<BR>Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação.<BR> Deposita o valor da Transação na conta do Seller.<BR> Deposita o valor da taxa cobrada pelo Marketplace so Seller |
 
 
+
 O Fluxo transacional de autorização e retirada de ocorre como na imagem abaixo:
 
 
