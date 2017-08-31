@@ -99,30 +99,31 @@ Abaixo demonstramos como essa Taxa é formada pelo MKP com base no custo Braspag
 O Split funciona como parte da API transacional da Braspag via API Cielo Ecommerce.
 
 A integração A ser realizara é a mesma descrita para transações de cartão de crédito dentro da API Cielo Ecommerce.
-PAra mais informações, veja o [Manual de Integração](https://developercielo.github.io/Webservice-3.0/#criando-uma-transação-simples)
+Para mais informações, veja o [Manual de Integração](https://developercielo.github.io/Webservice-3.0/#criando-uma-transação-simples)
+
+Neste manual serão apresentados os contratos de integração da API Cielo ecommerce, mas o foco da analise se dará nos paramêtros do Split de pagamentos.
+
+> O Split está disponivel apenas para transações de CARTÃO DE CRÉDITO
 
 
-
-
-
-
-#### Tipos de Split
+### Tipos de Split
 
 O Split de pagamentos possui dois tipos basicos de integração:
 
 
 | Tipo                 | Descrição                                                                                                                          |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| **Transacional**     | O marketplace envia na transação quais os Sellers, os valores e Taxas a sofrerem SPLIT                                             |
-| **Pós-Transacional** | O marketplace define quais os Sellers, valores e Taxas a sofrerem SPLIT depois autorização realizando uma atualização da transação |
+| **Split Transacional**     | O marketplace envia na transação quais os Sellers, os valores e Taxas a sofrerem SPLIT                                             |
+| **Split Pós-Transacional** | O marketplace define quais os Sellers, valores e Taxas a sofrerem SPLIT depois autorização realizando uma atualização da transação |
 
-Cada modelo possui um contrato adicional de integração a API Cielo Ecommerce e Braspag
-
-
+Cada modelo possui um contrato adicional de integração a API Cielo Ecommerce e Braspag, que será apresentado a seguir.
 
 
 
-  
+#### Split Transacional
+
+Esse modelo exige que o lojista envie um né adicional na integração da API CIelo 
+
 
 
 ```
