@@ -33,16 +33,28 @@ Nesse modelo de split de pagamentos existem 3 entidades básicas:
 | **Seller** | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<BR> Um Marketplace possui inumeros Seller. <BR>Recebem parte da venda, descontado o valor da taxa do MarketPlace<BR>  |
 | **Braspag** | Responsavel pela autorização da transação.<BR>Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação.<BR> Deposita o valor da Transação na conta do Seller.<BR> Deposita o valor da taxa cobrada pelo Marketplace so Seller <BR> |
 
-O Split é um processo de divisão transacional, onde o Marketplace separa o valor pertecente da transação do **Seller** em duas partes: 
+
+O Split é um processo de divisão transacional, onde o **Marketplace** separa o valor pertecente da transação do **Seller** em duas partes: 
 
 * **Taxa do MKP:** Taxa cobrada pelo marketplace sobre o Seller para que a venda seja realizada. Pode ser um valor **%** ou/e uma **taxa fixa por venda.**
-* **Valor da venda:** Parte do valor da transação/carrinho que será destinada ao Seller
+* **Valor da venda:** Parte do valor da transação/carrinho que será destinada ao Seller, menos o valor cobrado como **Taxa do MKP**
+
+
+A **Braspag** receberá a transação, separando a transação entre valores a serem direcionados ao MKP, originado da **Taxa do MKP** e aos Sellers, originado do valor devido dentro da venda.
+
+> **Sobre Contas**: Ao utilizar o SPLIT, o Markteplace deverá junto aos seus Sellers se cadastrar na **Braspag**, assim recebendo um identificador de loja e registrando uma conta bancaria para cada ator como ponto de deposito dos valores Splitados
 
 
 
 
+Abaixo um exemplo do Fluxo transacional de autorização e divisão de valores no Split de pagamentos:
 
-O Fluxo transacional de autorização e retirada de ocorre como na imagem abaixo:
+
+EX: Uma venda de R$100, feita pelo **Seller** no Marketplace **MKP**
+
+* O **MKP** tem Taxa de **5%** Sobre a venda O **Seller**
+* A
+
 
 Descrevendo os Passos:
 
@@ -52,17 +64,6 @@ Descrevendo os Passos:
 4. O Seller recebe o valor da transa&ccedil;&atilde;o, menos o valor da Taxa de MKP.
 5. A Braspag retira sua taxa de opera&ccedil;&atilde;o do Valor contindo no MKP. Esse valor &eacute; calculado sobre o valor total da transa&ccedil;&atilde;o e n&atilde;o sobre a participa&ccedil;&atilde;o do MKP na venda
 6. O Marketplace recebe o valor restante da participa&ccedil;&atilde;o gerada com a taxa de Marketplace
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -89,7 +90,9 @@ O Split de pagamentos Braspag funciona com base em uma taxa basica tabelada cont
 
 > **Custo MKP:** TAXA BRASPAG + R$0,30
 
-O valor da tarifa fixa Braspag é retirada do montante destinado ao marketplace.
+* A taxa Braspaga é vinculada ao valor total da transação do Seller e não sobre o valor que MKP irá receber.
+* +EX: 2% sobre a Venda de R$100,00 do SELLER)
+* O valor da tarifa fixa Braspag é debitada do montante destinado ao MKP. 
 
 #### Custo Seller
 
