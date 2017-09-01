@@ -343,7 +343,7 @@ Body
    "MerchantOrderId":"2014111701",
    "Payment":{
      "Type":"SplittedCreditCard",
-     "Amount":10000,
+     "Amount":20000,
      "Installments":1,
      "SoftDescriptor":"Split*LosCone",
      "Capture":false,
@@ -357,14 +357,14 @@ Body
      "SplitPayments":[
         {
         "SellerMerchantId" :"MID SELLER 01",
-        "Amount":5000,
+        "Amount":10000,
         "Fares":{
             "Mdr":5,
             "Fee":0
         },
         {
         "SellerMerchantId" :"MID SELLER 02",
-        "Amount":5000,
+        "Amount":10000,
         "Fares":{
             "Mdr":10,
             "Fee":0
@@ -386,7 +386,7 @@ RESPONSE
     "SplitPayments": [
             {
                 "sellerMerchantId": "MID SELLER 01",
-                "amount": 5000,
+                "amount": 10000,
                 "fares": {
                     "mdr": 5,
                     "fee": 0
@@ -394,11 +394,11 @@ RESPONSE
                 "splits": [                
                     {
                         "sellerMerchantId": "MID DO MKP",
-                        "amount": 250,
+                        "amount": 500,
                     },
                     {
                         "sellerMerchantId": "MID SELLER 01",
-                        "amount": 4750,
+                        "amount": 9500,
                    }
                 ]
             },
@@ -412,11 +412,11 @@ RESPONSE
                 "splits": [                
                     {
                         "sellerMerchantId": "MID DO MKP",
-                        "amount": 500,
+                        "amount": 1000,
                     },
                     {
                         "sellerMerchantId": "MID SELLER 02",
-                        "amount": 4500,
+                        "amount": 9000,
                     }
                 ]
             }
