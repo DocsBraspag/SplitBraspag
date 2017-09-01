@@ -190,12 +190,14 @@ O nó `SPLIT` contido na resposta da transação retorna informações especific
 
 O Split aceita varias combinações para transações entre diferentes atores:
 
-* Apenas 1 Seller
-* 2 Sellers dividindo a mesma transação
-* 2 Sellers, sendo um deles o próprio MKP
+* Apenas 1 Seller - Sem taxa ou tarifa Braspag
+* 2 Sellers dividindo a mesma transação - Com taxa e tarifa Braspag
+* 2 Sellers, sendo um deles o próprio MKP - Com taxa e tarifa Braspag
 
 
 **EXEMPLO 01 -  Apenas 1 Seller**
+
+Neste primeiro exemplo, para simplificar como a apresentação do Modelo de integração, o MKP não sofrerá cobrança de taxa ou tarifa Braspag
 
 
 REQUEST 
@@ -325,6 +327,14 @@ RESPONSE
 
 
 **EXEMPLO 02 - 2 Sellers dividindo a mesma transação**
+
+Neste exemplo, o MKP será cobrado pela Braspag. 
+Vamos usar como base:
+
+* **Taxa Braspag:** 2% sobre o valor da Venda do Seller
+* **Tarifa Braspag:** R$0,30 por transação do Seller
+
+
 
 REQUEST 
 
