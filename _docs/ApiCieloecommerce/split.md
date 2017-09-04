@@ -783,7 +783,7 @@ O Split aceita varias combinações para transações entre diferentes entidades
 * 2 Subordinates dividindo a mesma transação
 * 2 Subordinates, sendo um deles o próprio Marketplace
 
-**OBS:** Em todos os exemplos abaixo, é desconsiderado o valor cobrado pela Braspag. Se for considerado, o montante recebido pelo Marketplace será inferior. 
+**OBS:** Em todos os exemplos abaixo, é desconsiderado o valor cobrado pela Braspag. Se for considerado, o montante recebido pelo Marketplace será inferior ao valor da Taxa Marketplace. 
 
 
 
@@ -929,7 +929,7 @@ RESPONSE
 }
 ```
 
-**EXEMPLO 03 - 2 Subordinates, sendo um deles o próprio Marketplace**
+**EXEMPLO 03 - 3 Subordinates, sendo um deles o próprio Marketplace**
 
 
 REQUEST 
