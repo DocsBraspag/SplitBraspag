@@ -486,6 +486,14 @@ RESPONSE
 
 **EXEMPLO 03 - 3 Subordinates, sendo um deles o próprio Marketplace**
 
+Neste exemplo, o Marketplace será cobrado pela Braspag e participará da transação como Subordinate. 
+Vamos usar como base:
+
+* **Taxa Braspag:** 2% sobre o valor da Venda do Subordinate
+* **Tarifa Braspag:** R$0,30 por transação do Subordinate
+
+![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split3S.jpg)
+
 
 REQUEST 
 
