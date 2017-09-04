@@ -9,7 +9,14 @@ order: 1
 
 O Split de Pagamentos permite a divisão de uma transação entre diferentes entidades.
 
-Muito utilizado em MarketPlaces, onde **o carrinho é composto por produtos de diferentes fornecedores**, tornando-se necessário a liquidação do pagamento para todos os participantes da venda.
+Muito utilizado em MarketPlaces, onde **o carrinho é composto por produtos de diferentes fornecedores** e o valor total da venda deverá ser dividido entre todos os participantes da venda.
+
+
+| **Entidades** | **Descrição** | 
+|-----------|---------- |
+| **Marketplace** | Dono do carrinho e da Transação. <BR> Possui Subordinates que fornecem o contudo do Carrinho.<BR> Realiza a cobrança de uma Taxa sobre a venda do Subordinate<BR>  | 
+| **Subordinate** | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<BR> Um Marketplace possui inumeros Subordinates. <BR>Recebem parte da venda, descontado o valor da taxa do MarketPlace<BR>  |
+| **Braspag** | Responsável pela autorização da transação.<BR>Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação.<BR> Deposita o valor da Transação na conta do Subordinate.<BR> Deposita o valor da taxa cobrada pelo Marketplace so Subordinate <BR> |
 
 
 
@@ -18,12 +25,6 @@ Muito utilizado em MarketPlaces, onde **o carrinho é composto por produtos de d
 O Split de pagamento funciona quando um Marketplace realiza uma transação e-commerce enviando a Braspag a maneira como esse pagamento será dividido e quais participantes serão cobrados ou receberão o valor vendido.
 
 Nesse modelo de split de pagamentos, existem 3 entidades básicas:
-
-| **Entidades** | **Descrição** | 
-|-----------|---------- |
-| **Marketplace** | Dono do carrinho e da Transação. <BR> Possui Subordinates que fornecem o contudo do Carrinho.<BR> Realiza a cobrança de uma Taxa sobre a venda do Subordinate<BR>  | 
-| **Subordinate** | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<BR> Um Marketplace possui inumeros Subordinates. <BR>Recebem parte da venda, descontado o valor da taxa do MarketPlace<BR>  |
-| **Braspag** | Responsável pela autorização da transação.<BR>Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação.<BR> Deposita o valor da Transação na conta do Subordinate.<BR> Deposita o valor da taxa cobrada pelo Marketplace so Subordinate <BR> |
 
 
 O Split é um processo de divisão transacional, onde o **Marketplace** separa o valor pertecente da transação do **Subordinate** em duas partes: 
