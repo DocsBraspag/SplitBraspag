@@ -676,11 +676,12 @@ Exemplo do Nó de SPLIT no `POST`:
 | Propriedade                                  | Descrição                                                                                                        | Tipo   | Tamanho | Obrigatório |
 |----------------------------------------------|------------------------------------------------------------------------------------------------------------------|--------|---------|-------------|
 | `TransactionId`                              | Identificador da transação - Respondido após autorização                                                         | GUID   | 36      | Sim         |
-| `SplitPayments.SubordinateMerchantId`        | Identificador do Subordinate ou Marketplace incluso no Split                                                     | GUID   | 36      | Sim         |
-| `SplitPayments.Amount`                       | Valor da transação pertencente ao Subordinate dentro da transação                                                | Número | 15      | Sim         |
+| `SplitPayments.SubordinateMerchantId`        | Identificador do Subordinate                                                                                     | GUID   | 36      | Sim         |
+| `SplitPayments.Amount`                       | Valor da transação pertencente ao Subordinate                                                                    | Número | 15      | Sim         |
 | `SplitPayments.Fares.Mdr`                    | Taxa do Marketplace (%) a ser retirada do Subordinate                                                            | Número | 2       | Sim         |
 | `SplitPayments.Fares.Fee`                    | Tarifa (R$) a ser cobrada do Subordinate - em Centavos                                                           | Número | 15      | Sim         |
-
+| `SplitPayments.split.SubordinateMerchantId.` | Identificador do Subordinate ou Marketplace incluso no Split                                                     | GUID   | 36      | Sim         |
+| `SplitPayments.split.Amount`                 | Valor da transação a ser depositado no Subordinate ou Marketplace, descontado a Taxa Marketplace e/ou Taxa Cielo | Número | 15      | Sim         |
 
 Com resposta, A API retornará um nó com as seguintes caracteristicas:
 
@@ -729,6 +730,16 @@ Parte do `RESPONSE`:
 }
 
 ```
+| Propriedade                                  | Descrição                                                                                                        | Tipo   | Tamanho | Obrigatório |
+|----------------------------------------------|------------------------------------------------------------------------------------------------------------------|--------|---------|-------------|
+| `TransactionId`                              | Identificador da transação - Respondido após autorização                                                         | GUID   | 36      | Sim         |
+| `SplitPayments.SubordinateMerchantId`        | Identificador do Subordinate ou Marketplace incluso no Split                                                     | GUID   | 36      | Sim         |
+| `SplitPayments.Amount`                       | Valor da transação pertencente ao Subordinate dentro da transação                                                | Número | 15      | Sim         |
+| `SplitPayments.Fares.Mdr`                    | Taxa do Marketplace (%) a ser retirada do Subordinate                                                            | Número | 2       | Sim         |
+| `SplitPayments.Fares.Fee`                    | Tarifa (R$) a ser cobrada do Subordinate - em Centavos                                                           | Número | 15      | Sim         |
+
+
+
 
 O Split aceita varias combinações para transações entre diferentes entidades:
 
