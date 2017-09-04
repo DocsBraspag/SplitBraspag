@@ -402,7 +402,7 @@ RESPONSE
                 "splits": [                
                     {
                         "SubordinateMerchantId": "MID DO Marketplace",
-                        "amount": 500,
+                        "amount": 270,
                     },
                     {
                         "SubordinateMerchantId": "MID Subordinate 01",
@@ -420,7 +420,7 @@ RESPONSE
                 "splits": [                
                     {
                         "SubordinateMerchantId": "MID DO Marketplace",
-                        "amount": 1000,
+                        "amount": 770,
                     },
                     {
                         "SubordinateMerchantId": "MID Subordinate 02",
