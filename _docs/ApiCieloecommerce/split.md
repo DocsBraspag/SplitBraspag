@@ -12,10 +12,10 @@ O Split de pagamentos é uma funcionalidade Braspag que permite a divisão de um
 Ele funciona recebendo uma transação que pode ser subdividida para diferentes atores. Os valores dessa transação é dividido e pago em contas bancarias separadas. 
 
 
-Essa é uma  estrutura transacional muito utilizada em MarketPlaces, onde **o carrinho é formado por produtos de diferentes fornecedores** que receberarão partes do pagamento total da transação.
+Essa é uma  estrutura transacional muito utilizada em MarketPlaces, onde **o carrinho é formado por produtos de diferentes fornecedores** que receberão partes do pagamento total da transação.
 O Split é uma funcionalidade que possui as seguintes vantagens:
 
-* Evita que comprador realize várias transações, elevando a chance de conversão
+* Evita que comprador realize várias transações separadas, criando apenas uma transação,assim elevando a chance de conversão
 * Permite que um Marketplace possa cobrar uma taxa sobre o valor transacional utilizando apenas uma integração técnica
 * Permite que o Marketplace possa montar um carrinho com produtos de diferentes fornecedores de maneira transparente para o comprador.
 
@@ -23,14 +23,14 @@ O Split é uma funcionalidade que possui as seguintes vantagens:
 
 ### Como funciona o Split de Pagamentos.
 
-O Split de pagamento funciona quando um Marketplace realiza uma transação e-commerce enviado a Braspag sobre como esse pagamento será dividido e quais participantes serão cobrados ou receberá o valor vendido.
+O Split de pagamento funciona quando um Marketplace realiza uma transação e-commerce enviando a Braspag a maneira como esse pagamento será dividido e quais participantes serão cobrados ou receberão o valor vendido.
 
-Nesse modelo de split de pagamentos existem 3 entidades básicas:
+Nesse modelo de split de pagamentos, existem 3 entidades básicas:
 
 | **Entidades** | **Descrição** | 
 |-----------|---------- |
 | **Marketplace** | Dono do carrinho e da Transação. <BR> Possui Subordinates que fornecem o contudo do Carrinho.<BR> Realiza a cobrança de uma Taxa sobre a venda do Subordinate<BR>  | 
-| **Subordinate** | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<BR> Um Marketplace possui inumeros Subordinate. <BR>Recebem parte da venda, descontado o valor da taxa do MarketPlace<BR>  |
+| **Subordinate** | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<BR> Um Marketplace possui inumeros Subordinates. <BR>Recebem parte da venda, descontado o valor da taxa do MarketPlace<BR>  |
 | **Braspag** | Responsavel pela autorização da transação.<BR>Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação.<BR> Deposita o valor da Transação na conta do Subordinate.<BR> Deposita o valor da taxa cobrada pelo Marketplace so Subordinate <BR> |
 
 
