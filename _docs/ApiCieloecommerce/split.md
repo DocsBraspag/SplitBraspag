@@ -9,7 +9,7 @@ order: 1
 
 O Split de Pagamentos permite a divisão de uma transação entre diferentes entidades.
 
-Essa é uma  estrutura transacional muito utilizada em MarketPlaces, onde **o carrinho é formado por produtos de diferentes fornecedores** que receberão partes do pagamento total da transação.
+Muito utilizada em MarketPlaces, onde **o carrinho é composto por produtos de diferentes fornecedores** que receberão partes do pagamento total da transação.
 O Split é uma funcionalidade que possui as seguintes vantagens:
 
 * Evita que comprador realize várias transações separadas, criando apenas uma transação,assim elevando a chance de conversão
