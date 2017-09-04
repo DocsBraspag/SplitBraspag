@@ -743,9 +743,12 @@ Parte do `RESPONSE`:
 
 O Split aceita varias combinações para transações entre diferentes entidades:
 
-* Apenas 1 Subordinate - Sem taxa ou tarifa Braspag
-* 2 Subordinates dividindo a mesma transação - Com taxa e tarifa Braspag
-* 2 Subordinates, sendo um deles o próprio Marketplace - Com taxa e tarifa Braspag
+* Apenas 1 Subordinate
+* 2 Subordinates dividindo a mesma transação
+* 2 Subordinates, sendo um deles o próprio Marketplace
+
+**OBS:** Em todos os exemplos abaixo, é desconsiderado o valor cobrado pela Braspag. Se for considerado, o montante recebido pelo Marketplace será inferior. 
+
 
 
 **EXEMPLO 01 - Apenas 1 Subordinate - Sem taxa ou tarifa Braspag**
