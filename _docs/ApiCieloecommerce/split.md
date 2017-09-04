@@ -413,7 +413,7 @@ RESPONSE
             },
         	{
                 "SubordinateMerchantId": "MID Subordinate 02",
-                "amount": 5000,
+                "amount": 10000,
                 "fares": {
                     "mdr": 10,
                     "fee": 0
@@ -484,7 +484,7 @@ RESPONSE
 }
 ```
 
-**EXEMPLO 03 - 2 Subordinates, sendo um deles o próprio Marketplace**
+**EXEMPLO 03 - 3 Subordinates, sendo um deles o próprio Marketplace**
 
 
 REQUEST 
@@ -504,7 +504,7 @@ Body
    "MerchantOrderId":"2014111701",
    "Payment":{
      "Type":"SplittedCreditCard",
-     "Amount":10000,
+     "Amount":30000,
      "Installments":1,
      "SoftDescriptor":"Split*LosCone",
      "Capture":false,
@@ -518,14 +518,21 @@ Body
      "SplitPayments":[
         {
         "SubordinateMerchantId" :"MID Subordinate 01",
-        "Amount":5000,
+        "Amount":10000,
         "Fares":{
             "Mdr":5,
             "Fee":0
         },
         {
+        "SubordinateMerchantId" :"MID Subordinate 02",
+        "Amount":10000,
+        "Fares":{
+            "Mdr":10,
+            "Fee":0
+        },
+        {
         "SubordinateMerchantId" :"MID DO Marketplace",
-        "Amount":5000,
+        "Amount":10000,
         "Fares":{
             "Mdr":0,
             "Fee":0
@@ -548,7 +555,7 @@ RESPONSE
     "SplitPayments": [
             {
                 "SubordinateMerchantId": "MID Subordinate 01",
-                "amount": 5000,
+                "amount": 10000,
                 "fares": {
                     ""mdr: 5,
                     "fee": 0
@@ -556,19 +563,39 @@ RESPONSE
                 "splits": [                
                     {
                         "SubordinateMerchantId": "MID DO Marketplace",
-                        "amount": 250,
+                        "amount": 270,
                         
                     },
                     {
                         "SubordinateMerchantId": "MID Subordinate 01",
-                        "amount": 4750,
+                        "amount": 9500,
+                        
+                    }
+                ]
+            },
+        	{
+                "SubordinateMerchantId": "MID Subordinate 02",
+                "amount": 10000,
+                "fares": {
+                    ""mdr: 10,
+                    "fee": 0
+                },
+                "splits": [                
+                    {
+                        "SubordinateMerchantId": "MID DO Marketplace",
+                        "amount": 770,
+                        
+                    },
+                    {
+                        "SubordinateMerchantId": "MID Subordinate 01",
+                        "amount": 9000,
                         
                     }
                 ]
             },
         	{
                 "SubordinateMerchantId": "MID DO Marketplace",
-                "amount": 5000,
+                "amount": 10000,
                 "fares": {
                     "mdr": 0,
                     "fee": 0
@@ -577,15 +604,11 @@ RESPONSE
                     {
                         "SubordinateMerchantId": "MID DO Marketplace",
                         "amount": 0,
-                        "mdr": 0,
-                        "fee": 0
-                    },
+                      },
                     {
                         "SubordinateMerchantId": "MID DO Marketplace",
-                        "amount": 5000
-                        "mdr": 100,
-                        "fee": 0
-                    }
+                        "amount": 9770
+                      }
                 ]
             }
         ],
