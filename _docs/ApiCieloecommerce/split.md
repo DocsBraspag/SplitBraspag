@@ -119,7 +119,6 @@ O Split de pagamentos possui dois tipos basicos de integração:
 Cada modelo possui um contrato adicional de integração a API Cielo Ecommerce e Braspag, que será apresentado a seguir.
 
 
-
 #### Split Transacional
 
 Esse modelo exige que o lojista envie um  adicional na integração da API Cielo Ecommerce onde serão inclusos os dados do pagamento, Sellers e Taxas a serem cobradas.
@@ -648,8 +647,7 @@ RESPONSE
 
 Esse modelo exige que o lojista envie uma atualização  (via `PUT`) na integração da API Cielo Ecommerce informando qual Sellers e Taxas a serão cobrados.
 
-
-> 
+> EndPoint de atualização: https://apidev.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/split
 
 Exemplo do Nó de SPLIT no `PUT`:
 ```
