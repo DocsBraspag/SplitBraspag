@@ -20,6 +20,7 @@ O Split é uma funcionalidade que possui as seguintes vantagens:
 * Permite que o Marketplace possa montar um carrinho com produtos de diferentes fornecedores de maneira transparente para o comprador.
 
 
+
 ### Como funciona o Split de Pagamentos.
 
 O Split de pagamento funciona quando um Marketplace realiza uma transação e-commerce enviando a Braspag a maneira como esse pagamento será dividido e quais participantes serão cobrados ou receberão o valor vendido.
@@ -30,7 +31,7 @@ Nesse modelo de split de pagamentos, existem 3 entidades básicas:
 |-----------|---------- |
 | **Marketplace** | Dono do carrinho e da Transação. <BR> Possui Subordinates que fornecem o contudo do Carrinho.<BR> Realiza a cobrança de uma Taxa sobre a venda do Subordinate<BR>  | 
 | **Subordinate** | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<BR> Um Marketplace possui inumeros Subordinates. <BR>Recebem parte da venda, descontado o valor da taxa do MarketPlace<BR>  |
-| **Braspag** | Responsavel pela autorização da transação.<BR>Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação.<BR> Deposita o valor da Transação na conta do Subordinate.<BR> Deposita o valor da taxa cobrada pelo Marketplace so Subordinate <BR> |
+| **Braspag** | Responsável pela autorização da transação.<BR>Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação.<BR> Deposita o valor da Transação na conta do Subordinate.<BR> Deposita o valor da taxa cobrada pelo Marketplace so Subordinate <BR> |
 
 
 O Split é um processo de divisão transacional, onde o **Marketplace** separa o valor pertecente da transação do **Subordinate** em duas partes: 
@@ -41,23 +42,23 @@ O Split é um processo de divisão transacional, onde o **Marketplace** separa o
 
 A **Braspag** receberá a transação, separando a transação entre valores a serem direcionados ao Marketplace, originado da **Taxa do Marketplace** e aos Subordinates, originado do valor devido dentro da venda.
 
-> **Sobre Contas**: Ao utilizar o SPLIT, o Markteplace deverá junto aos seus Subordinates se cadastrar na **Braspag**, assim recebendo um identificador de loja e registrando uma conta bancaria para cada ator como ponto de deposito dos valores Splitados
+> **Sobre Contas**: Ao utilizar o SPLIT, o Markteplace deverá junto aos seus Subordinates se cadastrar na **Braspag**, assim recebendo um identificador de loja e registrando uma conta bancaria para cada entidade como ponto de deposito dos valores Splitados
 
 
 
 Abaixo um exemplo do Fluxo transacional de autorização e divisão de valores no Split de pagamentos:
 
 
-![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split0.jpg)
+![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/Split0.jpg)
 
 **EX:** Uma venda de R$100, feita pelo **Subordinate** no Marketplace **Marketplace**
 
 0. O **Marketplace** tem Taxa de **5%** Sobre a venda do **Subordinate**
 0. Essa Taxa é formada por uma margem de `3 Pontos Percentuais` sobre o total da transação + o custo braspag (`2 pontos percentuais + 0,30 centavos`) sobre o total da transação
-0. A Transação é processada. O **Subordinate** recebe o montante da venda - a `Taxa Marketplace`
+0. A Transação é processada. O **Subordinate** recebe o montante da venda menos a `Taxa Marketplace`
 1. O Marketplace Recebe a parte da transação menos o custo da taxa Braspag.
 
-> **Importante**: As porcentagens exibidas no exemplo não são aplicadas uma sobre as outras, mas sim como pontos percentuais que somados formam uma taxa unica sobre o Subordinate. Isso ocorre pois o valor das taxas sempre é cobrado sobre o total da transação do Subordinate.
+> ** *Importante* **: As porcentagens exibidas no exemplo não são aplicadas uma sobre as outras, mas sim como pontos percentuais que somados formam uma taxa unica sobre o Subordinate. Isso ocorre pois o valor das taxas sempre é cobrado sobre o total da transação do Subordinate.
 
 
 
@@ -71,7 +72,7 @@ Nesta área do manual vamos detalhar como o processo de cobrança e custos afeta
 #### Custo Marketplace
 
 O Split de pagamentos Braspag funciona com base em uma **taxa basica percentual tabelada** e uma **Tarifa fixa por transação** contratada pelo Marketplace. 
-A Taxa braspag é cobrada sobre o valor da transação do Subordinate Como um todo, mas é retirada da parte destinada ao Marketplace
+A Taxa braspag é cobrada sobre o valor da transação do Subordinate como um todo, mas é retirada da parte destinada ao Marketplace.
 
 
 > **Custo Marketplace:** TAXA BRASPAG (%) + TARIFA FIXA (R$)
@@ -79,7 +80,12 @@ A Taxa braspag é cobrada sobre o valor da transação do Subordinate Como um to
 1 - A `taxa Braspag` é vinculada ao valor total da transação do Subordinate e não sobre o valor que Marketplace irá receber.<BR><BR>
 **EX:** 2% sobre a Venda de R$100,00 do Subordinate<BR><BR>
 2 - O valor da tarifa fixa Braspag é debitada do montante destinado ao Marketplace. <BR><BR>
-**EX:** 2% sobre a Venda de R$100,00 do Subordinate = R$2,00, será retirado da Fatia cobrada pelo Marketplace do Subordinate<BR><BR>
+**EX:** 2% sobre a Venda de R$100,00 do Subordinate = R$2,00, será retirado da fatia cobrada pelo Marketplace do Subordinate<BR><BR>
+
+
+Abaixo um exemplo de como a divisão de valores é realizada por transação:
+
+![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/splitF.jpg)
 
 
 
@@ -98,7 +104,7 @@ Abaixo demonstramos como essa Taxa é formada pelo Marketplace com base no custo
 O Split funciona como parte da API transacional da Braspag via API Cielo Ecommerce.
 
 A integração A ser realizara é a mesma descrita para transações de cartão de crédito dentro da API Cielo Ecommerce.
-Para mais informações, veja o [Manual de Integração](https://developercielo.github.io/Webservice-3.0/#criando-uma-transação-simples)
+Para mais informações, veja este [Manual de Integração](https://developercielo.github.io/Webservice-3.0/#criando-uma-transação-simples)
 
 Neste manual serão apresentados os contratos de integração da API Cielo ecommerce, mas o foco da analise se dará nos paramêtros do Split de pagamentos.
 
@@ -120,9 +126,9 @@ Cada modelo possui um contrato adicional de integração a API Cielo Ecommerce e
 
 #### Split Transacional
 
-Esse modelo exige que o lojista envie um  adicional na integração da API Cielo Ecommerce onde serão inclusos os dados do pagamento, Subordinates e Taxas a serem cobradas.
+Esse modelo exige que o lojista envie um "nó" adicional na integração da API Cielo Ecommerce onde serão inclusos os dados do pagamento, Subordinates e Taxas a serem cobradas.
 
-Exemplo do Nó de SPLIT no `POST`:
+Exemplo do Nó de SPLIT no `POST` criando a transação:
 ```
 "SplitPayments":[{
         "SubordinateMerchantId" :"MID Subordinate 01",
@@ -167,14 +173,14 @@ Parte do `RESPONSE`:
         ],
 ```
 
-| Propriedade                                  | Descrição                                                                                                        | Tipo   | Tamanho | Obrigatório |
-|----------------------------------------------|------------------------------------------------------------------------------------------------------------------|--------|---------|-------------|
-| `SplitPayments.SubordinateMerchantId`        | Identificador do Subordinate                                                                                     | GUID   | 36      | Sim         |
-| `SplitPayments.Amount`                       | Valor da transação pertencente ao Subordinate                                                                    | Número | 15      | Sim         |
-| `SplitPayments.Fares.Mdr`                    | Taxa do Marketplace (%) a ser retirada do Subordinate                                                            | Número | 2       | Sim         |
-| `SplitPayments.Fares.Fee`                    | Tarifa (R$) a ser cobrada do Subordinate - em Centavos                                                           | Número | 15      | Sim         |
-| `SplitPayments.split.SubordinateMerchantId.` | Identificador do Subordinate ou Marketplace incluso no Split                                                     | GUID   | 36      | Sim         |
-| `SplitPayments.split.Amount`                 | Valor da transação a ser depositado no Subordinate ou Marketplace, descontado a Taxa Marketplace e/ou Taxa Cielo | Número | 15      | Sim         |
+| Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
+|-----------------------------------------|---------------------------------------------------------------------------------------------|--------|---------|-------------|
+| `SplitPayments.SubordinateMerchantId`        | Identificador do Subordinate                                                                     | GUID   | 36      | Sim         |
+| `SplitPayments.Amount`                  | Valor da transação pertencente ao Subordinate                                                    | Número | 15      | Sim         |
+| `SplitPayments.Fares.Mdr`               | Taxa do Marketplace (%) a ser retirada do Subordinate                                                    | Número | 2       | Sim         |
+| `SplitPayments.Fares.Fee`               | Tarifa (R$) a ser cobrada do Subordinate - em Centavos                                           | Número | 15      | Sim         |
+| `SplitPayments.split.SubordinateMerchantId.` | Identificador do Subordinate ou Marketplace incluso no Split                                             | GUID   | 36      | Sim         |
+| `SplitPayments.split.Amount`            | Valor da transação a ser depositado no Subordinate ou Marketplace, descontado a Taxa Marketplace e/ou Taxa Cielo | Número | 15      | Sim         |
 
 
 
@@ -183,10 +189,10 @@ Parte do `RESPONSE`:
 O nó `SPLIT` contido na resposta da transação retorna informações especificas a respeito dos valores a serem depositados para cada entidade do split:
 
 
-![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split3.jpg)
+![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/Split03.jpg)
 
 
-O Split aceita varias combinações para transações entre diferentes entidades:
+O Split aceita varias combinações para transações entre diferentes atores:
 
 * Apenas 1 Subordinate - Sem taxa ou tarifa Braspag
 * 2 Subordinates dividindo a mesma transação - Com taxa e tarifa Braspag
@@ -196,10 +202,6 @@ O Split aceita varias combinações para transações entre diferentes entidades
 **EXEMPLO 01 -  Apenas 1 Subordinate**
 
 Neste primeiro exemplo, para simplificar como a apresentação do Modelo de integração, o Marketplace não sofrerá cobrança de taxa ou tarifa Braspag
-
-
-![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split1s.jpg)
-
 
 
 REQUEST 
@@ -336,7 +338,6 @@ Vamos usar como base:
 * **Taxa Braspag:** 2% sobre o valor da Venda do Subordinate
 * **Tarifa Braspag:** R$0,30 por transação do Subordinate
 
-![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split2S.jpg)
 
 
 REQUEST 
@@ -407,7 +408,7 @@ RESPONSE
                 "splits": [                
                     {
                         "SubordinateMerchantId": "MID DO Marketplace",
-                        "amount": 270,
+                        "amount": 500,
                     },
                     {
                         "SubordinateMerchantId": "MID Subordinate 01",
@@ -417,7 +418,7 @@ RESPONSE
             },
         	{
                 "SubordinateMerchantId": "MID Subordinate 02",
-                "amount": 10000,
+                "amount": 5000,
                 "fares": {
                     "mdr": 10,
                     "fee": 0
@@ -425,7 +426,7 @@ RESPONSE
                 "splits": [                
                     {
                         "SubordinateMerchantId": "MID DO Marketplace",
-                        "amount": 770,
+                        "amount": 1000,
                     },
                     {
                         "SubordinateMerchantId": "MID Subordinate 02",
@@ -488,15 +489,7 @@ RESPONSE
 }
 ```
 
-**EXEMPLO 03 - 3 Subordinates, sendo um deles o próprio Marketplace**
-
-Neste exemplo, o Marketplace será cobrado pela Braspag e participará da transação como Subordinate. 
-Vamos usar como base:
-
-* **Taxa Braspag:** 2% sobre o valor da Venda do Subordinate
-* **Tarifa Braspag:** R$0,30 por transação do Subordinate
-
-![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split3S.jpg)
+**EXEMPLO 03 - 2 Subordinates, sendo um deles o próprio Marketplace**
 
 
 REQUEST 
@@ -516,7 +509,7 @@ Body
    "MerchantOrderId":"2014111701",
    "Payment":{
      "Type":"SplittedCreditCard",
-     "Amount":30000,
+     "Amount":10000,
      "Installments":1,
      "SoftDescriptor":"Split*LosCone",
      "Capture":false,
@@ -530,21 +523,14 @@ Body
      "SplitPayments":[
         {
         "SubordinateMerchantId" :"MID Subordinate 01",
-        "Amount":10000,
+        "Amount":5000,
         "Fares":{
             "Mdr":5,
             "Fee":0
         },
         {
-        "SubordinateMerchantId" :"MID Subordinate 02",
-        "Amount":10000,
-        "Fares":{
-            "Mdr":10,
-            "Fee":0
-        },
-        {
         "SubordinateMerchantId" :"MID DO Marketplace",
-        "Amount":10000,
+        "Amount":5000,
         "Fares":{
             "Mdr":0,
             "Fee":0
@@ -567,7 +553,7 @@ RESPONSE
     "SplitPayments": [
             {
                 "SubordinateMerchantId": "MID Subordinate 01",
-                "amount": 10000,
+                "amount": 5000,
                 "fares": {
                     ""mdr: 5,
                     "fee": 0
@@ -575,39 +561,19 @@ RESPONSE
                 "splits": [                
                     {
                         "SubordinateMerchantId": "MID DO Marketplace",
-                        "amount": 270,
+                        "amount": 250,
                         
                     },
                     {
                         "SubordinateMerchantId": "MID Subordinate 01",
-                        "amount": 9500,
-                        
-                    }
-                ]
-            },
-        	{
-                "SubordinateMerchantId": "MID Subordinate 02",
-                "amount": 10000,
-                "fares": {
-                    ""mdr: 10,
-                    "fee": 0
-                },
-                "splits": [                
-                    {
-                        "SubordinateMerchantId": "MID DO Marketplace",
-                        "amount": 770,
-                        
-                    },
-                    {
-                        "SubordinateMerchantId": "MID Subordinate 01",
-                        "amount": 9000,
+                        "amount": 4750,
                         
                     }
                 ]
             },
         	{
                 "SubordinateMerchantId": "MID DO Marketplace",
-                "amount": 10000,
+                "amount": 5000,
                 "fares": {
                     "mdr": 0,
                     "fee": 0
@@ -616,11 +582,15 @@ RESPONSE
                     {
                         "SubordinateMerchantId": "MID DO Marketplace",
                         "amount": 0,
-                      },
+                        "mdr": 0,
+                        "fee": 0
+                    },
                     {
                         "SubordinateMerchantId": "MID DO Marketplace",
-                        "amount": 9770
-                      }
+                        "amount": 5000
+                        "mdr": 100,
+                        "fee": 0
+                    }
                 ]
             }
         ],
@@ -680,361 +650,54 @@ RESPONSE
 
 #### Split Pós-Transacional
 
-Esse modelo exige que o lojista envie uma crie um split dentro de transação (via `POST`) na integração da API Cielo Ecommerce informando qual Subordinates e Taxas a serão cobrados.
+Esse modelo exige que o lojista envie uma atualização da transação (via `PUT`) na integração da API Cielo Ecommerce informando qual Subordinates e Taxas a serão cobrados.
 
-> EndPoint de Criação: https://split.braspag.com.br/api/split
 
-Exemplo do Nó de SPLIT no `POST`:
+> EndPoint de atualização: https://apidev.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/split
 
-* No exemplo abaixo, uma transação é dividida entre 2 Subordinate, um com Taxa de Marketplace de 5% e outro com Taxa de 10%.
-
+Exemplo do Nó de SPLIT no `PUT`:
 ```
-{
-    TransactionId: "Guid",
-    SplitPayments: [
-         SubordinateMerchantId: "MID Subordinate 01",
-         Amount: "10000",
-         Fares: {
-             Mdr: "5",
-             Fee: "0"
-         },
-         SubordinateMerchantId: "MID Subordinate 02",
-         Amount: "10000",
-         Fares: {
-             Mdr: "10",
-             Fee: "0"
-         }
-    ]
-}
+"SplitPayments":[{
+        "SubordinateMerchantId" :"MID Subordinate 01",
+        "Amount":10000,
+        "Fares":{
+            "Mdr":5,
+            "Fee":0
+        }
 ```
 
+| Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
+|-----------------------------------------|---------------------------------------------------------------------------------------------|--------|---------|-------------|
+| `SplitPayments.SubordinateMerchantId`        | Identificador do Subordinate                                                                     | GUID   | 36      | Sim         |
+| `SplitPayments.Amount`                  | Valor da transação pertencente ao Subordinate                                                    | Número | 15      | Sim         |
+| `SplitPayments.Fares.Mdr`               | Taxa do Marketplace (%) a ser retirada do Subordinate                                                    | Número | 2       | Sim         |
+| `SplitPayments.Fares.Fee`               | Tarifa (R$) a ser cobrada do Subordinate - em Centavos                                           | Número | 15      | Sim         |
 
-| Propriedade                                  | Descrição                                                                                                        | Tipo   | Tamanho | Obrigatório |
-|----------------------------------------------|------------------------------------------------------------------------------------------------------------------|--------|---------|-------------|
-| `TransactionId`                              | Identificador da transação - Respondido após autorização                                                         | GUID   | 36      | Sim         |
-| `SplitPayments.SubordinateMerchantId`        | Identificador do Subordinate                                                                                     | GUID   | 36      | Sim         |
-| `SplitPayments.Amount`                       | Valor da transação pertencente ao Subordinate                                                                    | Número | 15      | Sim         |
-| `SplitPayments.Fares.Mdr`                    | Taxa do Marketplace (%) a ser retirada do Subordinate                                                            | Número | 2       | Sim         |
-| `SplitPayments.Fares.Fee`                    | Tarifa (R$) a ser cobrada do Subordinate - em Centavos                                                           | Número | 15      | Sim         |
-| `SplitPayments.split.SubordinateMerchantId.` | Identificador do Subordinate ou Marketplace incluso no Split                                                     | GUID   | 36      | Sim         |
-| `SplitPayments.split.Amount`                 | Valor da transação a ser depositado no Subordinate ou Marketplace, descontado a Taxa Marketplace e/ou Taxa Cielo | Número | 15      | Sim         |
 
 Com resposta, A API retornará um nó com as seguintes caracteristicas:
 
 Parte do `RESPONSE`:
 ```
-{
-    "transactionId": "a417522f-8f05-b216-0d21-227e4331882a",
-    "splitPayments": [
-        {
-            "subordinateMerchantId": "MID Subordinate 01",
-            "amount": 10000,
-            "fares": {
-                "mdr": 7,
-                "fee": 0
-            },
-            "splits": [
-                {
-                    "merchantId": "MID Subordinate 01",
-                    "amount": 9300
+"SplitPayments": [
+            {
+                "SubordinateMerchantId": "MID Subordinate 01",
+                "amount": 10000,
+                "fares": {
+                    "mdr": 5,
+                    "fee": 0
                 },
-                {
-                    "merchantId": "MID DO Marketplace",
-                    "amount": 700
-                }
-            ]
-        },
-        {
-            "subordinateMerchantId": "MID Subordinate 02",
-            "amount": 10000,
-            "fares": {
-                "mdr": 4,
-                "fee": 0
-            },
-            "splits": [
-                {
-                    "merchantId": "MID Subordinate 02",
-                    "amount": 9600
-                },
-                {
-                    "merchantId": "MID DO Marketplace",
-                    "amount": 400
-                }
-            ]
-        }
-    ]
-}
-
-```
-
-| Propriedade                                  | Descrição                                                                                                        | Tipo   | Tamanho | Obrigatório |
-|----------------------------------------------|------------------------------------------------------------------------------------------------------------------|--------|---------|-------------|
-| `TransactionId`                              | Identificador da transação - Respondido após autorização                                                         | GUID   | 36      | Sim         |
-| `SplitPayments.SubordinateMerchantId`        | Identificador do Subordinate ou Marketplace incluso no Split                                                     | GUID   | 36      | Sim         |
-| `SplitPayments.Amount`                       | Valor da transação pertencente ao Subordinate dentro da transação                                                | Número | 15      | Sim         |
-| `SplitPayments.Fares.Mdr`                    | Taxa do Marketplace (%) a ser retirada do Subordinate                                                            | Número | 2       | Sim         |
-| `SplitPayments.Fares.Fee`                    | Tarifa (R$) a ser cobrada do Subordinate - em Centavos                                                           | Número | 15      | Sim         |
-
-
-
-
-O Split aceita varias combinações para transações entre diferentes entidades:
-
-* Apenas 1 Subordinate
-* 2 Subordinates dividindo a mesma transação
-* 2 Subordinates, sendo um deles o próprio Marketplace
-
-**OBS:** Em todos os exemplos abaixo, é desconsiderado o valor cobrado pela Braspag. Se for considerado, o montante recebido pelo Marketplace será inferior ao valor da Taxa Marketplace. 
-
-
-
-**EXEMPLO 01 - Apenas 1 Subordinate - Sem taxa ou tarifa Braspag**
-
-
-REQUEST 
-
-Header
-```
---request POST "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/"
---header "Content-Type: application/json"
---header "MerchantId: MID DO Marketplace"
---header "MerchantKey: 0123456789012345678901234567890123456789"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
-```
-
-Body
-```
-{
-    TransactionId: "a417522f-8f05-b216-0d21-227e4331882a",
-    SplitPayments: [
-         SubordinateMerchantId: "MID Subordinate 01",
-         Amount: "10000",
-         Fares: {
-             Mdr: "5",
-             Fee: "0"
-         }
-      ]
-}
-```
-
-RESPONSE
-
-```
-{
-    "transactionId": "a417522f-8f05-b216-0d21-227e4331882a",
-    "splitPayments": [
-        {
-            "subordinateMerchantId": "MID Subordinate 01",
-            "amount": 10000,
-            "fares": {
-                "mdr": 5,
-                "fee": 0
-            },
-            "splits": [
-                {
-                    "merchantId": "MID Subordinate 01",
-                    "amount": 9500
-                },
-                {
-                    "merchantId": "MID DO Marketplace",
-                    "amount": 500
-                }
-            ]
-        }
-    ]
-}
-
-```
-
-
-**EXEMPLO 02 - 2 Subordinates dividindo a mesma transação**
-
-
-REQUEST 
-
-Header
-```
---request POST "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/"
---header "Content-Type: application/json"
---header "MerchantId: MID DO Marketplace"
---header "MerchantKey: 0123456789012345678901234567890123456789"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
-```
-
-Body
-```
-{
-    TransactionId: "a417522f-8f05-b216-0d21-227e4331882a",
-    SplitPayments: [
-         SubordinateMerchantId: "MID Subordinate 01",
-         Amount: "10000",
-         Fares: {
-             Mdr: "5",
-             Fee: "0"
-         },
-         SubordinateMerchantId: "MID Subordinate 02",
-         Amount: "10000",
-         Fares: {
-             Mdr: "10",
-             Fee: "0"
-         }
-    ]
-}
-```
-
-RESPONSE
-
-```
-{
-    "transactionId": "a417522f-8f05-b216-0d21-227e4331882a",
-    "splitPayments": [
-        {
-            "subordinateMerchantId": "MID Subordinate 01",
-            "amount": 10000,
-            "fares": {
-                "mdr": 5,
-                "fee": 0
-            },
-            "splits": [
-                {
-                    "merchantId": "MID Subordinate 01",
-                    "amount": 9500
-                },
-                {
-                    "merchantId": "MID DO Marketplace",
-                    "amount": 700
-                }
-            ]
-        },
-        {
-            "subordinateMerchantId": "MID Subordinate 02",
-            "amount": 10000,
-            "fares": {
-                "mdr": 10,
-                "fee": 0
-            },
-            "splits": [
-                {
-                    "merchantId": "MID Subordinate 02",
-                    "amount": 9000
-                },
-                {
-                    "merchantId": "MID DO Marketplace",
-                    "amount": 1000
-                }
-            ]
-        }
-    ]
-}
-```
-
-**EXEMPLO 03 - 3 Subordinates, sendo um deles o próprio Marketplace**
-
-
-REQUEST 
-
-Header
-```
---request POST "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/"
---header "Content-Type: application/json"
---header "MerchantId: MID DO Marketplace"
---header "MerchantKey: 0123456789012345678901234567890123456789"
---header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
-```
-
-Body
-```
-{
-    TransactionId: "a417522f-8f05-b216-0d21-227e4331882a",
-    SplitPayments: [
-         SubordinateMerchantId: "MID Subordinate 01",
-         Amount: "10000",
-         Fares: {
-             Mdr: "5",
-             Fee: "0"
-         },
-         SubordinateMerchantId: "MID Subordinate 02",
-         Amount: "10000",
-         Fares: {
-             Mdr: "10",
-             Fee: "0"
-         }
-         },
-         SubordinateMerchantId: "MID Subordinate 02",
-         Amount: "10000",
-         Fares: {
-             Mdr: "10",
-             Fee: "0"
-         }
-    ]
-}
-```
-
-RESPONSE
-
-```
-{
-    "transactionId": "a417522f-8f05-b216-0d21-227e4331882a",
-    "splitPayments": [
-        {
-            "subordinateMerchantId": "MID Subordinate 01",
-            "amount": 10000,
-            "fares": {
-                "mdr": 5,
-                "fee": 0
-            },
-            "splits": [
-                {
-                    "merchantId": "MID Subordinate 01",
-                    "amount": 9500
-                },
-                {
-                    "merchantId": "MID DO Marketplace",
-                    "amount": 700
-                }
-            ]
-        },
-        {
-            "subordinateMerchantId": "MID Subordinate 02",
-            "amount": 10000,
-            "fares": {
-                "mdr": 10,
-                "fee": 0
-            },
-            "splits": [
-                {
-                    "merchantId": "MID Subordinate 02",
-                    "amount": 9000
-                },
-                {
-                    "merchantId": "MID DO Marketplace",
-                    "amount": 1000
-                }
-            ]
-        },
-        {
-            "subordinateMerchantId": "MID DO Marketplace",
-            "amount": 10000,
-            "fares": {
-                "mdr": 0,
-                "fee": 0
-            },
-            "splits": [
-                {
-                    "merchantId": "MID DO Marketplace",
-                    "amount": 0
-                },
-                {
-                    "merchantId": "MID DO Marketplace",
-                    "amount": 10000
-                }
-            ]
-        }
-    ]
-}
+                "splits": [                
+                    {
+                        "SubordinateMerchantId": "MID DO Marketplace",
+                        "amount": 500,
+                    },
+                    {
+                        "SubordinateMerchantId": "MID Subordinate 01",
+                        "amount": 9500,
+                    }
+                ]
+            }
+        ],
 ```
 
 
