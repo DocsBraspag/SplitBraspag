@@ -645,7 +645,8 @@ RESPONSE
 
 #### Split Pós-Transacional
 
-Esse modelo exige que o lojista envie uma atualização  (via `PUT`) na integração da API Cielo Ecommerce informando qual Sellers e Taxas a serão cobrados.
+Esse modelo exige que o lojista envie uma atualização da transação (via `PUT`) na integração da API Cielo Ecommerce informando qual Sellers e Taxas a serão cobrados.
+
 
 > EndPoint de atualização: https://apidev.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/split
 
