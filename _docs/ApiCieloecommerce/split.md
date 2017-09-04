@@ -675,6 +675,7 @@ Exemplo do Nó de SPLIT no `POST`:
 
 | Propriedade                                  | Descrição                                                                                                        | Tipo   | Tamanho | Obrigatório |
 |----------------------------------------------|------------------------------------------------------------------------------------------------------------------|--------|---------|-------------|
+| `TransactionId`                              | Identificador da transação - Respondido após autorização                                                         | GUID   | 36      | Sim         |
 | `SplitPayments.SubordinateMerchantId`        | Identificador do Subordinate ou Marketplace incluso no Split                                                     | GUID   | 36      | Sim         |
 | `SplitPayments.Amount`                       | Valor da transação pertencente ao Subordinate dentro da transação                                                | Número | 15      | Sim         |
 | `SplitPayments.Fares.Mdr`                    | Taxa do Marketplace (%) a ser retirada do Subordinate                                                            | Número | 2       | Sim         |
@@ -689,7 +690,7 @@ Parte do `RESPONSE`:
     "transactionId": "a417522f-8f05-b216-0d21-227e4331882a",
     "splitPayments": [
         {
-            "subordinateMerchantId": "e41356f9-461c-43f3-bee6-409a4a49dd29",
+            "subordinateMerchantId": "MID Subordinate 01",
             "amount": 10000,
             "fares": {
                 "mdr": 7,
@@ -697,17 +698,17 @@ Parte do `RESPONSE`:
             },
             "splits": [
                 {
-                    "merchantId": "e41356f9-461c-43f3-bee6-409a4a49dd29",
+                    "merchantId": "MID Subordinate 01",
                     "amount": 9300
                 },
                 {
-                    "merchantId": "94d0ba02-9c0e-4eac-be4e-3a9cc24574c0",
-                    "amount": 400
+                    "merchantId": "MID DO Marketplace",
+                    "amount": 700
                 }
             ]
         },
         {
-            "subordinateMerchantId": "675728cb-b0cc-483a-a6eb-fcd1f277d508",
+            "subordinateMerchantId": "MID Subordinate 02",
             "amount": 10000,
             "fares": {
                 "mdr": 4,
@@ -715,12 +716,12 @@ Parte do `RESPONSE`:
             },
             "splits": [
                 {
-                    "merchantId": "675728cb-b0cc-483a-a6eb-fcd1f277d508",
+                    "merchantId": "MID Subordinate 02",
                     "amount": 9600
                 },
                 {
-                    "merchantId": "94d0ba02-9c0e-4eac-be4e-3a9cc24574c0",
-                    "amount": 100
+                    "merchantId": "MID DO Marketplace",
+                    "amount": 400
                 }
             ]
         }
