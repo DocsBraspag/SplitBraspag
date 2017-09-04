@@ -24,7 +24,7 @@ No Split de Pagamentos, existem 3 entidades:
 
 ### Como funciona o Split de Pagamentos?
 
-O Split de pagamento funciona quando um Marketplace realiza uma transação e-commerce enviando a Braspag a maneira como esse pagamento será dividido e quais participantes serão cobrados ou receberão o valor vendido.
+No Split de Pagamentos o Marketplace se integra na Braspag para transacionar e informa como o valor total da transação será dividida com os seus subordinados.
 
 
 O Split é um processo de divisão transacional, onde o **Marketplace** separa o valor pertecente da transação do **Subordinate** em duas partes: 
