@@ -14,8 +14,8 @@ Muito utilizado em MarketPlaces, onde **o carrinho é composto por produtos de d
 
 | **Entidades** | **Descrição** | 
 |-----------|---------- |
-| **Marketplace** | Dono do carrinho e da Transação. <BR> Possui Subordinates que fornecem o contudo do Carrinho.<BR> Realiza a cobrança de uma Taxa sobre a venda do Subordinate<BR>  | 
-| **Subordinate** | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<BR> Um Marketplace possui inumeros Subordinates. <BR>Recebem parte da venda, descontado o valor da taxa do MarketPlace<BR>  |
+| **Marketplace** | Responsável pelo carrinho e Transação. <BR> Possui subordinados (**Subordinates**) que fornecem os produtos que compôem o carrinho.<BR> Realiza a cobrança de uma Taxa sobre a venda do Subordinate<BR>  | 
+| **Subordinados** | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<BR> Um Marketplace possui inumeros Subordinates. <BR>Recebem parte da venda, descontado o valor da taxa do MarketPlace<BR>  |
 | **Braspag** | Responsável pela autorização da transação.<BR>Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação.<BR> Deposita o valor da Transação na conta do Subordinate.<BR> Deposita o valor da taxa cobrada pelo Marketplace so Subordinate <BR> |
 
 
