@@ -57,7 +57,7 @@ Abaixo um exemplo do Fluxo transacional de autorização e divisão de valores n
 0. A Transação é processada. O **Subordinate** recebe o montante da venda - a `Taxa Marketplace`
 1. O Marketplace Recebe a parte da transação menos o custo da taxa Braspag.
 
-> ** *Importante* **: As porcentagens exibidas no exemplo não são aplicadas uma sobre as outras, mas sim como pontos percentuais que somados formam uma taxa unica sobre o Subordinate. Isso ocorre pois o valor das taxas sempre é cobrado sobre o total da transação do Subordinate.
+> **Importante**: As porcentagens exibidas no exemplo não são aplicadas uma sobre as outras, mas sim como pontos percentuais que somados formam uma taxa unica sobre o Subordinate. Isso ocorre pois o valor das taxas sempre é cobrado sobre o total da transação do Subordinate.
 
 
 
