@@ -18,6 +18,7 @@ Muito utilizado em MarketPlaces, onde **o carrinho é composto por produtos de d
 | **Subordinados** | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<BR> Um Marketplace possui inumeros Subordinates. <BR>Recebem parte da venda, descontado o valor da taxa do MarketPlace<BR>  |
 | **Braspag** | Responsável pela autorização da transação.<BR>Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação.<BR> Deposita o valor da Transação na conta do Subordinate.<BR> Deposita o valor da taxa cobrada pelo Marketplace so Subordinate <BR> |
 
+> **MDR**: Sigla para *Merchant Discount Rate* - Percentual a ser descontado sobre o valor de uma transação.
 
 
 ### Como funciona o Split de Pagamentos.
