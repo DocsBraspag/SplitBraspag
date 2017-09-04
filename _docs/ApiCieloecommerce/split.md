@@ -17,7 +17,7 @@ No Split de Pagamentos, existem 3 entidades:
 |-----------|---------- |
 | **Marketplace** | Responsável pelo carrinho. <BR> Possui subordinados (**Subordinates**) que fornecem os produtos que compõem o carrinho.<BR> Define um MDR\* a ser descontado sobre a venda do subordinado.<BR>  | 
 | **Subordinate** | Fornecedor dos produtos que compõem o carrinho.<BR>Recebe parte do valor da venda, descontando o MDR do Marketplace.<BR>  |
-| **Braspag** | Responsável pelo fluxo transacional.<BR> Define um MDR\* a ser descontado sobre o valor total da venda realizada pelo Marketplace.<br> Responsável pela liquidação dos pagamentos para os subordinados e marketplace.|
+| **Braspag (Facilitador)** | Responsável pelo fluxo transacional.<BR> Define um MDR\* a ser descontado sobre o valor total da venda realizada pelo Marketplace.<br> Responsável pela liquidação dos pagamentos para os subordinados e marketplace.|
 
 > \***MDR**  (*Merchant Discount Rate*): Percentual a ser descontado sobre o valor de uma transação.
 
@@ -43,6 +43,8 @@ Abaixo um exemplo do Fluxo transacional de autorização e divisão de valores n
 
 
 ![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split0.jpg)
+
+![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/splitF.jpg)
 
 **EX:** Uma venda de R$100, feita pelo **Subordinate** no Marketplace **Marketplace**
 
