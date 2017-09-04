@@ -9,7 +9,7 @@ order: 1
 
 O Split de pagamentos é uma funcionalidade Braspag que permite a divisão de uma transações em diferentes lojas de maneira organizadada e hierarquizada.
 
-Ele funcionando recebendo uma transação que pode ser subdividida para diferentes atores. Os valores dessa transação é dividido e pago em contas bancarias separadas. 
+Ele funciona recebendo uma transação que pode ser subdividida para diferentes atores. Os valores dessa transação é dividido e pago em contas bancarias separadas. 
 
 
 Essa é uma  estrutura transacional muito utilizada em MarketPlaces (MKP), onde **o carrinho é formado por produtos de diferentes fornecedores** que receberarão partes do pagamento total da transação.
@@ -644,13 +644,14 @@ RESPONSE
 }
 ```
 
-#### Split Transacional
+#### Split Pós-Transacional
+
+Esse modelo exige que o lojista envie uma atualização  (via `PUT`) na integração da API Cielo Ecommerce informando qual Sellers e Taxas a serão cobrados.
 
 
+> 
 
-Esse modelo exige que o lojista envie uma atualização  (via `PUT`) na integração da API Cielo Ecommerce onde serão inclusos os dados do pagamento, Sellers e Taxas a serem cobradas.
-
-Exemplo do Nó de SPLIT no `POST`:
+Exemplo do Nó de SPLIT no `PUT`:
 ```
 "SplitPayments":[{
         "SellerMerchantId" :"MID SELLER 01",
