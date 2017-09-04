@@ -198,6 +198,10 @@ O Split aceita varias combinações para transações entre diferentes entidades
 Neste primeiro exemplo, para simplificar como a apresentação do Modelo de integração, o Marketplace não sofrerá cobrança de taxa ou tarifa Braspag
 
 
+![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split1s.jpg)
+
+
+
 REQUEST 
 
 Header
