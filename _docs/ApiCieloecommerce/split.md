@@ -766,6 +766,7 @@ Parte do `RESPONSE`:
 }
 
 ```
+
 | Propriedade                                  | Descrição                                                                                                        | Tipo   | Tamanho | Obrigatório |
 |----------------------------------------------|------------------------------------------------------------------------------------------------------------------|--------|---------|-------------|
 | `TransactionId`                              | Identificador da transação - Respondido após autorização                                                         | GUID   | 36      | Sim         |
