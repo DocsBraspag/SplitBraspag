@@ -696,5 +696,3 @@ Parte do `RESPONSE`:
 
 
 
-
-
