@@ -7,10 +7,7 @@ order: 1
 
 ### O que é o Split de pagamentos ?
 
-O Split de Pagamentos permite a divisão de uma transações em diferentes lojas de maneira organizadada.
-
-Ele funciona recebendo uma transação que pode ser subdividida para diferentes atores. Os valores dessa transação é dividido e pago em contas bancarias separadas. 
-
+O Split de Pagamentos permite a divisão de uma transação entre diferentes entidades.
 
 Essa é uma  estrutura transacional muito utilizada em MarketPlaces, onde **o carrinho é formado por produtos de diferentes fornecedores** que receberão partes do pagamento total da transação.
 O Split é uma funcionalidade que possui as seguintes vantagens:
