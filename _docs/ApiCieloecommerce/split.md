@@ -644,5 +644,58 @@ RESPONSE
 }
 ```
 
+#### Split Transacional
+
+
+
+Esse modelo exige que o lojista envie uma atualização  (via `PUT`) na integração da API Cielo Ecommerce onde serão inclusos os dados do pagamento, Sellers e Taxas a serem cobradas.
+
+Exemplo do Nó de SPLIT no `POST`:
+```
+"SplitPayments":[{
+        "SellerMerchantId" :"MID SELLER 01",
+        "Amount":10000,
+        "Fares":{
+            "Mdr":5,
+            "Fee":0
+        }
+```
+
+| Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
+|-----------------------------------------|---------------------------------------------------------------------------------------------|--------|---------|-------------|
+| `SplitPayments.SellerMerchantId`        | Identificador do Seller                                                                     | GUID   | 36      | Sim         |
+| `SplitPayments.Amount`                  | Valor da transação pertencente ao Seller                                                    | Número | 15      | Sim         |
+| `SplitPayments.Fares.Mdr`               | Taxa do MKP (%) a ser retirada do Seller                                                    | Número | 2       | Sim         |
+| `SplitPayments.Fares.Fee`               | Tarifa (R$) a ser cobrada do Seller - em Centavos                                           | Número | 15      | Sim         |
+
+
+Com resposta, A API retornará um nó com as seguintes caracteristicas:
+
+Parte do `RESPONSE`:
+```
+"SplitPayments": [
+            {
+                "sellerMerchantId": "MID SELLER 01",
+                "amount": 10000,
+                "fares": {
+                    "mdr": 5,
+                    "fee": 0
+                },
+                "splits": [                
+                    {
+                        "sellerMerchantId": "MID DO MKP",
+                        "amount": 500,
+                    },
+                    {
+                        "sellerMerchantId": "MID SELLER 01",
+                        "amount": 9500,
+                    }
+                ]
+            }
+        ],
+```
+
+
+
 
 
