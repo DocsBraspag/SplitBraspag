@@ -183,7 +183,7 @@ Parte do `RESPONSE`:
 O nó `SPLIT` contido na resposta da transação retorna informações especificas a respeito dos valores a serem depositados para cada entidade do split:
 
 
-![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/Split03.jpg)
+![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split3.jpg)
 
 
 O Split aceita varias combinações para transações entre diferentes entidades:
