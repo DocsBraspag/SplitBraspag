@@ -685,7 +685,48 @@ Com resposta, A API retornará um nó com as seguintes caracteristicas:
 
 Parte do `RESPONSE`:
 ```
-XXXXXXX
+{
+    "transactionId": "a417522f-8f05-b216-0d21-227e4331882a",
+    "splitPayments": [
+        {
+            "subordinateMerchantId": "e41356f9-461c-43f3-bee6-409a4a49dd29",
+            "amount": 10000,
+            "fares": {
+                "mdr": 7,
+                "fee": 0
+            },
+            "splits": [
+                {
+                    "merchantId": "e41356f9-461c-43f3-bee6-409a4a49dd29",
+                    "amount": 9300
+                },
+                {
+                    "merchantId": "94d0ba02-9c0e-4eac-be4e-3a9cc24574c0",
+                    "amount": 400
+                }
+            ]
+        },
+        {
+            "subordinateMerchantId": "675728cb-b0cc-483a-a6eb-fcd1f277d508",
+            "amount": 10000,
+            "fares": {
+                "mdr": 4,
+                "fee": 0
+            },
+            "splits": [
+                {
+                    "merchantId": "675728cb-b0cc-483a-a6eb-fcd1f277d508",
+                    "amount": 9600
+                },
+                {
+                    "merchantId": "94d0ba02-9c0e-4eac-be4e-3a9cc24574c0",
+                    "amount": 100
+                }
+            ]
+        }
+    ]
+}
+
 ```
 
 O Split aceita varias combinações para transações entre diferentes entidades:
