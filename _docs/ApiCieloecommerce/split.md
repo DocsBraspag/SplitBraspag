@@ -11,6 +11,7 @@ O Split de Pagamentos permite a divisão de uma transação entre diferentes ent
 
 Muito utilizado em MarketPlaces, onde **o carrinho é composto por produtos de diferentes fornecedores** e o valor total da venda deverá ser dividido entre todos os participantes.
 
+No Split de Pagamentos, existem 3 entidades:
 
 | **Entidades** | **Descrição** | 
 |-----------|---------- |
@@ -21,11 +22,9 @@ Muito utilizado em MarketPlaces, onde **o carrinho é composto por produtos de d
 > \***MDR**  (*Merchant Discount Rate*): Percentual a ser descontado sobre o valor de uma transação.
 
 
-### Como funciona o Split de Pagamentos.
+### Como funciona o Split de Pagamentos?
 
 O Split de pagamento funciona quando um Marketplace realiza uma transação e-commerce enviando a Braspag a maneira como esse pagamento será dividido e quais participantes serão cobrados ou receberão o valor vendido.
-
-Nesse modelo de split de pagamentos, existem 3 entidades básicas:
 
 
 O Split é um processo de divisão transacional, onde o **Marketplace** separa o valor pertecente da transação do **Subordinate** em duas partes: 
