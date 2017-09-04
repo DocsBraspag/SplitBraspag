@@ -7,7 +7,7 @@ order: 1
 
 ### O que é o Split de pagamentos ?
 
-O Split de pagamentos é uma funcionalidade Braspag que permite a divisão de uma transações em diferentes lojas de maneira organizadada e hierarquizada.
+O Split de Pagamentos permite a divisão de uma transações em diferentes lojas de maneira organizadada.
 
 Ele funciona recebendo uma transação que pode ser subdividida para diferentes atores. Os valores dessa transação é dividido e pago em contas bancarias separadas. 
 
