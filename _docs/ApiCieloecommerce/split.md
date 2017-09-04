@@ -44,7 +44,6 @@ Abaixo um exemplo do Fluxo transacional de autorização e divisão de valores n
 
 ![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split0.jpg)
 
-![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/splitF.jpg)
 
 **EX:** Uma venda de R$100, feita pelo **Subordinate** no Marketplace **Marketplace**
 
