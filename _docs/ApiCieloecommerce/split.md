@@ -29,7 +29,7 @@ O Split de pagamento funciona quando um Marketplace realiza uma transação e-co
 
 O Split é um processo de divisão transacional, onde o **Marketplace** separa o valor pertecente da transação do **Subordinate** em duas partes: 
 
-* **Taxa do Marketplace:** Taxa cobrada pelo marketplace sobre o Subordinate para que a venda seja realizada. Pode ser um valor **%** ou/e uma **taxa fixa por venda.**
+* **Taxa do Marketplace (MDR):** Taxa cobrada pelo marketplace sobre o Subordinate para que a venda seja realizada. Pode ser um valor **%** ou/e uma **taxa fixa por venda.**
 * **Valor da venda:** Parte do valor da transação/carrinho que será destinada ao Subordinate, menos o valor cobrado como **Taxa do Marketplace**
 
 
