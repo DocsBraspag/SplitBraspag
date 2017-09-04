@@ -12,7 +12,7 @@ O Split de pagamentos é uma funcionalidade Braspag que permite a divisão de um
 Ele funciona recebendo uma transação que pode ser subdividida para diferentes atores. Os valores dessa transação é dividido e pago em contas bancarias separadas. 
 
 
-Essa é uma  estrutura transacional muito utilizada em MarketPlaces (Marketplace), onde **o carrinho é formado por produtos de diferentes fornecedores** que receberarão partes do pagamento total da transação.
+Essa é uma  estrutura transacional muito utilizada em MarketPlaces, onde **o carrinho é formado por produtos de diferentes fornecedores** que receberarão partes do pagamento total da transação.
 O Split é uma funcionalidade que possui as seguintes vantagens:
 
 * Evita que comprador realize várias transações, elevando a chance de conversão
