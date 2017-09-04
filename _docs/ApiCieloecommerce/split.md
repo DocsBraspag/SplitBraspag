@@ -17,7 +17,7 @@ O Split é uma funcionalidade que possui as seguintes vantagens:
 
 * Evita que comprador realize várias transações, elevando a chance de conversão
 * Permite que um Marketplace possa cobrar uma taxa sobre o valor transacional utilizando apenas uma integração técnica
-* Permite que o Marketplace possa montar um carrinho com produtos de diferentes fornecedores de maneira total transparente para o comprador.
+* Permite que o Marketplace possa montar um carrinho com produtos de diferentes fornecedores de maneira transparente para o comprador.
 
 
 
