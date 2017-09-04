@@ -805,7 +805,7 @@ Header
 Body
 ```
 {
-    TransactionId: "Guid",
+    TransactionId: "a417522f-8f05-b216-0d21-227e4331882a",
     SplitPayments: [
          SubordinateMerchantId: "MID Subordinate 01",
          Amount: "10000",
@@ -820,7 +820,30 @@ Body
 RESPONSE
 
 ```
-XXXXXXXXXXXXXXXXXXXXX
+{
+    "transactionId": "a417522f-8f05-b216-0d21-227e4331882a",
+    "splitPayments": [
+        {
+            "subordinateMerchantId": "MID Subordinate 01",
+            "amount": 10000,
+            "fares": {
+                "mdr": 5,
+                "fee": 0
+            },
+            "splits": [
+                {
+                    "merchantId": "MID Subordinate 01",
+                    "amount": 9500
+                },
+                {
+                    "merchantId": "MID DO Marketplace",
+                    "amount": 500
+                }
+            ]
+        }
+    ]
+}
+
 ```
 
 
@@ -842,7 +865,7 @@ Header
 Body
 ```
 {
-    TransactionId: "Guid",
+    TransactionId: "a417522f-8f05-b216-0d21-227e4331882a",
     SplitPayments: [
          SubordinateMerchantId: "MID Subordinate 01",
          Amount: "10000",
@@ -863,7 +886,48 @@ Body
 RESPONSE
 
 ```
-XXXXXXXXXXXXXXXXXXXXX
+{
+    "transactionId": "a417522f-8f05-b216-0d21-227e4331882a",
+    "splitPayments": [
+        {
+            "subordinateMerchantId": "MID Subordinate 01",
+            "amount": 10000,
+            "fares": {
+                "mdr": 5,
+                "fee": 0
+            },
+            "splits": [
+                {
+                    "merchantId": "MID Subordinate 01",
+                    "amount": 9500
+                },
+                {
+                    "merchantId": "MID DO Marketplace",
+                    "amount": 700
+                }
+            ]
+        },
+        {
+            "subordinateMerchantId": "MID Subordinate 02",
+            "amount": 10000,
+            "fares": {
+                "mdr": 10,
+                "fee": 0
+            },
+            "splits": [
+                {
+                    "merchantId": "MID Subordinate 02",
+                    "amount": 9000
+                },
+                {
+                    "merchantId": "MID DO Marketplace",
+                    "amount": 1000
+                }
+            ]
+        }
+    ]
+}
+
 ```
 
 **EXEMPLO 03 - 2 Subordinates, sendo um deles o próprio Marketplace**
@@ -884,13 +948,20 @@ Header
 Body
 ```
 {
-    TransactionId: "Guid",
+    TransactionId: "a417522f-8f05-b216-0d21-227e4331882a",
     SplitPayments: [
-         SubordinateMerchantId: "MID do Marketplace",
+         SubordinateMerchantId: "MID Subordinate 01",
          Amount: "10000",
          Fares: {
              Mdr: "5",
              Fee: "0"
+         },
+         SubordinateMerchantId: "MID Subordinate 02",
+         Amount: "10000",
+         Fares: {
+             Mdr: "10",
+             Fee: "0"
+         }
          },
          SubordinateMerchantId: "MID Subordinate 02",
          Amount: "10000",
