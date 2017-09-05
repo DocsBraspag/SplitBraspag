@@ -244,20 +244,16 @@ O Split de Pagamentos possui dois tipos básicos de integração:
 Este modelo exige que o **Marketplace** envie um "nó" adicional na integração da API Cielo E-Commerce, como apresentado em exemplos anteriores, informando as regras de divisão da transação.
 
 ```
-"SplitPayments":[{
+"SplitPayments":[
+    {
         "SubordinateMerchantId" :"MID Subordinate 01",
-        "Amount":6000,
+        "Amount":10000,
         "Fares":{
             "Mdr":5,
-            "Fee":0.30
-        },
-        "SubordinateMerchantId" :"MID Subordinate 02",
-        "Amount":4000,
-        "Fares":{
-            "Mdr":4,
-            "Fee":0.15
+            "Fee":0.00
         }
-     }]
+    }
+]
 ```
 
 | Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
@@ -271,25 +267,25 @@ Como resposta, A API Cielo E-Commerce retornará na resposta um nó contento as 
 
 ```
 "SplitPayments": [
+    {
+        "SubordinateMerchantId": "MID Subordinate 01",
+        "Amount": 10000,
+        "Fares": {
+            "Mdr": 5,
+            "Fee": 0
+        },
+        "Splits": [                
+            {
+                "SubordinateMerchantId": "MID DO Marketplace",
+                "amount": 500,
+            },
             {
                 "SubordinateMerchantId": "MID Subordinate 01",
-                "amount": 10000,
-                "fares": {
-                    "mdr": 5,
-                    "fee": 0
-                },
-                "splits": [                
-                    {
-                        "SubordinateMerchantId": "MID DO Marketplace",
-                        "amount": 500,
-                    },
-                    {
-                        "SubordinateMerchantId": "MID Subordinate 01",
-                        "amount": 9500,
-                    }
-                ]
+                "amount": 9500,
             }
         ]
+    }
+]
 ```
 
 | Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
