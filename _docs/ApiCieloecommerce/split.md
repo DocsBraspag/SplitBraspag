@@ -13,9 +13,9 @@ Muito utilizado em Marketplaces, onde **o carrinho é composto por produtos de d
 
 | **Participantes** | **Descrição** | 
 |-----------|---------- |
-| **Marketplace** | Responsável pelo carrinho. <BR> Possui subordinados (**Subordinados**) que fornecem os produtos que compõem o carrinho.<BR> Define um MDR\* + Taxa (opcional) a ser descontado sobre a venda do subordinado.<BR>  | 
-| **Subordinados** | Fornecedor dos produtos que compõem o carrinho.<BR>Recebe parte do valor da venda, descontadoo o MDR\* do Marketplace.<BR>  |
-| **Braspag (Facilitador)** | Responsável pelo fluxo transacional.<BR> Define um MDR\* + Taxa a serem descontados sobre o valor total da venda realizada pelo Marketplace.<br> Responsável pela liquidação dos pagamentos para os subordinados e marketplace.|
+| **Marketplace** | Responsável pelo carrinho. <BR> Possui subordinados (**Subordinados**) que fornecem os produtos que compõem o carrinho.<BR> Define um MDR\* + Taxa (opcional) a ser descontado sobre a venda do **Subordinado**.<BR>  | 
+| **Subordinados** | Fornecedor dos produtos que compõem o carrinho.<BR>Recebe parte do valor da venda, descontadoo o MDR\* do **Marketplace**.<BR>  |
+| **Braspag (Facilitador)** | Responsável pelo fluxo transacional.<BR> Define um MDR\* + Taxa a serem descontados sobre o valor total da venda realizada pelo **Marketplace**.<br> Responsável pela liquidação dos pagamentos para os **Subordinados** e **Marketplace**.|
 
 > \***MDR**  (*Merchant Discount Rate*): Percentual a ser descontado sobre o valor de uma transação.
 
@@ -36,6 +36,9 @@ A divisão de uma transação é composta por:
 * Identificadores dos **Subordinados** participantes da transação.
 * Os valor de participação de cada **Subordinado**. O somatório deverá ser igual ao valor total da transação.
 * MDRs + Taxas (opcional) a ser aplicado sobre o valor de cada subordinado e que será destinado ao **Marketplace**. Deverá ser acordado previamente entre o **Marketplace** e o **Subordinado**.
+
+
+
 
 O Split é um processo de divisão transacional, onde o **Marketplace** separa o valor pertecente da transação do **Subordinate** em duas partes: 
 
