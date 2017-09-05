@@ -440,15 +440,15 @@ Neste exemplo o cálculos do Split foram realizados sobre cada regra de divisão
 ![Split](http://able-caribou.cloudvent.net/images/Split/Split003.PNG)
 
 
-* Divisão do valor do Subordinado **0f377932-5668-4c72-8b5b-2b43760ebd38**:
+Divisão do valor do Subordinado **0f377932-5668-4c72-8b5b-2b43760ebd38**:
 
-**Marketplace**: R$2,10
-**Subordinado**: R$56,70
+**Marketplace**: R$2,10  
+**Subordinado**: R$56,70  
 
-* Divisão do valor do Subordinado **98430463-7c1e-413b-b13a-0f613af594d8**:
+Divisão do valor do Subordinado **98430463-7c1e-413b-b13a-0f613af594d8**:
 
-**Marketplace**: R$0,95
-**Subordinado**: R$38,25
+**Marketplace**: R$0,95  
+**Subordinado**: R$38,25  
 
 
 O nó `SPLIT` contido na resposta da transação retorna informações especificas a respeito dos valores a serem depositados para cada entidade do split:
