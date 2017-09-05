@@ -44,7 +44,9 @@ O **Marketplace** também pode ser um participante da divisão. Para isso basta 
 
 ### Taxas
 
-As taxas acordadas entre os participantes devem ser definidas no momento do cadastro do **Marketplace** e **Subordinados** junto à Braspag. As mesmas poderão ser enviadas no momento transacional ou pós-transacional. Caso não sejam enviadas, a **Braspag** irá considerar as taxas cadsatradas no momento.   
+As taxas acordadas entre os participantes, que são o **MDR(%)** e uma **Taxa Fixa(R$)**, devem ser definidas no momento do cadastro do **Marketplace** e **Subordinados** junto à Braspag.  
+
+As mesmas poderão ser enviadas no momento transacional ou pós-transacional. Caso não sejam enviadas, a **Braspag** irá considerar as taxas já cadastradas.   
 <BR>
 #### Braspag (Facilitador)
 <BR>
@@ -216,7 +218,7 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
 }
 ```
 
-Neste caso o cálculos do Split são realizados sobre cada regra de divisão informada. No próximo tópico serão explicados as propriedades que compões o nó do Split de Pagamentos.
+Neste caso o cálculos do Split são realizados sobre cada regra de divisão informada. No próximo tópico serão explicados as propriedades que compõem o nó do Split de Pagamentos.
 
 ![Split](http://able-caribou.cloudvent.net/images/Split/Split003.PNG)
 
