@@ -43,6 +43,8 @@ A divisão de uma transação deve serguir as seguintes regras:
 O **Marketplace** também pode ser um participante da divisão. Para isso basta informar seu identificador na divisão, passando o mesmo a ter também o papel de **Subordinado** e ter seus próprios produtos no carrinho. 
 
 ### Taxas
+
+As taxas acordadas entre os participantes devem ser definidas no momento do cadastro do **Marketplace** e **Subordinados** junto à Braspag. As mesmas poderão ser enviadas no momento transacional ou pós-transacional. Caso não sejam enviadas, a **Braspag** irá considerar as taxas cadsatradas no momento.   
 <BR>
 #### Braspag (Facilitador)
 <BR>
