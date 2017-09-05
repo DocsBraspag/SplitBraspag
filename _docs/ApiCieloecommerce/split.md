@@ -61,7 +61,7 @@ O desconto da **Tarifa Fixa** não é aplicado no valor total da transação, n�
 <BR>
 O **Marketplace** é responsável por acordar as taxas a serem cobradas de seus **Subordinados**, onde dever ser defindo um **MDR** maior ou igual ao **MDR** definido entre a **Braspag** e o **Marketplace** e uma Tarifa Fixa, que é opcional. 
 
-> **Custo Subordinado:** MDR Marketplace(%) + Tarifa Fixa(R$), onde no MDR Markectplace(%) está embutido o MDR Braspag(%).
+> **Custo Subordinado:** MDR Marketplace(%) + Tarifa Fixa(R$), onde no MDR Marketplace(%) está embutido o MDR Braspag(%).
 
 <BR>
 #### Exemplo
