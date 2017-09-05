@@ -85,7 +85,7 @@ Crédito: R$3,30 = R$100 * (5% - 2%) + R$0,30.
 Débito: R$0,30 (Tarifa Fixa Braspag)
 
 **Braspag (Facilitador)**:  
-Crédito: R$2,00 = R$100 * 2%.
+Crédito: R$2,00 = R$100 * 2%.  
 Crédito: R$0,30 (Tarifa Fixa Braspag)
 
 ### Utilizando o Split de Pagamentos
