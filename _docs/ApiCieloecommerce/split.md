@@ -64,11 +64,11 @@ O **Marketplace** é responsável por acordar as taxas a serem cobradas de seus 
 
 ####Exemplo
 
-Abaixo um exemplo do fluxo transacional e regras de divisão:
+Uma transação de **R$100**, realizada ppor um **Marketplace** com participação do **Subordinado 01**.
 
 ![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split0.jpg)
 
-**EX:** Uma venda de R$100, realizada pelo **Marketplace** com participação do **Subordinado 01**.
+
 
 
 1. O **Marketplace** tem um MDR de **5%** acordado com o **Subordinado 01**
