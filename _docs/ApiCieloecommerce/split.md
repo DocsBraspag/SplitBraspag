@@ -168,7 +168,7 @@ Neste caso o **Marketplace** recebe o valor da transação descontado o MDR acor
 
 ![Split](http://able-caribou.cloudvent.net/images/Split/Split001.PNG)
 
-**Exemplo 2)** Com o nó contendo as regras de divisão.
+**Exemplo 2)** Transação no valor de **R$100,00** sem o nó contendo as regras de divisão.
 
 **Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa. 
 **Taxa Marketplace com o Subordinado 01**: 5% MDR, já embutindo os 2% do MDR Braspag + 0,30 Tarifa Fixa.  
@@ -193,11 +193,27 @@ Neste caso o **Marketplace** recebe o valor da transação descontado o MDR acor
          "SecurityCode":"123",
          "Brand":"Visa"
      }
+     "SplitPayments":[{
+        "SubordinateMerchantId" :"MID Subordinate 01",
+        "Amount":6000,
+        "Fares":{
+            "Mdr":5,
+            "Fee":0.30
+        },
+        "SubordinateMerchantId" :"MID Subordinate 02",
+        "Amount":4000,
+        "Fares":{
+            "Mdr":4,
+            "Fee":0.15
+        }
+     }]
    }
 }
 ```
 
-Neste caso o **Marketplace** recebe o valor da transação descontado o MDR acordado com a **Braspag**. Como apresentado anteriormente, a Taxa Fixa acordada entre o **Marketplace** e a **Braspag** é sensibilizada diretamente na agenda.
+Neste caso o cálculos do Split são realizados sobre cada regra de divisão informada. No próximo tópico serão explicados as propriedades que compões o nó do Split de Pagamentos.
+
+![Split](http://able-caribou.cloudvent.net/images/Split/Split001.PNG)
 
 ### Tipos de Split
 
