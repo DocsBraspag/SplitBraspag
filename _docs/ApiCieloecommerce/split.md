@@ -199,7 +199,7 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
          "ExpirationDate":"12/2030",
          "SecurityCode":"123",
          "Brand":"Visa"
-     }
+     },
      "SplitPayments":[{
         "SubordinateMerchantId" :"MID Subordinate 01",
         "Amount":6000,
@@ -232,30 +232,36 @@ O Split de Pagamentos possui dois tipos básicos de integração:
 | **Split Transacional**     | O **Marketplace** envia na autorização (captura automática) ou no momento de captura as regras de divisão.                                             |
 | **Split Pós-Transacional** | O **Marketplace** envia as regras de divisão após a captura da transação.
 
-> O Split de Pagamentos só é realizado para transações capturadas, ou seja, o mesmo só será considerado para autorizações com captura automática e no momento da execução de captura de uma transação. 
+> O Split de Pagamentos só é realizado para transações capturadas, ou seja, o mesmo só será considerado para autorizações com captura automática e no momento da execução de captura de uma transação. Caso seja informado no momento de uma autorização sem captura automática, as regras de divisão serão desconsideradas.
   
   
 #### Split Transacional
 
-Esse modelo exige que o lojista envie um "nó" adicional na integração da API Cielo Ecommerce onde serão inclusos os dados do pagamento, Subordinates e Taxas a serem cobradas.
+Este modelo exige que o **Marketplace** envie um "nó" adicional na integração da API Cielo E-Commerce, como apresentado em exemplos anteriores, informando as regras de divisão da transação.
 
-Exemplo do Nó de SPLIT no `POST` criando a transação:
 ```
 "SplitPayments":[{
         "SubordinateMerchantId" :"MID Subordinate 01",
-        "Amount":10000,
+        "Amount":6000,
         "Fares":{
             "Mdr":5,
-            "Fee":0
+            "Fee":0.30
+        },
+        "SubordinateMerchantId" :"MID Subordinate 02",
+        "Amount":4000,
+        "Fares":{
+            "Mdr":4,
+            "Fee":0.15
         }
+     }]
 ```
 
 | Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
 |-----------------------------------------|---------------------------------------------------------------------------------------------|--------|---------|-------------|
-| `SplitPayments.SubordinateMerchantId`        | Identificador do Subordinate                                                                     | GUID   | 36      | Sim         |
-| `SplitPayments.Amount`                  | Valor da transação pertencente ao Subordinate                                                    | Número | 15      | Sim         |
-| `SplitPayments.Fares.Mdr`               | Taxa do Marketplace (%) a ser retirada do Subordinate                                                    | Número | 2       | Sim         |
-| `SplitPayments.Fares.Fee`               | Tarifa (R$) a ser cobrada do Subordinate - em Centavos                                           | Número | 15      | Sim         |
+| `SplitPayments.SubordinateMerchantId`   | Identificador do **Subordinado**.                                                           | Guid   | 36      | Sim         |
+| `SplitPayments.Amount`                  | Parte do valor total da transação referente a participação do **Subordinado**, em centavos.              | Número | 15      | Sim         |
+| `SplitPayments.Fares.Mdr`               | **MDR(%)** do **Marketplace** a ser descontado do valor referente a participação do **Subordinado** | Número | 2       | Sim         |
+| `SplitPayments.Fares.Fee`               | **Tarifa Fixa(R$)** a ser descontada do valor referente a participação do **Subordinado**, em centavos.  | Número | 15      | Sim         |
 
 
 Com resposta, A API retornará um nó com as seguintes caracteristicas:
