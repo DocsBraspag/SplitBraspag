@@ -88,9 +88,6 @@ Débito: R$0,30 (Tarifa Fixa Braspag)
 Crédito: R$2,00 = R$100 * 2%.
 Crédito: R$0,30 (Tarifa Fixa Braspag)
 
-
-> ** *Importante* **: As porcentagens exibidas no exemplo não são aplicadas uma sobre as outras, mas sim como pontos percentuais que somados formam uma taxa unica sobre o Subordinate. Isso ocorre pois o valor das taxas sempre é cobrado sobre o total da transação do Subordinate.
-
 ### Utilizando o Split de Pagamentos
 
 O Split de Pagamentos funciona como parte da API transacional da Braspag via API Cielo Ecommerce.
