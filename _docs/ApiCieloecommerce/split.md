@@ -42,27 +42,7 @@ A divisão de uma transação deve serguir as seguintes regras:
 
 O **Marketplace** também pode ser um participante da divisão. Para isso basta informar seu identificador na divisão, passando o mesmo a ter também o papel de **Subordinado**. 
 
-
-Abaixo um exemplo do fluxo transacional e regras de divisão:
-
-
-![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split0.jpg)
-
-
-**EX:** Uma venda de R$100, feita pelo **Subordinate** no Marketplace **Marketplace**
-
-0. O **Marketplace** tem Taxa de **5%** Sobre a venda do **Subordinate**
-0. Essa Taxa é formada por uma margem de `3 Pontos Percentuais` sobre o total da transação + o custo braspag (`2 pontos percentuais + 0,30 centavos`) sobre o total da transação
-0. A Transação é processada. O **Subordinate** recebe o montante da venda menos a `Taxa Marketplace`
-1. O Marketplace Recebe a parte da transação menos o custo da taxa Braspag.
-
-> ** *Importante* **: As porcentagens exibidas no exemplo não são aplicadas uma sobre as outras, mas sim como pontos percentuais que somados formam uma taxa unica sobre o Subordinate. Isso ocorre pois o valor das taxas sempre é cobrado sobre o total da transação do Subordinate.
-
-
-
-
-
-### Tarifas e Custos
+### Taxas
 
 Nesta área do manual vamos detalhar como o processo de cobrança e custos afeta cada uma das entidades envolvidas no Split
 
