@@ -36,7 +36,7 @@ Para utilizar o Split de Pagamentos, o **Marketplace** deverá se cadastrar na B
 
 A divisão de uma transação deve serguir as seguintes regras:
 
-* Informar os identificadores dos **Subordinados** participantes.
+* Informar os identificadores dos **Subordinados**.
 * Os valor de participação de cada **Subordinado**. O somatório deverá ser igual ao valor total da transação.
 * MDRs + Taxas (opcional) a ser aplicado sobre o valor de cada **Subordinado** que será destinado ao **Marketplace**. Deverá ser acordado previamente entre o **Marketplace** e o **Subordinado**.
 
