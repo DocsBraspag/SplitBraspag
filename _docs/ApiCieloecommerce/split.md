@@ -11,7 +11,7 @@ O Split de Pagamentos permite a divisão de uma transação entre diferentes par
 
 Muito utilizado em MarketPlaces, onde **o carrinho é composto por produtos de diferentes fornecedores** e o valor total da venda deve ser dividido entre todos os participantes.
 
-No Split de Pagamentos, existem 3 entidades:
+No Split de Pagamentos, podem existir 3 participantes em uma venda:
 
 | **Entidades** | **Descrição** | 
 |-----------|---------- |
