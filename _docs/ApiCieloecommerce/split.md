@@ -134,7 +134,36 @@ Exemplo:
 
 Ao informar um tipo de pagamento do Split, a API Cielo e-Commerce automaticamente identifica que a transação é referente ao Split de Pagamentos e transaciona pela Braspag (Facilitador).
 
-Caso a transação enviada seja marcada para captura automática, o nó contendo as regras de divisão deverá ser enviado, caso contrário a transação será dividida entre a **Braspag** e o **Marketplace**.
+Caso a transação enviada seja marcada para captura automática, o nó contendo as regras de divisão deverá ser enviado, caso contrário a transação será dividida entre a **Braspag** e o **Marketplace**. Posteriormente é permitido que o **Marketplace** envie novas regras de divisão para a transação através da API de divisão pós-transacional, desde que esteja dentro do período de tempo permitido.
+
+**Exemplo 1)** Sem o nó contendo as regras de divisão.
+
+**Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa. 
+
+```
+{
+   "MerchantOrderId":"2014111703",
+   "Customer":{
+      "Name":"Comprador crédito simples"
+   },
+   "Payment":{
+     "Type":"SplittedCreditCard",
+     "Amount":10000,
+     "Capture":true,
+     "Installments":1,
+     "SoftDescriptor":"123456789ABCD",
+     "CreditCard":{
+         "CardNumber":"1234123412341231",
+         "Holder":"Teste Holder",
+         "ExpirationDate":"12/2030",
+         "SecurityCode":"123",
+         "Brand":"Visa"
+     }
+   }
+}
+```
+
+![Split](http://able-caribou.cloudvent.net/images/Split/Split.PNG)
 
 
 ### Tipos de Split
