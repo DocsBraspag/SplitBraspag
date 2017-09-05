@@ -44,7 +44,7 @@ O **Marketplace** também pode ser um participante da divisão. Para isso basta 
 
 ### Taxas
 
-As taxas acordadas entre os participantes, que são o **MDR(%)** e uma **Taxa Fixa(R$)**, devem ser definidas no momento do cadastro do **Marketplace** e **Subordinados** junto à Braspag.  
+As taxas acordadas entre os participantes, que são o **MDR(%)** e uma **Taxa Fixa(R$)**, devem ser definidas no momento do cadastro do **Marketplace** e dos seus **Subordinados** junto à Braspag.  
 
 As mesmas poderão ser enviadas no momento transacional ou pós-transacional. Caso não sejam enviadas, a **Braspag** irá considerar as taxas já cadastradas.   
 <BR>
@@ -224,15 +224,13 @@ Neste caso o cálculos do Split são realizados sobre cada regra de divisão inf
 
 ### Tipos de Split
 
-O Split de pagamentos possui dois tipos basicos de integração:
+O Split de Pagamentos possui dois tipos básicos de integração:
 
 
 | Tipo                 | Descrição                                                                                                                          |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| **Split Transacional**     | O marketplace envia na transação quais os Subordinates, os valores e Taxas a sofrerem SPLIT                                             |
-| **Split Pós-Transacional** | O marketplace define quais os Subordinates, valores e Taxas a sofrerem SPLIT depois autorização realizando uma atualização da transação |
-
-Cada modelo possui um contrato adicional de integração a API Cielo Ecommerce e Braspag, que será apresentado a seguir.
+| **Split Transacional**     | O **Marketplace** envia na autorização(captura automática) ou na captura as regras de divisão.                                             |
+| **Split Pós-Transacional** | O **Marketplace** define as regras de divisão após a captura da transação.
 
 
 #### Split Transacional
