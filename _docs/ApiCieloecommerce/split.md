@@ -72,19 +72,19 @@ Uma transação de **R$100**, realizada por um **Marketplace** com participaçã
 
 Neste exemplo, foram assumidos os seguintes acordos:
 
-**Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa.
+**Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa.<BR>
 **Taxa Marketplace**: 5% MDR, já embutindo os 2% do MDR Braspag + 0,30 Tarifa Fixa.
 
 Após o split, cada participante terá sua agenda sensibilizada com os seguintes eventos:
 
-**Subordinado**:
+**Subordinado**:v
 Crédito: R$94,70 = R$100 - 5%.
 
-**Marketplace**:
+**Marketplace**:<BR>
 Crédito: R$3,30 = R$100 * (5% - 2%) + R$0,30.
 Débito: R$0,30 (Tarifa Fixa Braspag)
 
-**Braspag (Facilitador)**:
+**Braspag (Facilitador)**:<BR>
 Crédito: R$2,00 = R$100 * 2%.
 Crédito: R$0,30 (Tarifa Fixa Braspag)
 
