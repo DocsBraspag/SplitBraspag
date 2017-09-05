@@ -105,7 +105,7 @@ Porém, para indentificar que a transação enviada se trata de uma transação 
 
 |                     | **Cartão de Crédito**  | **Cartão de Débito**  | 
 | **Transação Comum** | CreditCard             | DebitCard             |
-| **Transação Split** | SpplitedCreditCard     | SplittedDebitCard     |
+| **Transação Split** | SplittedCreditCard     | SplittedDebitCard     |
 
 
 
