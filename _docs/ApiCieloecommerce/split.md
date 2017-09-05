@@ -13,9 +13,9 @@ Muito utilizado em Marketplaces, onde **o carrinho é composto por produtos de d
 
 | **Participantes** | **Descrição** | 
 |-----------|---------- |
-| **Marketplace** | Responsável pelo carrinho. <BR> Possui subordinados (**Subordinados**) que fornecem os produtos que compõem o carrinho.<BR> Define um MDR\* + Taxa (opcional) a ser descontado sobre a venda do **Subordinado**.<BR>  | 
+| **Marketplace** | Responsável pelo carrinho. <BR> Possui subordinados (**Subordinados**) que fornecem os produtos que compõem o carrinho.<BR> Define um MDR\* + Tarifa (opcional) a ser descontado sobre a venda do **Subordinado**.<BR>  | 
 | **Subordinados** | Fornecedor dos produtos que compõem o carrinho.<BR>Recebe parte do valor da venda, descontadoo o MDR\* do **Marketplace**.<BR>  |
-| **Braspag (Facilitador)** | Responsável pelo fluxo transacional.<BR> Define um MDR\* + Taxa a serem descontadas sobre o valor total da venda realizada pelo **Marketplace**.<br> Responsável pela liquidação dos pagamentos para os **Subordinados** e **Marketplace**.|
+| **Braspag (Facilitador)** | Responsável pelo fluxo transacional.<BR> Define um MDR\* + Tarifa a serem descontadas sobre o valor total da venda realizada pelo **Marketplace**.<br> Responsável pela liquidação dos pagamentos para os **Subordinados** e **Marketplace**.|
 
 > \***MDR**  (*Merchant Discount Rate*): Percentual a ser descontado sobre o valor de uma transação.
 
@@ -45,14 +45,11 @@ O **Marketplace** também pode ser um participante da divisão. Para isso basta 
 ### Taxas
 #### Braspag (Facilitador)
 <BR>
-Para cada transação a Braspag acordará um **MDR** e uma **Taxa** com o **Marketplace**.
+Para cada transação a Braspag acordará **MDR(%) + TARIFA FIXA (R$)** com o **Marketplace**.
 
-TAXA BRASPAG (%) + TARIFA FIXA (R$)
+O **Marketplace** com o conhecimento destas taxas negociará o seu MDR + Tarifa juntamente com seus **Subornidanos**, já embutindo o MDR do mesmo junto à **Braspag**.
 
-O **Marketplace** com o conhecimento destas taxas negociará o seu MDR + Taxa juntamente com seus **Subornidanos** já embutindo o MDR do mesmo junto a **Braspag**.
-
-> O MDR acordado entre um **Marketplace** e um **Subordinado** deve ser maior que o MDR acordado entreo o **Marketplace** e a **Braspag**. 
-
+> O MDR acordado entre um **Marketplace** e um **Subordinado** deve ser sempre maior que o MDR acordado entre o **Marketplace** e a **Braspag**. 
 
 1 - A `taxa Braspag` é vinculada ao valor total da transação do Subordinate e não sobre o valor que Marketplace irá receber.<BR><BR>
 **EX:** 2% sobre a Venda de R$100,00 do Subordinate<BR><BR>
