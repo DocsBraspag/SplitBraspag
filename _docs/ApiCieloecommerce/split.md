@@ -32,7 +32,7 @@ Com a transação capturada, a Braspag calcula o valor destinado a cada particip
 > **Crédito** Parcelado: 1º parcela em até 31 dias, demais a cada 30.<BR>
 > **Débito**: Em até 1 dia útil<BR>
 
-Para utilizar o Split de Pagamentos, o **Marketplace** deverá se cadastrar na Braspag informando seus **Subordinados**. Após este processo tanto o **Marketplace** quanto seus supordinados possuirão um identificador único que deverá ser utlizado nas divisões de uma transação. 
+Para utilizar o Split de Pagamentos, o **Marketplace** deverá se cadastrar na Braspag informando seus **Subordinados**. Após este processo tanto o **Marketplace** quanto seus **Subordinados** possuirão um identificador único, conheciedo como **MerchantId (MID)** que deverá ser utlizado nas divisões de uma transação. 
 
 A divisão de uma transação deve serguir as seguintes regras:
 
@@ -276,7 +276,7 @@ Como resposta, A API Cielo E-Commerce retornará na resposta um nó contento as 
         },
         "Splits": [                
             {
-                "SubordinateMerchantId": "MID DO Marketplace",
+                "SubordinateMerchantId": "MID do Marketplace",
                 "amount": 500,
             },
             {
