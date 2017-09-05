@@ -47,7 +47,7 @@ O **Marketplace** também pode ser um participante da divisão. Para isso basta 
 <BR>
 Para cada transação a Braspag acordará **MDR(%) + TARIFA FIXA (R$)** com o **Marketplace**.
 
-O **Marketplace** com o conhecimento destas taxas negociará o seu MDR + Tarifa juntamente com seus **Subornidanos**, já embutindo o MDR do mesmo junto à **Braspag**.
+O **Marketplace** com o conhecimento destas taxas negociará o seu MDR(%) + TARIFA(R$) juntamente com seus **Subornidanos**, já embutindo o MDR do mesmo junto à **Braspag**.
 
 > O MDR acordado entre um **Marketplace** e um **Subordinado** deve ser sempre maior que o MDR acordado entre o **Marketplace** e a **Braspag**. 
 
