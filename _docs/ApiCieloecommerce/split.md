@@ -104,8 +104,8 @@ A autorização de uma transação no Split de Pagamentos deve ser realizada atr
 Porém, para indentificar que a transação enviada se trata de uma transação de Split de Pagamentos, deve-se modificar o tipo de pagamento utilizado, conforme abaixo:
 
 |                     | **Cartão de Crédito**  | **Cartão de Débito**  | 
-| **Transação Comum** | CreditCard         | DebitCard         |
-| **Transação Split** | SpplitedCreditCard | SplittedDebitCard |
+| **Transação Comum** | CreditCard             | DebitCard             |
+| **Transação Split** | SpplitedCreditCard     | SplittedDebitCard     |
 
 
 
