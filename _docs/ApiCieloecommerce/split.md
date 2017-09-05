@@ -83,7 +83,14 @@ Crédito: R$94,70 = R$100 - 5%.
 
 **Marketplace**: 
 
-Crédito: R$100,00 - = R$100 - 5%.
+Crédito: R$3,30 = R$100 * (5% - 2%) + R$0,30.
+Débito: R$0,30 (Tarifa Fixa Braspag)
+
+**Braspag (Facilitador)**: 
+
+Crédito: R$2,00 = R$100 * 2%.
+Crédito: R$0,30 (Tarifa Fixa Braspag)
+
 
 > ** *Importante* **: As porcentagens exibidas no exemplo não são aplicadas uma sobre as outras, mas sim como pontos percentuais que somados formam uma taxa unica sobre o Subordinate. Isso ocorre pois o valor das taxas sempre é cobrado sobre o total da transação do Subordinate.
 
