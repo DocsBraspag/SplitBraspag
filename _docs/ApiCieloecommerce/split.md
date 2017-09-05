@@ -290,7 +290,7 @@ Como resposta, A API Cielo E-Commerce retornará na resposta um nó contento as 
 
 | Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
 |-----------------------------------------|---------------------------------------------------------------------------------------------|--------|---------|-------------|
-| `SplitPayments.Splits.SubordinateMerchantId.` | Identificador do **Subordinado** ou **Marketplace**.                                            | Guid   | 36      | Sim         |
+| `SplitPayments.Splits.SubordinateMerchantId` | Identificador do **Subordinado** ou **Marketplace**.                                            | Guid   | 36      | Sim         |
 | `SplitPayments.Splits.Amount`            | Parte do valor calculado da transação a ser recebido pelo **Subordinado** ou **Marketplace**, já descontando todas as taxas | Inteiro | -      | Sim         |
 
 
