@@ -72,7 +72,7 @@ Uma transação de **R$100**, realizada por um **Marketplace** com participaçã
 
 Neste exemplo, foram assumidos os seguintes acordos:
 
-**Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa 
+**Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa
 **Taxa Marketplace**: 5% MDR, já embutindo os 2% do MDR Braspag + 0,30 Tarifa Fixa
 
 Após o split, cada participante terá sua agenda sensibilizada com os seguintes eventos:
