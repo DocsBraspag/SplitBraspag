@@ -68,7 +68,7 @@ O **Marketplace** é responsável por acordar as taxas a serem cobradas de seus 
 <BR>
 Uma transação de **R$100**, realizada por um **Marketplace** com participação do **Subordinado 01**.
 
-![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/Split.PNG)
+![Split](http://able-caribou.cloudvent.net/images/Split/Split.PNG)
 
 Neste exemplo, foram assumidos os seguintes acordos:
 
