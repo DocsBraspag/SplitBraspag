@@ -43,19 +43,23 @@ A divisão de uma transação deve serguir as seguintes regras:
 O **Marketplace** também pode ser um participante da divisão. Para isso basta informar seu identificador na divisão, passando o mesmo a ter também o papel de **Subordinado** e ter seus próprios produtos no carrinho. 
 
 ### Taxas
+
 #### Braspag (Facilitador) -> Marketplace
 <BR>
-Para cada transação a Braspag acordará **MDR(%) + TARIFA FIXA (R$)** com o **Marketplace**.
+A Braspag acordará um **MDR** e uma **Tarifa Fixa** com o **Marketplace** a serem descontado em cada transação.
 
-O **Marketplace** com o conhecimento destas taxas negociará o seu MDR(%) + TARIFA(R$) juntamente com seus **Subornidanos**, já embutindo o MDR do mesmo junto à **Braspag**.
+O **Marketplace** com, o conhecimento destas taxas, negociará o seu MDR(%) + TARIFA(R$) juntamente com seus **Subornidandos**, já embutindo o seu MDR junto à **Braspag**.
 
-> O MDR acordado entre um **Marketplace** e um **Subordinado** deve ser sempre maior que o MDR acordado entre o **Marketplace** e a **Braspag**. 
+> **Custo Marketplace:** MDR BRASPAG(%) + TARIFA FIXA (R$)
+
+> O MDR acordado entre um **Marketplace** e um **Subordinado** deve ser sempre maior que o MDR acordado entre a **Braspag** e o **Marketplace**. 
 
 
-#### Custo Subordinate
+#### Marketplace -> Subordinado
 
-O Unico custo para o Subordinate no Split de pagamento Braspag é a Taxa que o Marketplace cobra sobre transações geradas.
-Essa taxa normalmente é formada por uma **Margem de lucro Percentual** aplicada sobre o **custo transacional**.
+O **Marketplace** é responsável por acordar as taxas a serem cobradas de seus **Subordinados**, onde dever ser defindo um **MDR** maior ou igual ao **MDR** definido entre a **Braspag** e o **Marketplace** e uma Tarifa Fixa, que é opcional. 
+
+> **Custo Subordinado:** MDR MARKETPLACE(%) + TARIFA FIXA (R$), onde MDR MARKETPLACE(%) já comtempla o MDR BRASPAG(%)
 
 Abaixo demonstramos como essa Taxa é formada pelo Marketplace com base no custo Braspag.
 
