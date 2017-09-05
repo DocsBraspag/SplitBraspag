@@ -13,8 +13,8 @@ Muito utilizado em Marketplaces, onde **o carrinho é composto por produtos de d
 
 | **Participantes** | **Descrição** | 
 |-----------|---------- |
-| **Marketplace** | Responsável pelo carrinho. <BR> Possui subordinados (**Subordinates**) que fornecem os produtos que compõem o carrinho.<BR> Define um MDR\* + Taxa (opcional) a ser descontado sobre a venda do subordinado.<BR>  | 
-| **Subordinate** | Fornecedor dos produtos que compõem o carrinho.<BR>Recebe parte do valor da venda, descontadoo o MDR\* do Marketplace.<BR>  |
+| **Marketplace** | Responsável pelo carrinho. <BR> Possui subordinados (**Subordinados**) que fornecem os produtos que compõem o carrinho.<BR> Define um MDR\* + Taxa (opcional) a ser descontado sobre a venda do subordinado.<BR>  | 
+| **Subordinados** | Fornecedor dos produtos que compõem o carrinho.<BR>Recebe parte do valor da venda, descontadoo o MDR\* do Marketplace.<BR>  |
 | **Braspag (Facilitador)** | Responsável pelo fluxo transacional.<BR> Define um MDR\* + Taxa a serem descontados sobre o valor total da venda realizada pelo Marketplace.<br> Responsável pela liquidação dos pagamentos para os subordinados e marketplace.|
 
 > \***MDR**  (*Merchant Discount Rate*): Percentual a ser descontado sobre o valor de uma transação.
@@ -26,10 +26,12 @@ No Split de Pagamentos o responsável pelo fluxo transacional é o facilitador. 
 
 Com a transação capturada, a Braspag calcula o valor destinado a cada participante e repassa esses valores, no prazo estabelecido de acordo com cada produto (regime de pagamento\*), para cada envolvido na transação. 
 
-> \***Regime de Pagamento**: Prazo estabelecido para pagamento de acordo com o produto (crédito ou débito).<BR>
-> Crédito: Em até 31 dias.<BR>
-> Crédito Parcelado: 1º parcela em até 31 dias, demais a cada 30.<BR>
-> Débito: Em até 1 dia útil<BR>
+> \***Regime de Pagamento**: Prazo estabelecido para liquidação de acordo com o produto (crédito ou débito).<BR>
+> **Crédito**: Em até 31 dias.<BR>
+> **Crédito** Parcelado: 1º parcela em até 31 dias, demais a cada 30.<BR>
+> **Débito**: Em até 1 dia útil<BR>
+
+Para informar a divisão de uma transação, o marketplace 
 
 O Split é um processo de divisão transacional, onde o **Marketplace** separa o valor pertecente da transação do **Subordinate** em duas partes: 
 
