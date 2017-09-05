@@ -47,12 +47,12 @@ O **Marketplace** também pode ser um participante da divisão. Para isso basta 
 <BR>
 Para cada transação a Braspag acordará um **MDR** e uma **Taxa** com o **Marketplace**.
 
-O **Marketplace** com o conhecimento destas taxas negociará o seu MDR + Taxa juntamente com seus **Subornidanos**. 
+TAXA BRASPAG (%) + TARIFA FIXA (R$)
 
-> O MDR acordado entre um **Marketplace** e um subordinado ser menor que o MDR acordado entreo o **Marketplace** e a **Braspag**. 
+O **Marketplace** com o conhecimento destas taxas negociará o seu MDR + Taxa juntamente com seus **Subornidanos** já embutindo o MDR do mesmo junto a **Braspag**.
 
+> O MDR acordado entre um **Marketplace** e um **Subordinado** deve ser maior que o MDR acordado entreo o **Marketplace** e a **Braspag**. 
 
-> **Custo Marketplace:** TAXA BRASPAG (%) + TARIFA FIXA (R$)
 
 1 - A `taxa Braspag` é vinculada ao valor total da transação do Subordinate e não sobre o valor que Marketplace irá receber.<BR><BR>
 **EX:** 2% sobre a Venda de R$100,00 do Subordinate<BR><BR>
