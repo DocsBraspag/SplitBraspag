@@ -13,9 +13,9 @@ Muito utilizado em Marketplaces, onde **o carrinho é composto por produtos de d
 
 | **Participantes** | **Descrição** | 
 |-----------|---------- |
-| **Marketplace** | Responsável pelo carrinho. <BR> Possui subordinados (**Subordinados**) que fornecem os produtos que compõem o carrinho.<BR> Define um MDR\* + Tarifa (opcional) a ser descontado sobre a venda do **Subordinado**.<BR>  | 
-| **Subordinados** | Fornecedor dos produtos que compõem o carrinho.<BR>Recebe parte do valor da venda, descontadoo o MDR\* do **Marketplace**.<BR>  |
-| **Braspag (Facilitador)** | Responsável pelo fluxo transacional.<BR> Define um MDR\* + Tarifa a serem descontadas sobre o valor total da venda realizada pelo **Marketplace**.<br> Responsável pela liquidação dos pagamentos para os **Subordinados** e **Marketplace**.|
+| **Marketplace** | Responsável pelo carrinho. <BR> Possui subordinados (**Subordinados**) que fornecem os produtos que compõem o carrinho.<BR> Define MDR\* e Tarifa (opcional) a serem descontados sobre a venda do **Subordinado**.<BR>  | 
+| **Subordinados** | Fornecedor dos produtos que compõem o carrinho.<BR>Recebe parte do valor da venda, descontado o MDR\* do **Marketplace**.<BR>  |
+| **Braspag (Facilitador)** | Responsável pelo fluxo transacional.<BR> Define um MDR\* e Tarifa a serem descontados sobre o valor total da venda realizada pelo **Marketplace**.<br> Responsável pela liquidação dos pagamentos para os **Subordinados** e **Marketplace**.|
 
 > \***MDR**  (*Merchant Discount Rate*): Percentual a ser descontado sobre o valor de uma transação.
 
@@ -27,7 +27,7 @@ O Marketplace se integra à Braspag para transacionar e informa como será divid
 
 Com a transação capturada, a Braspag calcula o valor destinado a cada participante e repassa esses valores, no prazo estabelecido de acordo com cada produto (regime de pagamento\*), para cada envolvido na transação. 
 
-> \***Regime de Pagamento**: Prazo estabelecido para liquidação de acordo com o produto (crédito ou débito).<BR>
+> \***Regime de Pagamento**: Prazo estabelecido para liquidação de acordo com o produto (crédito ou débito) e bandeira.<BR>
 > **Crédito**: Em até 31 dias.<BR>
 > **Crédito** Parcelado: 1º parcela em até 31 dias, demais a cada 30.<BR>
 > **Débito**: Em até 1 dia útil<BR>
@@ -74,12 +74,6 @@ Neste exemplo, foram assumidos os seguintes acordos:
 
 Taxa Braspag: `2%` MDR + `R$0,30` Tarifa Fixa 
 Taxa Marketplace: `5%`, já embutindo os `2%` do MDR Braspag.
-
-
-1. O **Marketplace** tem um **MDR** de `5%` acordado com o **Subordinado 01**.
-2. Essa Taxa é formada por uma margem de `3 Pontos Percentuais` sobre o total da transação + o custo braspag (`2 pontos percentuais + 0,30 centavos`) sobre o total da transação
-3. A Transação é processada. O **Subordinate** recebe o montante da venda menos a `Taxa Marketplace`
-4. O Marketplace Recebe a parte da transação menos o custo da taxa Braspag.
 
 > ** *Importante* **: As porcentagens exibidas no exemplo não são aplicadas uma sobre as outras, mas sim como pontos percentuais que somados formam uma taxa unica sobre o Subordinate. Isso ocorre pois o valor das taxas sempre é cobrado sobre o total da transação do Subordinate.
 
