@@ -89,7 +89,7 @@ Crédito: R$2,00 = R$100 * 2%.
 Crédito: R$0,30 (Tarifa Fixa Braspag)
 
 ### Utilizando o Split de Pagamentos
-
+  
 O Split de Pagamentos funciona como parte da API transacional da Braspag via API Cielo Ecommerce.
 
 A integração A ser realizara é a mesma descrita para transações de cartão de crédito dentro da API Cielo Ecommerce.
