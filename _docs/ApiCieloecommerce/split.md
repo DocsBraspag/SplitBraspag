@@ -43,7 +43,7 @@ A divisão de uma transação deve serguir as seguintes regras:
 O **Marketplace** também pode ser um participante da divisão. Para isso basta informar seu identificador na divisão, passando o mesmo a ter também o papel de **Subordinado**. 
 
 
-Abaixo um exemplo do Fluxo transacional de autorização e divisão de valores no Split de pagamentos:
+Abaixo um exemplo do fluxo transacional e regras de divisão:
 
 
 ![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split0.jpg)
