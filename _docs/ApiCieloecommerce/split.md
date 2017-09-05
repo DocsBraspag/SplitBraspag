@@ -263,7 +263,7 @@ Este modelo exige que o **Marketplace** envie um "nó" adicional na integração
 | `SplitPayments.Fares.Mdr`               | **MDR(%)** do **Marketplace** a ser descontado do valor referente a participação do **Subordinado** | Decimal | -       | Sim         |
 | `SplitPayments.Fares.Fee`               | **Tarifa Fixa(R$)** a ser descontada do valor referente a participação do **Subordinado**, em centavos.  | Inteiro | -      | Sim         |
 
-Como resposta, A API Cielo E-Commerce retornará na resposta um nó contento as regras de divisão e como foi divida a transação entre o **Marketplace** e os **Subordinados**:
+Como resposta, A API Cielo E-Commerce retornará na resposta um nó contento as regras de divisão enviadas e os valores a serem recebidos pelo **Marketplace** e seus **Subordinados**:
 
 ```
 "SplitPayments": [
@@ -387,11 +387,11 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
                 "Splits": [
                     {
                         "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                        "amount": 500,    
+                        "amount": 2.10,    
                     },
                     {
                         "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
-                        "amount": 500,    
+                        "amount": 56.70,    
                     }
                 ]
             },
@@ -405,11 +405,11 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
                 "Splits": [
                     {
                         "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                        "amount": 500,    
+                        "amount": 0.95,    
                     },
                     {
                         "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
-                        "amount": 500,    
+                        "amount": 38.25,    
                     }
                 ]
             }
@@ -435,7 +435,13 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
 }
 ```
 
-Neste caso o cálculos do Split são realizados sobre cada regra de divisão informada.
+Neste exmeplo o cálculos do Split foram realizados sobre cada regra de divisão informada e na resposta retornaram os valores a serem recebidos pelo **Marketplace** e seus **Subordinados**.
+
+
+**Participante**                                      | **0f377932-5668-4c72-8b5b-2b43760ebd38** | **98430463-7c1e-413b-b13a-0f613af594d8**
+**Marketplace**(cd16ab8e-2173-4a16-b037-36cd04c07950) | 
+**Subordinado**(0f377932-5668-4c72-8b5b-2b43760ebd38) |
+**Subordinado**(98430463-7c1e-413b-b13a-0f613af594d8) |
 
 ![Split](http://able-caribou.cloudvent.net/images/Split/Split003.PNG)
 
@@ -912,7 +918,7 @@ Esse modelo exige que o lojista envie uma atualização da transação (via `PUT
 
 > EndPoint de atualização: https://apidev.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/split
 
-Exemplo do Nó de SPLIT no `PUT`:
+Exemplo do nó de SPLIT no `PUT`:
 ```
 "SplitPayments":[{
         "SubordinateMerchantId" :"MID Subordinate 01",
@@ -931,7 +937,7 @@ Exemplo do Nó de SPLIT no `PUT`:
 | `SplitPayments.Fares.Fee`               | Tarifa (R$) a ser cobrada do Subordinate - em Centavos                                           | Número | 15      | Sim         |
 
 
-Com resposta, A API retornará um nó com as seguintes caracteristicas:
+Com resposta, A API retornará um nó com as seguintes características:
 
 Parte do `RESPONSE`:
 ```
