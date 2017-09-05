@@ -132,7 +132,7 @@ Exemplo:
 }
 ```
 
-Ao informar um tipo de pagamento do Split, a API Cielo e-Commerce automaticamente identifica que a transação é referente ao Split de Pagamentos e transaciona pela Braspag (Facilitador).
+Ao informar um tipo de pagamento referente ao Split, a API Cielo e-Commerce automaticamente identifica que a transação é referente ao Split de Pagamentos e realiza o fluxo transacional pela Braspag (Facilitador).
 
 Caso a transação enviada seja marcada para captura automática, o nó contendo as regras de divisão deverá ser enviado, caso contrário a transação será dividida entre a **Braspag** e o **Marketplace**. Posteriormente é permitido que o **Marketplace** envie novas regras de divisão para a transação através da API de divisão pós-transacional, desde que esteja dentro do período de tempo permitido.
 
