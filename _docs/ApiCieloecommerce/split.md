@@ -294,7 +294,7 @@ Como resposta, A API Cielo E-Commerce retornará na resposta um nó contento as 
 | `SplitPayments.Splits.Amount`            | Parte do valor calculado da transação a ser recebido pelo **Subordinado** ou **Marketplace**, já descontando todas as taxas | Inteiro | -      | Sim         |
 
 
-**Exemplo 2)**  
+**Exemplo**  
   
 Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
 
