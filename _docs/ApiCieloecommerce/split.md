@@ -52,15 +52,15 @@ O **Marketplace** com, o conhecimento destas taxas, negociará o seu **MDR** e u
 
 O desconto da **Tarifa Fixa** não é aplicado no valor total da transação, não entrando no cálculo da divisão e sim sendo debitado do montande que o **Marketplace** tem para receber junto à **Braspag**. O **MDR** entra no cálculo de divisão da transação, já que o mesmo deve estar embutido no **MDR** acordado entre o **Marketplace** e seus **Subordinados.**
 
-> **Custo Marketplace:** MDR BRASPAG(%) + TARIFA FIXA (R$)
+> **Custo Marketplace:** MDR Braspag(%) + Tarifa Fixa (R$)
 
 > O MDR acordado entre um **Marketplace** e um **Subordinado** deve ser sempre maior que o MDR acordado entre a **Braspag** e o **Marketplace**. 
-
+<BR>
 #### Marketplace
 <BR>
 O **Marketplace** é responsável por acordar as taxas a serem cobradas de seus **Subordinados**, onde dever ser defindo um **MDR** maior ou igual ao **MDR** definido entre a **Braspag** e o **Marketplace** e uma Tarifa Fixa, que é opcional. 
 
-> **Custo Subordinado:** MDR MARKETPLACE(%) + TARIFA FIXA (R$), onde MDR MARKETPLACE(%) já comtempla o MDR BRASPAG(%)
+> **Custo Subordinado:** MDR Marketplace(%) + Tarifa Fixa(R$), onde no MDR Markectplace(%) está embutido o MDR Braspag(%).
 
 #### Exemplo
 
@@ -68,10 +68,11 @@ Uma transação de **R$100**, realizada por um **Marketplace** com participaçã
 
 ![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split0.jpg)
 
+Neste exemplo, foram assumidos os seguintes acordos:
 
+MDR Braspag
 
-
-1. O **Marketplace** tem um MDR de **5%** acordado com o **Subordinado 01**
+1. O **Marketplace** tem um **MDR** de `5%` acordado com o **Subordinado 01**.
 2. Essa Taxa é formada por uma margem de `3 Pontos Percentuais` sobre o total da transação + o custo braspag (`2 pontos percentuais + 0,30 centavos`) sobre o total da transação
 3. A Transação é processada. O **Subordinate** recebe o montante da venda menos a `Taxa Marketplace`
 4. O Marketplace Recebe a parte da transação menos o custo da taxa Braspag.
