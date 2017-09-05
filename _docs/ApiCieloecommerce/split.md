@@ -53,7 +53,7 @@ O **Marketplace** com, o conhecimento destas taxas, negociará o seu **MDR** e u
 
 O desconto da **Tarifa Fixa** não é aplicado no valor total da transação, não entrando no cálculo da divisão e sim sendo debitado do montande que o **Marketplace** tem para receber junto à **Braspag**. O **MDR** entra no cálculo de divisão da transação, já que o mesmo deve estar embutido no **MDR** acordado entre o **Marketplace** e seus **Subordinados.**
 
-> **Custo Marketplace:** MDR Braspag(%) + Tarifa Fixa (R$)
+> **Custo Marketplace:** MDR Braspag(%) + Tarifa Fixa(R$)
 
 > O MDR acordado entre um **Marketplace** e um **Subordinado** deve ser sempre maior que o MDR acordado entre a **Braspag** e o **Marketplace**. 
 
@@ -71,7 +71,9 @@ Uma transação de **R$100**, realizada por um **Marketplace** com participaçã
 
 Neste exemplo, foram assumidos os seguintes acordos:
 
-MDR Braspag
+Taxa Braspag: `2%` MDR + `R$0,30` Tarifa Fixa 
+Taxa Marketplace: `5%`, já embutindo os `2%` do MDR Braspag.
+
 
 1. O **Marketplace** tem um **MDR** de `5%` acordado com o **Subordinado 01**.
 2. Essa Taxa é formada por uma margem de `3 Pontos Percentuais` sobre o total da transação + o custo braspag (`2 pontos percentuais + 0,30 centavos`) sobre o total da transação
