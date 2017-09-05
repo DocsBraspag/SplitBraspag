@@ -11,8 +11,6 @@ O Split de Pagamentos permite a divisão de uma transação entre diferentes par
 
 Muito utilizado em Marketplaces, onde **o carrinho é composto por produtos de diferentes fornecedores** e o valor total da venda deve ser dividido entre os participantes.
 
-No Split de Pagamentos, podem existir 3 participantes:
-
 | **Participantes** | **Descrição** | 
 |-----------|---------- |
 | **Marketplace** | Responsável pelo carrinho. <BR> Possui subordinados (**Subordinates**) que fornecem os produtos que compõem o carrinho.<BR> Define um MDR\* + Taxa (opcional) a ser descontado sobre a venda do subordinado.<BR>  | 
