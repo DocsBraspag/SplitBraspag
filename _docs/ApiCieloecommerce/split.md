@@ -229,12 +229,12 @@ O Split de Pagamentos possui dois tipos básicos de integração:
 
 | Tipo                 | Descrição                                                                                                                          |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| **Split Transacional**     | O **Marketplace** envia na autorização(captura automática) ou na captura as regras de divisão.                                             |
-| **Split Pós-Transacional** | O **Marketplace** define as regras de divisão após a captura da transação.
+| **Split Transacional**     | O **Marketplace** envia na autorização (captura automática) ou no momento de captura as regras de divisão.                                             |
+| **Split Pós-Transacional** | O **Marketplace** envia as regras de divisão após a captura da transação.
 
 > O Split de Pagamentos só é realizado para transações capturadas, ou seja, o mesmo só será considerado para autorizações com captura automática e no momento da execução de captura de uma transação. 
-
-
+  
+  
 #### Split Transacional
 
 Esse modelo exige que o lojista envie um "nó" adicional na integração da API Cielo Ecommerce onde serão inclusos os dados do pagamento, Subordinates e Taxas a serem cobradas.
