@@ -96,7 +96,7 @@ Para mais informações sobre a API Cielo E-Commerce, consulte o [Manual de Inte
 
 OBS: Neste manual serão apresentados os contratos de integração da API Cielo E-Commerce, porém o foco da análise será nas operações referentes ao Split de Pagamentos.
 
-> Atualmente o Split de Pagamentos está disponivel para os seguintes tipos de transação:
+> Atualmente o Split de Pagamentos está disponivel para os seguintes tipos de pagamento:
 > * CARTÃO DE CRÉDITO
 
 #### Autorização
