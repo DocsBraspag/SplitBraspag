@@ -77,10 +77,10 @@ Neste exemplo, foram assumidos os seguintes acordos:
 
 Após o split, cada participante terá sua agenda sensibilizada com os seguintes eventos:
 
-**Subordinado**: 
+**Subordinado**:
 Crédito: R$94,70 = R$100 - 5%.
 
-**Marketplace**: 
+**Marketplace**:
 Crédito: R$3,30 = R$100 * (5% - 2%) + R$0,30.
 Débito: R$0,30 (Tarifa Fixa Braspag)
 
