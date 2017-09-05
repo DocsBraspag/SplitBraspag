@@ -136,7 +136,8 @@ Ao informar um tipo de pagamento referente ao Split, a API Cielo e-Commerce auto
 
 Caso a transação enviada seja marcada para captura automática, o nó contendo as regras de divisão deverá ser enviado, caso contrário a transação será dividida entre a **Braspag** e o **Marketplace**. Posteriormente é permitido que o **Marketplace** envie novas regras de divisão para a transação através da API de divisão pós-transacional, desde que esteja dentro do período de tempo permitido.
 
-**Exemplo 1)** Sem o nó contendo as regras de divisão.
+**Exemplo 1)** Transação no valor de **R$100,00** sem o nó contendo as regras de divisão.
+
 
 **Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa. 
 
@@ -167,6 +168,36 @@ Neste caso o **Marketplace** recebe o valor da transação descontado o MDR acor
 
 ![Split](http://able-caribou.cloudvent.net/images/Split/Split001.PNG)
 
+**Exemplo 2)** Com o nó contendo as regras de divisão.
+
+**Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa. 
+**Taxa Marketplace com o Subordinado 01**: 5% MDR, já embutindo os 2% do MDR Braspag + 0,30 Tarifa Fixa.  
+**Taxa Marketplace com o Subordinado 02**: 4% MDR, já embutindo os 2% do MDR Braspag + 0,15 Tarifa Fixa.
+
+```
+{
+   "MerchantOrderId":"2014111703",
+   "Customer":{
+      "Name":"Comprador crédito simples"
+   },
+   "Payment":{
+     "Type":"SplittedCreditCard",
+     "Amount":10000,
+     "Capture":true,
+     "Installments":1,
+     "SoftDescriptor":"123456789ABCD",
+     "CreditCard":{
+         "CardNumber":"1234123412341231",
+         "Holder":"Teste Holder",
+         "ExpirationDate":"12/2030",
+         "SecurityCode":"123",
+         "Brand":"Visa"
+     }
+   }
+}
+```
+
+Neste caso o **Marketplace** recebe o valor da transação descontado o MDR acordado com a **Braspag**. Como apresentado anteriormente, a Taxa Fixa acordada entre o **Marketplace** e a **Braspag** é sensibilizada diretamente na agenda.
 
 ### Tipos de Split
 
