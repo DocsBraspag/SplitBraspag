@@ -92,7 +92,7 @@ Crédito: R$0,30 (Tarifa Fixa Braspag)
 <BR>
 O Split de Pagamentos é parte da API Cielo E-Commerce, desenvolvida utilizando a arquiteura REST e que utiliza JSON na troca de mensagens. 
 
-Para mais informações sobre a API Cielo E-Commerce, veja este [Manual de Integração](https://developercielo.github.io/Webservice-3.0/#criando-uma-transação-simples)
+Para mais informações sobre a API Cielo E-Commerce, consulte o [Manual de Integração](https://developercielo.github.io/Webservice-3.0/#criando-uma-transação-simples) da Plataforma.
 
 Neste manual serão apresentados os contratos de integração da API Cielo ecommerce, mas o foco da analise se dará nos paramêtros do Split de pagamentos.
 
