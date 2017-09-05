@@ -272,7 +272,7 @@ Como resposta, A API Cielo E-Commerce retornará na resposta um nó contento as 
         "Amount": 10000,
         "Fares": {
             "Mdr": 5,
-            "Fee": 0
+            "Fee": 0.00
         },
         "Splits": [                
             {
