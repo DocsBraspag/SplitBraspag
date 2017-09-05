@@ -117,7 +117,7 @@ Exemplo:
       "Name":"Comprador crédito simples"
    },
    "Payment":{
-     "Type":"CreditCard",
+     "Type":"SplittedCreditCard",
      "Amount":15700,
      "Installments":1,
      "SoftDescriptor":"123456789ABCD",
@@ -131,6 +131,11 @@ Exemplo:
    }
 }
 ```
+
+Ao informar um tipo de pagamento do Split, a API Cielo e-Commerce automaticamente identifica que a transação é referente ao Split de Pagamentos e transaciona pela Braspag (Facilitador).
+
+Caso a transação enviada seja marcada para captura automática, o nó contendo as regras de divisão deverá ser enviado, caso contrário a transação será dividida entre a **Braspag** e o **Marketplace**.
+
 
 ### Tipos de Split
 
