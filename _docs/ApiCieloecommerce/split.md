@@ -44,13 +44,13 @@ O **Marketplace** também pode ser um participante da divisão. Para isso basta 
 
 ### Taxas
 
-Nesta área do manual vamos detalhar como o processo de cobrança e custos afeta cada uma das entidades envolvidas no Split
+#### Braspag (Facilitador)
 
+Para cada transação a Braspag acordará um **MDR** e uma **Taxa** com o **Marketplace**.
 
-#### Custo Marketplace
+O **Marketplace** com o conhecimento destas taxas negociará o seu MDR + Taxa juntamente com seus **Subornidanos**, 
 
-O Split de pagamentos Braspag funciona com base em uma **taxa basica percentual tabelada** e uma **Tarifa fixa por transação** contratada pelo Marketplace. 
-A Taxa braspag é cobrada sobre o valor da transação do Subordinate como um todo, mas é retirada da parte destinada ao Marketplace.
+> O MDR acordado entre um **Marketplace** e um subordinado ser menor que o MDR acordado entreo o **Marketplace** e a **Braspag**. 
 
 
 > **Custo Marketplace:** TAXA BRASPAG (%) + TARIFA FIXA (R$)
