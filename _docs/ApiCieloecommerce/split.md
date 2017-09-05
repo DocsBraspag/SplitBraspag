@@ -64,9 +64,19 @@ O **Marketplace** é responsável por acordar as taxas a serem cobradas de seus 
 
 ####Exemplo
 
-Abaixo demonstramos como essa Taxa é formada pelo Marketplace com base no custo Braspag.
+Abaixo um exemplo do fluxo transacional e regras de divisão:
 
-> **Custo Subordinate:** Taxa Marketplace = {Margem Marketplace + (TAXA BRASPAG (%) + TARIFA FIXA (R$))}
+![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split0.jpg)
+
+**EX:** Uma venda de R$100, realizada pelo **Marketplace** com participação do **Subordinado 01**.
+
+
+1. O **Marketplace** tem um MDR de **5%** acordado com o **Subordinado 01**
+2. Essa Taxa é formada por uma margem de `3 Pontos Percentuais` sobre o total da transação + o custo braspag (`2 pontos percentuais + 0,30 centavos`) sobre o total da transação
+3. A Transação é processada. O **Subordinate** recebe o montante da venda menos a `Taxa Marketplace`
+4. O Marketplace Recebe a parte da transação menos o custo da taxa Braspag.
+
+> ** *Importante* **: As porcentagens exibidas no exemplo não são aplicadas uma sobre as outras, mas sim como pontos percentuais que somados formam uma taxa unica sobre o Subordinate. Isso ocorre pois o valor das taxas sempre é cobrado sobre o total da transação do Subordinate.
 
 ### Utilizando o Split de Pagamentos
 
@@ -81,21 +91,7 @@ Neste manual serão apresentados os contratos de integração da API Cielo ecomm
 
 
 
-Abaixo um exemplo do fluxo transacional e regras de divisão:
 
-
-![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split0.jpg)
-
-
-**EX:** Uma venda de R$100, realizada pelo **Marketplace** com participação do **Subordinado 01**.
-
-
-1. O **Marketplace** tem um MDR de **5%** acordado com o **Subordinado 01**
-2. Essa Taxa é formada por uma margem de `3 Pontos Percentuais` sobre o total da transação + o custo braspag (`2 pontos percentuais + 0,30 centavos`) sobre o total da transação
-3. A Transação é processada. O **Subordinate** recebe o montante da venda menos a `Taxa Marketplace`
-4. O Marketplace Recebe a parte da transação menos o custo da taxa Braspag.
-
-> ** *Importante* **: As porcentagens exibidas no exemplo não são aplicadas uma sobre as outras, mas sim como pontos percentuais que somados formam uma taxa unica sobre o Subordinate. Isso ocorre pois o valor das taxas sempre é cobrado sobre o total da transação do Subordinate.
 
 
 ### Tipos de Split
