@@ -263,12 +263,9 @@ Este modelo exige que o **Marketplace** envie um "nó" adicional na integração
 | `SplitPayments.Fares.Mdr`               | **MDR(%)** do **Marketplace** a ser descontado do valor referente a participação do **Subordinado** | Decimal | -       | Sim         |
 | `SplitPayments.Fares.Fee`               | **Tarifa Fixa(R$)** a ser descontada do valor referente a participação do **Subordinado**, em centavos.  | Inteiro | -      | Sim         |
 
-Como resposta, A API Cielo E-Commerce retornará um nó com as seguintes características:
+Como resposta, A API Cielo E-Commerce retornará na resposta um nó contento as seguintes propriedades:
 
-Parte do `RESPONSE`:
 ```
-{
-
 "SplitPayments": [
             {
                 "SubordinateMerchantId": "MID Subordinate 01",
@@ -289,17 +286,62 @@ Parte do `RESPONSE`:
                 ]
             }
         ]
-}
 ```
 
 | Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
 |-----------------------------------------|---------------------------------------------------------------------------------------------|--------|---------|-------------|
-| `SplitPayments.SubordinateMerchantId`        | Identificador do Subordinate                                                                     | GUID   | 36      | Sim         |
-| `SplitPayments.Amount`                  | Valor da transação pertencente ao Subordinate                                                    | Número | 15      | Sim         |
-| `SplitPayments.Fares.Mdr`               | Taxa do Marketplace (%) a ser retirada do Subordinate                                                    | Número | 2       | Sim         |
-| `SplitPayments.Fares.Fee`               | Tarifa (R$) a ser cobrada do Subordinate - em Centavos                                           | Número | 15      | Sim         |
 | `SplitPayments.split.SubordinateMerchantId.` | Identificador do Subordinate ou Marketplace incluso no Split                                             | GUID   | 36      | Sim         |
 | `SplitPayments.split.Amount`            | Valor da transação a ser depositado no Subordinate ou Marketplace, descontado a Taxa Marketplace e/ou Taxa Cielo | Número | 15      | Sim         |
+
+
+**Exemplo 2)**  
+  
+Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
+
+**Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa.  
+**Taxa Marketplace com o Subordinado 01**: 5% MDR, já embutindo os 2% do MDR Braspag + 0,30 Tarifa Fixa.  
+**Taxa Marketplace com o Subordinado 02**: 4% MDR, já embutindo os 2% do MDR Braspag + 0,15 Tarifa Fixa.  
+
+```
+{
+   "MerchantOrderId":"2014111703",
+   "Customer":{
+      "Name":"Comprador crédito simples"
+   },
+   "Payment":{
+     "Type":"SplittedCreditCard",
+     "Amount":10000,
+     "Capture":true,
+     "Installments":1,
+     "SoftDescriptor":"123456789ABCD",
+     "CreditCard":{
+         "CardNumber":"1234123412341231",
+         "Holder":"Teste Holder",
+         "ExpirationDate":"12/2030",
+         "SecurityCode":"123",
+         "Brand":"Visa"
+     },
+     "SplitPayments":[{
+        "SubordinateMerchantId" :"MID Subordinate 01",
+        "Amount":6000,
+        "Fares":{
+            "Mdr":5,
+            "Fee":0.30
+        },
+        "SubordinateMerchantId" :"MID Subordinate 02",
+        "Amount":4000,
+        "Fares":{
+            "Mdr":4,
+            "Fee":0.15
+        }
+     }]
+   }
+}
+```
+
+Neste caso o cálculos do Split são realizados sobre cada regra de divisão informada. No próximo tópico serão explicados as propriedades que compõem o nó do Split de Pagamentos.
+
+![Split](http://able-caribou.cloudvent.net/images/Split/Split003.PNG)
 
 
 
