@@ -263,7 +263,6 @@ Este modelo exige que o **Marketplace** envie um "nó" adicional na integração
 | `SplitPayments.Fares.Mdr`               | **MDR(%)** do **Marketplace** a ser descontado do valor referente a participação do **Subordinado** | Decimal | -       | Sim         |
 | `SplitPayments.Fares.Fee`               | **Tarifa Fixa(R$)** a ser descontada do valor referente a participação do **Subordinado**, em centavos.  | Inteiro | 15      | Sim         |
 
-
 Com resposta, A API retornará um nó com as seguintes caracteristicas:
 
 Parte do `RESPONSE`:
