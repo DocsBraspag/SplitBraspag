@@ -216,7 +216,7 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
 
 Neste caso o cálculos do Split são realizados sobre cada regra de divisão informada. No próximo tópico serão explicados as propriedades que compões o nó do Split de Pagamentos.
 
-![Split](http://able-caribou.cloudvent.net/images/Split/Split001.PNG)
+![Split](http://able-caribou.cloudvent.net/images/Split/Split003.PNG)
 
 ### Tipos de Split
 
