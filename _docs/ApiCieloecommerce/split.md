@@ -200,20 +200,24 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
          "SecurityCode":"123",
          "Brand":"Visa"
      },
-     "SplitPayments":[{
-        "SubordinateMerchantId" :"MID Subordinate 01",
-        "Amount":6000,
-        "Fares":{
-            "Mdr":5,
-            "Fee":0.30
+     "SplitPayments":[
+        {
+            "SubordinateMerchantId" :"MID Subordinate 01",
+            "Amount":6000,
+            "Fares":{
+                "Mdr":5,
+                "Fee":0.30
+            }
         },
-        "SubordinateMerchantId" :"MID Subordinate 02",
-        "Amount":4000,
-        "Fares":{
-            "Mdr":4,
-            "Fee":0.15
+        {
+            "SubordinateMerchantId" :"MID Subordinate 02",
+            "Amount":4000,
+            "Fares":{
+                "Mdr":4,
+                "Fee":0.15
+            }
         }
-     }]
+     ]
    }
 }
 ```
@@ -302,6 +306,7 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
 **Taxa Marketplace com o Subordinado 01**: 5% MDR, já embutindo os 2% do MDR Braspag + 0,30 Tarifa Fixa.  
 **Taxa Marketplace com o Subordinado 02**: 4% MDR, já embutindo os 2% do MDR Braspag + 0,15 Tarifa Fixa.  
 
+`REQUEST`
 ```
 {
    "MerchantOrderId":"2014111703",
@@ -322,13 +327,13 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
          "Brand":"Visa"
      },
      "SplitPayments":[{
-        "SubordinateMerchantId" :"MID Subordinate 01",
+        "SubordinateMerchantId" :"70e3fb9c-26a7-4513-9d39-65eec93a7e66",
         "Amount":6000,
         "Fares":{
             "Mdr":5,
             "Fee":0.30
         },
-        "SubordinateMerchantId" :"MID Subordinate 02",
+        "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
         "Amount":4000,
         "Fares":{
             "Mdr":4,
@@ -336,6 +341,84 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
         }
      }]
    }
+}
+```
+
+`RESPONSE`
+```
+{
+    "MerchantOrderId": "2014111706",
+    "Customer": {
+        "Name": "Comprador crédito simples"
+    },
+    "Payment": {
+        "ServiceTaxAmount": 0,
+        "Installments": 1,
+        "Interest": "ByMerchant",
+        "Capture": true,
+        "Authenticate": false,
+        "CreditCard": {
+            "CardNumber": "455187******0183",
+            "Holder": "Teste Holder",
+            "ExpirationDate": "12/2030",
+            "SaveCard": false,
+            "Brand": "Visa"
+        },
+        "ProofOfSale": "674532",
+        "Tid": "0305023644309",
+        "AuthorizationCode": "123456",
+        "PaymentId": "24bc8366-fc31-4d6c-8555-17049a836a07",
+        "Type": "CreditCard",
+        "Amount": 15700,
+        "Currency": "BRL",
+        "Country": "BRA",
+        "ExtraDataCollection": [],
+        "Status": 1,
+        "ReturnCode": "4",
+        "ReturnMessage": "Operation Successful",
+        "SplitPayments":[
+            {
+            "SubordinateMerchantId" :"70e3fb9c-26a7-4513-9d39-65eec93a7e66",
+            "Amount":6000,
+            "Fares":{
+                "Mdr":5,
+                "Fee":0.30
+            },
+            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+            "Amount":4000,
+            "Fares":{
+                "Mdr":4,
+                "Fee":0.15
+            }
+            "splits": [                
+                    {
+                        "SubordinateMerchantId": "MID DO Marketplace",
+                        "amount": 500,
+                    },
+                    {
+                        "SubordinateMerchantId": "MID Subordinate 01",
+                        "amount": 9500,
+                    }
+                ]
+        }],
+        "Links": [
+            {
+                "Method": "GET",
+                "Rel": "self",
+                "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
+            },
+            {
+                "Method": "PUT",
+                "Rel": "capture",
+                "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/capture"
+            },
+            {
+                "Method": "PUT",
+                "Rel": "void",
+                "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/void"
+            }
+        ]
+    }
 }
 ```
 
