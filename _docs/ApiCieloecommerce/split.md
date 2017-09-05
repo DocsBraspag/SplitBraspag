@@ -22,9 +22,9 @@ Muito utilizado em Marketplaces, onde **o carrinho é composto por produtos de d
 
 ### Como funciona o Split de Pagamentos?
 
-No Split de Pagamentos o responsável pelo fluxo transacional é o facilitador. O Marktplace se integra à Braspag para transacionar e informa como será divida a transação entre cada paticipante, podendo ser no momento de captura ou em um momento posterior, conhecido como split pós-transacional, desde que seja dentro de um limite de tempo pré-estabelecido. 
+No Split de Pagamentos o responsável pelo fluxo transacional é o facilitador. O Marketplace se integra à Braspag para transacionar e informa como será divida a transação entre cada paticipante, podendo ser no momento de captura ou em um momento posterior, conhecido como split pós-transacional, desde que seja dentro de um limite de tempo pré-estabelecido. 
 
-Com a transação capturada a Braspag calcula o valor destinado a cada participante e repassa esses valores, no prazo estabelecido de acordo com cada produto (regime de pagamento), para cada envolvido. 
+Com a transação capturada, a Braspag calcula o valor destinado a cada participante e repassa esses valores, no prazo estabelecido de acordo com cada produto (regime de pagamento\*), para cada envolvido na transação. 
 
 > \***Regime de Pagamento**: Prazo estabelecido para pagamento de acordo com o produto (crédito ou débito).<BR>
 > Crédito: Em até 31 dias.<BR>
