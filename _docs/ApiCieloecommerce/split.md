@@ -48,9 +48,9 @@ O **Marketplace** também pode ser um participante da divisão. Para isso basta 
 <BR>
 A Braspag acordará um **MDR** e uma **Tarifa Fixa** com o **Marketplace** a serem descontados em cada transação.
 
-O **Marketplace** com, o conhecimento destas taxas, negociará o seu MDR(%) + TARIFA(R$) juntamente com seus **Subornidandos**, já embutindo o seu MDR junto à **Braspag**.
+O **Marketplace** com, o conhecimento destas taxas, negociará o seu **MDR** e uma **Tarifa Fixa (opcional)** juntamente com seus **Subornidandos**, já embutindo o seu **MDR** junto à **Braspag**.
 
-O desconto da **Tarifa Fixa** não é aplicado no valor total da transação, não entrando no cálculo da divisão e sim sendo debitado no montande que o **Marketplace** tem para receber junto à **Braspag**. O **MDR** entra no cálculo de divisão da transação, já que o mesmo deve estar embutido no **MDR** acordado entre o **Marketplace** e seus **Subordinados.**
+O desconto da **Tarifa Fixa** não é aplicado no valor total da transação, não entrando no cálculo da divisão e sim sendo debitado do montande que o **Marketplace** tem para receber junto à **Braspag**. O **MDR** entra no cálculo de divisão da transação, já que o mesmo deve estar embutido no **MDR** acordado entre o **Marketplace** e seus **Subordinados.**
 
 > **Custo Marketplace:** MDR BRASPAG(%) + TARIFA FIXA (R$)
 
@@ -62,6 +62,9 @@ O desconto da **Tarifa Fixa** não é aplicado no valor total da transação, n�
 O **Marketplace** é responsável por acordar as taxas a serem cobradas de seus **Subordinados**, onde dever ser defindo um **MDR** maior ou igual ao **MDR** definido entre a **Braspag** e o **Marketplace** e uma Tarifa Fixa, que é opcional. 
 
 > **Custo Subordinado:** MDR MARKETPLACE(%) + TARIFA FIXA (R$), onde MDR MARKETPLACE(%) já comtempla o MDR BRASPAG(%)
+
+
+
 
 Abaixo demonstramos como essa Taxa é formada pelo Marketplace com base no custo Braspag.
 
