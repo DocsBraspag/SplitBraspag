@@ -62,7 +62,7 @@ O **Marketplace** é responsável por acordar as taxas a serem cobradas de seus 
 
 > **Custo Subordinado:** MDR MARKETPLACE(%) + TARIFA FIXA (R$), onde MDR MARKETPLACE(%) já comtempla o MDR BRASPAG(%)
 
-####Exemplo
+#### Exemplo
 
 Uma transação de **R$100**, realizada ppor um **Marketplace** com participação do **Subordinado 01**.
 
