@@ -43,24 +43,13 @@ A divisão de uma transação deve serguir as seguintes regras:
 O **Marketplace** também pode ser um participante da divisão. Para isso basta informar seu identificador na divisão, passando o mesmo a ter também o papel de **Subordinado** e ter seus próprios produtos no carrinho. 
 
 ### Taxas
-#### Braspag (Facilitador)
+#### Braspag (Facilitador) -> Marketplace
 <BR>
 Para cada transação a Braspag acordará **MDR(%) + TARIFA FIXA (R$)** com o **Marketplace**.
 
 O **Marketplace** com o conhecimento destas taxas negociará o seu MDR(%) + TARIFA(R$) juntamente com seus **Subornidanos**, já embutindo o MDR do mesmo junto à **Braspag**.
 
 > O MDR acordado entre um **Marketplace** e um **Subordinado** deve ser sempre maior que o MDR acordado entre o **Marketplace** e a **Braspag**. 
-
-1 - A `taxa Braspag` é vinculada ao valor total da transação do Subordinate e não sobre o valor que Marketplace irá receber.<BR><BR>
-**EX:** 2% sobre a Venda de R$100,00 do Subordinate<BR><BR>
-2 - O valor da tarifa fixa Braspag é debitada do montante destinado ao Marketplace. <BR><BR>
-**EX:** 2% sobre a Venda de R$100,00 do Subordinate = R$2,00, será retirado da fatia cobrada pelo Marketplace do Subordinate<BR><BR>
-
-
-Abaixo um exemplo de como a divisão de valores é realizada por transação:
-
-![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/splitF.jpg)
-
 
 
 #### Custo Subordinate
