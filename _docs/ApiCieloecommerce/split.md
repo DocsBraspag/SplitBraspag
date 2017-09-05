@@ -31,7 +31,11 @@ Com a transação capturada, a Braspag calcula o valor destinado a cada particip
 > **Crédito** Parcelado: 1º parcela em até 31 dias, demais a cada 30.<BR>
 > **Débito**: Em até 1 dia útil<BR>
 
-Para informar a divisão de uma transação, o marketplace 
+A divisão de uma transação é composta por:
+
+* Identificadores dos **Subordinados** participantes da transação.
+* Os valor de participação de cada **Subordinado**. O somatório deverá ser igual ao valor total da transação.
+* MDRs + Taxas (opcional) a ser aplicado sobre o valor de cada subordinado e que será destinado ao **Marketplace**. Deverá ser acordado previamente entre o **Marketplace** e o **Subordinado**.
 
 O Split é um processo de divisão transacional, onde o **Marketplace** separa o valor pertecente da transação do **Subordinate** em duas partes: 
 
