@@ -68,10 +68,9 @@ Abaixo demonstramos como essa Taxa é formada pelo Marketplace com base no custo
 
 > **Custo Subordinate:** Taxa Marketplace = {Margem Marketplace + (TAXA BRASPAG (%) + TARIFA FIXA (R$))}
 
-
 ### Utilizando o Split de Pagamentos
 
-O Split de Plagamentos funciona como parte da API transacional da Braspag via API Cielo Ecommerce.
+O Split de Pagamentos funciona como parte da API transacional da Braspag via API Cielo Ecommerce.
 
 A integração A ser realizara é a mesma descrita para transações de cartão de crédito dentro da API Cielo Ecommerce.
 Para mais informações, veja este [Manual de Integração](https://developercielo.github.io/Webservice-3.0/#criando-uma-transação-simples)
