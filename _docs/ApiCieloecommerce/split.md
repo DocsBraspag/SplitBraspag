@@ -40,7 +40,7 @@ A divisão de uma transação deve serguir as seguintes regras:
 * Os valores de participação de cada **Subordinado**. O somatório deverá ser igual ao valor total da transação.
 * MDRs + Taxas (opcional) a ser aplicado sobre o valor de cada **Subordinado** que será destinado ao **Marketplace**. Deverá ser acordado previamente entre o **Marketplace** e o **Subordinado**.
 
-O **Marketplace** também pode ser um participante da divisão. Para isso basta informar seu identificador na divisão, passando o mesmo a ter também o papel de **Subordinado**. 
+O **Marketplace** também pode ser um participante da divisão. Para isso basta informar seu identificador na divisão, passando o mesmo a ter também o papel de **Subordinado** e ter seus próprios produtos no carrinho. 
 
 ### Taxas
 
