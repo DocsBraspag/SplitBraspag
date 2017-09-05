@@ -240,7 +240,7 @@ O Split de Pagamentos possui dois tipos básicos de integração:
   
 <BR>
 #### Split Transacional
-  
+<BR>
 Este modelo exige que o **Marketplace** envie um "nó" adicional na integração da API Cielo E-Commerce, como apresentado em exemplos anteriores, informando as regras de divisão da transação.
 
 ```
