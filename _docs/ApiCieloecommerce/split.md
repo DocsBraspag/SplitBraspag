@@ -263,7 +263,7 @@ Este modelo exige que o **Marketplace** envie um "nó" adicional na integração
 | `SplitPayments.Fares.Mdr`               | **MDR(%)** do **Marketplace** a ser descontado do valor referente a participação do **Subordinado** | Decimal | -       | Sim         |
 | `SplitPayments.Fares.Fee`               | **Tarifa Fixa(R$)** a ser descontada do valor referente a participação do **Subordinado**, em centavos.  | Inteiro | -      | Sim         |
 
-Como resposta, A API Cielo E-Commerce retornará na resposta um nó contento as seguintes propriedades:
+Como resposta, A API Cielo E-Commerce retornará na resposta um nó contento as regras de divisão e como foi divida a transação entre o **Marketplace** e os **Subordinados**:
 
 ```
 "SplitPayments": [
@@ -290,8 +290,8 @@ Como resposta, A API Cielo E-Commerce retornará na resposta um nó contento as 
 
 | Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
 |-----------------------------------------|---------------------------------------------------------------------------------------------|--------|---------|-------------|
-| `SplitPayments.split.SubordinateMerchantId.` | Identificador do Subordinate ou Marketplace incluso no Split                                             | GUID   | 36      | Sim         |
-| `SplitPayments.split.Amount`            | Valor da transação a ser depositado no Subordinate ou Marketplace, descontado a Taxa Marketplace e/ou Taxa Cielo | Número | 15      | Sim         |
+| `SplitPayments.Splits.SubordinateMerchantId.` | Identificador do **Subordinado** ou **Marketplace**.                                            | Guid   | 36      | Sim         |
+| `SplitPayments.Splits.Amount`            | Parte do valor calculado da transação a ser recebido pelo **Subordinado** ou **Marketplace**, já descontando todas as taxas | Inteiro | -      | Sim         |
 
 
 **Exemplo 2)**  
