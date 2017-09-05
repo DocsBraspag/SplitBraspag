@@ -45,18 +45,20 @@ O **Marketplace** também pode ser um participante da divisão. Para isso basta 
 ### Taxas
 
 
-#### Braspag (Facilitador) -> Marketplace
+#### Braspag (Facilitador)
 <BR>
-A Braspag acordará um **MDR** e uma **Tarifa Fixa** com o **Marketplace** a serem descontado em cada transação.
+A Braspag acordará um **MDR** e uma **Tarifa Fixa** com o **Marketplace** a serem descontados em cada transação.
 
 O **Marketplace** com, o conhecimento destas taxas, negociará o seu MDR(%) + TARIFA(R$) juntamente com seus **Subornidandos**, já embutindo o seu MDR junto à **Braspag**.
+
+O desconto da **Tarifa Fixa** não é aplicado no valor total da transação, não entrando no cálculo da divisão e sim sendo debitado no montande que o **Marketplace** tem para receber junto à **Braspag**. O **MDR** entra no cálculo de divisão da transação, já que o mesmo deve estar embutido no **MDR** acordado entre o **Marketplace** e seus **Subordinados.**
 
 > **Custo Marketplace:** MDR BRASPAG(%) + TARIFA FIXA (R$)
 
 > O MDR acordado entre um **Marketplace** e um **Subordinado** deve ser sempre maior que o MDR acordado entre a **Braspag** e o **Marketplace**. 
 
 
-#### Marketplace -> Subordinado
+#### Marketplace
 
 O **Marketplace** é responsável por acordar as taxas a serem cobradas de seus **Subordinados**, onde dever ser defindo um **MDR** maior ou igual ao **MDR** definido entre a **Braspag** e o **Marketplace** e uma Tarifa Fixa, que é opcional. 
 
