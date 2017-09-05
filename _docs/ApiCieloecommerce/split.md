@@ -31,25 +31,15 @@ Com a transação capturada, a Braspag calcula o valor destinado a cada particip
 > **Crédito** Parcelado: 1º parcela em até 31 dias, demais a cada 30.<BR>
 > **Débito**: Em até 1 dia útil<BR>
 
-A divisão de uma transação é composta por:
+Para utilizar o Split de Pagamentos, o **Marketplace** deverá se cadastrar na Braspag informando seus **Subordinados**. Após este processo tanto o **Marketplace** quanto seus supordinados possuirão um identificador único que deverá ser utlizado nas divisões de uma transação. 
 
-* Identificadores dos **Subordinados** participantes da transação.
+A divisão de uma transação deve serguir as seguintes regras:
+
+* Informar os identificadores dos **Subordinados** participantes.
 * Os valor de participação de cada **Subordinado**. O somatório deverá ser igual ao valor total da transação.
-* MDRs + Taxas (opcional) a ser aplicado sobre o valor de cada subordinado e que será destinado ao **Marketplace**. Deverá ser acordado previamente entre o **Marketplace** e o **Subordinado**.
+* MDRs + Taxas (opcional) a ser aplicado sobre o valor de cada **Subordinado** que será destinado ao **Marketplace**. Deverá ser acordado previamente entre o **Marketplace** e o **Subordinado**.
 
-
-
-
-O Split é um processo de divisão transacional, onde o **Marketplace** separa o valor pertecente da transação do **Subordinate** em duas partes: 
-
-* **Taxa do Marketplace (MDR):** Taxa cobrada pelo marketplace sobre o Subordinate para que a venda seja realizada. Pode ser um valor **%** ou/e uma **taxa fixa por venda.**
-* **Valor da venda:** Parte do valor da transação/carrinho que será destinada ao Subordinate, menos o valor cobrado como **Taxa do Marketplace**
-
-
-A **Braspag** receberá a transação, separando a transação entre valores a serem direcionados ao Marketplace, originado da **Taxa do Marketplace** e aos Subordinates, originado do valor devido dentro da venda.
-
-> **Sobre Contas**: Ao utilizar o SPLIT, o Markteplace deverá junto aos seus Subordinates se cadastrar na **Braspag**, assim recebendo um identificador de loja e registrando uma conta bancaria para cada entidade como ponto de deposito dos valores Splitados
-
+O **Marketplace** também pode ser um participante da divisão. Para isso basta informar seu identificador na divisão, passando o mesmo a ter também o papel de **Subordinado**. 
 
 
 Abaixo um exemplo do Fluxo transacional de autorização e divisão de valores no Split de pagamentos:
