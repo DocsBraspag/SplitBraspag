@@ -64,7 +64,7 @@ O **Marketplace** é responsável por acordar as taxas a serem cobradas de seus 
 
 #### Exemplo
 
-Uma transação de **R$100**, realizada ppor um **Marketplace** com participação do **Subordinado 01**.
+Uma transação de **R$100**, realizada por um **Marketplace** com participação do **Subordinado 01**.
 
 ![Salve a imagem para uma maior resolução](http://able-caribou.cloudvent.net/images/Split/split0.jpg)
 
