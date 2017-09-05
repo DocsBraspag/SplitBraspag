@@ -24,7 +24,8 @@ No Split de Pagamentos, podem existir 3 participantes:
 
 ### Como funciona o Split de Pagamentos?
 
-No Split de Pagamentos o Marketplace se integra na Braspag para transacionar e informa como o valor total da transação será dividida com os seus subordinados.
+No Split de Pagamentos o responsável pelo fluxo transacional é o facilitador. O Marktplace se integra à Braspag para transacionar e informa como será divida a transação entre cada paticipante, podendo ser no momento de captura de uma transação ou posteriormente, desde que seja dentro de um limite de tempo pré-estabelecido. 
+
 
 
 O Split é um processo de divisão transacional, onde o **Marketplace** separa o valor pertecente da transação do **Subordinate** em duas partes: 
