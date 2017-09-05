@@ -56,24 +56,22 @@ O desconto da **Tarifa Fixa** não é aplicado no valor total da transação, n�
 
 > O MDR acordado entre um **Marketplace** e um **Subordinado** deve ser sempre maior que o MDR acordado entre a **Braspag** e o **Marketplace**. 
 
-
 #### Marketplace
-
+<BR>
 O **Marketplace** é responsável por acordar as taxas a serem cobradas de seus **Subordinados**, onde dever ser defindo um **MDR** maior ou igual ao **MDR** definido entre a **Braspag** e o **Marketplace** e uma Tarifa Fixa, que é opcional. 
 
 > **Custo Subordinado:** MDR MARKETPLACE(%) + TARIFA FIXA (R$), onde MDR MARKETPLACE(%) já comtempla o MDR BRASPAG(%)
 
-
-
+####Exemplo
 
 Abaixo demonstramos como essa Taxa é formada pelo Marketplace com base no custo Braspag.
 
 > **Custo Subordinate:** Taxa Marketplace = {Margem Marketplace + (TAXA BRASPAG (%) + TARIFA FIXA (R$))}
 
 
-### Integrando o Split
+### Utilizando o Split de Pagamentos
 
-O Split funciona como parte da API transacional da Braspag via API Cielo Ecommerce.
+O Split de Plagamentos funciona como parte da API transacional da Braspag via API Cielo Ecommerce.
 
 A integração A ser realizara é a mesma descrita para transações de cartão de crédito dentro da API Cielo Ecommerce.
 Para mais informações, veja este [Manual de Integração](https://developercielo.github.io/Webservice-3.0/#criando-uma-transação-simples)
