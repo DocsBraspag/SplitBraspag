@@ -173,9 +173,9 @@ Neste caso o **Marketplace** recebe o valor da transação descontado o MDR acor
   
 Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
 
-**Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa. 
+**Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa.  
 **Taxa Marketplace com o Subordinado 01**: 5% MDR, já embutindo os 2% do MDR Braspag + 0,30 Tarifa Fixa.  
-**Taxa Marketplace com o Subordinado 02**: 4% MDR, já embutindo os 2% do MDR Braspag + 0,15 Tarifa Fixa.
+**Taxa Marketplace com o Subordinado 02**: 4% MDR, já embutindo os 2% do MDR Braspag + 0,15 Tarifa Fixa.  
 
 ```
 {
