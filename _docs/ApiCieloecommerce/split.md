@@ -44,6 +44,7 @@ O **Marketplace** também pode ser um participante da divisão. Para isso basta 
 
 ### Taxas
 
+
 #### Braspag (Facilitador) -> Marketplace
 <BR>
 A Braspag acordará um **MDR** e uma **Tarifa Fixa** com o **Marketplace** a serem descontado em cada transação.
