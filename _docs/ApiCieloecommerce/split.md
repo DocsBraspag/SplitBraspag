@@ -259,14 +259,16 @@ Este modelo exige que o **Marketplace** envie um "nó" adicional na integração
 | Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
 |-----------------------------------------|---------------------------------------------------------------------------------------------|--------|---------|-------------|
 | `SplitPayments.SubordinateMerchantId`   | Identificador do **Subordinado**.                                                           | Guid   | 36      | Sim         |
-| `SplitPayments.Amount`                  | Parte do valor total da transação referente a participação do **Subordinado**, em centavos.              | Número | 15      | Sim         |
+| `SplitPayments.Amount`                  | Parte do valor total da transação referente a participação do **Subordinado**, em centavos.              | Inteiro | -      | Sim         |
 | `SplitPayments.Fares.Mdr`               | **MDR(%)** do **Marketplace** a ser descontado do valor referente a participação do **Subordinado** | Decimal | -       | Sim         |
-| `SplitPayments.Fares.Fee`               | **Tarifa Fixa(R$)** a ser descontada do valor referente a participação do **Subordinado**, em centavos.  | Inteiro | 15      | Sim         |
+| `SplitPayments.Fares.Fee`               | **Tarifa Fixa(R$)** a ser descontada do valor referente a participação do **Subordinado**, em centavos.  | Inteiro | -      | Sim         |
 
-Com resposta, A API retornará um nó com as seguintes caracteristicas:
+Como resposta, A API Cielo E-Commerce retornará um nó com as seguintes características:
 
 Parte do `RESPONSE`:
 ```
+{
+
 "SplitPayments": [
             {
                 "SubordinateMerchantId": "MID Subordinate 01",
@@ -286,7 +288,8 @@ Parte do `RESPONSE`:
                     }
                 ]
             }
-        ],
+        ]
+}
 ```
 
 | Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
