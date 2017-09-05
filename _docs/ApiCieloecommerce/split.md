@@ -108,6 +108,29 @@ Porém, para indentificar que a transação enviada se trata de uma transação 
 | **Transação Split** | SplittedCreditCard     | SplittedDebitCard     |
 
 
+Exemplo:
+```
+{
+   "MerchantOrderId":"2014111703",
+   "Customer":{
+      "Name":"Comprador crédito simples"
+   },
+   "Payment":{
+     "Type":"CreditCard",
+     "Amount":15700,
+     "Installments":1,
+     "SoftDescriptor":"123456789ABCD",
+     "CreditCard":{
+         "CardNumber":"1234123412341231",
+         "Holder":"Teste Holder",
+         "ExpirationDate":"12/2030",
+         "SecurityCode":"123",
+         "Brand":"Visa"
+     }
+   }
+}
+```
+
 
 ### Tipos de Split
 
