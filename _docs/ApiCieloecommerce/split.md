@@ -322,20 +322,24 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
          "SecurityCode":"123",
          "Brand":"Visa"
      },
-     "SplitPayments":[{
-        "SubordinateMerchantId" :"70e3fb9c-26a7-4513-9d39-65eec93a7e66",
-        "Amount":6000,
-        "Fares":{
-            "Mdr":5,
-            "Fee":0.30
+     "SplitPayments":[
+        {
+            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+            "Amount":6000,
+            "Fares":{
+                "Mdr":5,
+                "Fee":0.30
+            }
         },
-        "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
-        "Amount":4000,
-        "Fares":{
-            "Mdr":4,
-            "Fee":0.15
+        {
+            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+            "Amount":4000,
+            "Fares":{
+                "Mdr":4,
+                "Fee":0.15
+            }
         }
-     }]
+     ]
    }
 }
 ```
@@ -374,29 +378,42 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
         "ReturnMessage": "Operation Successful",
         "SplitPayments":[
             {
-            "SubordinateMerchantId" :"70e3fb9c-26a7-4513-9d39-65eec93a7e66",
-            "Amount":6000,
-            "Fares":{
-                "Mdr":5,
-                "Fee":0.30
-            },
-            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
-            "Amount":4000,
-            "Fares":{
-                "Mdr":4,
-                "Fee":0.15
-            }
-            "splits": [                
+                "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+                "Amount":6000,
+                "Fares":{
+                    "Mdr":5,
+                    "Fee":0.30
+                },
+                "Splits": [
                     {
-                        "SubordinateMerchantId": "MID DO Marketplace",
-                        "amount": 500,
+                        "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                        "amount": 500,    
                     },
                     {
-                        "SubordinateMerchantId": "MID Subordinate 01",
-                        "amount": 9500,
+                        "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
+                        "amount": 500,    
                     }
                 ]
-        }],
+            },
+            {
+                "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+                "Amount":4000,
+                "Fares":{
+                    "Mdr":4,
+                    "Fee":0.15
+                },
+                "Splits": [
+                    {
+                        "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                        "amount": 500,    
+                    },
+                    {
+                        "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
+                        "amount": 500,    
+                    }
+                ]
+            }
+        ],
         "Links": [
             {
                 "Method": "GET",
@@ -418,7 +435,7 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
 }
 ```
 
-Neste caso o cálculos do Split são realizados sobre cada regra de divisão informada. No próximo tópico serão explicados as propriedades que compõem o nó do Split de Pagamentos.
+Neste caso o cálculos do Split são realizados sobre cada regra de divisão informada.
 
 ![Split](http://able-caribou.cloudvent.net/images/Split/Split003.PNG)
 
