@@ -15,7 +15,7 @@ Muito utilizado em Marketplaces, onde **o carrinho é composto por produtos de d
 |-----------|---------- |
 | **Marketplace** | Responsável pelo carrinho. <BR> Possui subordinados (**Subordinados**) que fornecem os produtos que compõem o carrinho.<BR> Define um MDR\* + Taxa (opcional) a ser descontado sobre a venda do **Subordinado**.<BR>  | 
 | **Subordinados** | Fornecedor dos produtos que compõem o carrinho.<BR>Recebe parte do valor da venda, descontadoo o MDR\* do **Marketplace**.<BR>  |
-| **Braspag (Facilitador)** | Responsável pelo fluxo transacional.<BR> Define um MDR\* + Taxa a serem descontados sobre o valor total da venda realizada pelo **Marketplace**.<br> Responsável pela liquidação dos pagamentos para os **Subordinados** e **Marketplace**.|
+| **Braspag (Facilitador)** | Responsável pelo fluxo transacional.<BR> Define um MDR\* + Taxa a serem descontadas sobre o valor total da venda realizada pelo **Marketplace**.<br> Responsável pela liquidação dos pagamentos para os **Subordinados** e **Marketplace**.|
 
 > \***MDR**  (*Merchant Discount Rate*): Percentual a ser descontado sobre o valor de uma transação.
 
