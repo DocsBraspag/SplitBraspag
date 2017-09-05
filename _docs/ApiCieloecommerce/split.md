@@ -15,9 +15,9 @@ No Split de Pagamentos, podem existir 3 participantes:
 
 | **Participantes** | **Descrição** | 
 |-----------|---------- |
-| **Marketplace** | Responsável pelo carrinho. <BR> Possui subordinados (**Subordinates**) que fornecem os produtos que compõem o carrinho.<BR> Define um MDR\* a ser descontado sobre a venda do subordinado.<BR>  | 
+| **Marketplace** | Responsável pelo carrinho. <BR> Possui subordinados (**Subordinates**) que fornecem os produtos que compõem o carrinho.<BR> Define um MDR\* + Taxa(opcional) a ser descontado sobre a venda do subordinado.<BR>  | 
 | **Subordinate** | Fornecedor dos produtos que compõem o carrinho.<BR>Recebe parte do valor da venda, descontando o MDR do Marketplace.<BR>  |
-| **Braspag (Facilitador)** | Responsável pelo fluxo transacional.<BR> Define um MDR\* a ser descontado sobre o valor total da venda realizada pelo Marketplace.<br> Responsável pela liquidação dos pagamentos para os subordinados e marketplace.|
+| **Braspag (Facilitador)** | Responsável pelo fluxo transacional.<BR> Define um MDR\* + Taxa a ser descontado sobre o valor total da venda realizada pelo Marketplace.<br> Responsável pela liquidação dos pagamentos para os subordinados e marketplace.|
 
 > \***MDR**  (*Merchant Discount Rate*): Percentual a ser descontado sobre o valor de uma transação.
 
