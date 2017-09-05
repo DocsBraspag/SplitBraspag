@@ -72,8 +72,8 @@ Uma transação de **R$100**, realizada por um **Marketplace** com participaçã
 
 Neste exemplo, foram assumidos os seguintes acordos:
 
-Taxa Braspag: `2%` MDR + `R$0,30` Tarifa Fixa 
-Taxa Marketplace: `5%`, já embutindo os `2%` do MDR Braspag.
+Taxa Braspag: `2% MDR` + `R$0,30 Tarifa Fixa` 
+Taxa Marketplace: `5% MDR`, já embutindo os `2%` do MDR Braspag + `0,30 Tarifa Fixa`.
 
 > ** *Importante* **: As porcentagens exibidas no exemplo não são aplicadas uma sobre as outras, mas sim como pontos percentuais que somados formam uma taxa unica sobre o Subordinate. Isso ocorre pois o valor das taxas sempre é cobrado sobre o total da transação do Subordinate.
 
