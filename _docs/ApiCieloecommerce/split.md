@@ -232,6 +232,8 @@ O Split de Pagamentos possui dois tipos básicos de integração:
 | **Split Transacional**     | O **Marketplace** envia na autorização(captura automática) ou na captura as regras de divisão.                                             |
 | **Split Pós-Transacional** | O **Marketplace** define as regras de divisão após a captura da transação.
 
+> O Split de Pagamentos só é realizado para transações capturadas, ou seja, o mesmo só será considerado para autorizações com captura automática e no momento da execução de captura de uma transação. 
+
 
 #### Split Transacional
 
