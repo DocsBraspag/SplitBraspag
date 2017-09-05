@@ -28,10 +28,10 @@ No Split de Pagamentos o responsável pelo fluxo transacional é o facilitador. 
 
 Com a transação capturada a Braspag calcula o valor destinado a cada participante e repasse esses valores, no prazo estabelecido de acordo com cada produto (regime de pagamento), para cada participante. 
 
-> \***Regime de Pagamento**: Prazo estabelecido para pagamento de acordo com o produto (crédito ou débito).
-> Crédito: Em até 31 dias.
-> Crédito Parcelado: 1º parcela em até 31 dias, demais a cada 30.
-> Débito: Em até 1 dia útil
+> \***Regime de Pagamento**: Prazo estabelecido para pagamento de acordo com o produto (crédito ou débito).<BR>
+> Crédito: Em até 31 dias.<BR>
+> Crédito Parcelado: 1º parcela em até 31 dias, demais a cada 30.<BR>
+> Débito: Em até 1 dia útil<BR>
 
 O Split é um processo de divisão transacional, onde o **Marketplace** separa o valor pertecente da transação do **Subordinate** em duas partes: 
 
