@@ -163,6 +163,8 @@ Caso a transação enviada seja marcada para captura automática, o nó contendo
 }
 ```
 
+Neste caso o **Marketplace** recebe o valor da transação descontado o MDR acordado com a **Braspag**. Como apresentado anteriormente, a Taxa Fixa acordada entre o **Marketplace** e a **Braspag** é sensibilizada diretamente na agenda.
+
 ![Split](http://able-caribou.cloudvent.net/images/Split/Split001.PNG)
 
 
