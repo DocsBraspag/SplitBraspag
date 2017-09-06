@@ -189,7 +189,7 @@ Transação no valor de **R$100,00** sem o nó contendo as regras de divisão.
 
 Neste caso o **Marketplace** recebe o valor da transação descontado o MDR acordado com a **Braspag**. Como apresentado anteriormente, a Tarifa Fixa acordada entre o **Marketplace** e a **Braspag** é sensibilizada diretamente na agenda.
 
-![Split](http://able-caribou.cloudvent.net/images/Split/Split001.PNG)
+![Split](https://docsbraspag.github.io/SplitBraspag/images/Split/Split001.PNG)
 
 **Exemplo 2)**  
   
