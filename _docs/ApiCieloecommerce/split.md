@@ -452,7 +452,35 @@ Divisão do valor do Subordinado **98430463-7c1e-413b-b13a-0f613af594d8**:
 
 #### Split Pós-Transacional
 
-Esse modelo exige que o lojista envie uma atualização da transação (via `PUT`) na integração da API Cielo Ecommerce informando qual Subordinates e Taxas a serão cobrados.
+Neste modelo o **Marketplace** poderá enviar as regras de divisão da transação após a mesma ser capturada.
+
+A divisão pós-transacional é possível somente para transações com **Cartão de Crédito** e poderá ser realizada dentro de um intervalo de tempo a partir da data de captura da transação.
+
+Para transações com **Cartão de Crédito**, este período é de **25 dias** se o **Marktplace** possuir um regime de pagamentos padrão. Caso tenha um regime personalizado, o período deverá ser acordado entre as partes (**Marketplace** e **Braspag**).
+
+A API de divisão pós-transacional utiliza como segurança o protocolo [OAUTH2](https://oauth.net/2/){target:"_blanck"}, onde é necessário primeiramente obter um token utlizando suas credenciais que deverá posteriormente ser enviado à API do Split para realização da divisão pós-transacional.
+
+Para obter um token de acesso, siga os passos abaixo:
+
+1. Concatene o ClientId e ClientSecret: `ClientId:ClientSecret`
+2. Codifique o resultado da concatenação em Base64.
+3. Realize uma requisição ao servidor de autorização:
+
+`REQUEST`
+> `POST` {{urlOAUTH}}/oauth2/token
+> --header "Authorization: Basic {base64}"
+> --header "Content-Type: application/x-www-form-urlencoded"
+> grant_type=client_credentials
+
+`RESPONSE`
+
+
+`POST` https://apidev.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/split
+
+
+
+
+
 
 
 > EndPoint de atualização: https://apidev.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/split
