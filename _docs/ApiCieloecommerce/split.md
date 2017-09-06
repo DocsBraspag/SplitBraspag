@@ -846,7 +846,7 @@ No cancelamento parcial, o somatório dos valores cancelados definidos para cada
         },
         {
             "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
-            "Amount":5000,
+            "Amount":500,
         }
      ]
 }
@@ -855,8 +855,12 @@ No cancelamento parcial, o somatório dos valores cancelados definidos para cada
 `RESPONSE`
 ```
 {
-    "Status": 10,
-    "ReturnCode": "9",
+    "Status": 2,
+    "ReasonCode": 0,
+    "ReasonMessage": "Successful",
+    "ProviderReturnCode": "0",
+    "ProviderReturnMessage": "Operation Successful",
+    "ReturnCode": "0",
     "ReturnMessage": "Operation Successful",
     "SplitPayments": [
         {
