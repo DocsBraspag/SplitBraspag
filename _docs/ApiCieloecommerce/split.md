@@ -438,7 +438,7 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
 }
 ```
 
-Neste exemplo o cálculos do Split foram realizados sobre cada regra de divisão informada e na resposta retornaram os valores a serem recebidos pelo **Marketplace** e seus **Subordinados**.
+Neste exemplo os cálculos do Split foram realizados sobre cada regra de divisão informada e na resposta retornaram os valores a serem recebidos pelo **Marketplace** e seus **Subordinados**.
 
 ![Split](http://able-caribou.cloudvent.net/images/Split/Split003.PNG)
 
@@ -459,23 +459,32 @@ Neste modelo o **Marketplace** poderá enviar as regras de divisão da transaç�
 
 A divisão pós-transacional é possível somente para transações com **Cartão de Crédito** e poderá ser realizada dentro de um intervalo de tempo a partir da data de captura da transação.
 
-Para transações com **Cartão de Crédito**, este período é de **25 dias** se o **Marktplace** possuir um regime de pagamentos padrão. Caso tenha um regime personalizado, o período deverá ser acordado entre as partes (**Marketplace** e **Braspag**).
+Para transações com **Cartão de Crédito**, este período é de **25 dias** se o **Marktplace** possuir um regime padrão de pagamentos. Caso tenha um regime personalizado, o período deverá ser acordado entre as partes (**Marketplace** e **Braspag**).
 
 A API de divisão pós-transacional utiliza como segurança o protocolo [OAUTH2](https://oauth.net/2/){:target="_blank"}, onde é necessário primeiramente obter um token utlizando suas credenciais que deverá posteriormente ser enviado à API do Split para realização da divisão pós-transacional.
 
 Para obter um token de acesso, siga os passos abaixo:
 
-1. Concatene o ClientId e ClientSecret: `ClientId:ClientSecret`
-2. Codifique o resultado da concatenação em Base64.
-3. Realize uma requisição ao servidor de autorização:
+1. Concatene o ClientId e ClientSecret: `ClientId:ClientSecret`.  
+2. Codifique o resultado da concatenação em Base64.  
+3. Realize uma requisição ao servidor de autorização:  
 
-`REQUEST`
-> `POST` {{urlOAUTH}}/oauth2/token
-> --header "Authorization: Basic {base64}"
-> --header "Content-Type: application/x-www-form-urlencoded"
-> grant_type=client_credentials
+`REQUEST`  
+```
+`POST` {{urlOAUTH}}/oauth2/token  
+--header "Authorization: Basic {base64}"  
+--header "Content-Type: application/x-www-form-urlencoded"  
+grant_type=client_credentials
+```
 
 `RESPONSE`
+````
+{
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbGllbnRfbmFtZSI6IkFkbWluQ2xpZW50IiwiY2xpZW50X2lkIjoiNTY3N2M5ZWItNGRjYS00OTk3LTk1MWYtM2QxNzk3YzhmYTcwIiwic2NvcGVzIjoie1wiU2NvcGVcIjpcIkFkbWluaXN0cmF0b3JcIixcIkNsYWltc1wiOltdfSIsInJvbGUiOiJBZG1pbmlzdHJhdG9yIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmJyYXNwYWcuY29tLmJyIiwiYXVkIjoiTWpZNE9XRmxNREF0TlRZeU15MDBNekF5TFdJNU1XTXRaV1F3WkdZd1l6VTBabUk0IiwiZXhwIjoxNTA0NjU3ODY0LCJuYmYiOjE1MDQ2NTY2NjR9.ad3roa2fnQWP8oYd34LcQOLP_RDPcEWE1igNAQRuHAs",
+    "token_type": "bearer",
+    "expires_in": 1199
+}
+```
 
 
 `POST` https://apidev.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/split
