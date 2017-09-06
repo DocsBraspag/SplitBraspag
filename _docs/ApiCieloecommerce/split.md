@@ -811,7 +811,7 @@ No cancelamento total de uma transação, será cancelado o valor total da trans
             },
             "Splits": [
                 {
-                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950",
                     "amount": 0.95,    
                 },
                 {
