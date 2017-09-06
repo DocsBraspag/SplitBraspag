@@ -766,9 +766,142 @@ Exemplo considerando transação no valor de **R$100,00**, captura parcial de **
 
 ### Cancelamento
 
-Ao cancelar uma transação do Split de Pagamentos o **Marketplace** deve informar as regras de divisão da mesma. Caso não informe, será gerada a divisão da transação entre o **Marketplace** e a **Braspag**, tanto para **captura do valor total** quanto para **captura de um valor parcial**. 
+Ao cancelar uma transação do Split de Pagamentos o **Marketplace** deve informar, para um cancelamento parcial, qual o valor deve ser cancelado de cada **Subpordinado** que participa da transação. Para um cancelamento total esta informação não é necessária, já que será cancelado o valor total e consequentemente o valor total de cada **Subpordinado**.
 
 #### Cancelamento Total
 
+No cancelamento total de uma transação, será cancelado o valor total da transação e consequentemente o valor total de cada **Subordinado**.
+
+`REQUEST`  
+```
+`PUT` https://apicieloecommerce/1/sales/{PaymentId}/void
+```
+
+`RESPONSE`
+```
+{
+    "Status": 10,
+    "ReturnCode": "9",
+    "ReturnMessage": "Operation Successful",
+    "SplitPayments": [
+        {
+            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+            "Amount":6000,
+            "Fares":{
+                "Mdr":5,
+                "Fee":0.30
+            },
+            "Splits": [
+                {
+                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "amount": 2.10,    
+                },
+                {
+                    "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
+                    "amount": 56.70,    
+                }
+            ]
+        },
+        {
+            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+            "Amount":4000,
+            "Fares":{
+                "Mdr":4,
+                "Fee":0.15
+            },
+            "Splits": [
+                {
+                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "amount": 0.95,    
+                },
+                {
+                    "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
+                    "amount": 38.25,    
+                }
+            ]
+        }
+    ]
+    "Links": [
+        {
+            "Method": "GET",
+            "Rel": "self",
+            "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
+        }
+    ]
+}
+```
+
 #### Cancelamento Parcial
 
+No cancelamento parcial, o somatório dos valores cancelados definidos para cada **Subordiado** não poderão ultrapassar o valor total do cancelamento parcial.
+
+`REQUEST`  
+```
+`PUT` https://apicieloecommerce/1/sales/{PaymentId}/void?amount=2000
+{
+    "VoidSplitPayments":[
+        {
+            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+            "Amount":1500,
+        },
+        {
+            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+            "Amount":5000,
+        }
+     ]
+}
+```
+
+`RESPONSE`
+```
+{
+    "Status": 10,
+    "ReturnCode": "9",
+    "ReturnMessage": "Operation Successful",
+    "SplitPayments": [
+        {
+            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+            "Amount":6000,
+            "Fares":{
+                "Mdr":5,
+                "Fee":0.30
+            },
+            "Splits": [
+                {
+                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "amount": 2.10,    
+                },
+                {
+                    "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
+                    "amount": 56.70,    
+                }
+            ]
+        },
+        {
+            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+            "Amount":4000,
+            "Fares":{
+                "Mdr":4,
+                "Fee":0.15
+            },
+            "Splits": [
+                {
+                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "amount": 0.95,    
+                },
+                {
+                    "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
+                    "amount": 38.25,    
+                }
+            ]
+        }
+    ]
+    "Links": [
+        {
+            "Method": "GET",
+            "Rel": "self",
+            "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
+        }
+    ]
+}
+```
