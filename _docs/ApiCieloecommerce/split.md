@@ -708,7 +708,7 @@ Na captura parcial de uma transação, o somatório dos valores de participaçã
     "SplitPayments":[
         {
             "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
-            "Amount":4000-5%,
+            "Amount":4000,
             "Fares":{
                 "Mdr":5,
                 "Fee":0.30
@@ -716,11 +716,11 @@ Na captura parcial de uma transação, o somatório dos valores de participaçã
             "Splits": [
                 {
                     "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                    "amount": 2.10,    
+                    "amount": 1.50,    
                 },
                 {
                     "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
-                    "amount": 56.70,    
+                    "amount": 37.70,    
                 }
             ]
         },
