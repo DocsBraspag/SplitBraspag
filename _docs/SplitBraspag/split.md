@@ -224,7 +224,7 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
             "Amount":6000,
             "Fares":{
                 "Mdr":5,
-                "Fee":0.30
+                "Fee":30
             }
         },
         {
@@ -232,7 +232,7 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
             "Amount":4000,
             "Fares":{
                 "Mdr":4,
-                "Fee":0.15
+                "Fee":15
             }
         }
      ]
@@ -268,7 +268,7 @@ Este modelo exige que o **Marketplace** envie um "nó" adicional na integração
         "Amount":10000,
         "Fares":{
             "Mdr":5,
-            "Fee":0.00
+            "Fee":0
         }
     }
 ]
@@ -290,7 +290,7 @@ Como resposta, A API Cielo E-Commerce retornará na resposta um nó contento as 
         "Amount": 10000,
         "Fares": {
             "Mdr": 5,
-            "Fee": 0.00
+            "Fee": 0
         },
         "Splits": [                
             {
@@ -346,7 +346,7 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
             "Amount":6000,
             "Fares":{
                 "Mdr":5,
-                "Fee":0.30
+                "Fee":30
             }
         },
         {
@@ -354,7 +354,7 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
             "Amount":4000,
             "Fares":{
                 "Mdr":4,
-                "Fee":0.15
+                "Fee":15
             }
         }
      ]
@@ -400,16 +400,16 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
                 "Amount":6000,
                 "Fares":{
                     "Mdr":5,
-                    "Fee":0.30
+                    "Fee":30
                 },
                 "Splits": [
                     {
                         "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                        "amount": 2.10,    
+                        "amount": 210,    
                     },
                     {
                         "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
-                        "amount": 56.70,    
+                        "amount": 5670,    
                     }
                 ]
             },
@@ -423,11 +423,11 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
                 "Splits": [
                     {
                         "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                        "amount": 0.95,    
+                        "amount": 95,    
                     },
                     {
                         "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
-                        "amount": 38.25,    
+                        "amount": 3825,    
                     }
                 ]
             }
@@ -520,7 +520,7 @@ PUT https://{API Split}/api/transactions/{PaymentId}/split
             "Amount":6000,
             "Fares":{
                 "Mdr":5,
-                "Fee":0.30
+                "Fee":30
             }
         },
         {
@@ -528,7 +528,7 @@ PUT https://{API Split}/api/transactions/{PaymentId}/split
             "Amount":4000,
             "Fares":{
                 "Mdr":4,
-                "Fee":0.15
+                "Fee":15
             }
         }
      ]
@@ -545,16 +545,16 @@ PUT https://{API Split}/api/transactions/{PaymentId}/split
             "Amount":6000,
             "Fares":{
                 "Mdr":5,
-                "Fee":0.30
+                "Fee":30
             },
             "Splits": [
                 {
                     "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                    "amount": 2.10,    
+                    "amount": 210,    
                 },
                 {
                     "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
-                    "amount": 56.70,    
+                    "amount": 5670,    
                 }
             ]
         },
@@ -568,11 +568,11 @@ PUT https://{API Split}/api/transactions/{PaymentId}/split
             "Splits": [
                 {
                     "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                    "amount": 0.95,    
+                    "amount": 95,    
                 },
                 {
                     "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
-                    "amount": 38.25,    
+                    "amount": 3825,    
                 }
             ]
         }
@@ -634,16 +634,16 @@ GET https://{API Cielo E-Commerce (consulta)}/1/sales/{PaymentId}
                 "Amount":6000,
                 "Fares":{
                     "Mdr":5,
-                    "Fee":0.30
+                    "Fee":30
                 },
                 "Splits": [
                     {
                         "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                        "amount": 2.10,    
+                        "amount": 210,    
                     },
                     {
                         "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
-                        "amount": 56.70,    
+                        "amount": 5670,    
                     }
                 ]
             },
@@ -652,16 +652,16 @@ GET https://{API Cielo E-Commerce (consulta)}/1/sales/{PaymentId}
                 "Amount":4000,
                 "Fares":{
                     "Mdr":4,
-                    "Fee":0.15
+                    "Fee":15
                 },
                 "Splits": [
                     {
                         "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                        "amount": 0.95,    
+                        "amount": 95,    
                     },
                     {
                         "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
-                        "amount": 38.25,    
+                        "amount": 3825,    
                     }
                 ]
             }
@@ -705,7 +705,7 @@ PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/capture
             "Amount":6000,
             "Fares":{
                 "Mdr":5,
-                "Fee":0.30
+                "Fee":30
             }
         },
         {
@@ -713,7 +713,7 @@ PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/capture
             "Amount":4000,
             "Fares":{
                 "Mdr":4,
-                "Fee":0.15
+                "Fee":15
             }
         }
      ]
@@ -732,16 +732,16 @@ PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/capture
             "Amount":6000,
             "Fares":{
                 "Mdr":5,
-                "Fee":0.30
+                "Fee":30
             },
             "Splits": [
                 {
                     "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                    "amount": 2.10,    
+                    "amount": 210,    
                 },
                 {
                     "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
-                    "amount": 56.70,    
+                    "amount": 5670,    
                 }
             ]
         },
@@ -750,16 +750,16 @@ PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/capture
             "Amount":4000,
             "Fares":{
                 "Mdr":4,
-                "Fee":0.15
+                "Fee":15
             },
             "Splits": [
                 {
                     "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                    "amount": 0.95,    
+                    "amount": 95,    
                 },
                 {
                     "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
-                    "amount": 38.25,    
+                    "amount": 3825,    
                 }
             ]
         }
@@ -799,7 +799,7 @@ PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/capture?amount=8000
             "Amount":4000,
             "Fares":{
                 "Mdr":5,
-                "Fee":0.30
+                "Fee":30
             }
         },
         {
@@ -807,7 +807,7 @@ PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/capture?amount=8000
             "Amount":4000,
             "Fares":{
                 "Mdr":4,
-                "Fee":0.15
+                "Fee":15
             }
         }
      ]
@@ -826,16 +826,16 @@ PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/capture?amount=8000
             "Amount":4000,
             "Fares":{
                 "Mdr":5,
-                "Fee":0.30
+                "Fee":30
             },
             "Splits": [
                 {
                     "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                    "amount": 1.50,    
+                    "amount": 150,    
                 },
                 {
                     "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
-                    "amount": 37.70,    
+                    "amount": 3770,    
                 }
             ]
         },
@@ -849,11 +849,11 @@ PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/capture?amount=8000
             "Splits": [
                 {
                     "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                    "amount": 0.95,    
+                    "amount": 95,    
                 },
                 {
                     "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
-                    "amount": 38.25,    
+                    "amount": 3825,    
                 }
             ]
         }
