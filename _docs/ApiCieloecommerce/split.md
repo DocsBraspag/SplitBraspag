@@ -104,6 +104,7 @@ OBS: Neste manual serão apresentados os contratos de integração da API Cielo 
 > * API Cielo E-Commerce: https://apisandbox.cieloecommerce.cielo.com.br/
 > * API Cielo E-Commerce (consulta): https://apiquery.cieloecommerce.cielo.com.br/
 > * API Split: http://splitsandbox.braspag.com.br/api/
+> * OAUTH2 Server: https://authhomolog.braspag.com.br/
 
 ### Autorização  
 <BR>
