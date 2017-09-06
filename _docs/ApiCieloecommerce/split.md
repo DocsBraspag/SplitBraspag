@@ -50,11 +50,11 @@ As mesmas poderão ser enviadas no momento transacional ou pós-transacional. Ca
 <BR>
 #### Braspag (Facilitador)
 <BR>
-A Braspag acordará um **MDR** e uma **Tarifa Fixa** com o **Marketplace** a serem descontados em cada transação.
+A Braspag acordará um **MDR(%)** e uma **Tarifa Fixa(R$)** com o **Marketplace** a serem descontados em cada transação.
 
-O **Marketplace** com, o conhecimento destas taxas, negociará o seu **MDR** e uma **Tarifa Fixa (opcional)** juntamente com seus **Subornidandos**, já embutindo o seu **MDR** junto à **Braspag**.
+O **Marketplace**, de conhecimento destas taxas, negociará o seu **MDR(%)** e uma **Tarifa Fixa(R$)(opcional)** juntamente com seus **Subornidandos**, já embutindo o **MDR(%)** acordado junto à **Braspag**.
 
-O desconto da **Tarifa Fixa** não é aplicado no valor total da transação, não entrando no cálculo da divisão e sim sendo debitado do montande que o **Marketplace** tem para receber junto à **Braspag**. O **MDR** entra no cálculo de divisão da transação, já que o mesmo deve estar embutido no **MDR** acordado entre o **Marketplace** e seus **Subordinados.**
+O desconto da **Tarifa Fixa(R$)**, acordado entre o **Marketplace** e a **Braspag**, não é aplicado no valor total da transação, não entrando no cálculo da divisão e sim sendo debitado do montande que o **Marketplace** tem para receber junto à **Braspag**. O **MDR(%)** entra no cálculo de divisão da transação, já que o mesmo deve estar embutido no **MDR(%)** acordado entre o **Marketplace** e seus **Subordinados.**
 
 > **Custo Marketplace:** MDR Braspag(%) + Tarifa Fixa(R$)
 
