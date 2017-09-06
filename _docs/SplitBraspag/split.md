@@ -455,7 +455,7 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
 
 Neste exemplo os cálculos do Split foram realizados sobre cada regra de divisão informada e na resposta retornaram os valores a serem recebidos pelo **Marketplace** e seus **Subordinados**.
 
-![Split](http://able-caribou.cloudvent.net/images/Split/Split003.PNG)
+![Split](https://docsbraspag.github.io/SplitBraspag/images/Split/Split003.PNG)
 
 
 Divisão do valor do Subordinado **0f377932-5668-4c72-8b5b-2b43760ebd38**:
