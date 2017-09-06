@@ -102,7 +102,7 @@ OBS: Neste manual serão apresentados os contratos de integração da API Cielo 
 
 > **Sandbox**
 >
-> **API Cielo E-Commerce**: 
+> **API Cielo E-Commerce**:  
 > https://apisandbox.cieloecommerce.cielo.com.br/  
 > **API Cielo E-Commerce (Consulta)**:  
 > https://apiquerysandbox.cieloecommerce.cielo.com.br/  
