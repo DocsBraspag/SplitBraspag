@@ -769,7 +769,7 @@ Exemplo considerando transação no valor de **R$100,00**, captura parcial de **
 Ao cancelar uma transação do Split de Pagamentos o **Marketplace** deve informar, para um cancelamento parcial, qual o valor deve ser cancelado de cada **Subpordinado** que participa da transação. Para um cancelamento total esta informação não é necessária, já que será cancelado o valor total e consequentemente o valor total de cada **Subpordinado**.
 
 #### Cancelamento Total
-
+<BR>
 No cancelamento total de uma transação, será cancelado o valor total da transação e consequentemente o valor total de cada **Subordinado**.
 
 `REQUEST`  
@@ -832,7 +832,7 @@ No cancelamento total de uma transação, será cancelado o valor total da trans
 ```
 
 #### Cancelamento Parcial
-
+<BR>
 No cancelamento parcial, o somatório dos valores cancelados definidos para cada **Subordiado** não poderão ultrapassar o valor total do cancelamento parcial.
 
 `REQUEST`  
