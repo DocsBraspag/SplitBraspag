@@ -471,7 +471,7 @@ Para obter um token de acesso, siga os passos abaixo:
 
 `REQUEST`  
 ```
-`POST` {{urlOAUTH}}/oauth2/token  
+POST https://authorizationserver/oauth2/token  
 --header "Authorization: Basic {base64}"  
 --header "Content-Type: application/x-www-form-urlencoded"  
 grant_type=client_credentials
@@ -480,67 +480,90 @@ grant_type=client_credentials
 `RESPONSE`
 ````
 {
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbGllbnRfbmFtZSI6IkFkbWluQ2xpZW50IiwiY2xpZW50X2lkIjoiNTY3N2M5ZWItNGRjYS00OTk3LTk1MWYtM2QxNzk3YzhmYTcwIiwic2NvcGVzIjoie1wiU2NvcGVcIjpcIkFkbWluaXN0cmF0b3JcIixcIkNsYWltc1wiOltdfSIsInJvbGUiOiJBZG1pbmlzdHJhdG9yIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmJyYXNwYWcuY29tLmJyIiwiYXVkIjoiTWpZNE9XRmxNREF0TlRZeU15MDBNekF5TFdJNU1XTXRaV1F3WkdZd1l6VTBabUk0IiwiZXhwIjoxNTA0NjU3ODY0LCJuYmYiOjE1MDQ2NTY2NjR9.ad3roa2fnQWP8oYd34LcQOLP_RDPcEWE1igNAQRuHAs",
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbG.....WE1igNAQRuHAs",
     "token_type": "bearer",
     "expires_in": 1199
 }
 ```
 
+O token retornado (access_token) deverá ser utilizado em toda requisição a API do Split para autorização. O mesmo possui uma validade de 20 minutos e deverá ser obtido um novo token caso o mesmo expire.  
+  
+Com o token de acesso, é possível realizar um requisição à API do Split para enviar as regras de divisão de uma transação.  
 
-`POST` https://apidev.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/split
-
-
-
-
-
-
-
-> EndPoint de atualização: https://apidev.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/split
-
-Exemplo do nó de SPLIT no `PUT`:
+`REQUEST`  
 ```
-"SplitPayments":[{
-        "SubordinateMerchantId" :"MID Subordinate 01",
-        "Amount":10000,
-        "Fares":{
-            "Mdr":5,
-            "Fee":0
-        }
-```
-
-| Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
-|-----------------------------------------|---------------------------------------------------------------------------------------------|--------|---------|-------------|
-| `SplitPayments.SubordinateMerchantId`        | Identificador do Subordinate                                                                     | GUID   | 36      | Sim         |
-| `SplitPayments.Amount`                  | Valor da transação pertencente ao Subordinate                                                    | Número | 15      | Sim         |
-| `SplitPayments.Fares.Mdr`               | Taxa do Marketplace (%) a ser retirada do Subordinate                                                    | Número | 2       | Sim         |
-| `SplitPayments.Fares.Fee`               | Tarifa (R$) a ser cobrada do Subordinate - em Centavos                                           | Número | 15      | Sim         |
-
-
-Com resposta, A API retornará um nó com as seguintes características:
-
-Parte do `RESPONSE`:
-```
-"SplitPayments": [
-            {
-                "SubordinateMerchantId": "MID Subordinate 01",
-                "amount": 10000,
-                "fares": {
-                    "mdr": 5,
-                    "fee": 0
-                },
-                "splits": [                
-                    {
-                        "SubordinateMerchantId": "MID DO Marketplace",
-                        "amount": 500,
-                    },
-                    {
-                        "SubordinateMerchantId": "MID Subordinate 01",
-                        "amount": 9500,
-                    }
-                ]
+`POST` https://splitapi/{PaymentId}/split
+--header "Authorization: Bearer {token}"
+{
+    "PaymentId":"24bc8366-fc31-4d6c-8555-17049a836a07",
+    "SplitPayments":[
+        {
+            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+            "Amount":6000,
+            "Fares":{
+                "Mdr":5,
+                "Fee":0.30
             }
-        ],
+        },
+        {
+            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+            "Amount":4000,
+            "Fares":{
+                "Mdr":4,
+                "Fee":0.15
+            }
+        }
+     ]
+}
 ```
+
+`RESPONSE`   
+```
+{
+    "PaymentId":"24bc8366-fc31-4d6c-8555-17049a836a07",
+    "SplitPayments":[
+        {
+            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+            "Amount":6000,
+            "Fares":{
+                "Mdr":5,
+                "Fee":0.30
+            },
+            "Splits": [
+                {
+                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "amount": 2.10,    
+                },
+                {
+                    "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
+                    "amount": 56.70,    
+                }
+            ]
+        },
+        {
+            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+            "Amount":4000,
+            "Fares":{
+                "Mdr":4,
+                "Fee":0.15
+            },
+            "Splits": [
+                {
+                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "amount": 0.95,    
+                },
+                {
+                    "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
+                    "amount": 38.25,    
+                }
+            ]
+        }
+    ]
+}
+```
+
+O nó do Split de Pagamentos presente na API pós-transacional no contrato de request e response é o mesmo retornado na divisão no momento transacional.
+
 
 
 
