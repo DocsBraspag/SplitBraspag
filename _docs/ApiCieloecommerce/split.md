@@ -56,16 +56,16 @@ O **Marketplace**, de conhecimento destas taxas, negociará o seu **MDR(%)** e u
 
 O desconto da **Tarifa Fixa(R$)**, acordado entre o **Marketplace** e a **Braspag**, não é aplicado no valor total da transação, não entrando no cálculo da divisão e sim sendo debitado do montande que o **Marketplace** tem para receber junto à **Braspag**. O **MDR(%)** entra no cálculo de divisão da transação, já que o mesmo deve estar embutido no **MDR(%)** acordado entre o **Marketplace** e seus **Subordinados.**
 
-> **Custo Marketplace:** MDR Braspag(%) + Tarifa Fixa(R$)
+> **Custo para o Marketplace:** MDR Braspag(%) + Tarifa Fixa(R$)
 
-> O MDR acordado entre um **Marketplace** e um **Subordinado** deve ser sempre maior que o MDR acordado entre a **Braspag** e o **Marketplace**. 
+> O **MDR(%)** acordado entre um **Marketplace** e um **Subordinado** deve ser sempre maior que o **MDR(%)** acordado entre a **Braspag** e o **Marketplace**. 
 
 <BR>
 #### Marketplace
 <BR>
-O **Marketplace** é responsável por acordar as taxas a serem cobradas de seus **Subordinados**, onde dever ser defindo um **MDR** maior ou igual ao **MDR** definido entre a **Braspag** e o **Marketplace** e uma Tarifa Fixa, que é opcional. 
+O **Marketplace** é responsável por acordar as taxas a serem cobradas de seus **Subordinados**, onde deve ser defindo um **MDR(%)** maior ou igual ao **MDR(%)** definido entre a **Braspag** e o **Marketplace** e uma **Tarifa Fixa(R$)**, que é opcional. 
 
-> **Custo Subordinado:** MDR Marketplace(%) + Tarifa Fixa(R$), onde no MDR Marketplace(%) está embutido o MDR Braspag(%).
+> **Custo para o Subordinado:** MDR Marketplace(%) + Tarifa Fixa(R$), onde no MDR Marketplace(%) está embutido o MDR Braspag(%).
 
 <BR>
 #### Exemplo
