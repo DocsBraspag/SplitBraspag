@@ -478,7 +478,7 @@ Para obter um token de acesso:
 
 `REQUEST`  
 ```
-POST https://{API Split}/oauth2/token  
+POST https://{OAUTH2 Server}/oauth2/token  
 --header "Authorization: Basic {base64}"  
 --header "Content-Type: application/x-www-form-urlencoded"  
 grant_type=client_credentials
