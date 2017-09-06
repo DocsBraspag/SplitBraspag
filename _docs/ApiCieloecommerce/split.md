@@ -758,7 +758,7 @@ Na captura parcial de uma transação, o somatório dos valores de participaçã
 }
 ```
 
-Exemplo considerando transação no valor de **R$100,00**, porém uma captura parcial de **R$80,00 e as seguintes taxas:
+Exemplo considerando transação no valor de **R$100,00**, captura parcial de **R$80,00** e as seguintes taxas:
 
 **Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa.  
 **Taxa Marketplace com o Subordinado 01**: 5% MDR, já embutindo os 2% do MDR Braspag + 0,30 Tarifa Fixa.  
