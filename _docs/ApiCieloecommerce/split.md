@@ -478,7 +478,7 @@ Para obter um token de acesso:
 
 `REQUEST`  
 ```
-POST https://authorizationserver/oauth2/token  
+POST https://{API Split}/oauth2/token  
 --header "Authorization: Basic {base64}"  
 --header "Content-Type: application/x-www-form-urlencoded"  
 grant_type=client_credentials
@@ -500,7 +500,7 @@ Com o token de acesso, é possível realizar um requisição à API do Split par
 
 `REQUEST`  
 ```
-PUT https://splitapi/{PaymentId}/split
+PUT https://{API Split}/{PaymentId}/split
 --header "Authorization: Bearer {token}"
 ```
 ```
@@ -588,7 +588,7 @@ Para consultar uma transação, utilize o próprio serviço de consulta da API C
 
 `REQUEST`  
 ```
-GET https://apicieloecommerce//1/sales/{PaymentId}
+GET https://{API Cielo E-Commerce (consulta)}/1/sales/{PaymentId}
 ```
 
 `RESPONSE`
@@ -689,7 +689,7 @@ Na captura total de uma transação, o somatório dos valores de participação 
 
 `REQUEST`  
 ```
-PUT https://apicieloecommerce/1/sales/{PaymentId}/capture
+PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/capture
 {
     "SplitPayments":[
         {
@@ -783,7 +783,7 @@ Na captura parcial de uma transação, o somatório dos valores de participaçã
 
 `REQUEST`  
 ```
-PUT https://apicieloecommerce/1/sales/{PaymentId}/capture?amount=8000
+PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/capture?amount=8000
 {
     "SplitPayments":[
         {
@@ -881,7 +881,7 @@ No cancelamento total de uma transação, será cancelado o valor total da trans
 
 `REQUEST`  
 ```
-PUT https://apicieloecommerce/1/sales/{PaymentId}/void
+PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/void
 ```
 
 `RESPONSE`
@@ -908,7 +908,7 @@ Os valores cancelados serão sensibilizados nas respectivas agendas dos **Subord
 
 `REQUEST`  
 ```
-PUT https://apicieloecommerce/1/sales/{PaymentId}/void?amount=2000
+PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/void?amount=2000
 {
     "VoidSplitPayments":[
         {
