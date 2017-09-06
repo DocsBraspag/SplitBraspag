@@ -99,7 +99,7 @@ O Split de Pagamentos é parte da API Cielo E-Commerce, desenvolvida utilizando 
 OBS: Neste manual serão apresentados os contratos de integração da API Cielo E-Commerce, porém o foco da análise será nas operações referentes ao Split de Pagamentos.
 
 <BR>
-#### Autorização  
+### Autorização  
 <BR>
 A autorização de uma transação no Split de Pagamentos deve ser realizada através da API Cielo E-Commerce seguindo os mesmos contratos descritos na documentação da plataforma.
 
@@ -562,8 +562,17 @@ Com o token de acesso, é possível realizar um requisição à API do Split par
 }
 ```
 
-O nó do Split de Pagamentos presente na API pós-transacional no contrato de request e response é o mesmo retornado na divisão no momento transacional.
+O nó do Split de Pagamentos da API pós-transacional no contrato de request e response é o mesmo retornado na divisão no momento transacional, apresentado anteriormente.
 
+### Captura
 
+#### Captura Total
 
+#### Captura Parcial
+
+### Cancelamento
+
+#### Cancelamento Total
+
+#### Cancelamento Parcial
 
