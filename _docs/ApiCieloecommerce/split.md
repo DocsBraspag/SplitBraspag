@@ -1,6 +1,6 @@
 ---
 title: Split de Pagamentos
-category: API CIELO E-COMMERCE
+category: Integrações
 order: 1
 ---
 
