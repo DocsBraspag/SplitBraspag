@@ -564,9 +564,15 @@ Com o token de acesso, é possível realizar um requisição à API do Split par
 
 O nó do Split de Pagamentos da API pós-transacional no contrato de request e response é o mesmo retornado na divisão no momento transacional, apresentado anteriormente.
 
+> O **Marketplace** poderá informar as regras de divisão da transação mais de uma vez desde que esteja dentro do período de tempo permitido, que é de **25 dias** para Cartão de Crédito. Para transações com Cartão de Débito a divisão poderá ser realizada somente no momento transacional.
+
 ### Captura
 
+Ao capturar uma transação do Split de Pagamentos o **Marketplace** deve informar as regas de divisão da mesma. Caso não informe, será gerada a divisão da transação entre o **Marketplace** e a **Braspag**, tanto para **captura do valor total** quanto para **captura de um valor parcial**. 
+
 #### Captura Total
+
+
 
 #### Captura Parcial
 
