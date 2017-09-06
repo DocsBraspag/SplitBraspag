@@ -111,6 +111,7 @@ Porém, para indentificar que a transação enviada se trata de uma transação 
 
 > Atualmente o Split de Pagamentos está disponivel para os seguintes tipos de pagamento:
 > * Cartão de Crédito  
+
 > Em breve estarão disponíveis:
 > * Cartão de Débito
 > * Boleto
