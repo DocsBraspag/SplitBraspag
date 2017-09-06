@@ -294,11 +294,11 @@ Como resposta, A API Cielo E-Commerce retornará na resposta um nó contento as 
         },
         "Splits": [                
             {
-                "SubordinateMerchantId": "MID do Marketplace",
+                "MerchantId": "MID do Marketplace",
                 "amount": 500,
             },
             {
-                "SubordinateMerchantId": "MID Subordinate 01",
+                "MerchantId": "MID Subordinate 01",
                 "amount": 9500,
             }
         ]
@@ -404,11 +404,11 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
                 },
                 "Splits": [
                     {
-                        "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                        "MerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
                         "amount": 210,    
                     },
                     {
-                        "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
+                        "MerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
                         "amount": 5670,    
                     }
                 ]
@@ -422,11 +422,11 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
                 },
                 "Splits": [
                     {
-                        "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                        "MerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
                         "amount": 95,    
                     },
                     {
-                        "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
+                        "MerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
                         "amount": 3825,    
                     }
                 ]
@@ -549,11 +549,11 @@ PUT https://{API Split}/api/transactions/{PaymentId}/split
             },
             "Splits": [
                 {
-                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "MerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
                     "amount": 210,    
                 },
                 {
-                    "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
+                    "MerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
                     "amount": 5670,    
                 }
             ]
@@ -567,11 +567,11 @@ PUT https://{API Split}/api/transactions/{PaymentId}/split
             },
             "Splits": [
                 {
-                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "MerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
                     "amount": 95,    
                 },
                 {
-                    "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
+                    "MerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
                     "amount": 3825,    
                 }
             ]
@@ -638,11 +638,11 @@ GET https://{API Cielo E-Commerce (consulta)}/1/sales/{PaymentId}
                 },
                 "Splits": [
                     {
-                        "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                        "MerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
                         "amount": 210,    
                     },
                     {
-                        "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
+                        "MerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
                         "amount": 5670,    
                     }
                 ]
@@ -656,11 +656,11 @@ GET https://{API Cielo E-Commerce (consulta)}/1/sales/{PaymentId}
                 },
                 "Splits": [
                     {
-                        "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                        "MerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
                         "amount": 95,    
                     },
                     {
-                        "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
+                        "MerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
                         "amount": 3825,    
                     }
                 ]
@@ -736,11 +736,11 @@ PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/capture
             },
             "Splits": [
                 {
-                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "MerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
                     "amount": 210,    
                 },
                 {
-                    "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
+                    "MerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
                     "amount": 5670,    
                 }
             ]
@@ -754,11 +754,11 @@ PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/capture
             },
             "Splits": [
                 {
-                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "MerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
                     "amount": 95,    
                 },
                 {
-                    "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
+                    "MerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
                     "amount": 3825,    
                 }
             ]
@@ -830,11 +830,11 @@ PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/capture?amount=8000
             },
             "Splits": [
                 {
-                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "MerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
                     "amount": 150,    
                 },
                 {
-                    "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
+                    "MerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
                     "amount": 3770,    
                 }
             ]
@@ -848,11 +848,11 @@ PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/capture?amount=8000
             },
             "Splits": [
                 {
-                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "MerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
                     "amount": 95,    
                 },
                 {
-                    "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
+                    "MerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
                     "amount": 3825,    
                 }
             ]
