@@ -418,7 +418,7 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
                 "Amount":4000,
                 "Fares":{
                     "Mdr":4,
-                    "Fee":0.15
+                    "Fee":15
                 },
                 "Splits": [
                     {
