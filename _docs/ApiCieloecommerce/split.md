@@ -576,7 +576,7 @@ O nó de Split de Pagamentos da API pós-transacional, no contrato de request e 
 
 ### Consulta
 
-Para consultar uma transação, utilize a própria consulta da API Cielo E-Commerce.
+Para consultar uma transação, utilize o próprio serviço de consulta da API Cielo E-Commerce.
 
 `REQUEST`  
 ```
@@ -894,7 +894,9 @@ PUT https://apicieloecommerce/1/sales/{PaymentId}/void
 
 #### Cancelamento Parcial
 <BR>
-No cancelamento parcial, o somatório dos valores cancelados definidos para cada **Subordinado** não poderão ultrapassar o valor total do cancelamento parcial. Os valores cancelados serão sensibilizados nas respectivas agendas dos **Subordinados**.
+No cancelamento parcial, o somatório dos valores cancelados definidos para cada **Subordinado** não poderão ultrapassar o valor total do cancelamento parcial.  
+  
+Os valores cancelados serão sensibilizados nas respectivas agendas dos **Subordinados**.
 
 `REQUEST`  
 ```
@@ -932,3 +934,7 @@ PUT https://apicieloecommerce/1/sales/{PaymentId}/void?amount=2000
     ]
 }
 ```
+
+## Agenda
+
+> Em breve disponibilizaremos a API de Agenda onde será possível consultar a agenda do **Markectplace** e seus **Subordinados**. 
