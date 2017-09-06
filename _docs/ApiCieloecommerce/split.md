@@ -574,7 +574,7 @@ O nó de Split de Pagamentos da API pós-transacional, no contrato de request e 
 
 ### Captura
 
-Ao capturar uma transação do Split de Pagamentos o **Marketplace** deve informar as regas de divisão da mesma. Caso não informe, será gerada a divisão da transação entre o **Marketplace** e a **Braspag**, tanto para **captura do valor total** quanto para **captura de um valor parcial**. 
+Ao capturar uma transação do Split de Pagamentos o **Marketplace** deve informar as regras de divisão da mesma. Caso não informe, será gerada a divisão da transação entre o **Marketplace** e a **Braspag**, tanto para **captura do valor total** quanto para **captura de um valor parcial**. 
 
 #### Captura Total
 
@@ -765,6 +765,8 @@ Exemplo considerando transação no valor de **R$100,00**, porém uma captura pa
 **Taxa Marketplace com o Subordinado 02**: 4% MDR, já embutindo os 2% do MDR Braspag + 0,15 Tarifa Fixa. 
 
 ### Cancelamento
+
+Ao cancelar uma transação do Split de Pagamentos o **Marketplace** deve informar as regras de divisão da mesma. Caso não informe, será gerada a divisão da transação entre o **Marketplace** e a **Braspag**, tanto para **captura do valor total** quanto para **captura de um valor parcial**. 
 
 #### Cancelamento Total
 
