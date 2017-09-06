@@ -125,7 +125,7 @@ Exemplo:
    },
    "Payment":{
      "Type":"SplittedCreditCard",
-     "Amount":15700,
+     "Amount":10000,
      "Installments":1,
      "SoftDescriptor":"123456789ABCD",
      "CreditCard":{
@@ -372,7 +372,7 @@ Transação no valor de **R$100,00** com o nó contendo as regras de divisão.
         "AuthorizationCode": "123456",
         "PaymentId": "24bc8366-fc31-4d6c-8555-17049a836a07",
         "Type": "CreditCard",
-        "Amount": 15700,
+        "Amount": 10000,
         "Currency": "BRL",
         "Country": "BRA",
         "ExtraDataCollection": [],
@@ -571,6 +571,103 @@ Exemplo considerando transação no valor de **R$100,00** e as seguinte taxas:
 O nó de Split de Pagamentos da API pós-transacional, no contrato de request e response, é o mesmo retornado na divisão no momento transacional, apresentado anteriormente.
 
 > O **Marketplace** poderá informar as regras de divisão da transação mais de uma vez desde que esteja dentro do período de tempo permitido, que é de **25 dias** para Cartão de Crédito. Para transações com Cartão de Débito a divisão poderá ser realizada somente no momento transacional.
+
+### Consulta
+
+Para consultar uma transação, utilize a própria consulta da API Cielo E-Commerce.
+
+`REQUEST`  
+```
+`GET` https://apicieloecommerce//1/sales/{PaymentId}
+```
+
+`RESPONSE`
+```
+{
+    "MerchantOrderId": "2014111706",
+    "Customer": {
+        "Name": "Comprador Teste"
+    },
+    "Payment": {
+        "ServiceTaxAmount": 0,
+        "Installments": 1,
+        "Interest": "ByMerchant",
+        "Capture": false,
+        "Authenticate": false,
+        "CreditCard": {
+            "CardNumber": "455187******0183",
+            "Holder": "Teste Holder",
+            "ExpirationDate": "12/2030",
+            "SaveCard": false,
+            "Brand": "Visa"
+        },
+        "ProofOfSale": "674532",
+        "AuthorizationCode": "123456",
+        "PaymentId": "24bc8366-fc31-4d6c-8555-17049a836a07",
+        "Type": "CreditCard",
+        "Amount": 1000,
+        "Currency": "BRL",
+        "Country": "BRA",
+        "ExtraDataCollection": [],
+        "Status": 2,
+        "SplitPayments":[
+            {
+                "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+                "Amount":6000,
+                "Fares":{
+                    "Mdr":5,
+                    "Fee":0.30
+                },
+                "Splits": [
+                    {
+                        "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                        "amount": 2.10,    
+                    },
+                    {
+                        "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
+                        "amount": 56.70,    
+                    }
+                ]
+            },
+            {
+                "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+                "Amount":4000,
+                "Fares":{
+                    "Mdr":4,
+                    "Fee":0.15
+                },
+                "Splits": [
+                    {
+                        "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                        "amount": 0.95,    
+                    },
+                    {
+                        "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
+                        "amount": 38.25,    
+                    }
+                ]
+            }
+        ],
+        "Links": [
+            {
+                "Method": "GET",
+                "Rel": "self",
+                "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
+            },
+            {
+                "Method": "PUT",
+                "Rel": "capture",
+                "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/capture"
+            },
+            {
+                "Method": "PUT",
+                "Rel": "void",
+                "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/void"
+            }
+        ]
+    }
+}
+```
 
 ### Captura
 
@@ -783,44 +880,6 @@ No cancelamento total de uma transação, será cancelado o valor total da trans
     "Status": 10,
     "ReturnCode": "9",
     "ReturnMessage": "Operation Successful",
-    "SplitPayments": [
-        {
-            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
-            "Amount":6000,
-            "Fares":{
-                "Mdr":5,
-                "Fee":0.30
-            },
-            "Splits": [
-                {
-                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                    "amount": 2.10,    
-                },
-                {
-                    "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
-                    "amount": 56.70,    
-                }
-            ]
-        },
-        {
-            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
-            "Amount":4000,
-            "Fares":{
-                "Mdr":4,
-                "Fee":0.15
-            },
-            "Splits": [
-                {
-                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950",
-                    "amount": 0.95,    
-                },
-                {
-                    "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
-                    "amount": 38.25,    
-                }
-            ]
-        }
-    ]
     "Links": [
         {
             "Method": "GET",
@@ -833,7 +892,7 @@ No cancelamento total de uma transação, será cancelado o valor total da trans
 
 #### Cancelamento Parcial
 <BR>
-No cancelamento parcial, o somatório dos valores cancelados definidos para cada **Subordiado** não poderão ultrapassar o valor total do cancelamento parcial.
+No cancelamento parcial, o somatório dos valores cancelados definidos para cada **Subordinado** não poderão ultrapassar o valor total do cancelamento parcial. Os valores cancelados serão sensibilizados nas respectivas agendas dos **Subordinados**.
 
 `REQUEST`  
 ```
@@ -862,44 +921,6 @@ No cancelamento parcial, o somatório dos valores cancelados definidos para cada
     "ProviderReturnMessage": "Operation Successful",
     "ReturnCode": "0",
     "ReturnMessage": "Operation Successful",
-    "SplitPayments": [
-        {
-            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
-            "Amount":6000,
-            "Fares":{
-                "Mdr":5,
-                "Fee":0.30
-            },
-            "Splits": [
-                {
-                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                    "amount": 2.10,    
-                },
-                {
-                    "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
-                    "amount": 56.70,    
-                }
-            ]
-        },
-        {
-            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
-            "Amount":4000,
-            "Fares":{
-                "Mdr":4,
-                "Fee":0.15
-            },
-            "Splits": [
-                {
-                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                    "amount": 0.95,    
-                },
-                {
-                    "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
-                    "amount": 38.25,    
-                }
-            ]
-        }
-    ]
     "Links": [
         {
             "Method": "GET",
