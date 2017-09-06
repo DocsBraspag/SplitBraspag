@@ -492,7 +492,7 @@ Com o token de acesso, é possível realizar um requisição à API do Split par
 
 `REQUEST`  
 ```
-`POST` https://splitapi/{PaymentId}/split
+`PUT` https://splitapi/{PaymentId}/split
 --header "Authorization: Bearer {token}"
 {
     "PaymentId":"24bc8366-fc31-4d6c-8555-17049a836a07",
@@ -562,7 +562,13 @@ Com o token de acesso, é possível realizar um requisição à API do Split par
 }
 ```
 
-O nó do Split de Pagamentos da API pós-transacional no contrato de request e response é o mesmo retornado na divisão no momento transacional, apresentado anteriormente.
+Exemplo considerando transação no valor de **R$100,00** e as seguinte taxas:
+
+**Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa.  
+**Taxa Marketplace com o Subordinado 01**: 5% MDR, já embutindo os 2% do MDR Braspag + 0,30 Tarifa Fixa.  
+**Taxa Marketplace com o Subordinado 02**: 4% MDR, já embutindo os 2% do MDR Braspag + 0,15 Tarifa Fixa.  
+
+O nó de Split de Pagamentos da API pós-transacional, no contrato de request e response, é o mesmo retornado na divisão no momento transacional, apresentado anteriormente.
 
 > O **Marketplace** poderá informar as regras de divisão da transação mais de uma vez desde que esteja dentro do período de tempo permitido, que é de **25 dias** para Cartão de Crédito. Para transações com Cartão de Débito a divisão poderá ser realizada somente no momento transacional.
 
@@ -572,9 +578,191 @@ Ao capturar uma transação do Split de Pagamentos o **Marketplace** deve inform
 
 #### Captura Total
 
+Na captura total de uma transação, o somatório dos valores de participação de cada subordinado deverá ser igual ao valor total da transação enviado no momento da autorização.
 
+`REQUEST`  
+```
+`PUT` https://apicieloecommerce/1/sales/{PaymentId}/capture
+{
+    "SplitPayments":[
+        {
+            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+            "Amount":6000,
+            "Fares":{
+                "Mdr":5,
+                "Fee":0.30
+            }
+        },
+        {
+            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+            "Amount":4000,
+            "Fares":{
+                "Mdr":4,
+                "Fee":0.15
+            }
+        }
+     ]
+}
+```
+
+`RESPONSE`  
+```
+{
+    "Status": 2,
+    "ReturnCode": "6",
+    "ReturnMessage": "Operation Successful",
+    "SplitPayments":[
+        {
+            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+            "Amount":6000,
+            "Fares":{
+                "Mdr":5,
+                "Fee":0.30
+            },
+            "Splits": [
+                {
+                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "amount": 2.10,    
+                },
+                {
+                    "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
+                    "amount": 56.70,    
+                }
+            ]
+        },
+        {
+            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+            "Amount":4000,
+            "Fares":{
+                "Mdr":4,
+                "Fee":0.15
+            },
+            "Splits": [
+                {
+                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "amount": 0.95,    
+                },
+                {
+                    "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
+                    "amount": 38.25,    
+                }
+            ]
+        }
+    ]
+    "Links": [
+        {
+            "Method": "GET",
+            "Rel": "self",
+            "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
+        },
+        {
+            "Method": "PUT",
+            "Rel": "void",
+            "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/void"
+        }
+    ]
+}
+```
+
+Exemplo considerando transação no valor de **R$100,00** e as seguinte taxas:
+
+**Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa.  
+**Taxa Marketplace com o Subordinado 01**: 5% MDR, já embutindo os 2% do MDR Braspag + 0,30 Tarifa Fixa.  
+**Taxa Marketplace com o Subordinado 02**: 4% MDR, já embutindo os 2% do MDR Braspag + 0,15 Tarifa Fixa. 
 
 #### Captura Parcial
+
+Na captura parcial de uma transação, o somatório dos valores de participação de cada subordinado deverá ser igual ao valor total a ser capturado.
+
+`REQUEST`  
+```
+`PUT` https://apicieloecommerce/1/sales/{PaymentId}/capture?amount=8000
+{
+    "SplitPayments":[
+        {
+            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+            "Amount":4000,
+            "Fares":{
+                "Mdr":5,
+                "Fee":0.30
+            }
+        },
+        {
+            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+            "Amount":4000,
+            "Fares":{
+                "Mdr":4,
+                "Fee":0.15
+            }
+        }
+     ]
+}
+```
+
+`RESPONSE`  
+```
+{
+    "Status": 2,
+    "ReturnCode": "6",
+    "ReturnMessage": "Operation Successful",
+    "SplitPayments":[
+        {
+            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+            "Amount":4000-5%,
+            "Fares":{
+                "Mdr":5,
+                "Fee":0.30
+            },
+            "Splits": [
+                {
+                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "amount": 2.10,    
+                },
+                {
+                    "SubordinateMerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
+                    "amount": 56.70,    
+                }
+            ]
+        },
+        {
+            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+            "Amount":4000,
+            "Fares":{
+                "Mdr":4,
+                "Fee":0.15
+            },
+            "Splits": [
+                {
+                    "SubordinateMerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                    "amount": 0.95,    
+                },
+                {
+                    "SubordinateMerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
+                    "amount": 38.25,    
+                }
+            ]
+        }
+    ]
+    "Links": [
+        {
+            "Method": "GET",
+            "Rel": "self",
+            "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
+        },
+        {
+            "Method": "PUT",
+            "Rel": "void",
+            "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}/void"
+        }
+    ]
+}
+```
+
+Exemplo considerando transação no valor de **R$100,00**, porém uma captura parcial de **R$80,00 e as seguintes taxas:
+
+**Taxa Braspag**: 2% MDR + R$0,30 Tarifa Fixa.  
+**Taxa Marketplace com o Subordinado 01**: 5% MDR, já embutindo os 2% do MDR Braspag + 0,30 Tarifa Fixa.  
+**Taxa Marketplace com o Subordinado 02**: 4% MDR, já embutindo os 2% do MDR Braspag + 0,15 Tarifa Fixa. 
 
 ### Cancelamento
 
