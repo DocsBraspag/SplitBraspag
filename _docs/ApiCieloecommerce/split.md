@@ -98,9 +98,6 @@ O Split de Pagamentos é parte da API Cielo E-Commerce, desenvolvida utilizando 
 
 OBS: Neste manual serão apresentados os contratos de integração da API Cielo E-Commerce, porém o foco da análise será nas operações referentes ao Split de Pagamentos.
 
-> Atualmente o Split de Pagamentos está disponivel para os seguintes tipos de pagamento:
-> * Cartão de Crédito
-
 <BR>
 #### Autorização  
   
@@ -113,6 +110,11 @@ Porém, para indentificar que a transação enviada se trata de uma transação 
 | **Transação Comum** | CreditCard             | DebitCard             |
 | **Transação Split** | SplittedCreditCard     | SplittedDebitCard     |
 
+> Atualmente o Split de Pagamentos está disponivel para os seguintes tipos de pagamento:
+> * Cartão de Crédito
+> Em breve estarão disponíveis:
+> * Cartão de Débito
+> * Boleto
 
 Exemplo:
 ```
