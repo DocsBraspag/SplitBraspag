@@ -171,7 +171,7 @@ Transação no valor de **R$100,00** sem o nó contendo as regras de divisão.
 }
 ```
 
-Neste caso o **Marketplace** recebe o valor da transação descontado o MDR acordado com a **Braspag**. Como apresentado anteriormente, a Taxa Fixa acordada entre o **Marketplace** e a **Braspag** é sensibilizada diretamente na agenda.
+Neste caso o **Marketplace** recebe o valor da transação descontado o MDR acordado com a **Braspag**. Como apresentado anteriormente, a Tarifa Fixa acordada entre o **Marketplace** e a **Braspag** é sensibilizada diretamente na agenda.
 
 ![Split](http://able-caribou.cloudvent.net/images/Split/Split001.PNG)
 
@@ -228,9 +228,9 @@ Neste caso o cálculos do Split são realizados sobre cada regra de divisão inf
 
 ![Split](http://able-caribou.cloudvent.net/images/Split/Split003.PNG)
 
-### Tipos de Split
+### Modelos de Split
 
-O Split de Pagamentos possui dois tipos básicos de integração:
+O Split de Pagamentos possui dois modelos básicos de integração:
 
 
 | Tipo                 | Descrição                                                                                                                          |
@@ -238,7 +238,7 @@ O Split de Pagamentos possui dois tipos básicos de integração:
 | **Split Transacional**     | O **Marketplace** envia na autorização (captura automática) ou no momento de captura as regras de divisão.                                             |
 | **Split Pós-Transacional** | O **Marketplace** envia as regras de divisão após a captura da transação.
 
-> O Split de Pagamentos só é realizado para transações capturadas, ou seja, o mesmo só será considerado para autorizações com captura automática e no momento da execução de captura de uma transação. Caso seja informado no momento de uma autorização sem captura automática, as regras de divisão serão desconsideradas.
+> O Split de Pagamentos só é realizado para transações capturadas, ou seja, o mesmo só será considerado para autorizações com captura automática e no momento da captura de uma transação. Caso seja informado no momento de uma autorização sem captura automática, as regras de divisão serão desconsideradas.
   
 <BR>
 #### Split Transacional
