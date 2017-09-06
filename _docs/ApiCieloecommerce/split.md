@@ -98,6 +98,13 @@ O Split de Pagamentos é parte da API Cielo E-Commerce, desenvolvida utilizando 
 
 OBS: Neste manual serão apresentados os contratos de integração da API Cielo E-Commerce, porém o foco da análise será nas operações referentes ao Split de Pagamentos.
 
+### Ambientes
+
+> **Sandbox**
+> * API Cielo E-Commerce: https://apisandbox.cieloecommerce.cielo.com.br
+> * API Cielo E-Commerce (consulta): https://apiquery.cieloecommerce.cielo.com.br/
+> * API Split: http://splitsandbox.braspag.com.br/api/
+
 ### Autorização  
 <BR>
 A autorização de uma transação no Split de Pagamentos deve ser realizada através da API Cielo E-Commerce seguindo os mesmos contratos descritos na documentação da plataforma.
