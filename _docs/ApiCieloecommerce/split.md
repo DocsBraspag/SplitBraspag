@@ -901,11 +901,11 @@ PUT https://apicieloecommerce/1/sales/{PaymentId}/void?amount=2000
     "VoidSplitPayments":[
         {
             "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
-            "Amount":1500,
+            "VoidAmount":1500,
         },
         {
             "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
-            "Amount":500,
+            "VoidAmount":500,
         }
      ]
 }
