@@ -500,7 +500,7 @@ Com o token de acesso, é possível realizar um requisição à API do Split par
 
 `REQUEST`  
 ```
-PUT https://{API Split}/{PaymentId}/split
+PUT https://{API Split}/api/transactions/{PaymentId}/split
 --header "Authorization: Bearer {token}"
 ```
 ```
