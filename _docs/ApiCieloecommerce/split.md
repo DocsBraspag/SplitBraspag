@@ -260,7 +260,7 @@ Este modelo exige que o **Marketplace** envie um "nó" adicional na integração
 
 | Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
 |-----------------------------------------|---------------------------------------------------------------------------------------------|--------|---------|-------------|
-| `SplitPayments.SubordinateMerchantId`   | Identificador do **Subordinado**.                                                           | Guid   | 36      | Sim         |
+| `SplitPayments.SubordinateMerchantId`   | **MerchantId** (Identificador) do **Subordinado**.                                                           | Guid   | 36      | Sim         |
 | `SplitPayments.Amount`                  | Parte do valor total da transação referente a participação do **Subordinado**, em centavos.              | Inteiro | -      | Sim         |
 | `SplitPayments.Fares.Mdr`               | **MDR(%)** do **Marketplace** a ser descontado do valor referente a participação do **Subordinado** | Decimal | -       | Sim         |
 | `SplitPayments.Fares.Fee`               | **Tarifa Fixa(R$)** a ser descontada do valor referente a participação do **Subordinado**, em centavos.  | Inteiro | -      | Sim         |
@@ -292,8 +292,8 @@ Como resposta, A API Cielo E-Commerce retornará na resposta um nó contento as 
 
 | Propriedade                             | Descrição                                                                                   | Tipo   | Tamanho | Obrigatório |
 |-----------------------------------------|---------------------------------------------------------------------------------------------|--------|---------|-------------|
-| `SplitPayments.Splits.SubordinateMerchantId` | Identificador do **Subordinado** ou **Marketplace**.                                            | Guid   | 36      | Sim         |
-| `SplitPayments.Splits.Amount`            | Parte do valor calculado da transação a ser recebido pelo **Subordinado** ou **Marketplace**, já descontando todas as taxas | Inteiro | -      | Sim         |
+| `SplitPayments.Splits.SubordinateMerchantId` | **MerchantId** (Identificador) do **Subordinado** ou **Marketplace**.                                            | Guid   | 36      | Sim         |
+| `SplitPayments.Splits.Amount`            | Parte do valor calculado da transação a ser recebido pelo **Subordinado** ou **Marketplace**, já descontando todas as taxas (MDR e Tarifa Fixa) | Inteiro | -      | Sim         |
 
 
 **Exemplo**  
@@ -460,9 +460,9 @@ A divisão pós-transacional é possível somente para transações com **Cartã
 
 Para transações com **Cartão de Crédito**, este período é de **25 dias** se o **Marktplace** possuir um regime padrão de pagamentos. Caso tenha um regime personalizado, o período deverá ser acordado entre as partes (**Marketplace** e **Braspag**).
 
-A API de divisão pós-transacional utiliza como segurança o protocolo [OAUTH2](https://oauth.net/2/){:target="_blank"}, onde é necessário primeiramente obter um token utlizando suas credenciais que deverá posteriormente ser enviado à API do Split para realização da divisão pós-transacional.
+A API de divisão pós-transacional utiliza como segurança o protocolo [OAUTH2](https://oauth.net/2/){:target="_blank"}, onde é necessário primeiramente obter um token utlizando suas credenciais, que deverá posteriormente ser enviado à API do Split para realização da divisão pós-transacional.
 
-Para obter um token de acesso, siga os passos abaixo:
+Para obter um token de acesso:
 
 1. Concatene o ClientId e ClientSecret: `ClientId:ClientSecret`.  
 2. Codifique o resultado da concatenação em Base64.  
@@ -484,8 +484,9 @@ grant_type=client_credentials
     "expires_in": 1199
 }
 ```
+> O ClientId é o mesmo utilizado na integração com a API Cielo E-Commerce, conhecido como MerchantId. O ClientSecret deve ser obtido junto à Braspag.
 
-O token retornado (access_token) deverá ser utilizado em toda requisição a API do Split para autorização. O mesmo possui uma validade de 20 minutos e deverá ser obtido um novo token caso o mesmo expire.  
+O token retornado (access_token) deverá ser utilizado em toda requisição à API do Split como uma chave de autorização. O mesmo possui uma validade de 20 minutos e deverá ser obtido um novo token toda vez que o mesmo expirar.  
   
 Com o token de acesso, é possível realizar um requisição à API do Split para enviar as regras de divisão de uma transação.  
 
@@ -493,6 +494,8 @@ Com o token de acesso, é possível realizar um requisição à API do Split par
 ```
 PUT https://splitapi/{PaymentId}/split
 --header "Authorization: Bearer {token}"
+```
+```
 {
     "PaymentId":"24bc8366-fc31-4d6c-8555-17049a836a07",
     "SplitPayments":[
