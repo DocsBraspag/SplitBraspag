@@ -512,72 +512,66 @@ PUT https://{API Split}/api/transactions/{PaymentId}/split
 --header "Authorization: Bearer {token}"
 ```
 ```
-{
-    "PaymentId":"24bc8366-fc31-4d6c-8555-17049a836a07",
-    "SplitPayments":[
-        {
-            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
-            "Amount":6000,
-            "Fares":{
-                "Mdr":5,
-                "Fee":30
-            }
-        },
-        {
-            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
-            "Amount":4000,
-            "Fares":{
-                "Mdr":4,
-                "Fee":15
-            }
+[
+    {
+        "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+        "Amount":6000,
+        "Fares":{
+            "Mdr":5,
+            "Fee":30
         }
-     ]
-}
+    },
+    {
+        "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+        "Amount":4000,
+        "Fares":{
+            "Mdr":4,
+            "Fee":15
+        }
+    }
+]
 ```
 
 `RESPONSE`   
 ```
-{
-    "PaymentId":"24bc8366-fc31-4d6c-8555-17049a836a07",
-    "SplitPayments":[
-        {
-            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
-            "Amount":6000,
-            "Fares":{
-                "Mdr":5,
-                "Fee":30
-            },
-            "Splits": [
-                {
-                    "MerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                    "amount": 210,    
-                },
-                {
-                    "MerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
-                    "amount": 5670,    
-                }
-            ]
+[
+    {
+        "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+        "Amount":6000,
+        "Fares":{
+            "Mdr":5,
+            "Fee":30
         },
-        {
-            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
-            "Amount":4000,
-            "Fares":{
-                "Mdr":4,
-                "Fee":0.15
+        "Splits": [
+            {
+                "MerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                "amount": 210,    
             },
-            "Splits": [
-                {
-                    "MerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
-                    "amount": 95,    
-                },
-                {
-                    "MerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
-                    "amount": 3825,    
-                }
-            ]
-        }
-    ]
-}
+            {
+                "MerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
+                "amount": 5670,    
+            }
+        ]
+    },
+    {
+        "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+        "Amount":4000,
+        "Fares":{
+            "Mdr":4,
+            "Fee":0.15
+        },
+        "Splits": [
+            {
+                "MerchantId": "cd16ab8e-2173-4a16-b037-36cd04c07950", 
+                "amount": 95,    
+            },
+            {
+                "MerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
+                "amount": 3825,    
+            }
+        ]
+    }
+]
 ```
 
 Exemplo considerando transação no valor de **R$100,00** e as seguinte taxas:
