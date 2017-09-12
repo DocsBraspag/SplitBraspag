@@ -23,7 +23,7 @@ Muito utilizado em Marketplaces, onde **o carrinho é composto por produtos de d
 <BR>
 No Split de Pagamentos o responsável pelo fluxo transacional é o facilitador.
 
-O Marketplace se integra à Braspag para transacionar e informa como será divida a transação entre cada paticipante, podendo ser no momento de captura ou em um momento posterior, conhecido como split pós-transacional, desde que seja dentro de um limite de tempo pré-estabelecido. 
+O Marketplace se integra à Braspag para transacionar e informa como será dividida a transação entre cada participante, podendo ser no momento de captura ou em um momento posterior, conhecido como split pós-transacional, desde que seja dentro de um limite de tempo pré-estabelecido. 
 
 Com a transação capturada, a Braspag calcula o valor destinado a cada participante e repassa esses valores, no prazo estabelecido de acordo com cada produto (regime de pagamento\*), para cada envolvido na transação. 
 
@@ -54,7 +54,7 @@ A Braspag acordará um **MDR(%)** e uma **Tarifa Fixa(R$)** com o **Marketplace*
 
 O **Marketplace**, de conhecimento destas taxas, negociará o seu **MDR(%)** e uma **Tarifa Fixa(R$)(opcional)** juntamente com seus **Subornidandos**, já embutindo o **MDR(%)** acordado junto à **Braspag**.
 
-O desconto da **Tarifa Fixa(R$)**, acordado entre o **Marketplace** e a **Braspag**, não é aplicado no valor total da transação, não entrando no cálculo da divisão e sim sendo debitado do montande que o **Marketplace** tem para receber junto à **Braspag**. O **MDR(%)** entra no cálculo de divisão da transação, já que o mesmo deve estar embutido no **MDR(%)** acordado entre o **Marketplace** e seus **Subordinados.**
+O desconto da **Tarifa Fixa(R$)**, acordado entre o **Marketplace** e a **Braspag**, não é aplicado no valor total da transação, não entrando no cálculo da divisão e sim sendo debitado do montante que o **Marketplace** tem para receber junto à **Braspag**. O **MDR(%)** entra no cálculo de divisão da transação, já que o mesmo deve estar embutido no **MDR(%)** acordado entre o **Marketplace** e seus **Subordinados.**
 
 > **Custo para o Marketplace:** MDR Braspag(%) + Tarifa Fixa(R$)
 
@@ -474,7 +474,7 @@ Neste modelo o **Marketplace** poderá enviar as regras de divisão da transaç�
 
 A divisão pós-transacional é possível somente para transações com **Cartão de Crédito** e poderá ser realizada dentro de um intervalo de tempo a partir da data de captura da transação.
 
-Para transações com **Cartão de Crédito**, este período é de **25 dias** se o **Marktplace** possuir um regime padrão de pagamentos. Caso tenha um regime personalizado, o período deverá ser acordado entre as partes (**Marketplace** e **Braspag**).
+Para transações com **Cartão de Crédito**, este período é de **25 dias** se o **Marketplace** possuir um regime padrão de pagamentos. Caso tenha um regime personalizado, o período deverá ser acordado entre as partes (**Marketplace** e **Braspag**).
 
 A API de divisão pós-transacional utiliza como segurança o protocolo [OAUTH2](https://oauth.net/2/){:target="_blank"}, onde é necessário primeiramente obter um token utlizando suas credenciais, que deverá posteriormente ser enviado à API do Split para realização da divisão pós-transacional.
 
@@ -898,6 +898,16 @@ PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/void
     "Status": 10,
     "ReturnCode": "9",
     "ReturnMessage": "Operation Successful",
+    "VoidSplitPayments":[
+        {
+            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+            "VoidAmount":1500,
+        },
+        {
+            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+            "VoidAmount":500,
+        }
+    ]
     "Links": [
         {
             "Method": "GET",
@@ -941,6 +951,16 @@ PUT https://{API Cielo E-Commerce}/1/sales/{PaymentId}/void?amount=2000
     "ProviderReturnMessage": "Operation Successful",
     "ReturnCode": "0",
     "ReturnMessage": "Operation Successful",
+    "VoidSplitPayments":[
+        {
+            "SubordinateMerchantId" :"0f377932-5668-4c72-8b5b-2b43760ebd38",
+            "VoidAmount":1500,
+        },
+        {
+            "SubordinateMerchantId" :"98430463-7c1e-413b-b13a-0f613af594d8",
+            "VoidAmount":500,
+        }
+    ],
     "Links": [
         {
             "Method": "GET",
