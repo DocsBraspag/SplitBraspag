@@ -549,7 +549,7 @@ PUT https://{API Split}/api/transactions/{PaymentId}/split
             },
             {
                 "MerchantId": "0f377932-5668-4c72-8b5b-2b43760ebd38", 
-                "amount": 5670,    
+                "amount": 5670   
             }
         ]
     },
@@ -567,7 +567,7 @@ PUT https://{API Split}/api/transactions/{PaymentId}/split
             },
             {
                 "MerchantId": "98430463-7c1e-413b-b13a-0f613af594d8", 
-                "amount": 3825,    
+                "amount": 3825    
             }
         ]
     }
