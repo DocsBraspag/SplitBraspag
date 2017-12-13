@@ -1,14 +1,7 @@
 ---
-layout: manual
-title: Manual de Integração
-description: Manual integração técnica via API Split
-search: true
-toc_footers: false
-categories: manual
-sort_order: 3
-hub_visible: false
-tags:
-  - Split de Pagamentos
+title: Split de Pagamentos
+category: Manual
+order: 1
 ---
 
 # Split de Pagamentos
